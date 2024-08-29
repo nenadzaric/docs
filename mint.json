@@ -1,6 +1,6 @@
 {
-  "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "$schema": "https://trickest.com",
+  "name": "Trickest Platform Documentation",
   "theme": "prism",
   "logo": {
     "dark": "/logo/color-black.svg",
@@ -43,20 +43,12 @@
   },
   "tabs": [
     {
-      "name": "Knowledge Hub",
-      "url": "knowledge-hub"
+      "name": "User Guides",
+      "url": "user-guides"
     },
     {
-      "name": "Concepts",
-      "url": "concepts"
-    },
-    {
-      "name": "Tutorials",
-      "url": "tutorials"
-    },
-    {
-      "name": "Release Log",
-      "url": "release-log"
+      "name": "Releases",
+      "url": "releases"
     }
   ],
   "anchors": [
@@ -70,57 +62,26 @@
       "icon": "newspaper",
       "url": "https://trickest.com/blog"
     }
+
   ],
   "navigation": [
     {
-      "group": "Trickest Platform",
+      "group": "Getting Started",
       "pages": [
         "introduction",
-        "announcements"
+        "about-us"
       ]
     },
     {
-      "group": "Knowledge Hub",
+      "group": "User Guides",
       "pages": [
-        "knowledge-hub/overview",
-        {
-          "group": "Workflow Templates",
-          "pages": [
-            "knowledge-hub/workflow-templates/overview",
-            {
-              "group": "Attack Surface Management",
-              "pages": [
-                "knowledge-hub/workflow-templates/attack-surface-management/34-m-wordlist-subdomain-brute-force",
-                "knowledge-hub/workflow-templates/attack-surface-management/asn-based-network-scan",
-                "knowledge-hub/workflow-templates/attack-surface-management/asset-discovery-and-vulnerability-scanning",
-                "knowledge-hub/workflow-templates/attack-surface-management/custom-subdomain-bruteforce-from-ip-ranges",
-                "knowledge-hub/workflow-templates/attack-surface-management/enumerate-cloud-resources",
-                "knowledge-hub/workflow-templates/attack-surface-management/full-subdomain-enumeration",
-                "knowledge-hub/workflow-templates/attack-surface-management/get-ips-and-cnames",
-                "knowledge-hub/workflow-templates/attack-surface-management/get-dns",
-                "knowledge-hub/workflow-templates/attack-surface-management/github-recon-and-scanner"
-              ]
-          }
-          ]
-      }
-      ]
+        "user-guides/introduction"
+        ]
     },
     {
-      "group": "Concepts",
+      "group": "Releases",
       "pages": [
-        "concepts/introduction"
-      ]
-    },
-    {
-      "group": "Tutorials",
-      "pages": [
-        "tutorials/introduction"
-      ]
-    },
-    {
-      "group": "Release Log",
-      "pages": [
-        "release-log/introduction"
+        "releases/introduction"
       ]
     }
   ],
