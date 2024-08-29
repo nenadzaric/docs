@@ -1,0 +1,59 @@
+---
+title: Enumerate Cloud Resources
+description: 'This workflow helps in finding exposed cloud resources like storage buckets based on hostnames and company names, identifying potential data exposure risks.'
+---
+
+<Tip>Category: **Attack Surface Management**</Tip>
+
+<Note>After setup, the workflow is ready to be executed. Once the workflow's last node, `recursively-cat-all` script, is finished, the result can be viewed and downloaded. Exposed cloud resources like storage buckets might contain important information no one should see. If these resources aren't properly protected, someone who shouldn't have access could get their hands on sensitive data, like passwords or personal information. This could lead to problems like data breaches or identity theft. This workflow finds your buckets based on the hostnames and company name used as a target.</Note>
+
+<Check>Complexity: Advanced</Check>
+
+## Workflow
+
+<Frame caption="Enumerate Cloud Resources">
+    <img src="https://res.cloudinary.com/db14crach/image/upload/v1705667891/docs/enumerate-cloud-resources/enumerate-cloud-resources.png" alt="workflow editor of Enumerate Cloud Resource workflow"></img>
+</Frame>
+
+### Tools
+
+* [s3scanner](https://trickest.com/docs/knowledge-hub/tools/s3scanner/)
+* [cloudenum](https://trickest.io/dashboard/library/tool/c3059e36-2ec1-4a40-84ca-99f0b521b04c)
+
+## Setup
+
+You can set up this workflow by changing the following input values:
+
+* **TARGET_NAME** - Provide a target name, e.g., trickest.
+* **HOSTNAMES** - Provide a file containing a hostnames list.
+
+<Frame caption="Workflow Targets Setup">
+    <img src="https://res.cloudinary.com/db14crach/image/upload/v1705667805/docs/enumerate-cloud-resources/enumerate-cloud-resources-setup.gif" alt="setting up the target in the workflow editor of Enumerate Cloud Resource workflow template"></img>
+</Frame>
+
+## Build this Workflow in Steps
+
+Visit our blog for a more thorough explanation of how to build this workflow:
+
+* [Enumerating Cloud Resources](https://trickest.com/blog/enumerating-cloud-resources/)
+
+## Execution and Results
+
+After setup, the workflow is ready to be executed. Once the workflow's last node, `cloud-resources` script, is finished, the result can be viewed and downloaded.
+
+The `cloud-resources` script will have a list of files representing the found buckets from different cloud providers.
+
+<Frame caption="Workflow Results">
+    <img src="https://res.cloudinary.com/db14crach/image/upload/v1705667850/docs/enumerate-cloud-resources/enumerate-cloud-resources-results.png" alt="workflow results node highlighted in the editor"></img>
+</Frame>
+
+## Try it Out!
+
+[This workflow](https://trickest.io/dashboard/library/workflow/f43eddb3-c1ce-4d90-ab0e-98f26b1c39b4) is available in the Library; you can copy it and execute it immediately!
+
+## Improve this Workflow
+
+* Changing [machine type](https://trickest.com/docs/tutorials/how-do-machines-work/#assigning-the-machine-type-to-a-node) of tools to speed up the execution.
+* Add more cloud bucket checks.
+* Verify the access denied for all found buckets by providing the API keys from different cloud providers.
+* Implement a mechanism to merge all of the previous results through [scheduling](https://trickest.com/docs/tutorials/scheduling-a-workflow/) and `get-trickest-output`.

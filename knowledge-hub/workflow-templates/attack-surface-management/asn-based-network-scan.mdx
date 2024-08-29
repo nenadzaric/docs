@@ -1,0 +1,84 @@
+---
+title: ASN Based Network Scan
+description: 'Learn how to perform an ASN-based network scan using Trickest workflows to uncover IP addresses and open ports associated with a given ASN.'
+---
+
+<Tip>Category: **Attack Surface Management**</Tip>
+
+<Note>If an exposed port is not properly secured, attackers can exploit it to gain unauthorized access to the network or launch attacks against other devices on the network. It is important for organizations to properly secure their networks and limit the number of exposed ports to reduce the risk of cyber attacks. This workflow will provide you with the IP addresses and open ports for a given ASN.</Note>
+
+<Check>Complexity: Intermediate</Check>
+
+### Tools
+
+* [masscan](https://trickest.com/docs/knowledge-hub/tools/masscan/)
+* [get-asn-prefixes](https://trickest.io/dashboard/library/tool/b4d0f836-389a-4c9e-b2ef-97d137a92b56)
+* [using-splitters](https://trickest.com/docs/tutorials/building-a-workflow/using-splitters/)
+
+## Setup
+
+You can set up this workflow by changing the following input value:
+
+* **ASN_LIST** - Provide a file containing a company ASNs list, as a target.
+
+<Frame caption="Workflow Targets Setup in the Workflow Editor">
+    <img src="https://res.cloudinary.com/db14crach/image/upload/v1700236766/docs/asn-based-network-scan/asn-setup.gif" alt="Workflow Targets Setup in the workflow editor"></img>
+</Frame>
+
+## Execution and Results
+
+After setup, the workflow is ready to be executed. Once the workflow's last node, `recursively-cat-all` script, is finished, the result can be viewed and downloaded. The `recursively-cat-all` script will contain raw masscan data, and output with `ip:port` structure.
+
+## Build this Workflow in Steps
+
+### Get ASNs File with Recursively-cat-all and Connecting File-Splitter
+
+We can use the `recursively-cat-all` script to get all of the ASNs provided in a file. As we want to get all of the prefixes per ASN, we will also connect [file-splitter](https://trickest.com/docs/tutorials/building-a-workflow/using-splitters/) to it.
+
+<Frame caption="Splitting the List of ASNs to Strings via File-Splitter">
+    <img src="https://res.cloudinary.com/db14crach/image/upload/v1700236766/docs/asn-based-network-scan/asn-setup.gif" alt="splitting the list of ASNS to strings via file-splitter in the workflow editor"></img>
+</Frame>
+
+### Execute [get-asn-prefixes](https://trickest.io/dashboard/library/tool/b4d0f836-389a-4c9e-b2ef-97d137a92b56) in Parallel and Cat All Results
+
+The file-splitter will convert all of the lines in the input file to strings. This way, we can execute `get-asn-prefixes` in parallel for each ASN and get all of the prefixes (subnets) for a specific ASN.
+
+<Frame caption="Executing get-asn-prefixes in Parallel and Merging the Results">
+    <img src="https://res.cloudinary.com/db14crach/image/upload/v1705320823/docs/asn-based-network-scan/asn-get-asn-prefixes.gif" alt="executing get-asn-prefixes in parallel and merging the results in the workflow editor"></img>
+</Frame>
+
+<Note>As you can see in the example above, the `recursively-cat-all` script is connected with the folder output of `get-asn-prefixes`. This way, we can download all of the outputs that are executed in parallel through the file-splitter node.</Note>
+
+### Executing masscan for Each Subnet Found
+
+We will use the file-splitter node again to execute `masscan` for each subnet found.
+
+`Masscan` is a great and fast port scanner. By default, it accepts `ip-range` string parameter, `ports` where you describe which ports you want it to scan. We will additionally enable the `rate` parameter for it to be faster and enable the `banners` boolean flag to gather more information about the services running on found open ports.
+
+<Frame caption="Execute masscan for Each ASN Prefix Found">
+    <img src="https://res.cloudinary.com/db14crach/image/upload/v1705320825/docs/asn-based-network-scan/asn-masscan-splitter_1.gif" alt="Execute masscan for each ASN prefix found in the workflow editor"></img>
+</Frame>
+
+### Getting and Parsing masscan Results
+
+At the end, we will take advantage of a custom-script to parse the `masscan` results and output the raw result, which will be available at `out/results.txt` and `ip:port` result, which will be available on `out/output.txt` so we can develop this workflow further!
+
+Here is the script that does it:
+
+```bash
+find in -type f -exec cat {} + > out/results.txt
+cat out/results | grep Host | awk -F" " '{print $4":"$7}' | awk -F"/" '{print $1}' > out/output.txt
+```
+
+<Frame caption="Adding Custom Script Node from the Library in the Workflow Editor"> <img src="https://res.cloudinary.com/db14crach/image/upload/v1705320824/docs/asn-based-network-scan/asn-parse.gif" alt="Adding custom script node from the library in the workflow editor"></img> </Frame>
+<Note>As you can see in the example above, the custom-script node is connected with the folder output of masscan. This way, we can download all of the outputs executed in parallel through the file-splitter node.</Note>
+
+### Execution and Results
+The last node, in this case, recursively-cat-all, will contain raw masscan data, and output with ip:port structure.
+
+<Frame caption="Last Node in the Workflow Editor Containing Raw masscan Data"> <img src="https://res.cloudinary.com/db14crach/image/upload/v1700236765/docs/asn-based-network-scan/asn-results.png" alt="Last node in the workflow editor containing raw masscan data"></img> </Frame>
+
+### Improve this Workflow
+* Changing machine type of tools to speed up the execution.
+* Parsing the get-asn-prefixes output for IPv4 and IPv6 subnets.
+* Implement a mechanism to get the new ports through scheduling and get-trickest-output.

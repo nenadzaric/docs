@@ -1,0 +1,51 @@
+---
+title: Custom Subdomain Brute-Force Wordlist from IP Ranges
+description: Learn how to create a custom subdomain brute-force wordlist from IP ranges using SSL certificates to discover additional hostnames belonging to a specific company's root domain
+---
+
+<Tip>Category: **Attack Surface Management**</Tip>
+
+<Note>SSL certificates obtained from various hosts may contain valuable information that could be utilized to create a wordlist and then find additional hostnames belonging to a specific company's root domain.</Note>
+
+<Check>Complexity: Basic</Check>
+
+## Workflow
+
+<Frame caption="Custom Subdomain Brute-Force Wordlist from IP Ranges">
+    <img src="https://res.cloudinary.com/db14crach/image/upload/v1705670625/docs/custom-subdomain-brute-force-wordlist-from-ip-ranges/custom-subdomain-brute-force-ip-ranges.png" alt="Custom subdomain brute-force wordlist from IP ranges Workflow in the workflow editor"></img>
+</Frame>
+
+### Tools
+
+* [mapcidr](https://trickest.io/dashboard/library/tool/a800a1b8-a0f3-4b02-ab7d-51fa21787e29)
+* [cero](https://trickest.com/docs/knowledge-hub/tools/cero/)
+
+## Setup
+
+You can set up this workflow by changing the following input value:
+
+* **TARGET** - Provide a file containing the company's CIDR or IP-range, as a target.
+
+<Frame caption="Workflow Targets Setup">
+    <img src="https://res.cloudinary.com/db14crach/image/upload/v1705670733/docs/custom-subdomain-brute-force-wordlist-from-ip-ranges/custom-subdomain-brute-force-ip-ranges-setup.gif" alt="Workflow target setup for Custom subdomain brute-force wordlist from IP ranges workflow"></img>
+</Frame>
+
+### Execution and Results
+
+After setup, the workflow is ready to be executed. Once the workflow's last node, `recursively-cat-all` script, is finished, the result can be viewed and downloaded.
+
+The [recursively-cat-all](https://trickest.io/dashboard/library/script/f00bd5d5-8b14-49aa-80ac-d70dbff5dcaf) script will contain the wordlists gathered from `cero` parallel execution for each CIDR list.
+
+<Frame caption="Workflow Results in the Workflow Editor">
+    <img src="https://res.cloudinary.com/db14crach/image/upload/v1705670871/docs/custom-subdomain-brute-force-wordlist-from-ip-ranges/custom-subdomain-brute-force-ip-ranges-results.png" alt="workflow results in the workflow editor"></img>
+</Frame>
+
+### Try it Out!
+
+[This workflow](https://trickest.io/dashboard/library/workflow/9768d1c2-c718-4b65-a3ba-1cf5cc5bb0db/) is available in the Library; you can copy it and execute it immediately!
+
+### Improve this Workflow
+
+* Changing [machine type](https://trickest.com/docs/tutorials/how-do-machines-work/#assigning-the-machine-type-to-a-node/) of tools to speed up the execution.
+* Change input to ASNs and use [get-asn-prefixes](https://trickest.io/dashboard/library/tool/b4d0f836-389a-4c9e-b2ef-97d137a92b56) to get all of the prefixes used in `mapcidr`.
+* Implement a mechanism to merge all of the previous results through [scheduling](https://trickest.com/docs/tutorials/scheduling-a-workflow/) and [get-trickest-output](https://trickest.io/dashboard/library/tool/9e98f7f0-d3da-43af-9c75-a5be77630292).

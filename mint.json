@@ -1,85 +1,126 @@
 {
   "$schema": "https://mintlify.com/schema.json",
   "name": "Starter Kit",
+  "theme": "prism",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "dark": "/logo/color-black.svg",
+    "light": "/logo/color-black.svg"
   },
-  "favicon": "/favicon.svg",
+  "backgroundImage": "#",
+  "background": {
+    "style": "gradient"
+  },
+  "primaryTab": {
+    "name": "Home"
+  },
+  "modeToggle": {
+  "default": "dark",
+  "isHidden": true
+  },
+  "favicon": "images/favicon.png",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
+    "primary": "#00CCFF",
+    "light": "#00CCFF",
+    "dark": "#00CCFF",
     "anchors": {
-      "from": "#0D9373",
-      "to": "#07C983"
+      "from": "#17ECFF",
+      "to": "#0D9373"
+    },
+    "background": {
+      "dark": "#02031B",
+      "light": "#02031B"
     }
   },
   "topbarLinks": [
     {
-      "name": "Support",
-      "url": "mailto:hi@mintlify.com"
+      "name": "Login",
+      "url": "https://trickest.io"
     }
   ],
   "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "name": "Talk With Us",
+    "url": "https://trickest.com/talk-with-us/"
   },
   "tabs": [
     {
-      "name": "API Reference",
-      "url": "api-reference"
+      "name": "Knowledge Hub",
+      "url": "knowledge-hub"
+    },
+    {
+      "name": "Concepts",
+      "url": "concepts"
+    },
+    {
+      "name": "Tutorials",
+      "url": "tutorials"
+    },
+    {
+      "name": "Release Log",
+      "url": "release-log"
     }
   ],
   "anchors": [
     {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    },
-    {
       "name": "Community",
-      "icon": "slack",
+      "icon": "discord",
       "url": "https://mintlify.com/community"
     },
     {
       "name": "Blog",
       "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "url": "https://trickest.com/blog"
     }
   ],
   "navigation": [
     {
-      "group": "Get Started",
+      "group": "Trickest Platform",
       "pages": [
         "introduction",
-        "quickstart",
-        "development"
+        "announcements"
       ]
     },
     {
-      "group": "Essentials",
+      "group": "Knowledge Hub",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
+        "knowledge-hub/overview",
+        {
+          "group": "Workflow Templates",
+          "pages": [
+            "knowledge-hub/workflow-templates/overview",
+            {
+              "group": "Attack Surface Management",
+              "pages": [
+                "knowledge-hub/workflow-templates/attack-surface-management/34-m-wordlist-subdomain-brute-force",
+                "knowledge-hub/workflow-templates/attack-surface-management/asn-based-network-scan",
+                "knowledge-hub/workflow-templates/attack-surface-management/asset-discovery-and-vulnerability-scanning",
+                "knowledge-hub/workflow-templates/attack-surface-management/custom-subdomain-bruteforce-from-ip-ranges",
+                "knowledge-hub/workflow-templates/attack-surface-management/enumerate-cloud-resources",
+                "knowledge-hub/workflow-templates/attack-surface-management/full-subdomain-enumeration",
+                "knowledge-hub/workflow-templates/attack-surface-management/get-ips-and-cnames",
+                "knowledge-hub/workflow-templates/attack-surface-management/get-dns",
+                "knowledge-hub/workflow-templates/attack-surface-management/github-recon-and-scanner"
+              ]
+          }
+          ]
+      }
       ]
     },
     {
-      "group": "API Documentation",
+      "group": "Concepts",
       "pages": [
-        "api-reference/introduction"
+        "concepts/introduction"
       ]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Tutorials",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        "tutorials/introduction"
+      ]
+    },
+    {
+      "group": "Release Log",
+      "pages": [
+        "release-log/introduction"
       ]
     }
   ],

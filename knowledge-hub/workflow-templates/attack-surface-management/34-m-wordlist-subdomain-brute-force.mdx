@@ -1,0 +1,111 @@
+---
+title: 34 M Wordlist Subdomain Brute-Force
+description: 'This workflow uses a 34 million-word wordlist to brute-force subdomains for a given root domain, revealing associated hostnames and providing deeper insights into your attack surface.'
+---
+
+<Tip>Category: **Attack Surface Management**</Tip>
+
+<Note>This workflow can brute-force the root domain used as an input in the search for the associated hostnames. This can give you valuable information about the hostnames and thus give you better insight into your attack surface.</Note>
+
+<Check>Complexity: Basic</Check>
+
+## Workflow
+
+<Frame caption="34 M Wordlist Subdomain Brute-Force">
+    <img src="https://res.cloudinary.com/db14crach/image/upload/v1705321880/docs/34m-wordlist-subdomain-brute-force/34m-active-brute-force-wf.png" alt="34 M Wordlist Subdomain Brute-Force workflow in Trickest workflow editor"></img>
+</Frame>
+
+### Tools
+
+* [mksub](https://trickest.com/docs/knowledge-hub/tools/mksub/)
+* [puredns](https://trickest.com/docs/knowledge-hub/tools/puredns/)
+
+## Setup
+
+You can set up this workflow by changing the following input value:
+
+* **ROOT DOMAIN** - Provide the root domain, e.g., trickest.com, as a target.
+
+<Frame caption="Workflow Targets Setup">
+    <img src="https://res.cloudinary.com/db14crach/image/upload/v1705321875/docs/34m-wordlist-subdomain-brute-force/34m-domain-active-brute-force.gif" alt="Workflow targets setup in the workflow editor"></img>
+</Frame>
+
+## Execution and Results
+
+After setup, the workflow is ready to be executed. Once the workflow's last node, `recursively-cat-all` script, is finished, the result can be viewed and downloaded.
+
+The `recursively-cat-all` script will contain all of the hostnames found.
+
+<Frame caption="Workflow Results">
+    <img src="https://res.cloudinary.com/db14crach/image/upload/v1705321878/docs/34m-wordlist-subdomain-brute-force/34m-results.png" alt="Workflow results of the 34 M Wordlist Subdomain brute-force"></img>
+</Frame>
+
+## Build this Workflow in Steps
+
+### Unzipping Wordlist with [unzip-to-out](https://trickest.com/docs/knowledge-hub/scripts/unzip-to-out/)
+
+Firstly, download the zip wordlist from [https://localdomain.pw/subdomain-bruteforce-list/all.txt.zip](https://localdomain.pw/subdomain-bruteforce-list/all.txt.zip/) as it contains the most comprehensive and all-around wordlist.
+
+<Frame caption="Unzipping External Zip File Using unzip-to-out">
+    <img src="https://res.cloudinary.com/db14crach/image/upload/v1705321892/docs/34m-wordlist-subdomain-brute-force/34m-brute-force-get-zip.gif" alt="unzipping external zip file using unzip-to-out in Trickest workflow editor"></img>
+</Frame>
+
+### Getting Wordlist with [cat-all-in](https://trickest.io/dashboard/library/script/095e9575-066b-4274-bc23-e9b95a3ef275)
+
+As the output from [unzip-to-out](https://trickest.com/docs/knowledge-hub/scripts/unzip-to-out/) is a folder with all of the files contained in the zip used as input, we will use `cat-all-in` to [cat](https://man7.org/linux/man-pages/man1/cat.1.html) all of the files into one file. The output should be inside of `out/output.txt`, which is used by the `file` output port.
+
+<Frame caption="Cat-ing All Files Inside Zip">
+    <img src="https://res.cloudinary.com/db14crach/image/upload/v1705321871/docs/34m-wordlist-subdomain-brute-force/34m-brute-force-cat-all-in.gif" alt="cat-ing all of the files inside of zip in the workflow editor"></img>
+</Frame>
+
+### Create Potential Hostnames with [mksub](https://trickest.com/docs/knowledge-hub/tools/mksub/)
+
+Now that we have the wordlist, we can use [mksub](https://trickest.com/docs/knowledge-hub/tools/mksub/) to merge the wordlist with our root domain.
+
+Firstly, set the string to the `mksub` `domain` parameter. Then, connect the previously added `cat-all-in` output to the `mksub` `wordlist` parameter.
+
+<Frame caption="Creation of Potential Hostnames with mksub and Root Domains">
+    <img src="https://res.cloudinary.com/db14crach/image/upload/v1705321873/docs/34m-wordlist-subdomain-brute-force/34m-brute-force-mksub.gif" alt="creation of potential hostnames with mksub and root domains in the workflow editor"></img>
+</Frame>
+
+With `mksub`, we have all of our potential hostnames consisting of the root domain and potential wordlist, which we unzipped previously. Time to resolve!
+
+### Resolve with puredns
+
+It is time to resolve our potential hostnames. [Puredns](https://trickest.com/docs/knowledge-hub/tools/puredns/) has two types of modes, and in this case, as we have already created hostnames, we will use the `resolve` mode. Additionally, `puredns` uses two resolver file inputs to resolve all of the hostnames used as input. One of our project's [trickest/resolvers](https://github.com/trickest/resolvers/) is focused on that, so we can use the URL inputs for `puredns`, which will be downloaded and used at execution time.
+
+Firstly, connect the wordlist from `mksub` and enable the `resolve` mode.
+
+<Frame caption="Enabling Resolve Mode and Wordlist to be Resolved">
+    <img src="https://res.cloudinary.com/db14crach/image/upload/v1705321887/docs/34m-wordlist-subdomain-brute-force/34m-brute-force-mode-wordlist.gif" alt="enabling resolve mode and wordlist to be resolved in the workflow editor"></img>
+</Frame>
+
+Next, add `resolvers` and `resolvers-trusted` URLs from the repository.
+
+<Frame caption="Adding Resolver File URLs to puredns">
+    <img src="https://res.cloudinary.com/db14crach/image/upload/v1705321885/docs/34m-wordlist-subdomain-brute-force/34m-brute-force-resolvers.gif" alt="adding resolver file URLs to puredns in the workflow editor"></img>
+</Frame>
+
+Additionally, as we are in `resolve` mode, the `domain` parameter is unnecessary, so we can disable it through the [right sidebar.](https://trickest.com/docs/concepts/trickest-ui/editor-page/workflow-builder/right-sidebar-builder-tab/)
+
+<Frame caption="Disabling Domain Parameter on puredns">
+    <img src="https://res.cloudinary.com/db14crach/image/upload/v1705321890/docs/34m-wordlist-subdomain-brute-force/34m-disable-domain.gif" alt="disabling domain parameter on puredns in the workflow editor"></img>
+</Frame>
+
+### Get Results with [recursively-cat-all](https://trickest.io/dashboard/library/script/f00bd5d5-8b14-49aa-80ac-d70dbff5dcaf)
+
+Finally, we will use the [recursively-cat-all script](https://trickest.io/dashboard/library/script/f00bd5d5-8b14-49aa-80ac-d70dbff5dcaf), which will cat all of the files into one recursively.
+
+<Frame caption="Cat-ing Output Recursively from puredns">
+    <img src="https://res.cloudinary.com/db14crach/image/upload/v1705321882/docs/34m-wordlist-subdomain-brute-force/34m-get-results.gif" alt="cat-ing output recursively from puredns in the workflow editor"></img>
+</Frame>
+
+## Try it Out!
+
+[This workflow](https://trickest.io/dashboard/library/workflow/173a06ea-c247-47e6-83c4-89e86179d267) is available in the Library; you can copy it and execute it immediately!
+
+## Improve this Workflow
+
+* Changing [machine type](https://trickest.com/docs/tutorials/how-do-machines-work/#assigning-the-machine-type-to-a-node/) of tools to speed up the execution.
+* Adding more wordlist files and connecting them to the `cat-all-in` script node.
+* Enabling the `threads` parameter in `puredns` for faster execution.

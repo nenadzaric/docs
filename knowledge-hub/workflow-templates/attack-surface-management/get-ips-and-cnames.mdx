@@ -1,0 +1,51 @@
+---
+title: Get IPs and CNAMEs
+description: 'This workflow helps keep track of IPs and CNAME DNS records for specified hostnames.'
+---
+
+<Tip>Category: **Attack Surface Management**</Tip>
+
+<Note>Keep track of your IPs and CNAME DNS records with this workflow.</Note>
+
+<Check>Complexity: Basic</Check>
+
+## Workflow
+
+<Frame caption="Get IPs and CNAMEs Workflow">
+    <img src="https://res.cloudinary.com/db14crach/image/upload/v1705059862/docs/get-ips-and-cnames/get-ips-and-cnames.png" alt="Get IPs and CNAMEs Workflow"></img>
+</Frame>
+
+### Tools
+
+* [massdns](https://trickest.io/dashboard/library/tool/36daffe3-d5b0-4b31-92e1-c22e25747f2c)
+
+## Setup
+
+You can set up this workflow by changing the following input value:
+
+* **LIST_OF_HOSTS** - Provide a file containing a list of hostnames as a target.
+
+In the example below, we're providing a sample `hostnames.txt` from our [Inventory](https://github.com/trickest/inventory) repository as a target:
+
+<Frame caption="Workflow Targets Setup">
+    <img src="https://res.cloudinary.com/db14crach/image/upload/v1705059861/docs/get-ips-and-cnames/get-ips-cnames-setup.gif" alt="Workflow Targets Setup"></img>
+</Frame>
+
+### Execution and Results
+
+After setup, the workflow is ready to be executed. Once the workflow's last node, `ips-cnames-list` script, is finished, the result can be viewed and downloaded.
+
+The `ips-cnames-list` script node will contain all of the results.
+
+<Frame caption="Get IPs and CNAMES Workflow Results">
+    <img src="https://res.cloudinary.com/db14crach/image/upload/v1705059862/docs/get-ips-and-cnames/get-ips-and-cnames-results.png" alt="Get IPs and CNAMES workflow results in the workflow editor"></img>
+</Frame>
+
+## Try it Out!
+
+[This workflow](https://trickest.io/dashboard/library/workflow/d0a5645e-9c95-4f9a-80de-8fb95ea0f50b) is available in the Library; you can copy it and execute it immediately!
+
+## Improve this Workflow
+
+* Get other types of DNS Records and create and unify the report.
+* Resolve through [#batch-output](https://trickest.com/docs/tutorials/building-a-workflow/using-splitters/#batch-output).
