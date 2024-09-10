@@ -1,0 +1,45 @@
+---
+title: "witnessme-screenshot"
+description: "WitnessMe screenshot mode.  WitnessMe is a primarily a Web Inventory tool inspired by Eyewitness, its also written to be extensible allowing you to create custom functionality that can take advantage of the headless browser it drives in the back-end."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="ace8e68d-198d-4bd9-8052-e04529e588f9"
+  name="witnessme-screenshot"
+  description="WitnessMe screenshot mode.  WitnessMe is a primarily a Web Inventory tool inspired by Eyewitness, its also written to be extensible allowing you to create custom functionality that can take advantage of the headless browser it drives in the back-end."
+  category="Discovery"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/witnessme-screenshot:23fcfc2"
+  source_url="https://github.com/byt3bl33d3r/WitnessMe"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/ace8e68d-198d-4bd9-8052-e04529e588f9.json"
+  inputs={ {
+  "ports": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-p",
+    "visible": false,
+    "description": "Ports to scan if IP Range/CIDR is provided",
+  },
+  "target": {
+    "type": "STRING",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "The target IP, range, CIDR or hostname",
+  },
+  "targets": {
+    "type": "FILE",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "The target IPs, ranges, CIDRs, hostnames, NMap XML file, or .Nessus file",
+  },
+}}
+/>

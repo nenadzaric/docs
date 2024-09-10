@@ -1,0 +1,115 @@
+---
+title: "dmut"
+description: "A tool written in golang to perform permutations, mutations and alteration of subdomains and brute force the result."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="c68523c7-633c-4743-b0d2-04b8a9d3898d"
+  name="dmut"
+  description="A tool written in golang to perform permutations, mutations and alteration of subdomains and brute force the result."
+  category="Recon"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/dmut:e7ddfc6"
+  source_url="https://github.com/bp0lr/dmut"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/c68523c7-633c-4743-b0d2-04b8a9d3898d.json"
+  inputs={ {
+  "show-ip": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--show-ip",
+    "visible": false,
+    "description": "Display extra info for valid results",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--verbose",
+    "visible": false,
+    "description": "Add verboicity to the process",
+  },
+  "workers": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--workers",
+    "visible": false,
+    "description": "How many Workers amount (default 25)",
+  },
+  "dictionary": {
+    "type": "FILE",
+    "order": 1,
+    "command": "-d",
+    "visible": true,
+    "description": "Dictionary file containing mutation list",
+  },
+  "show-stats": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--show-stats",
+    "visible": false,
+    "description": "Display stats about the current job",
+  },
+  "subdomains": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Subdomain to generate permutations for",
+  },
+  "target-url": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--url",
+    "visible": true,
+    "description": "Target URL.",
+  },
+  "dns-retries": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--dns-retries",
+    "visible": false,
+    "description": "Max amount of retries for failed dns queries (default 3)",
+  },
+  "dns-timeout": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--dns-timeout",
+    "visible": false,
+    "description": "Dns Server timeOut in millisecond (default 500)",
+  },
+  "dns-error-limit": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--dns-errorLimit",
+    "visible": false,
+    "description": "How many errors until we the DNS is disabled (default 25)",
+  },
+  "update-dns-list": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--update-dnslist",
+    "visible": false,
+    "description": "Download a list of periodically validated public DNS resolvers",
+  },
+  "dns-servers-file": {
+    "type": "FILE",
+    "order": 1,
+    "command": "-s",
+    "visible": false,
+    "description": "Use DNS servers from this file",
+  },
+  "dns-servers-list": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--dnsServers",
+    "visible": false,
+    "description": "Use DNS servers from a list separated by ,",
+  },
+}}
+/>

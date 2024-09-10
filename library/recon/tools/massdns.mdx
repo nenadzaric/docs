@@ -1,0 +1,192 @@
+---
+title: "massdns"
+description: "MassDNS is a simple high-performance DNS stub resolver targeting those who seek to resolve a massive amount of domain names in the order of millions or even billions. Without special configuration, MassDNS is capable of resolving over 350,000 names per second using publicly available resolvers."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="36daffe3-d5b0-4b31-92e1-c22e25747f2c"
+  name="massdns"
+  description="MassDNS is a simple high-performance DNS stub resolver targeting those who seek to resolve a massive amount of domain names in the order of millions or even billions. Without special configuration, MassDNS is capable of resolving over 350,000 names per second using publicly available resolvers."
+  category="Recon"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/massdns:59c18ae"
+  source_url="https://github.com/blechschmidt/massdns"
+  license="Unknown"
+  output_command="-w"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/36daffe3-d5b0-4b31-92e1-c22e25747f2c.json"
+  inputs={ {
+  "verify-ip": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--verify-ip",
+    "visible": false,
+    "description": "Verify IP addresses of incoming replies.",
+  },
+  "quiet-mode": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-q",
+    "visible": false,
+    "description": "Quiet mode.",
+  },
+  "record-type": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-t",
+    "visible": false,
+    "description": "Record type to be resolved. (Default: A)",
+  },
+  "domains-list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "List of domains",
+  },
+  "send-buffer-size": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--sndbuf",
+    "visible": false,
+    "description": "Size of the send buffer in bytes.",
+  },
+  "busy-wait-polling": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--busy-poll",
+    "visible": false,
+    "description": "Use busy-wait polling instead of epoll.",
+  },
+  "concurent-lookups": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-s",
+    "visible": false,
+    "description": "Number of concurrent lookups. (Default: 10000)",
+  },
+  "flush-output-file": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--flush",
+    "visible": false,
+    "description": "Flush the output file whenever a response was received.",
+  },
+  "dns-resolvers-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-r",
+    "visible": true,
+    "description": "Text file containing DNS resolvers.",
+  },
+  "number-of-resolves": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-c",
+    "visible": false,
+    "description": "Number of resolves for a name before giving up. (Default: 50)",
+  },
+  "bind-to-ip-and-port": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-b",
+    "visible": false,
+    "description": "Bind to IP address and port. (Default: 0.0.0.0:0)",
+  },
+  "number-of-processes": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--processes",
+    "visible": false,
+    "description": "Number of processes to be used for resolving. (Default: 1)",
+  },
+  "receive-buffer-size": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--rcvbuf",
+    "visible": false,
+    "description": "Size of the receive buffer in bytes.",
+  },
+  "sockets-per-process": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--socket-count",
+    "visible": false,
+    "description": "Socket count per process. (Default: 1)",
+  },
+  "dont-drop-priviliges": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--root",
+    "visible": false,
+    "description": "Do not drop privileges when running as root. Not recommended.",
+  },
+  "dont-switch-resolver": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--sticky",
+    "visible": false,
+    "description": "Do not switch the resolver when retrying.",
+  },
+  "drop-privileges-user": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--drop-user",
+    "visible": false,
+    "description": "User to drop privileges to when running as root. (Default: nobody)",
+  },
+  "drop-privileges-group": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--drop-group",
+    "visible": false,
+    "description": "Group to drop privileges to when running as root. (Default: nogroup)",
+  },
+  "non-reqursive-queries": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--norecurse",
+    "visible": false,
+    "description": "Use non-recursive queries. Useful for DNS cache snooping.",
+  },
+  "not-output-response-code": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--ignore",
+    "visible": false,
+    "description": "Do not output packets with the specified response code.",
+  },
+  "use-resolvers-incrementaly": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--predictable",
+    "visible": false,
+    "description": "Use resolvers incrementally. Useful for resolver tests.",
+  },
+  "filter-response-code-output": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--filter",
+    "visible": false,
+    "description": "Only output packets with the specified response code.",
+  },
+  "unacceptable-response-codes": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--retry",
+    "visible": false,
+    "description": "Unacceptable DNS response codes. (Default: REFUSED)",
+  },
+  "time-to-wait-between-resolves": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-i",
+    "visible": false,
+    "description": "Interval in milliseconds to wait between multiple resolves of the same domain. (Default:500)",
+  },
+}}
+/>

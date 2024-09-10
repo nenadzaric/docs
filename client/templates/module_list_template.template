@@ -1,0 +1,23 @@
+---
+title: "{{ category_name }} Modules"
+description: "Explore a collection of powerful and efficient modules in the {{ category_name }} category to enhance your workflows."
+sidebarTitle: "{{ category_name }}"
+mode: "wide"
+---
+
+import { ModuleCard } from '/snippets/ModuleCard.mdx'
+
+<CardGroup cols={2}>
+{% for module in modules %}
+  <ModuleCard
+    name="{{ module.name }}"
+    category="{{ module.category }}"
+    inputs={{ module.inputs }}
+    outputs={{ module.outputs }}
+    description="{{ module.description }}"
+    author="{{ module.author }}"
+    createdDate="{{ module.created_date }}"
+    iframeUrl="{{ module.iframe_url }}"
+  />
+{% endfor %}
+</CardGroup>

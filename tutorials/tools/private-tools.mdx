@@ -1,0 +1,565 @@
+---
+title: 'Private Tools'
+description: 'Learn how to manage private tools in Trickest.'
+sidebarTitle: 'Private Tools'
+---
+
+<Warning>Exclusive access to integrating private tools into the Trickest platform is provided solely for [Enterprise](https://trickest.com/pricing) users. If you are interested in learning more about the Enterprise Edition, please [contact us](https://trickest.com/talk-with-us).</Warning>
+
+## About Private Tools
+
+Private Tools in Trickest allow for a tailored approach to security operations. Unlike public tools, private tools can be fully customized to meet specific automation needs and are not visible to the public within the Trickest Library.
+
+This feature enhances cybersecurity operations teams to tailor their security workflows with private CLI (Command Line) tools.
+
+<Tip> Private tools is coming with Private Docker Registry. If you are interested in learning more check out [Private Registry Tutorial](private-registry).</Tip>
+
+This documentation includes a detailed step-by-step guide that will take you through every part of the process, from the initial import to the final integration into your workflows. Screenshots, code snippets, and detailed explanations will ensure you have all the necessary information.
+
+## Features and Benefits of the Private Tools
+
+* **Secured Environment:** The Private tab ensures that the tools you import remain confidential and are not exposed to the public, safeguarding your custom solutions.
+* **Customization:** It allows users to import and configure tools tailored to their unique operational needs, essential for specialized tasks that off-the-shelf software cannot address.
+* **Easy Management:** Users can easily manage all of their private tools in one centralized location, simplifying the process of updating, configuring, and monitoring the usage of each tool.
+* *Integration:** Private tools can be integrated into custom workflows within the Trickest platform, providing the same automation and efficiency as public tools.
+
+This feature is particularly effective for organizations that rely on proprietary or specialized software to conduct their operations. It offers them the flexibility to leverage the power of Trickest's workflow automation while maintaining the integrity and confidentiality of their custom tools.
+
+## Prerequisites
+
+Before proceeding, make sure you have:
+
+* A Trickest account with access to private tool import enabled.
+* Trickest Client installed
+* The tool you wish to import, compliant with [Trickest's specifications](#tool-specifications)
+* Basic familiarity with Trickest workflows.
+
+## Accessing the Library
+
+After logging into your Trickest account, locate and click on the [Library](https://trickest.io/dashboard/library?type=tools&isPrivate=true) button in the navigation menu.
+
+You will see two primary tabs within the Library: `Public` and `Private`.
+
+<Info> With private tooling, your entire team gains clear visibility into the tools being used and detailed insights on the authors and users of these tools, fostering transparency and collaboration across your projects.</Info>
+
+
+## Viewing Your Private Tools
+
+Once in the Private section, you will have a grid of all the imported tools. If this is your first visit or you have not yet imported any tools, this area may be empty.
+
+<Frame>
+    <img src="/images/tutorials/tutorials-private-tools-library.png" alt="Library Private Tools" />
+</Frame>
+
+## Tool Details and Management
+
+Click on the tool's card to manage or get more information about a specific tool. This will take you to a screen to see the tool's description, version, and configuration options.
+
+**Dockerfile and Trickest YAML**
+
+Each tool will typically consist of files organized in a specific structure to ensure compatibility with Trickest's system.
+
+**Tool File Structure Overview**
+```
+tool-name/
+├── Dockerfile
+├── tool.yaml
+├── run.sh (optional)
+```
+
+**Dockerfile**
+
+This is the file that will be used to generate the Docker image of the tool. If you are unfamiliar with the Docker and its concepts, you can learn more [on this link](https://docs.docker.com/get-started/docker-overview/).
+
+
+To create efficient and light Docker images, follow best practices. But do keep in mind that although having small (in size) images (which means faster startup time) is essential, it is even more critical to have stable images. It's all about finding a compromise here, but pick stability if you have to choose.
+
+**Downloading the tool**
+
+Use one of the methods listed in [versioning conventions](#versioning-conventions) to download a specific version of the tool into the docker image.
+
+**Example Dockerfile**
+
+
+```dockerfile
+FROM golang:1.17.3-alpine AS build-env 
+
+RUN apk add --no-cache git 
+
+RUN go install -v github.com/author/tool-name@latest 
+
+
+FROM alpine:3.15.0 
+
+RUN apk -U upgrade --no-cache \ 
+
+    && apk add --no-cache bind-tools ca-certificates 
+
+COPY --from=build-env /go/bin/tool-name /usr/local/bin/ 
+
+
+ENTRYPOINT ["tool-name"] 
+```
+
+**`run.sh`**
+
+
+If the tool you use only supports `stdin` as an input, check out [Parameterizing stdin/stdout](#parametrizing-stdin-stdout) where you will learn how to create `run.sh` and configure the tool to be compatible with Trickest platform.
+
+<Tip> It is important to remember to copy run.sh it to your Docker image and configure it as the image ENTRYPOINT</Tip>
+
+```bash
+ADD run.sh /app/ 
+
+RUN chmod +x /app/run.sh 
+
+RUN apk add bash 
+
+ENTRYPOINT ["/app/run.sh"] 
+```
+
+**Input/Output folders**
+
+You need to create two folders: `/hive/in` and `/hive/out` in the final image. These will be used by the platform to store and manage the tool's input/output.
+
+<Tip>Check out Arhitecture's Inputs and Outputs to learn more about the [file structure](../../user-guides/concepts/architecture/inputs-and-outputs)</Tip>
+
+
+**Tips for better Docker images**
+
+* **Compiled languages (e.g. golang)**
+
+Use multi-stage builds to reduce the final image size
+Use -alpine images when possible
+
+* **Python**
+
+* You should almost always use `python:<version>-slim.` This is a variant that has less packages installed, resulting in a smaller image.
+* If you run into any problems with -slim, the official image should be your second choice.
+* Try to stay away from `alpine`, because it might cause some unexpected issues.
+
+* **Tagging**
+
+Remeber to always tag your images properly according to the [versioning guide.](#versioning-conventions)
+
+**Trickest Tool YAML**
+
+trickest.yaml Configuration File
+
+The `trickest.yaml` file is essential for integrating tools into the Trickest platform, specifically designed for the Workflow Editor. This YAML file contains all the necessary data for the tool to be displayed appropriately and configured within the platform.
+
+**Overview of trickest.yaml Structure**
+
+The YAML file is structured to provide comprehensive details about the tool, including its functionality, usage, and output handling. Below is a detailed explanation of each field in the trickest.yaml file:
+
+**Example trickest.yaml**
+
+```yaml
+
+name: my-private-tool
+description: This is an example of a private tool
+category: Recon
+source_url: https://github.com/my-tool
+docker_image: user/image:tag
+command:
+output_parameter: -o
+output_type: file
+license_info:
+  name: MIT
+  url: https://github.com/example-repository/LICENSE.md
+inputs:
+  input-parameter:
+    command: -d
+    description: This is description of input parameter
+    order: 0
+    visible: true
+    type: string
+```
+
+**Tool Identification and Description**
+
+| Name        | Description                                                                                                 | Required | Example                                                                                                                |
+|-------------|-------------------------------------------------------------------------------------------------------------|----------|------------------------------------------------------------------------------------------------------------------------|
+| name        | Name of the tool                                                                                            | Yes      | amass                                                                                                                  |
+| description | Short description of the tool. The "About" section of GitHub is an excellent starting point if available     | Yes      | The OWASP Amass Project performs network mapping of attack surfaces and external asset discovery using open source information gathering and active reconnaissance techniques. |
+| category    | High-level category of the tool                                                                             | No       | Recon                                                                                                                  |
+| source_url  | Original repository's URL                                                                                   | Yes      | https://github.com/OWASP/Amass                                                                                         |
+
+**Docker Image and Command Execution** 
+
+| Name                    | Description                                                               | Required | Example                                                     |
+|-------------------------|---------------------------------------------------------------------------|----------|-------------------------------------------------------------|
+| docker_image            | Docker image URL. We use quay.io for hosting images                        | Yes      | quay.io/trickest/amass:v3.10.5                              |
+| command                 | Command that should be executed on the container when the node runs        | Yes      | /bin/amass enum                                             |
+| output_parameter        | Command line parameter that designates the tool's output path              | Yes      | -o                                                          |
+| output_type             | Output type (file or folder)                                               | Yes      | file                                                        |
+| license_info.name       | Name of the tool's license                                                 | Yes      | Apache 2.0                                                  |
+| license_info.url        | URL of the tool's license                                                  | Yes      | https://github.com/OWASP/Amass/blob/main/LICENSE            |
+
+<Warning>The docker_image value should always use a Versioning Conventions. Never use `:latest.`</Warning>
+
+**Parameters**
+
+The parameters structure is as follows:
+
+| Name            | Description                                                        | Example                                |
+|-----------------|--------------------------------------------------------------------|----------------------------------------|
+| command         | Command line parameter used by the tool                             | -d                                     |
+| name            | Name to identify the parameter in the node                          | domain                                 |
+| parameter_type  | Type of the parameter (string, file, folder, or boolean)            | string                                 |
+| description     | Short description of the parameter                                  | Domain names separated by commas       |
+| order           | The index of the parameter. The order is followed when building the final command | 0                                      |
+
+
+## Versioning Conventions
+
+Part of our quest for keeping workflows stable is proper versioning of the tools. It's important to provide users with the latest and greatest updates to their tools by default but also allow them to revert to a previous version if need be.
+
+You must always tag your image before pushing it in at least one of the following ways:
+
+**Git Commit Short Hash**
+
+This is the recommended way that should be used for all tools as it's a unique value and you can easily use it to match a container image to its source. If a tool is hosted on a public git repository, it should use this convention by default, preferably in addition to the others listed below.
+
+```bash
+docker tag <image_id> <image_name>:<short_commit_hash>
+```
+
+**GitHub releases**
+
+If the tool has an official release cycle, you should follow the same versioning convention it uses. You can use wget to download the release into the image using the following command
+
+
+```bash
+wget https://github.com/author/tool/releases/download/<version>/tool.zip
+```
+
+**apt-get**
+
+If a tool is available on an apt repository, use this command to install a specific version
+
+```bash
+apt-get install tool=<version>
+```
+
+**go install**
+
+For Go tools hosted on git repositories, use go install to install a specific version or a specific commit
+
+```bash
+go install github.com/author/tool@<version OR commit hash>
+```
+
+**pip**
+
+For Python tools hosted on pypi.org, use pip to install a specific version
+
+```bash
+pip install tool==<version>
+```
+
+**gem**
+
+For Ruby tools hosted on rubygems.org, use gem to install a specific version
+
+```bash
+gem install tool -v <version>
+```
+
+**npm**
+
+For JavaScript tools hosted on npmjs.com, use npm to install a specific version
+
+```bash
+npm install -g tool@<version>
+```
+
+**Old Versioning**
+
+End users can access older versions of the tools through the git history of the tool's corresponding trickest.yaml file.
+
+**Notes**
+
+* If a tool has more than one active branch (e.g. main and dev), each branch should be treated as a separate tool.
+* If a tool has more than one active fork, each one should be treated as a separate tool.
+* No new tags should be created unless the code on the original repo (referenced in source_url in trickest.yaml) changes. Updates anywhere else should keep the same tag.
+
+
+## Parameterizing STDIN/STDOUT
+
+The platform currently needs explicit command line parameters for input and output:
+
+```bash
+tool -i input.txt -o output.txt
+```
+
+rather than using `STDIN/STDOUT`:
+
+```bash
+cat input.txt | tool > output.txt
+```
+
+Suppose your tool expects input/output in the latter format and does not have an explicit parameter for input/output. In that case, you can write a shell one-liner to emulate the existence of a parameter in your Docker image, like this one:
+
+```bash
+cat "${@: 1:1}" | tool "${@: 2:$#-2}" | tee "${@: $#:1}"
+```
+
+**Explanation:**
+
+- `@` is a list of all the input parameters passed to the script.
+- `${@: 1:1}` follows the format `${@: START:COUNT}`, which means "starting from the parameter at `START` (index 1 here), get `COUNT` (1 in this case) parameters," which is practically equivalent to `$1`, the first parameter.
+- The first command `cat "${@: 1:1}"` will output the content of the file passed in the first parameter.
+- `$#` refers to the number of parameters passed to the script.
+- `tool "${@: 2:$#-2}"` passes all the parameters to `tool` except the first and last one.
+- `tee "${@: $#:1}"` passes the last command to `tee`.
+
+So when it all comes together, this script allows us to use the following command:
+
+```bash
+./run.sh input.txt -p1 v1 -p2 v2 output.txt
+```
+
+and it will be equivalent to:
+
+```bash
+cat input.txt | tool -p1 v1 -p2 v2 | tee output.txt
+```
+
+**Templates**
+
+**STDIN only**
+
+If the tool expects input parameter through `STDIN` but accepts an output parameter, i.e., the original command follows this format:
+
+```bash
+cat input.txt | tool -o output.txt
+```
+
+Use this:
+
+```bash
+cat "${@: 1:1}" | tool "${@: 1:$#-1}"
+```
+
+**STDOUT only**
+
+If the tool accepts an input parameter but writes the output to `STDOUT`, i.e., the original command follows this format:
+
+```bash
+tool -i input.txt | tee output.txt
+```
+
+Use this:
+
+```bash
+tool "${@: 1:$#-1}" | tee "${@: $#:1}"
+```
+
+**Both STDIN and STDOUT**
+
+If the tool expects an input parameter through `STDIN` and writes the output to `STDOUT`, i.e., the original command follows this format:
+
+```bash
+cat input.txt | tool | tee output.txt
+```
+
+Use this:
+
+```bash
+cat "${@: 1:1}" | tool "${@: 2:$#-2}" | tee "${@: $#:1}"
+```
+
+**Where to Save This Script**
+
+Save the script to a separate file named `run.sh` and add it to the module's folder (don't forget to add the shebang `#!/bin/bash`).
+
+```bash
+#!/bin/bash 
+
+cat "${@: 1:1}" | tool "${@: 2:$#-2}" | tee "${@: $#:1}"
+```
+
+**Changes in `trickest.yaml`**
+
+**Main command**
+
+Use the script in the `command` parameter.
+
+**Parameters**
+
+The input and output parameters must be adjusted as follows:
+
+- The `output_parameter` should be set to `>`.
+- The `output_type` should be set to `file`.
+- The input parameter's command should be left empty.
+
+```
+command: 'cat "${@: 1:1}" | tool "${@: 2:$#-2}" | tee "${@: $#:1}"' 
+output_parameter: '>'  
+# This is important
+output_type: file 
+inputs:  
+- name-of-parameter:  
+  command:  
+  type: file  
+  description: DESCRIPTION  
+  order: 0  
+  visible: true  
+```
+
+**Dockerfile**
+
+The `run.sh` script should be copied to the docker image on build and used as an `ENTRYPOINT`.
+
+```bash
+ADD run.sh /app/ 
+
+RUN chmod +x /app/run.sh 
+
+RUN apk add bash 
+
+ENTRYPOINT ["/app/run.sh"]
+```
+
+## Example Tool Configuration and Import
+
+**trickest.yaml**
+
+The `trickest.yaml` file is a structured configuration that defines how a tool will be integrated and function within the Trickest platform.
+
+This file includes essential details like the tool's name, description, category, and technical specifics such as the Docker image URL and command execution parameters. It serves as a blueprint for the Trickest system to recognize and properly handle the tool, ensuring it operates seamlessly within your workflows.
+
+```
+name: tool-name
+description: Tool short description
+category: Recon
+source_url: https://github.com/author/tool-name
+docker_image: quay.io/trickest/tool-name:latest
+command: "/bin/tool-name"
+output_parameter: "-o"
+output_type: file
+inputs:
+  parameter-1:
+    command: -d
+    description: string-input for tool
+    order: 0
+    visible: true
+    type: string
+  parameter-2:
+    command: -file
+    description: file-input for tool
+    order: 0
+    visible: true
+    type: string
+license_info:
+  name: MIT
+  url: https://github.com/author/tool-name/blob/1234567890123456789/LICENSE
+```
+
+**Dockerfile**
+
+For Trickest private tools, a `Dockerfile` is essential for defining the environment in which your tool will run. It specifies the base image, necessary dependencies, build instructions, and how the tool should be executed. The Dockerfile ensures that your tool can be consistently deployed and run within the Trickest platform, regardless of the underlying infrastructure.
+
+```
+FROM golang:1.17.3-alpine AS build-env 
+RUN apk add --no-cache git 
+RUN go install -v github.com/author/tool-name@latest 
+
+FROM alpine:3.15.0 
+RUN apk -U upgrade --no-cache \ 
+    && apk add --no-cache bind-tools ca-certificates 
+COPY --from=build-env /go/bin/tool-name /usr/local/bin/ 
+
+ENTRYPOINT ["tool-name"]
+```
+
+Once your Dockerfile is ready, the following steps involve building and pushing the Docker image to a registry. This process is critical for making the tool available for integration into Trickest workflows.
+
+**Here's how you can do it:**
+
+**Log in to Docker Registry**
+
+Use the `docker login` command to authenticate with the Docker registry where you intend to push your image.
+
+```
+docker login quay.io # or any other registry
+```
+
+Enter your username and password when prompted.
+
+**Build the Docker Image**
+
+Navigate to the directory containing your Dockerfile and build the image using the `docker build` command:
+
+```
+docker build -t quay.io/username/tool-name:tag .
+```
+
+Replace `username`, `tool-name`, and `tag` with your Docker registry username, your tool's name, and the image's version or tag.
+
+**Push the Image to the Registry**
+
+After successfully building the image, push it to the Docker registry using `docker push`:
+
+```
+docker push quay.io/username/tool-name:tag
+```
+
+Ensure the tag used matches the one specified in the build step.
+
+By completing these steps, your custom tool image will be available in your Docker registry, ready to be integrated into Trickest as a private tool. This process is essential for maintaining version control and ensuring consistent deployment of your tools across various environments.
+
+**Adding a Private Tool Through trickest-cli**
+
+Adding a new private tool to the Trickest platform using the [trickest-cli](https://github.com/trickest/trickest-cli) is straightforward. This method allows you to integrate custom tools into your Trickest workflows efficiently.
+
+**Steps to Add a New Tool**
+
+**Navigate to the Directory**
+
+Use the `cd` command to navigate to the directory where your `trickest.yaml` file is located.
+
+**Run the Create Command**
+
+<Warning>You will need to either pass your `TRICKEST_TOKEN` to **Trickest CLI** or have it set as an environment variable. You can find your token at [this page](https://trickest.io/dashboard/settings/token)</Warning>
+
+Execute the following command to create a new private tool integration in Trickest:
+
+```
+trickest tools create --file tool.yaml
+```
+
+<Tip>Replace `tool.yaml` with the path to your YAML file.</Tip>
+
+**Confirmation and Testing**
+
+After running the command, you should receive a confirmation that your tool has been successfully created.
+
+It’s a good practice to test the tool in a workflow to ensure it has been configured correctly.
+
+**Managing Your Tool**
+
+Once your tool is added, you can manage it using various commands in the `Trickest-CLI`:
+
+- **Update Tool**: To update the tool, modify your `trickest.yaml` file and then run:
+
+  ```
+  trickest tools update --file tool.yaml
+  ```
+
+- **List Tools**: To list all your private tools, use:
+
+  ```
+  trickest tools list
+  ```
+
+  Add `--json` to display the output in JSON format.
+
+- **Delete Tool**: If you need to delete a tool, use:
+
+  ```
+  trickest tools delete --name tool-name
+  ```
+
+By following these steps, you can efficiently manage the lifecycle of your private tools within the Trickest platform, enhancing the capabilities and customizability of your workflows.

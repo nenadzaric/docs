@@ -1,0 +1,80 @@
+---
+title: "s3reverse"
+description: "The format of various s3 buckets is convert in one format. for bugbounty and security testing."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="c0e26036-1aab-4374-b4ab-a4bcb1c0d005"
+  name="s3reverse"
+  description="The format of various s3 buckets is convert in one format. for bugbounty and security testing."
+  category="Cloud Storage"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/s3reverse:8eb793f"
+  source_url="https://github.com/hahwul/s3reverse"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/c0e26036-1aab-4374-b4ab-a4bcb1c0d005.json"
+  inputs={ {
+  "input-list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-iL",
+    "visible": true,
+    "description": "Input List",
+  },
+  "to-name-format": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-tN",
+    "visible": false,
+    "description": "Convert to name format (example: github-cloud)",
+  },
+  "convert-to-s3-url": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-tS",
+    "visible": false,
+    "description": "Convert to s3 URL",
+  },
+  "output-format-array": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-oA",
+    "visible": false,
+    "description": "Write output in Array format (optional)",
+  },
+  "output-format-normal": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-oN",
+    "visible": false,
+    "description": "Write output in Normal format (optional)",
+  },
+  "verify-bucket-access": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-verify",
+    "visible": false,
+    "description": "Verify bucket access",
+  },
+  "convert-to-path-style": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-tP",
+    "visible": false,
+    "description": "Convert to path style (example: https://s3.amazonaws.com/github-cloud)",
+  },
+  "convert-to-virtual-hosted-style": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-tV",
+    "visible": false,
+    "description": "Convert to virtual hosted style (example: github-cloud.s3.amazonaws.com)",
+  },
+}}
+/>

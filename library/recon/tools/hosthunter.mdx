@@ -1,0 +1,45 @@
+---
+title: "hosthunter"
+description: "A tool to efficiently discover and extract hostnames providing a large set of target IP addresses. HostHunter utilises simple OSINT techniques to map IP addresses with virtual hostnames. It generates a CSV or TXT file containing the results of the reconnaissance."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="80b1a813-7491-4583-8353-be66406b6331"
+  name="hosthunter"
+  description="A tool to efficiently discover and extract hostnames providing a large set of target IP addresses. HostHunter utilises simple OSINT techniques to map IP addresses with virtual hostnames. It generates a CSV or TXT file containing the results of the reconnaissance."
+  category="Recon"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/hosthunter:68b9bc4"
+  source_url="https://github.com/SpiderLabs/HostHunter"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/80b1a813-7491-4583-8353-be66406b6331.json"
+  inputs={ {
+  "format": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--format",
+    "visible": false,
+    "description": "Choose between CSV and TXT output file formats.",
+  },
+  "targets": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Sets the path of the target IPs file.",
+  },
+  "single-ip-target": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-t",
+    "visible": true,
+    "description": "Scan a single IP",
+  },
+}}
+/>

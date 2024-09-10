@@ -1,0 +1,58 @@
+export const CategoryCard = ({ category, icon, href, description }) => (
+  <a href={href} style={{ textDecoration: 'none' }}>
+    <div style={{
+      backgroundColor: 'transparent',
+      borderRadius: '8px',
+      padding: '1rem',
+      border: '1px solid rgba(255, 255, 255, 0.1)',
+      transition: 'all 0.3s ease',
+      display: 'flex',
+      alignItems: 'center',
+      minHeight: '80px', 
+      cursor: 'pointer',
+      width: '100%',
+      boxSizing: 'border-box'
+    }} onMouseOver={(e) => {
+      e.currentTarget.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.3)';
+      e.currentTarget.style.border = '1px solid #00CCFF';
+    }} onMouseOut={(e) => {
+      e.currentTarget.style.boxShadow = 'none';
+      e.currentTarget.style.border = '1px solid rgba(255, 255, 255, 0.1)';
+    }}>
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '40px',
+        height: '40px',
+        marginRight: '1rem',
+        backgroundColor: 'rgba(0, 204, 255, 0.1)',
+        borderRadius: '50%',
+        flexShrink: 0 
+      }}>
+        <Icon icon={icon} color="#00CCFF" size={20} />
+      </div>
+      <div style={{
+        flexGrow: 1, 
+        overflow: 'hidden'
+      }}>
+        <h3 style={{
+          margin: 0,
+          fontSize: '0.9rem',
+          color: '#fff',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+          whiteSpace: 'nowrap',
+        }}>{category}</h3>
+        <p style={{
+          margin: '0.5rem 0 0',
+          fontSize: '0.75rem',
+          color: '#bbb',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+          whiteSpace: 'nowrap'
+        }}>{description}</p>
+      </div>
+    </div>
+  </a>
+);

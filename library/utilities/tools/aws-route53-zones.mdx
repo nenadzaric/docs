@@ -1,0 +1,31 @@
+---
+title: "aws-route53-zones"
+description: "Extract all hosted zones from AWS Route53"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="c3da264e-19d8-4b23-938c-d8026ed4c56a"
+  name="aws-route53-zones"
+  description="Extract all hosted zones from AWS Route53"
+  category="Utilities"
+  author="zaric"
+  created_date="2023-03-06"
+  container="quay.io/trickest/aws-route53-zones:v1.1"
+  source_url="https://github.com/trickest"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/c3da264e-19d8-4b23-938c-d8026ed4c56a.json"
+  inputs={ {
+  "aws-credentials": {
+    "type": "FILE",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "AWS credentials contaning a User with privileges to list AWS Route53 hosted zones.",
+  },
+}}
+/>

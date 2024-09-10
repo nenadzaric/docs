@@ -1,0 +1,34 @@
+---
+title: Node Connections
+description: ''
+---
+
+On this page you will learn what is a `Node Connection` in Trickest platform is and how you can configure and reuse inputs inside `Trickest Editor`. 
+
+## What is a Node Connection?
+
+Node Connection is a way to connect nodes to each other. It allows you to pass the output of one node to another node. Additionally as Node Connection is also considered connections described in [Node Inputs](node-inputs).
+
+## Connecting Nodes & Creating Workflows
+
+### File Connections
+
+Let's assume we have configured a tool which outputs subdomains. Now, we want to connect output of this tool to another tool which will find all alive webservers.
+
+<Frame caption="Trickest Tool with File Node connected to `list parameter`">
+  <img src="/images/node-file-connection.gif" />
+</Frame>
+
+How simple that was? Clicking on the `file` output of the first node and connecting it to the `domains` Node Input of the second node. This type of connection is the most frequent and will cover majority of use cases while creating your own automation workflows.
+
+Still, some tools require more complex connections. Let's see how we can connect a `Folder` output to a `Folder` input.
+
+### Folder Connections
+
+Now, let's assume our `webservers` Node is capable on also taking all HTTP Responses and generating file for each webservers. We want to analyze all of these files to find out if there are credentials or secrets hidden in these responses.
+
+<Frame caption="Trickest Tools with Folder Inputs connected with each other">
+  <img src="/images/folder-connections.png" />
+</Frame>
+
+Now, that we've learned how to configure [Node Inputs](node-inputs) and connect nodes with each other to create a workflow, we need computation power to execute. In the next section, we are going to cover [Machines](machines/overview) and how you can execute in Trickest platform.

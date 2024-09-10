@@ -1,0 +1,31 @@
+---
+title: "gittools-extractor"
+description: "Try to recover incomplete git repositories; this can be used in combination with gittools-dumper in case the downloaded repository is incomplete"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="e0d579f6-9579-45a9-a0d6-fd055adb31dc"
+  name="gittools-extractor"
+  description="Try to recover incomplete git repositories; this can be used in combination with gittools-dumper in case the downloaded repository is incomplete"
+  category="Discovery"
+  author="trickest-mhmdiaa"
+  created_date="2023-06-19"
+  container="quay.io/trickest/gittools-extractor:7cac63a"
+  source_url="https://github.com/internetwache/GitTools"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/e0d579f6-9579-45a9-a0d6-fd055adb31dc.json"
+  inputs={ {
+  "git-folder": {
+    "type": "FOLDER",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Dumped git repository folder",
+  },
+}}
+/>

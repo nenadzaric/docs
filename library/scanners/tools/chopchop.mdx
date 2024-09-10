@@ -1,0 +1,87 @@
+---
+title: "chopchop"
+description: "ChopChop is a command-line tool for dynamic application security testing on web applications, initially written by the Michelin CERT.Its goal is to scan several endpoints and identify exposition of services/files/folders through the webroot. Checks/Signatures are declared in a config file (by default: chopchop.yml), fully configurable, and especially by developers."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="2b32046e-b7bd-49da-b32e-286291f74b3d"
+  name="chopchop"
+  description="ChopChop is a command-line tool for dynamic application security testing on web applications, initially written by the Michelin CERT.Its goal is to scan several endpoints and identify exposition of services/files/folders through the webroot. Checks/Signatures are declared in a config file (by default: chopchop.yml), fully configurable, and especially by developers."
+  category="Scanners"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/chopchop:2f4838c"
+  source_url="https://github.com/michelin/ChopChop"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/2b32046e-b7bd-49da-b32e-286291f74b3d.json"
+  inputs={ {
+  "threads": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--threads",
+    "visible": false,
+    "description": "Number of threads (Default 1).",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--timeout",
+    "visible": false,
+    "description": "Timeout for the HTTP requests (Default: 10s).",
+  },
+  "insecure": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--insecure",
+    "visible": false,
+    "description": "Check SSL certificate.",
+  },
+  "url-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--url-file",
+    "visible": true,
+    "description": "Path to a specified file containing URLs to test. If this is used, you should not connect url parameter and vice versa.",
+  },
+  "verbosity": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-v",
+    "visible": false,
+    "description": "Log level (debug, info, warn, error, fatal, panic) (default warning)",
+  },
+  "signatures": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--signatures",
+    "visible": false,
+    "description": "Path to signature file (Default: chopchop.yml).",
+  },
+  "max-severity": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--max-severity",
+    "visible": false,
+    "description": "Block the CI pipeline if severity is over or equal specified flag.",
+  },
+  "plugin-filters": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--plugin-filters",
+    "visible": false,
+    "description": "Filter by the name of the plugin (engine will only check for plugin with the same name).",
+  },
+  "severity-filter": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--severity-filter",
+    "visible": false,
+    "description": "Filter by severity (engine will check for same severity checks).",
+  },
+}}
+/>

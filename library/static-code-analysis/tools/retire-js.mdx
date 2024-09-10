@@ -1,0 +1,122 @@
+---
+title: "retire-js"
+description: "There is a plethora of JavaScript libraries for use on the Web and in Node.JS apps out there. This greatly simplifies development,but we need to stay up-to-date on security fixes. Using Components with Known Vulnerabilities is now a part of the OWASP Top 10 list of security risks and insecure libraries can pose a huge risk to your Web app. The goal of Retire.js is to help you detect the use of JS-library versions with known vulnerabilities."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="e52583b2-3e37-41f4-ad9a-3d17a17e9d80"
+  name="retire-js"
+  description="There is a plethora of JavaScript libraries for use on the Web and in Node.JS apps out there. This greatly simplifies development,but we need to stay up-to-date on security fixes. Using Components with Known Vulnerabilities is now a part of the OWASP Top 10 list of security risks and insecure libraries can pose a huge risk to your Web app. The goal of Retire.js is to help you detect the use of JS-library versions with known vulnerabilities."
+  category="Static Code Analysis"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/retire:v4.3.4-patch-3"
+  source_url="https://github.com/RetireJS/retire.js"
+  license="Unknown"
+  output_command="--outputpath"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/e52583b2-3e37-41f4-ad9a-3d17a17e9d80.json"
+  inputs={ {
+  "ext": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--ext",
+    "visible": false,
+    "description": "Comma separated list of file extensions for JavaScript files. The default is js",
+  },
+  "path": {
+    "type": "FOLDER",
+    "order": 0,
+    "command": "--path",
+    "visible": true,
+    "description": "Folder to scan for javascript files",
+  },
+  "proxy": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--proxy",
+    "visible": false,
+    "description": "Proxy url (http://some.host:8080)",
+  },
+  "cacert": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--cacert",
+    "visible": false,
+    "description": "Use the specified certificate file to verify the peer used for fetching remote jsrepo/noderepo files",
+  },
+  "colors": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--colors",
+    "visible": false,
+    "description": "Enable color output (console output only)",
+  },
+  "ignore": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--ignore",
+    "visible": false,
+    "description": "Comma delimited list of paths to ignore",
+  },
+  "jsrepo": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--jsrepo",
+    "visible": false,
+    "description": "Local or internal version of repo. Can be multiple comma separated. Default: 'central')",
+  },
+  "nocache": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--nocache",
+    "visible": false,
+    "description": "Don't use local cache",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--verbose",
+    "visible": false,
+    "description": "Show identified files (by default only vulnerable files are shown)",
+  },
+  "insecure": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--insecure",
+    "visible": false,
+    "description": "Enable fetching remote jsrepo/noderepo files from hosts using an insecure or self-signed SSL (TLS) certificate",
+  },
+  "severity": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--severity",
+    "visible": false,
+    "description": "Specify the bug severity level from which the process fails. Allowed levels none, low, medium, high, critical. Default: none",
+  },
+  "ignorefile": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--ignorefile",
+    "visible": false,
+    "description": "Custom ignore file, defaults to .retireignore / .retireignore.json",
+  },
+  "includeOsv": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--includeOsv",
+    "visible": false,
+    "description": "Include OSV advisories in the output",
+  },
+  "outputformat": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--outputformat",
+    "visible": false,
+    "description": "Valid formats: text, json, jsonsimple, depcheck (experimental), cyclonedx and cyclonedxJSON",
+  },
+}}
+/>

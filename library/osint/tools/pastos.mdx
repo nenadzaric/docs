@@ -1,0 +1,45 @@
+---
+title: "pastos"
+description: "Search for strings in paste sites"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="e727c869-dcd0-4da1-beb5-4a9c3ecb44a2"
+  name="pastos"
+  description="Search for strings in paste sites"
+  category="OSINT"
+  author="trickest-mhmdiaa"
+  created_date="2022-09-09"
+  container="quay.io/trickest/pastos:f8bd4d8"
+  source_url="https://github.com/carlospolop/pastos"
+  license="Unknown"
+  output_command="--json-file"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/e727c869-dcd0-4da1-beb5-4a9c3ecb44a2.json"
+  inputs={ {
+  "debug": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--debug",
+    "visible": false,
+    "description": "Debug",
+  },
+  "search": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--search",
+    "visible": true,
+    "description": "Comma Separated list of things to search in paste webs",
+  },
+  "api-key": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--api-key",
+    "visible": true,
+    "description": "API key",
+  },
+}}
+/>

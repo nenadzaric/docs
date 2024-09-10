@@ -1,0 +1,185 @@
+---
+title: "bandit"
+description: "Bandit is a tool designed to find common security issues in Python code. To do this Bandit processes each file, builds an AST from it, and runs appropriate plugins against the AST nodes. Once Bandit has finished scanning all the files it generates a report.Bandit was originally developed within the OpenStack Security Project and later rehomed to PyCQA."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="90653c2e-163d-4c62-9534-f5cafddcaad4"
+  name="bandit"
+  description="Bandit is a tool designed to find common security issues in Python code. To do this Bandit processes each file, builds an AST from it, and runs appropriate plugins against the AST nodes. Once Bandit has finished scanning all the files it generates a report.Bandit was originally developed within the OpenStack Security Project and later rehomed to PyCQA."
+  category="Static Code Analysis"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/bandit:1.7.1"
+  source_url="https://github.com/PyCQA/bandit"
+  license="Unknown"
+  output_command="-o"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/90653c2e-163d-4c62-9534-f5cafddcaad4.json"
+  inputs={ {
+  "debug": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-d",
+    "visible": false,
+    "description": "Turn on debug mode",
+  },
+  "quiet": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-q",
+    "visible": false,
+    "description": "Only show output in the case of an error",
+  },
+  "profile": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--profile",
+    "visible": false,
+    "description": "Profile to use (defaults to executing all tests)",
+  },
+  "skip-id": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--skip",
+    "visible": false,
+    "description": "Comma-separated list of test IDs to skip",
+  },
+  "test-id": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--tests",
+    "visible": false,
+    "description": "Comma-separated list of test IDs to run",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--verbose",
+    "visible": false,
+    "description": "Output extra information like excluded and included files",
+  },
+  "baseline": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--baseline",
+    "visible": false,
+    "description": "Path of a baseline report to compare against (only JSON-formatted files are accepted)",
+  },
+  "ini-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--ini",
+    "visible": false,
+    "description": "Path to a .bandit file that supplies command line arguments",
+  },
+  "aggregate": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--aggregate",
+    "visible": false,
+    "description": "Aggregate ggregate output by vulnerability (default) or by filename",
+  },
+  "exit-zero": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--exit-zero",
+    "visible": true,
+    "description": "Exit with 0, even with results found",
+  },
+  "level-low": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-l",
+    "visible": false,
+    "description": "Report only issues of a given severity level or higher (level for LOW, -ll for MEDIUM, -lll for HIGH)",
+  },
+  "confidence": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--confidence",
+    "visible": false,
+    "description": "Report only issues of a given confidence level or higher",
+  },
+  "level-high": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-lll",
+    "visible": false,
+    "description": "Report only issues of a given severity level or higher (level for LOW, -ll for MEDIUM, -lll for HIGH)",
+  },
+  "config-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--configfile",
+    "visible": false,
+    "description": "Optional config file to use for selecting plugins and overriding defaults",
+  },
+  "ignore-nosec": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--ignore-nosec",
+    "visible": false,
+    "description": "Do not skip lines with # nosec comments",
+  },
+  "level-medium": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-ll",
+    "visible": false,
+    "description": "Report only issues of a given severity level or higher (level for LOW, -ll for MEDIUM, -lll for HIGH)",
+  },
+  "msg-template": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--msg-template",
+    "visible": false,
+    "description": "Specify output message template (only usable with output-format is set to custom)",
+  },
+  "number-lines": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--number",
+    "visible": false,
+    "description": "Maximum number of code lines to output for each issue",
+  },
+  "targets-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "targets",
+    "visible": true,
+    "description": "Source file(s)",
+  },
+  "exclude-paths": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--exclude",
+    "visible": false,
+    "description": "Comma-separated list of paths (glob patterns supported) to exclude from scan (note that these are in addition to the excluded paths provided in the config file) (default: .svn,CVS,.bzr,.hg,.git,__pycache__,.tox,.eggs,*.egg)",
+  },
+  "output-format": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-f",
+    "visible": false,
+    "description": "{csv,custom,html,json,screen,txt,xml,yaml}",
+  },
+  "targets-folder": {
+    "type": "FOLDER",
+    "order": 0,
+    "command": "targets",
+    "visible": true,
+    "description": "Source folder",
+  },
+  "recursive-target": {
+    "type": "FOLDER",
+    "order": 0,
+    "command": "--recursive",
+    "visible": false,
+    "description": "Find and process files in subdirectories",
+  },
+}}
+/>

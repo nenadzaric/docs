@@ -1,0 +1,45 @@
+---
+title: "prefix-file-lines"
+description: "Add prefix string on each line in files."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="b8e569b1-034f-4fa4-bb22-959170c1f81c"
+  name="prefix-file-lines"
+  description="Add prefix string on each line in files."
+  category="Utilities"
+  author="trickest"
+  created_date="2021-10-28"
+  container="quay.io/trickest/prefix-file-lines:v1.0.0"
+  source_url="https://github.com/trickest"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/b8e569b1-034f-4fa4-bb22-959170c1f81c.json"
+  inputs={ {
+  "file": {
+    "type": "FILE",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "Folder with files that need a prefix for each line",
+  },
+  "folder": {
+    "type": "FOLDER",
+    "order": 1,
+    "command": "",
+    "visible": false,
+    "description": "Folder with files that need a prefix for each line",
+  },
+  "prefix-string": {
+    "type": "STRING",
+    "order": 2,
+    "command": "",
+    "visible": true,
+    "description": "String that will be appended to each line.",
+  },
+}}
+/>

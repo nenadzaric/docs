@@ -1,0 +1,52 @@
+---
+title: "bigip-scanner"
+description: "Determine the running software version of a remote F5 BIG-IP management interface"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="407455f5-7fa9-445d-bc7b-cd339ede295b"
+  name="bigip-scanner"
+  description="Determine the running software version of a remote F5 BIG-IP management interface"
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2024-01-11"
+  container="quay.io/trickest/bigip-scanner:2bf3bdc"
+  source_url="https://github.com/BishopFox/bigip-scanner"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/407455f5-7fa9-445d-bc7b-cd339ede295b.json"
+  inputs={ {
+  "all": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-a",
+    "visible": false,
+    "description": "request all resources; don't stop after an exact match",
+  },
+  "debug": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-d",
+    "visible": false,
+    "description": "debug mode",
+  },
+  "target": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-t",
+    "visible": true,
+    "description": "Target URL",
+  },
+  "version-table": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-v",
+    "visible": false,
+    "description": "Version table",
+  },
+}}
+/>

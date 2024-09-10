@@ -1,0 +1,45 @@
+---
+title: "anew"
+description: "Append lines from stdin to a file, but only if they don't already appear in the file. Outputs new lines to stdout too, making it a bit like a tee -a that removes duplicates."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="d0e8a58e-4a78-49cb-98e5-20bcfde4eebd"
+  name="anew"
+  description="Append lines from stdin to a file, but only if they don't already appear in the file. Outputs new lines to stdout too, making it a bit like a tee -a that removes duplicates."
+  category="Discovery"
+  author="trickest"
+  created_date="2021-10-04"
+  container="quay.io/trickest/anew:v0.1.1"
+  source_url="https://github.com/tomnomnom/anew"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/d0e8a58e-4a78-49cb-98e5-20bcfde4eebd.json"
+  inputs={ {
+  "new-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Filename with possible new results",
+  },
+  "original-file": {
+    "type": "FILE",
+    "order": 2,
+    "command": "",
+    "visible": true,
+    "description": "Original file",
+  },
+  "trim-whitespaces": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-t",
+    "visible": false,
+    "description": "trim leading and trailing whitespace before comparison",
+  },
+}}
+/>

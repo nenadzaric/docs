@@ -1,0 +1,108 @@
+---
+title: "dorky"
+description: "A tool to automate dorking of GitHub/GitLab"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="e9151eb7-7ed1-4e21-99db-7bb4cb961ab9"
+  name="dorky"
+  description="A tool to automate dorking of GitHub/GitLab"
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2023-04-26"
+  container="quay.io/trickest/dorky:590e66d-patch-1"
+  source_url="https://github.com/codingo/dorky"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/e9151eb7-7ed1-4e21-99db-7bb4cb961ab9.json"
+  inputs={ {
+  "max": {
+    "type": "STRING",
+    "order": 3,
+    "command": "-max",
+    "visible": false,
+    "description": "maximum search results per category (default 10)",
+  },
+  "input": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "list of targets",
+  },
+  "simple": {
+    "type": "BOOLEAN",
+    "order": 3,
+    "command": "-s",
+    "visible": false,
+    "description": "simple output style for piping to another tool",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 3,
+    "command": "-v",
+    "visible": false,
+    "description": "enable verbose mode",
+  },
+  "username": {
+    "type": "BOOLEAN",
+    "order": 3,
+    "command": "-u",
+    "visible": false,
+    "description": "search for username matches",
+  },
+  "repository": {
+    "type": "BOOLEAN",
+    "order": 3,
+    "command": "-r",
+    "visible": false,
+    "description": "search for repository names",
+  },
+  "github-only": {
+    "type": "BOOLEAN",
+    "order": 3,
+    "command": "-gh",
+    "visible": false,
+    "description": "search only GitHub",
+  },
+  "gitlab-only": {
+    "type": "BOOLEAN",
+    "order": 3,
+    "command": "-gl",
+    "visible": false,
+    "description": "search only GitLab",
+  },
+  "organization": {
+    "type": "BOOLEAN",
+    "order": 3,
+    "command": "-o",
+    "visible": false,
+    "description": "search for organization names",
+  },
+  "clean-input-urls": {
+    "type": "BOOLEAN",
+    "order": 3,
+    "command": "-c",
+    "visible": false,
+    "description": "clean input URLs",
+  },
+  "github-access-token": {
+    "type": "FILE",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "GitHub access token",
+  },
+  "gitlab-access-token": {
+    "type": "FILE",
+    "order": 2,
+    "command": "",
+    "visible": true,
+    "description": "GitLab access token",
+  },
+}}
+/>

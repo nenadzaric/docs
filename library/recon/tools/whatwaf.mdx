@@ -1,0 +1,234 @@
+---
+title: "whatwaf"
+description: "Detect and bypass web application firewalls and protection systems"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="f9d4cf9c-5f69-491b-be37-ce58f9547c38"
+  name="whatwaf"
+  description="Detect and bypass web application firewalls and protection systems"
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2024-01-19"
+  container="quay.io/trickest/whatwaf:06c815a-patch-3"
+  source_url="https://github.com/Ekultek/WhatWaf"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/f9d4cf9c-5f69-491b-be37-ce58f9547c38.json"
+  inputs={ {
+  "csv": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--csv",
+    "visible": false,
+    "description": "Send the output to a CSV file",
+  },
+  "url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--url",
+    "visible": true,
+    "description": "Pass a single URL to detect the protection",
+  },
+  "burp": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--burp",
+    "visible": false,
+    "description": "Pass a Burp Suite request file to perform WAF evaluation",
+  },
+  "data": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--data",
+    "visible": false,
+    "description": "Send this data with the POST request (*default=random)",
+  },
+  "hide": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--hide",
+    "visible": false,
+    "description": "Hide the banner during the run",
+  },
+  "json": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--json",
+    "visible": true,
+    "description": "Send the output to a JSON file",
+  },
+  "list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--list",
+    "visible": true,
+    "description": "Pass a file containing URL's (one per line) to detect the protection",
+  },
+  "post": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--post",
+    "visible": false,
+    "description": "Send a POST request (*default=GET)",
+  },
+  "skip": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--skip",
+    "visible": false,
+    "description": "Skip checking for bypasses and just identify the firewall",
+  },
+  "test": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--test",
+    "visible": false,
+    "description": "Test the connection to the website before starting (*default=True)",
+  },
+  "yaml": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--yaml",
+    "visible": false,
+    "description": "Send the output to a YAML file",
+  },
+  "proxy": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--proxy",
+    "visible": false,
+    "description": "Provide a proxy to run behind in the format type://address:port (IE socks5://10.54.127.4:1080) (*default=None)",
+  },
+  "encode": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--encode",
+    "visible": false,
+    "description": "Encode a provided payload using provided tamper script(s) you are able to payy multiple tamper script load paths to this argument and the payload will be tampered as requested",
+  },
+  "googler": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--googler",
+    "visible": false,
+    "description": "Pass a JSON file from the Googler CMD line tool (IE googler -n 100 --json >> googler.json)",
+  },
+  "headers": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--headers",
+    "visible": false,
+    "description": "Add your own custom headers to the request. To use multiple separate headers by comma. Your headers need to be exact(IE: Set-Cookie=a345ddsswe,X-Forwarded-For:127.0.0.1) (*default=None)",
+  },
+  "threads": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--threads",
+    "visible": false,
+    "description": "Send requests in parallel (specify number of threads (*default=1)",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--timeout",
+    "visible": false,
+    "description": "Control the timeout time of the requests (*default=15)",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--verbose",
+    "visible": false,
+    "description": "Run in verbose mode (more output)",
+  },
+  "payloads": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--payloads",
+    "visible": false,
+    "description": "Provide your own payloads separated by a comma IE AND 1=1,AND 2=2",
+  },
+  "throttle": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--throttle",
+    "visible": false,
+    "description": "Provide a sleep time per request (*default=0)",
+  },
+  "force-ssl": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--force-ssl",
+    "visible": false,
+    "description": "Force the assignment of HTTPS instead of HTTP while processing (*default=HTTP unless otherwise specified by URL)",
+  },
+  "force-file": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--force-file",
+    "visible": false,
+    "description": "Force the creation of a file even if there is no protection identified",
+  },
+  "tamper-int": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--tamper-int",
+    "visible": false,
+    "description": "Control the amount of tampers that are displayed (*default=5)",
+  },
+  "user-agent": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--pa",
+    "visible": false,
+    "description": "Provide your own personal agent to use it for the HTTP requests",
+  },
+  "verify-num": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--verify-num",
+    "visible": false,
+    "description": "Change the request amount to verify if there really is not a WAF present(*default=5)",
+  },
+  "encode-list": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--encode-list",
+    "visible": false,
+    "description": "Encode a file containing payloads (one per line) by passing the path and load path, files can only encoded using a single tamper script load path",
+  },
+  "fingerprint": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--fingerprint",
+    "visible": false,
+    "description": "Save all fingerprints for further investigation",
+  },
+  "payload-list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--pl",
+    "visible": false,
+    "description": "Provide a file containing a list of payloads 1 per line",
+  },
+  "random-user-agent": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--ra",
+    "visible": false,
+    "description": "Use a random user-agent for the HTTP requests (*default=whatwaf/2.1.6.3 (Language=3.10.12; Platform=Linux))",
+  },
+  "determine-webserver": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--determine-webserver",
+    "visible": false,
+    "description": "Attempt to determine what web server is running on the backend (IE Apache, Nginx, etc.. *default=False)",
+  },
+}}
+/>

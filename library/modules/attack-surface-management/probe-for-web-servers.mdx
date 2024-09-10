@@ -1,0 +1,122 @@
+---
+title: "Probe for Web Servers"
+description: "Probe for web servers on a list of hostnames, IP addresses, or IP ranges"
+---
+
+import { ModuleOverview } from '/snippets/ModuleOverview.mdx'
+
+<ModuleOverview 
+  category="Attack Surface Management"
+  inputs={ {
+  "hosts": {
+    "name": "hosts",
+    "type": "FILE",
+    "visible": true,
+    "description": "List of hostnames/IP addresses/IP ranges",
+  },
+}}
+  outputs={[ 
+    "web-servers",
+    "web-server-details",
+    "subdomains",
+    "subdomain-details",
+    "potential-hostnames",
+    "potential-hostname-details",
+    "subdomain-wildcards",
+    "subdomain-wildcard-details",
+    "potential-hostname-wildcards",
+    "potential-hostname-wildcard-details"
+  ]}
+  author="trickest-mhmdiaa"
+  createdDate="2024-07-04"
+  iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/c3847326-8ece-4348-a0fc-c18dfc850c85.json"
+/>
+
+## Features
+# Probe for Web Servers
+
+## Description
+Probe for web servers on several common HTTP ports and collect relevant details about each discovered server. This module checks a list of common HTTP ports and gathers information including HTML titles, redirects, content lengths, favicons, TLS data, and more. You can supply hostnames, IP addresses, or IP ranges.
+
+## Features
+- Enriches discovered hosts with **useful data to guide prioritization** and help identify patterns.
+- Capable of processing **tens of thousands of hosts** simultaneously.
+- Supports **hostnames, IP addresses, and IP ranges**.
+- Probes the **most statistically likely ports** to have HTTP servers, balancing speed and thoroughness.
+- Discovers **additional hostnames** associated with the target organization.
+
+## Inputs
+### Required
+- **hosts**: a list of hostnames, IP addresses, or IP ranges
+```
+dashboard.example.com
+1.2.3.4
+5.6.7.8/24
+```
+
+## Outputs
+- **web-servers**: List of web server URLs.
+```
+https://dashboard.example.com
+http://1.2.3.4
+http://5.6.7.10:8080
+```
+
+- **web-server-details**: JSONLines records of web server details.
+```
+{"timestamp":"2024-01-01T11:11:11.111111111Z","port":443,"url":"https://dashboard.example.com","input":"dashboard.example.com","scheme":"https","webserver":"cloudflare","method":"GET","host":"1.2.3.4","path":"/","favicon_path":"/favicon.ico","time":"133.7ms","a":["1.2.3.4","1.2.3.4"],"words":7331,"lines":1337,"status_code":200,"cdn":true,"cdn_name":"cloudflare","tls_host":"dashboard.example.com","tls_port":"443","tls_probe_status":true,"tls_version":"tls13","tls_cipher":"TLS_AES_128_GCM_SHA256","tls_not_before":"2021-3-3T07:00:00Z","tls_not_after":"2027-3-3T07:00:00Z","tls_subject_dn":"CN=*.example.com, O=Example\\, Inc., L=San Francisco, ST=California, C=US","tls_subject_cn":"*.example.com","tls_subject_org":["Example, Inc."],"tls_subject_an":["*.example.com","example.com"],"tls_issuer_dn":"CN=Acme TLS RSA SHA256 2020 CA1, O=Acme Inc, C=US","tls_issuer_cn":"Acme TLS RSA SHA256 2020 CA1","tls_issuer_org":["Acme Inc"],"tls_fingerprint_hash_md5":"9ff41ab3d13b2386ad77fa0b1f058f4f","tls_fingerprint_hash_sha1":"9dc28cb216b46bee01eeaeb5d4ff5906bbba582b","tls_fingerprint_hash_sha256":"324db4e227d9b5fb5dc175d7b4bb984705b9f4ec07a36bfe2fd4df79a965961e","tls_wildcard_certificate":true,"tls_connection":"ctls","tls_sni":"dashboard.example.com","headers":["Cf-Cache-Status: DYNAMIC","Server: cloudflare"]}
+```
+
+- **subdomains**: List of discovered subdomains.
+```
+foo.example.com
+bar.example.com
+baz.example.com
+```
+
+- **subdomain-details**: JSONLines records of subdomain discovery details.
+```json
+{"hostname": "foo.example.com", "domain_name": "example.com", "data_source": "http response", "context": "http redirecrt", "linked_asset": "http://1.2.3.4"}
+{"hostname": "bar.example.com", "domain_name": "example.com", "data_source": "http response", "context": "content security policy (csp)", "linked_asset": "http://5.6.7.10:8080"}
+{"hostname": "baz.example.com", "domain_name": "example.com", "data_source": "tls certificate", "context": "tls subject alternative name (san)", "linked_asset": "https://dashboard.example.com"}
+```
+
+- **potential-hostnames**: List of related hostnames outside the strict scope.
+```
+foo.example-internal.com
+bar.example-subsidiary.com
+baz.example-service-provider.net
+```
+
+- **potential-hostname-details**: JSONLines records of potential hostname discovery details.
+```json
+{"hostname": "foo.example-internal.com", "domain_name": "example.com", "data_source": "http response", "context": "http redirecrt", "linked_asset": "http://1.2.3.4"}
+{"hostname": "bar.example-subsidiary.com", "domain_name": "example.com", "data_source": "http response", "context": "content security policy (csp)", "linked_asset": "http://5.6.7.10:8080"}
+{"hostname": "baz.example-service-provider.net", "domain_name": "example.com", "data_source": "tls certificate", "context": "tls subject alternative name (san)", "linked_asset": "https://dashboard.example.com"}
+```
+
+- **subdomain-wildcards**: List of discovered subdomain wildcards.
+```
+*.internal.example.com
+```
+
+- **subdomain-wildcard-details**: JSONLines records of subdomain wildcard discovery details.
+```json
+{"hostname": "*.internal.example.com", "domain_name": "example.com", "data_source": "tls certificate", "context": "tls common name (cn)", "linked_asset": "https://dashboard.example.com"}
+```
+
+- **potential-hostname-wildcards**: List of related hostnames with wildcards outside the strict scope.
+```
+*.proxy.example-corp.com
+```
+
+- **potential-hostname-wildcard-details**: JSONLines records of potential hostname wildcard discovery details.
+```json
+{"hostname": "*.proxy.example-corp.com", "domain_name": "example.com", "data_source": "tls certificate", "context": "tls common name (cn)", "linked_asset": "https://dashboard.example.com"}
+```
+
+**Note**: The `*-details` outputs may contain duplicates if a hostname was discovered through multiple sources.
+
+## Changelog
+- v1.0
+    - Initial release

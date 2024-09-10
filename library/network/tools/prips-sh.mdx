@@ -1,0 +1,52 @@
+---
+title: "prips-sh"
+description: "Print the IP addresses in a given range."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="acd35883-0d47-488c-a2ee-2c9eab248e75"
+  name="prips-sh"
+  description="Print the IP addresses in a given range."
+  category="Network"
+  author="trickest"
+  created_date="2021-11-05"
+  container="quay.io/trickest/prips-sh:a008377"
+  source_url="https://github.com/honzahommer/prips.sh"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/acd35883-0d47-488c-a2ee-2c9eab248e75.json"
+  inputs={ {
+  "increment": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-i",
+    "visible": false,
+    "description": "Set the increment to 'x'",
+  },
+  "address-format": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-f",
+    "visible": false,
+    "description": "Set the format of addresses (hex, dec, or dot)",
+  },
+  "ip-address-range": {
+    "type": "STRING",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "IP Address Range (192.168.0.0 192.168.0.255 or 192.168.0.1/24)",
+  },
+  "number-of-addresses": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-n",
+    "visible": true,
+    "description": "Set the number of addresses to print (<end> must not be set)",
+  },
+}}
+/>

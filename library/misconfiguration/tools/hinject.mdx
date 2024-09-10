@@ -1,0 +1,31 @@
+---
+title: "hinject"
+description: "Host Header Injection Vulnerability Checker"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="9b929dfe-cc9f-489a-ab9f-37c08fb125f8"
+  name="hinject"
+  description="Host Header Injection Vulnerability Checker"
+  category="Misconfiguration"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/hinject:d3c5291"
+  source_url="https://github.com/dwisiswant0/hinject"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/9b929dfe-cc9f-489a-ab9f-37c08fb125f8.json"
+  inputs={ {
+  "urls-list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "List of urls to check",
+  },
+}}
+/>

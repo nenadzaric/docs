@@ -1,0 +1,38 @@
+---
+title: "favfreak"
+description: "FavFreak takes a list of urls from stdin, fetches favicon.ico , calculate tha hash value and matches the calculated favicon hashes with the favicon hashes present in the fingerprint dictionary"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="db124168-2728-4718-a712-4d6a65385cfa"
+  name="favfreak"
+  description="FavFreak takes a list of urls from stdin, fetches favicon.ico , calculate tha hash value and matches the calculated favicon hashes with the favicon hashes present in the fingerprint dictionary"
+  category="Recon"
+  author="youssef"
+  created_date="2023-03-29"
+  container="quay.io/trickest/favfreak:a1ecf3b"
+  source_url="https://github.com/devanshbatham/FavFreak"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/db124168-2728-4718-a712-4d6a65385cfa.json"
+  inputs={ {
+  "urls": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "URLs to scan",
+  },
+  "shodan": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--shodan",
+    "visible": false,
+    "description": "generate shodan dorks",
+  },
+}}
+/>

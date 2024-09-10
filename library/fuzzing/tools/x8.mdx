@@ -1,0 +1,346 @@
+---
+title: "x8"
+description: "The tool helps to find hidden parameters that can be vulnerable or can reveal interesting functionality that other hunters miss. Greater accuracy is achieved thanks to the line-by-line comparison of pages, comparison of response code and reflections."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="066175e4-7f45-4301-b292-9ac8e0c5033d"
+  name="x8"
+  description="The tool helps to find hidden parameters that can be vulnerable or can reveal interesting functionality that other hunters miss. Greater accuracy is achieved thanks to the line-by-line comparison of pages, comparison of response code and reflections."
+  category="Fuzzing"
+  author="trickest"
+  created_date="2021-07-22"
+  container="quay.io/trickest/x8:ab1ba6c-patch-1"
+  source_url="https://github.com/Sh1Yo/x8"
+  license="Unknown"
+  output_command="--output"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/066175e4-7f45-4301-b292-9ac8e0c5033d.json"
+  inputs={ {
+  "max": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--max",
+    "visible": false,
+    "description": "Change the maximum number of parameters per request. (default is <= 256 for query, 64 for headers and 512 for body)",
+  },
+  "url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--url",
+    "visible": true,
+    "description": "You can add a custom injection point with %s. Multiple values are supported: https://url1 http://url2",
+  },
+  "body": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--body",
+    "visible": false,
+    "description": "Example body: '{x:{%s}}'",
+  },
+  "http": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--http",
+    "visible": false,
+    "description": "HTTP version. Supported versions: --http 1.1, --http 2",
+  },
+  "port": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--port",
+    "visible": false,
+    "description": "Port to use with request file",
+  },
+  "test": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--test",
+    "visible": false,
+    "description": "Prints request and response",
+  },
+  "delay": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--delay",
+    "visible": false,
+    "description": "Delay between requests in milliseconds [default: 0]",
+  },
+  "force": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--force",
+    "visible": false,
+    "description": "Force searching for parameters on pages > 25MB. Remove an error in case there's 1",
+  },
+  "proto": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--proto",
+    "visible": false,
+    "description": "Protocol to use with request file (default is https)",
+  },
+  "proxy": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--proxy",
+    "visible": false,
+    "description": "Proxy",
+  },
+  "encode": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--encode",
+    "visible": false,
+    "description": "Encodes query or body before making a request, i.e & -> %26, = -> %3D",
+  },
+  "invert": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--invert",
+    "visible": false,
+    "description": "By default, parameters are sent within the body only in case PUT or POST methods",
+  },
+  "joiner": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--joiner",
+    "visible": false,
+    "description": "How to join parameter templates. Example: --joiner '&'. Default: urlencoded - '&', json - ', ', header values - '; '",
+  },
+  "method": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--method",
+    "visible": false,
+    "description": "Multiple values are supported: -X GET POST",
+  },
+  "strict": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--strict",
+    "visible": false,
+    "description": "Only report parameters that have changed the different parts of a page",
+  },
+  "verify": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--verify",
+    "visible": false,
+    "description": "Verify found parameters.",
+  },
+  "headers": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-H",
+    "visible": false,
+    "description": "Example: 'one:one' 'two:two'",
+  },
+  "request": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--request",
+    "visible": false,
+    "description": "The file with the raw http request",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--timeout",
+    "visible": false,
+    "description": "HTTP request timeout in seconds. [default: 15]",
+  },
+  "verbose": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--verbose",
+    "visible": false,
+    "description": "Verbose level 0/1/2 [default: 1]",
+  },
+  "workers": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--workers",
+    "visible": false,
+    "description": "The number of concurrent url checks. [default: 1]",
+  },
+  "split-by": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--split-by",
+    "visible": false,
+    "description": "Split the request into lines by the provided sequence. By default splits by \r, \n and \r\n",
+  },
+  "url-list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--url",
+    "visible": true,
+    "description": "You can add a custom injection point with %s. Multiple values are supported: https://url1 http://url2",
+  },
+  "wordlist": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--wordlist",
+    "visible": true,
+    "description": "-w, --wordlist <wordlist>",
+  },
+  "data-type": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--data-type",
+    "visible": false,
+    "description": "-t, --data-type <data-type>",
+  },
+  "concurrency": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-c",
+    "visible": false,
+    "description": "The number of concurrent requests per url [default: 1]",
+  },
+  "replay-once": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--replay-once",
+    "visible": false,
+    "description": "If a replay proxy is specified, send all found parameters within one request.",
+  },
+  "check-binary": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--check-binary",
+    "visible": false,
+    "description": "Check the body of responses with binary content types",
+  },
+  "remove-empty": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--remove-empty",
+    "visible": false,
+    "description": "Skip writing to file outputs of url:method pairs without found parameters",
+  },
+  "replay-proxy": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--replay-proxy",
+    "visible": false,
+    "description": "Request target with every found parameter via the replay proxy at the end.",
+  },
+  "custom-values": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--custom-values",
+    "visible": false,
+    "description": "Values for custom parameters (default is 1 0 false off null true yes no)",
+  },
+  "mimic-browser": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--mimic-browser",
+    "visible": false,
+    "description": "Add default headers that browsers usually set.",
+  },
+  "output-format": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--output-format",
+    "visible": false,
+    "description": "standart, json, url, request [default: standart]",
+  },
+  "disable-colors": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--disable-colors",
+    "visible": false,
+    "description": "Disable colors",
+  },
+  "learn-requests": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--learn-requests",
+    "visible": false,
+    "description": "Set the custom number of learn requests. [default: 9]",
+  },
+  "param-template": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--param-template",
+    "visible": false,
+    "description": "%k - key, %v - value. Example: --param-template 'user[%k]=%v'. Default: urlencoded - <%k=%v>, json - <%k:%v>, headers - <%k=%v>",
+  },
+  "reflected-only": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--reflected-only",
+    "visible": false,
+    "description": "Disable page comparison and search for reflected parameters only.",
+  },
+  "recursion-depth": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--recursion-depth",
+    "visible": false,
+    "description": "Check the same list of parameters with the found parameters until there are no new parameters to be found. Conflicts with --verify for now.",
+  },
+  "disable-trustdns": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--disable-trustdns",
+    "visible": false,
+    "description": "Can solve some dns related problems",
+  },
+  "follow-redirects": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--follow-redirects",
+    "visible": false,
+    "description": "Follow redirections",
+  },
+  "progress-bar-len": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--progress-bar-len",
+    "visible": false,
+    "description": "[default: 26]",
+  },
+  "custom-parameters": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--custom-parameters",
+    "visible": false,
+    "description": "Check these parameters with non-random values like true/false yes/no (default is admin bot captcha debug disable encryption env show sso test waf)",
+  },
+  "one-worker-per-host": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--one-worker-per-host",
+    "visible": false,
+    "description": "Multiple urls with the same host will be checked one after another,",
+  },
+  "disable-progress-bar": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--disable-progress-bar",
+    "visible": false,
+    "description": "Disable progress bar",
+  },
+  "disable-additional-checks": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--disable-additional-checks",
+    "visible": false,
+    "description": "Disable additional checks",
+  },
+  "disable-custom-parameters": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--disable-custom-parameters",
+    "visible": false,
+    "description": "Do not automatically check parameters like admin=true",
+  },
+}}
+/>

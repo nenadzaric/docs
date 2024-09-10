@@ -1,0 +1,255 @@
+---
+title: "dnsreaper"
+description: "subdomain takeover tool for attackers, bug bounty hunters and the blue team!"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="4d310e43-d860-4b78-8833-640bd6248fc2"
+  name="dnsreaper"
+  description="subdomain takeover tool for attackers, bug bounty hunters and the blue team!"
+  category="Vulnerabilities"
+  author="trickest-mhmdiaa"
+  created_date="2022-09-07"
+  container="quay.io/trickest/dnsreaper:dd7fa2a-patch-2"
+  source_url="https://github.com/punk-security/dnsReaper"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/4d310e43-d860-4b78-8833-640bd6248fc2.json"
+  inputs={ {
+  "aws": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "aws",
+    "visible": true,
+    "description": "Scan multiple domains by fetching them from AWS Route53",
+  },
+  "bind": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "bind",
+    "visible": true,
+    "description": "Read domains from a dns BIND zone file, or path to multiple",
+  },
+  "file": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "file",
+    "visible": true,
+    "description": "Read domains from a file (or folder of files), one per line",
+  },
+  "azure": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "azure",
+    "visible": true,
+    "description": "Scan multiple domains by fetching them from Azure DNS services",
+  },
+  "single": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "single",
+    "visible": true,
+    "description": "Scan a single domain by providing a domain on the commandline",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-v",
+    "visible": false,
+    "description": "Verbose output",
+  },
+  "nocolour": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--nocolour",
+    "visible": false,
+    "description": "Turns off coloured text",
+  },
+  "pipeline": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--pipeline",
+    "visible": false,
+    "description": "Exit Non-Zero on detection (used to fail a pipeline)",
+  },
+  "resolver": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--resolver",
+    "visible": false,
+    "description": "Provide a custom DNS resolver (or multiple seperated by commas)",
+  },
+  "signature": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--signature",
+    "visible": false,
+    "description": "Only scan with this signature",
+  },
+  "cloudflare": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "cloudflare",
+    "visible": true,
+    "description": "Scan multiple domains by fetching them from Cloudflare",
+  },
+  "do-api-key": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--do-api-key",
+    "visible": false,
+    "description": "DigitalOcean API key (the `digitalocean` input must be set to true)",
+  },
+  "do-domains": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--do-domains",
+    "visible": false,
+    "description": "Limit the scan to these domains (comma-separated)",
+  },
+  "file-input": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--filename",
+    "visible": false,
+    "description": "List of domains to scan (the `file` input must be set to true)",
+  },
+  "out-format": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--out-format",
+    "visible": false,
+    "description": "Output format (csv/json)",
+  },
+  "parallelism": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--parallelism",
+    "visible": false,
+    "description": "Number of domains to test in parallel - too high and you may see odd DNS results (default: 30)",
+  },
+  "az-client-id": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--az-client-id",
+    "visible": false,
+    "description": "Azure client ID (the `azure` input must be set to true)",
+  },
+  "az-tenant-id": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--az-tenant-id",
+    "visible": false,
+    "description": "Azure tenant ID (the `azure` input must be set to true)",
+  },
+  "digitalocean": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "digitalocean",
+    "visible": true,
+    "description": "Scan multiple domains by fetching them from Digital Ocean",
+  },
+  "zonetransfer": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "zonetransfer",
+    "visible": false,
+    "description": "Scan multiple domains by fetching records via DNS zone transfer",
+  },
+  "extra-verbose": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-vv",
+    "visible": false,
+    "description": "Extra verbose output",
+  },
+  "single-domain": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--domain",
+    "visible": false,
+    "description": "Scan this one domain (the `single` input must be set to true)",
+  },
+  "bind-zone-file": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--bind-zone-file",
+    "visible": false,
+    "description": "Bind zone file (the `bind` input must be set to true)",
+  },
+  "enable-unlikely": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--enable-unlikely",
+    "visible": false,
+    "description": "Check for more conditions, but with a high false positive rate",
+  },
+  "az-client-secret": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--az-client-secret",
+    "visible": false,
+    "description": "Azure client secret (the `azure` input must be set to true)",
+  },
+  "cloudflare-token": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--cloudflare-token",
+    "visible": false,
+    "description": "Cloudflare token (the `cloudflare` input must be set to true)",
+  },
+  "disable-probable": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--disable-probable",
+    "visible": false,
+    "description": "Do not check for probable conditions",
+  },
+  "aws-access-key-id": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--aws-access-key-id",
+    "visible": false,
+    "description": "AWS access key ID (the `aws` input must be set to true)",
+  },
+  "exclude-signature": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--exclude-signature",
+    "visible": false,
+    "description": "Do not scan with this signature",
+  },
+  "az-subscription-id": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--az-subscription-id",
+    "visible": false,
+    "description": "Azure subscription ID (the `azure` input must be set to true)",
+  },
+  "zonetransfer-domain": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--zonetransfer-domain",
+    "visible": false,
+    "description": "Root domain to scan for (the `zonetransfer` input must be set to true)",
+  },
+  "aws-access-key-secret": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--aws-access-key-secret",
+    "visible": false,
+    "description": "AWS access key secret (the `aws` input must be set to true)",
+  },
+  "zonetransfer-nameserver": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--zonetransfer-nameserver",
+    "visible": false,
+    "description": "DNS server fqdn (such as ns1.domain.com) or IP address (the `zonetransfer` input must be set to true)",
+  },
+}}
+/>

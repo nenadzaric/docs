@@ -1,0 +1,206 @@
+---
+title: "uncover"
+description: "Quickly discover exposed hosts on the internet using multiple search engines."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="b2fd8519-9322-4d42-96e9-4be05b4db80c"
+  name="uncover"
+  description="Quickly discover exposed hosts on the internet using multiple search engines."
+  category="Network"
+  author="trickest-mhmdiaa"
+  created_date="2022-11-10"
+  container="quay.io/trickest/uncover:v1.0.7"
+  source_url="https://github.com/projectdiscovery/uncover"
+  license="Unknown"
+  output_command="-output"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/b2fd8519-9322-4d42-96e9-4be05b4db80c.json"
+  inputs={ {
+  "v": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-v",
+    "visible": false,
+    "description": "show verbose output",
+  },
+  "raw": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-raw",
+    "visible": false,
+    "description": "write raw output as received by the remote api",
+  },
+  "fofa": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-fofa",
+    "visible": false,
+    "description": "search query for fofa",
+  },
+  "json": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-json",
+    "visible": false,
+    "description": "write output in JSONL(ines) format",
+  },
+  "field": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-field",
+    "visible": false,
+    "description": "field to display in output (ip,port,host) (default ip:port)",
+  },
+  "limit": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-limit",
+    "visible": false,
+    "description": "limit the number of results to return (default 100)",
+  },
+  "quake": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-quake",
+    "visible": false,
+    "description": "search query for quake",
+  },
+  "retry": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-retry",
+    "visible": false,
+    "description": "number of times to retry a failed request (default 2)",
+  },
+  "censys": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-censys",
+    "visible": false,
+    "description": "search query for censys",
+  },
+  "config": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-config",
+    "visible": false,
+    "description": "configuration file",
+  },
+  "engine": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-engine",
+    "visible": false,
+    "description": "search engine to query (shodan,shodan-idb,fofa,censys,quake,hunter,zoomeye,netlas,publicwww,criminalip,hunterhow) (default shodan)",
+  },
+  "hunter": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-hunter",
+    "visible": false,
+    "description": "search query for hunter",
+  },
+  "netlas": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-netlas",
+    "visible": false,
+    "description": "search query for netlas",
+  },
+  "shodan": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-shodan",
+    "visible": false,
+    "description": "search query for shodan",
+  },
+  "silent": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-silent",
+    "visible": false,
+    "description": "show only results in output",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-timeout",
+    "visible": false,
+    "description": "timeout in seconds (default 30)",
+  },
+  "zoomeye": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-zoomeye",
+    "visible": false,
+    "description": "search query for zoomeye",
+  },
+  "provider": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-provider",
+    "visible": true,
+    "description": "provider configuration file",
+  },
+  "hunterhow": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-hunterhow",
+    "visible": false,
+    "description": "search query for hunterhow",
+  },
+  "publicwww": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-publicwww",
+    "visible": false,
+    "description": "search query for publicwww",
+  },
+  "criminalip": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-criminalip",
+    "visible": false,
+    "description": "search query for criminalip",
+  },
+  "query-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-query",
+    "visible": false,
+    "description": "search query file",
+  },
+  "rate-limit": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-rate-limit",
+    "visible": false,
+    "description": "maximum number of http requests to send per second",
+  },
+  "shodan-idb": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-shodan-idb",
+    "visible": false,
+    "description": "search query for shodan-idb",
+  },
+  "query-string": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-query",
+    "visible": true,
+    "description": "search query string",
+  },
+  "rate-limit-minute": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-rate-limit-minute",
+    "visible": false,
+    "description": "maximum number of requests to send per minute",
+  },
+}}
+/>

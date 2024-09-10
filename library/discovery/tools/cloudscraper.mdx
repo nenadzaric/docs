@@ -1,0 +1,66 @@
+---
+title: "cloudscraper"
+description: "CloudScraper is a Tool to spider and scrape targets in search of cloud resources. Plug in a URL and it will spider and search the source of spidered pages for strings such as 's3.amazonaws.com', 'windows.net' and 'digitaloceanspaces'. AWS, Azure, Digital Ocean resources are currently supported."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="b531ae02-0972-4430-ac0b-4b276c9aefd2"
+  name="cloudscraper"
+  description="CloudScraper is a Tool to spider and scrape targets in search of cloud resources. Plug in a URL and it will spider and search the source of spidered pages for strings such as 's3.amazonaws.com', 'windows.net' and 'digitaloceanspaces'. AWS, Azure, Digital Ocean resources are currently supported."
+  category="Discovery"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/cloudscraper:9756278"
+  source_url="https://github.com/jordanpotti/cloudscraper"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/b531ae02-0972-4430-ac0b-4b276c9aefd2.json"
+  inputs={ {
+  "url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-u",
+    "visible": true,
+    "description": "Target Scope URL",
+  },
+  "depth": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-d",
+    "visible": false,
+    "description": "Max Depth of links (Default:5)",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-v",
+    "visible": false,
+    "description": "Verbose output",
+  },
+  "no-verify": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--no-verify",
+    "visible": false,
+    "description": "Skip TLS verification",
+  },
+  "processes": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-p",
+    "visible": false,
+    "description": "Number of processes to be executed in parallel. Default: 2",
+  },
+  "target-list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-l",
+    "visible": true,
+    "description": "File of Line Delimited targets",
+  },
+}}
+/>

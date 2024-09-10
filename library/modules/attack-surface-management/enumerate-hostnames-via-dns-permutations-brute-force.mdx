@@ -1,0 +1,66 @@
+---
+title: "Enumerate Hostnames via DNS Permutations Brute Force"
+description: "Enumerate hostnames by checking for permutations of known hostnames"
+---
+
+import { ModuleOverview } from '/snippets/ModuleOverview.mdx'
+
+<ModuleOverview 
+  category="Attack Surface Management"
+  inputs={ {
+  "hostnames": {
+    "name": "hostnames",
+    "type": "FILE",
+    "visible": true,
+    "description": "List of hostnames",
+  },
+}}
+  outputs={[ 
+    "hostnames",
+    "hostname-details"
+  ]}
+  author="trickest-mhmdiaa"
+  createdDate="2024-07-04"
+  iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/a1976445-780a-4c2f-9e24-63bc57a0fa17.json"
+/>
+
+## Features
+# Enumerate Hostnames via Permutation DNS Brute Force
+
+## Description
+Enumerate hostnames by checking for permutations of known hostnames. This module finds different environments, regions, and associated software. It has an effective built-in wordlist but you can also use a custom wordlist tailored to your organization’s naming conventions.
+
+## Features
+- Discovers **different environments, regions, and associated software** based on the input hostnames.
+- **Built-in wordlists** with the option to **use custom ones** tailored to your target.
+- A **daily validated list of resolvers** to ensure accuracy.
+- Result **verification using manually curated trusted resolvers**.
+- A **wildcard filter** takes care of false positives.
+
+## Inputs
+### Required
+- **hostnames**: a list of hostnames
+```
+dashboard.example.com
+shop.example.com
+payments.example.com
+```
+
+## Outputs
+- **subdomains**: a list of found subdomains
+```
+dev-dashboard.example.com
+shop.us-east-1.example.com
+payments-log.example.com
+```
+
+- **subdomain-details**: JSONLines records of subdomain discovery details.
+```json
+{"hostname": "dev-dashboard.example.com", "domain_name": "example.com", "data_source": "dns brute force", "context": "permutation brute force"}
+{"hostname": "shop.us-east-1.example.com", "domain_name": "example.com", "data_source": "dns brute force", "context": "permutation brute force"}
+{"hostname": "payments-log.example.com", "domain_name": "example.com", "data_source": "dns brute force", "context": "permutation brute force"}
+```
+
+## Changelog
+- v1.0
+    - Initial release

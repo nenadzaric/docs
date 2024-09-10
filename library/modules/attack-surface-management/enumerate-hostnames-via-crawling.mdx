@@ -1,0 +1,74 @@
+---
+title: "Enumerate Hostnames via Crawling"
+description: "Enumerate subdomains by crawling web servers and analyzing their HTML content and headers"
+---
+
+import { ModuleOverview } from '/snippets/ModuleOverview.mdx'
+
+<ModuleOverview 
+  category="Attack Surface Management"
+  inputs={ {
+  "depth": {
+    "name": "depth",
+    "type": "STRING",
+    "visible": false,
+    "description": "Maximum crawling depth (Default: 2)",
+  },
+  "web-servers": {
+    "name": "web-servers",
+    "type": "FILE",
+    "visible": true,
+    "description": "List of web server URLs",
+  },
+}}
+  outputs={[ 
+    "subdomains",
+    "subdomain-details"
+  ]}
+  author="trickest-mhmdiaa"
+  createdDate="2024-07-04"
+  iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/b4c23a0f-7428-47e7-8b49-a95a8f6decdf.json"
+/>
+
+## Features
+# Enumerate Hostnames via Crawling
+
+## Description
+Enumerate subdomains by crawling web servers and analyzing their HTML content and headers.
+
+
+## Features
+- Discovers subdomains in **HTML attributes, HTTP headers, and JavaScript code** that may not be identified through other sources.
+- Offers **customizable crawling depth** to balance speed and coverage.
+- Capable of processing **tens of thousands of web servers** simultaneously.
+
+## Inputs
+### Required
+- **web-servers**: a list of web servers
+```
+https://dashboard.example.com
+https://payments.example.com
+http://shop.example.com:8080
+```
+
+### Optional
+- **depth**: maximum crawling depth (default: 2)
+
+## Outputs
+- **subdomains**: List of discovered subdomains
+```
+admin.example.com
+assets.example.com
+```
+
+- **subdomain-details**: JSONLines records of subdomain discovery details.
+```json
+{"hostname": "admin.example.com", "domain_name": "example.com", "data_source": "crawling", "context": "a href", "linked_asset": "dashboard.example.com"}
+{"hostname": "assets.example.com", "domain_name": "example.com", "data_source": "crawling", "context": "script text", "linked_asset": "payments.example.com"}
+```
+
+**Note**: The `subdomain-details` outputs may contain duplicates if a hostname was discovered in multiple locations.
+
+## Changelog
+- v1.0
+    - Initial release

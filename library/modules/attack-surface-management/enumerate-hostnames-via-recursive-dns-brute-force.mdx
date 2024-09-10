@@ -1,0 +1,116 @@
+---
+title: "Enumerate Hostnames via Recursive DNS Brute Force"
+description: "Enumerate sub-subdomains of a list of hostnames using DNS brute force on the most likely hostnames"
+---
+
+import { ModuleOverview } from '/snippets/ModuleOverview.mdx'
+
+<ModuleOverview 
+  category="Attack Surface Management"
+  inputs={ {
+  "hostnames": {
+    "name": "hostnames",
+    "type": "FILE",
+    "visible": true,
+    "description": "List of hostnames",
+  },
+  "level-2-wordlist": {
+    "name": "level-2-wordlist",
+    "type": "FILE",
+    "visible": false,
+    "description": "Custom wordlist for level-2 enumeration (FUZZ.1.example.com)",
+  },
+  "level-3-wordlist": {
+    "name": "level-3-wordlist",
+    "type": "FILE",
+    "visible": false,
+    "description": "Custom wordlist for level-3 enumeration (FUZZ.2.1.example.com)",
+  },
+  "level-4-wordlist": {
+    "name": "level-4-wordlist",
+    "type": "FILE",
+    "visible": false,
+    "description": "Custom wordlist for level-4, and higher, enumeration (FUZZ.3.2.1.example.com, FUZZ.4.3.2.1.example.com, ...)",
+  },
+  "hostnames-per-level": {
+    "name": "hostnames-per-level",
+    "type": "STRING",
+    "visible": false,
+    "description": "Number of hostnames to brute-force at each level. Default: 200",
+  },
+}}
+  outputs={[ 
+    "hostnames",
+    "hostname-details"
+  ]}
+  author="trickest-mhmdiaa"
+  createdDate="2024-07-04"
+  iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/65339daa-dca5-47f8-81ab-5af3db009925.json"
+/>
+
+## Features
+# Enumerate Hostnames via Recursive DNS Brute Force
+
+## Description
+Enumerate sub-subdomains of a list of hostnames using DNS brute force on the most likely hostnames. The module starts by determining which hostnames have the highest probability of having valid hostnames at other levels and then generates the permutations.
+
+For example, given a subdomain like `test.foo.bar.baz.example.com`, it will try variations like `FUZZ.foo.bar.baz.example.com`, `FUZZ.bar.baz.example.com`, `FUZZ.baz.example.com`, and so on. It uses regularly updated wordlists made specifically for this purpose, based on analyzing the hostnames of hundreds of organizations. You can also use custom wordlists tailored to your organization’s naming conventions.
+
+### Features
+- Discovers **different environments, regions, and associated software** based on the input hostnames.
+- **Faster than standard permutation scanning**, focusing on high-probability hostnames.
+- **Built-in wordlists** with the option to **use custom ones** tailored to your target.
+- A **daily validated list of resolvers** to ensure accuracy.
+- Result **verification using manually curated trusted resolvers**.
+- A **wildcard filter** takes care of false positives.
+
+## Inputs
+### Required
+- **subdomains:** a list of subdomains
+```
+test.foo.bar.baz.example.com
+dev.shop.example.com
+```
+
+### Optional
+- **hostnames-per-level**l: the number of hostnames to brute-force at each level - a higher value will lead to more comprehensive results but also require more time and/or machines (default: 200)
+- **level-2-wordlist**: a custom wordlist for level-2 enumeration `FUZZ.1.example.com`
+```
+prod
+test
+dev
+```
+    
+- **level-3-wordlist**" a custom wordlist for level-3 enumeration `FUZZ.2.1.example.com`    
+```
+api
+web
+ingress
+```
+    
+- **level-4-wordlist**: a custom wordlist for level-4 (and higher) enumeration `FUZZ.3.2.1.example.com`
+```
+auth
+admin
+private
+```
+    
+
+## Outputs
+- **subdomains**: a list of found subdomains
+```
+prod.baz.example.com
+api.dev.shop.example.com
+admin.foo.bar.baz.example.com
+```
+
+- **subdomain-details**: JSONLines records of subdomain discovery details.
+```json
+{"hostname": "prod.baz.example.com", "domain_name": "example.com", "data_source": "dns brute force", "context": "recursive brute force"}
+{"hostname": "api.dev.shop.example.com", "domain_name": "example.com", "data_source": "dns brute force", "context": "recursive brute force"}
+{"hostname": "admin.foo.bar.baz.example.com", "domain_name": "example.com", "data_source": "dns brute force", "context": "recursive brute force"}
+```
+
+## Changelog
+- v1.0
+    - Initial release

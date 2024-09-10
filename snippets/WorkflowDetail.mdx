@@ -1,0 +1,123 @@
+export const WorkflowPage = ({ 
+  id,
+  title, 
+  description, 
+  category,
+  createdOn, 
+  author, 
+  workflowUrl,
+}) => (
+  <div style={{
+    display: 'flex',
+    flexDirection: 'column',
+    minHeight: '100vh',
+    color: '#E0E0E0',
+    fontFamily: 'Arial, sans-serif',
+    marginTop: '1.5rem',
+  }}>
+    <header style={{
+      display: 'flex',
+      alignItems: 'center',
+      marginBottom: '30px',
+    }}>
+      <Icon name="aws" style={{ marginRight: '15px', color: '#FF9900', fontSize: '24px' }} />
+      <Icon name="key" style={{ marginRight: '15px', color: '#FFD700', fontSize: '24px' }} />
+      <Icon name="exclamation-triangle" style={{ color: '#FFA500', fontSize: '24px' }} />
+    </header>
+
+    <div style={{
+      display: 'flex',
+      flexDirection: 'row',
+      gap: '30px',
+    }}>
+      <div style={{
+        width: '30%',
+        paddingRight: '30px',
+        marginLeft: '9rem',
+        display: 'flex',
+        flexDirection: 'column',
+        height: '600px',
+      }}>
+        <div>
+          <div style={{
+            fontSize: '0.9rem',
+            fontWeight: 'bold',
+            marginBottom: '10px',
+            background: 'linear-gradient(133deg, #17ECFF 0.99%, #5139FF 98.19%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            display: 'inline-block',
+            textTransform: 'uppercase',
+          }}>
+            {category}
+          </div>
+          <h1 style={{
+            fontSize: '2.5rem',
+            fontWeight: '800',
+            marginBottom: '5px',
+            lineHeight: '1.2',
+          }}>
+            {title}
+          </h1>
+          <p style={{
+            color: '#A0A0A0',
+            fontSize: '0.9rem',
+            marginBottom: '20px',
+          }}>
+            Created on {createdOn} by {author}
+          </p>
+          <p style={{
+            color: '#A0A0A0',
+            fontSize: '1.1rem',
+            lineHeight: '1.5',
+          }}>
+            {description}
+          </p>
+        </div>
+        
+        <div style={{ 
+          border: '1px solid #00CCFF',
+          borderRadius: '10px',
+          padding: '20px',
+          backgroundColor: 'rgba(0, 204, 255, 0.1)',
+          marginTop: 'auto',
+        }}>
+          <h3 style={{ color: '#00CCFF', marginBottom: '15px', fontSize: '1.3rem' }}>Ready to Enhance Your {category}?</h3>
+          <p style={{ color: '#E0E0E0', marginBottom: '20px', lineHeight: '1.6' }}>
+            Copy this workflow to your account and start protecting your security posture today. Customize it to fit your specific needs and boost your security to the next level.
+          </p>
+          <button style={{
+            backgroundColor: '#00CCFF',
+            color: 'white',
+            border: 'none',
+            padding: '12px 24px',
+            borderRadius: '6px',
+            cursor: 'pointer',
+            fontWeight: 'bold',
+            fontSize: '1rem',
+            width: '100%',
+          }}>
+          <a href={`https://trickest.io/dashboard/library/workflow/${id}`}>Copy Workflow</a>
+          </button>
+        </div>
+      </div>
+      
+      <div style={{
+        width: '70%',
+      }}>
+      <Frame>
+        <iframe 
+          src={workflowUrl}
+          style={{
+            width: '100%',
+            height: '600px',
+            border: 'none',
+            borderRadius: '8px',
+          }}
+          scrolling='no'
+        />
+      </Frame>
+      </div>
+    </div>
+  </div>
+);

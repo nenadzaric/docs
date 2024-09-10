@@ -1,0 +1,122 @@
+---
+title: "scant3r"
+description: "Scant3r Scans all URLs with multiple HTTP Methods and Tries to look for bugs with basic exploits from Headers and URL Parameters By chaining waybackurls or gau with Scant3r you will have more time to look into functions and get Easy bugs on the way."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="1acad626-7044-49dd-bc1f-e4b216efca3a"
+  name="scant3r"
+  description="Scant3r Scans all URLs with multiple HTTP Methods and Tries to look for bugs with basic exploits from Headers and URL Parameters By chaining waybackurls or gau with Scant3r you will have more time to look into functions and get Easy bugs on the way."
+  category="Cloud Storage"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/scant3r:22efc27"
+  source_url="https://github.com/knassar702/scant3r"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/1acad626-7044-49dd-bc1f-e4b216efca3a.json"
+  inputs={ {
+  "api": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-a",
+    "visible": false,
+    "description": "Start Scant3r API",
+  },
+  "proxy": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-p",
+    "visible": false,
+    "description": "Forward all requests for proxy",
+  },
+  "header": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-H",
+    "visible": false,
+    "description": "Add custom header (ex: Cookies: test=1)",
+  },
+  "module": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-m",
+    "visible": true,
+    "description": "Run scant3r module (ex: example). Available lorsrf, ssrf,paths,xss,sqli,rce,finder,xss_param,ssti,injheaders,reflect",
+  },
+  "silent": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-n",
+    "visible": false,
+    "description": "Silent Mode",
+  },
+  "methods": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-y",
+    "visible": false,
+    "description": "Methods Allowed on your target",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-t",
+    "visible": false,
+    "description": "Set connection timeout (default: 10)",
+  },
+  "workers": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-w",
+    "visible": false,
+    "description": "Number of workers (default: 50)",
+  },
+  "url-list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Path to url list file for scan to be performed",
+  },
+  "external-host": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-x",
+    "visible": false,
+    "description": "Add your host (burpcall,etc..)",
+  },
+  "debugging-mode": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-d",
+    "visible": false,
+    "description": "Debugging mode (show requests/responses)",
+  },
+  "xss-hunter-host": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-b",
+    "visible": false,
+    "description": "Add your xsshunter host (or any xss host)",
+  },
+  "random-parameters": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-g",
+    "visible": false,
+    "description": "Generate Famouse Parameters if your url dosen't have parameters",
+  },
+  "random-user-agent": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-R",
+    "visible": false,
+    "description": "Use random user agent",
+  },
+}}
+/>

@@ -1,0 +1,38 @@
+---
+title: "bypass-403"
+description: "Go script for bypassing 403 forbidden"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="e05a8a0c-f306-4992-93c7-82e4b0ab9c7d"
+  name="bypass-403"
+  description="Go script for bypassing 403 forbidden"
+  category="Vulnerabilities"
+  author="trickest-mhmdiaa"
+  created_date="2022-02-05"
+  container="quay.io/trickest/bypass-403:5fa15a0"
+  source_url="https://github.com/daffainfo/bypass-403"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/e05a8a0c-f306-4992-93c7-82e4b0ab9c7d.json"
+  inputs={ {
+  "path": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-path",
+    "visible": true,
+    "description": "An endpoit. Example: admin",
+  },
+  "target-url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-url",
+    "visible": true,
+    "description": "Target URL.",
+  },
+}}
+/>

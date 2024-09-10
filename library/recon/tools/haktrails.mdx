@@ -1,0 +1,122 @@
+---
+title: "haktrails"
+description: "Golang client for querying SecurityTrails API data"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="5c73d3cd-c0b3-4276-abe5-5e3b85c461d8"
+  name="haktrails"
+  description="Golang client for querying SecurityTrails API data"
+  category="Recon"
+  author="trickest"
+  created_date="2021-10-26"
+  container="quay.io/trickest/haktrails:79fcb96"
+  source_url="https://github.com/hakluke/haktrails"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/5c73d3cd-c0b3-4276-abe5-5e3b85c461d8.json"
+  inputs={ {
+  "tags": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "tags",
+    "visible": false,
+    "description": "Tags mode",
+  },
+  "type": {
+    "type": "STRING",
+    "order": 3,
+    "command": "-type",
+    "visible": false,
+    "description": "DNS record type (only used for historical DNS queries): a,aaaa,mx,ns,soa,txt (default a)",
+  },
+  "whois": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "whois",
+    "visible": false,
+    "description": "Whois mode",
+  },
+  "api-key": {
+    "type": "STRING",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Api key",
+  },
+  "company": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "company",
+    "visible": false,
+    "description": "Company mode",
+  },
+  "details": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "details",
+    "visible": false,
+    "description": "Details mode",
+  },
+  "domains": {
+    "type": "FILE",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "Target domains list",
+  },
+  "threads": {
+    "type": "STRING",
+    "order": 3,
+    "command": "-t",
+    "visible": false,
+    "description": "Number of threads to utilise. Keep in mind that the API has rate limits. (default 2)",
+  },
+  "subdomains": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "subdomains",
+    "visible": true,
+    "description": "Subdomains mode",
+  },
+  "associatedips": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "associatedips",
+    "visible": false,
+    "description": "Associatedips mode",
+  },
+  "historicaldns": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "historicaldns",
+    "visible": false,
+    "description": "Historicaldns mode",
+  },
+  "subs-per-host": {
+    "type": "STRING",
+    "order": 3,
+    "command": "-b",
+    "visible": false,
+    "description": "Number of subdomains to send per request for the submission endpoint (default 100)",
+  },
+  "historicalwhois": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "historicalwhois",
+    "visible": false,
+    "description": "Historicalwhois mode",
+  },
+  "associateddomains": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "associateddomains",
+    "visible": false,
+    "description": "Associateddomains mode",
+  },
+}}
+/>

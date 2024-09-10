@@ -1,0 +1,38 @@
+---
+title: "gitjacker"
+description: "Gitjacker downloads git repositories and extracts their contents from sites where the .git directory has been mistakenly uploaded. It will still manage to recover a significant portion of a repository even where directory listings are disabled. More information at https://liam-galvin.co.uk/security/2020/09/26/leaking-git-repos-from-misconfigured-sites.html"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="f8d47ea3-59c7-41f9-a7da-f82f43e60e41"
+  name="gitjacker"
+  description="Gitjacker downloads git repositories and extracts their contents from sites where the .git directory has been mistakenly uploaded. It will still manage to recover a significant portion of a repository even where directory listings are disabled. More information at https://liam-galvin.co.uk/security/2020/09/26/leaking-git-repos-from-misconfigured-sites.html"
+  category="Misconfiguration"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/gitjacker:c39c704"
+  source_url="https://github.com/liamg/gitjacker"
+  license="Unknown"
+  output_command="--output-dir"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/f8d47ea3-59c7-41f9-a7da-f82f43e60e41.json"
+  inputs={ {
+  "url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Target URL.",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--verbose",
+    "visible": false,
+    "description": "Enable verbose logging.",
+  },
+}}
+/>

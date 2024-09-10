@@ -1,0 +1,157 @@
+---
+title: "gowitness-nmap"
+description: "gowitness is a website screenshot utility written in Golang, that uses Chrome Headless to generate screenshots of web interfaces using the command line, with a handy report viewer to process results. Both Linux and macOS is supported, with Windows support mostly working."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="53878121-a1eb-4921-b532-25c9180c2ccc"
+  name="gowitness-nmap"
+  description="gowitness is a website screenshot utility written in Golang, that uses Chrome Headless to generate screenshots of web interfaces using the command line, with a handy report viewer to process results. Both Linux and macOS is supported, with Windows support mostly working."
+  category="Discovery"
+  author="trickest-mhmdiaa"
+  created_date="2022-11-25"
+  container="quay.io/trickest/gowitness-nmap:f5e2aea"
+  source_url="https://github.com/sensepost/gowitness"
+  license="Unknown"
+  output_command="-P"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/53878121-a1eb-4921-b532-25c9180c2ccc.json"
+  inputs={ {
+  "pdf": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--pdf",
+    "visible": false,
+    "description": "save screenshots as pdf",
+  },
+  "open": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--open",
+    "visible": false,
+    "description": "only select open ports",
+  },
+  "port": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--port",
+    "visible": false,
+    "description": "ports filter",
+  },
+  "debug": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--debug",
+    "visible": false,
+    "description": "enable debug logging",
+  },
+  "delay": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--delay",
+    "visible": false,
+    "description": "Delay in seconds between navigation and screenshot.",
+  },
+  "proxy": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--proxy",
+    "visible": false,
+    "description": "HTTP/socks5 proxy to use. Use format proto://address:port.",
+  },
+  "header": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--header",
+    "visible": false,
+    "description": "Additional HTTP header to set.",
+  },
+  "no-http": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--no-http",
+    "visible": false,
+    "description": "Do not prefix http:// where missing.",
+  },
+  "service": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--service",
+    "visible": false,
+    "description": "map service name filter",
+  },
+  "threads": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-t",
+    "visible": false,
+    "description": "Threads used to run (default: 4).",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--timeout",
+    "visible": false,
+    "description": "Preflight check timeout (default: 10).",
+  },
+  "fullpage": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--fullpage",
+    "visible": false,
+    "description": "Take full page screenshots.",
+  },
+  "no-https": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--no-https",
+    "visible": false,
+    "description": "Do not prefix https:// where missing.",
+  },
+  "input-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-f",
+    "visible": true,
+    "description": "nmap xml file",
+  },
+  "user-agent": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--user-agent",
+    "visible": false,
+    "description": "User agent string to use (default: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36).",
+  },
+  "x-resolution": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-X",
+    "visible": false,
+    "description": "Screenshot resolution x (default: 1440).",
+  },
+  "y-resolution": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-Y",
+    "visible": false,
+    "description": "Screenshot resolution y (default: 900).",
+  },
+  "disable-logging": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--disable-logging",
+    "visible": false,
+    "description": "Disable all logging.",
+  },
+  "service-contains": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--service-contains",
+    "visible": false,
+    "description": "partial service name filter (aka: contains)",
+  },
+}}
+/>

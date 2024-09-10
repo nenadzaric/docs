@@ -1,0 +1,66 @@
+---
+title: "airixss"
+description: "Finding XSS during recon"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="1d4ebadc-22d1-4bd6-b593-e4a54a650c9e"
+  name="airixss"
+  description="Finding XSS during recon"
+  category="Scanners"
+  author="trickest-mhmdiaa"
+  created_date="2023-08-24"
+  container="quay.io/trickest/airixss:4c36e01"
+  source_url="https://github.com/ferreiraklet/airixss"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/1d4ebadc-22d1-4bd6-b593-e4a54a650c9e.json"
+  inputs={ {
+  "proxy": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--proxy",
+    "visible": false,
+    "description": "Send traffic to a proxy",
+  },
+  "headers": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--headers",
+    "visible": false,
+    "description": "Headers",
+  },
+  "payload": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-payload",
+    "visible": true,
+    "description": "Reflection Flag",
+  },
+  "targets": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Target URLs",
+  },
+  "only-poc": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--only-poc",
+    "visible": false,
+    "description": "Show only potentially vulnerable urls",
+  },
+  "concurrency": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-c",
+    "visible": false,
+    "description": "Set Concurrency, Default: 50",
+  },
+}}
+/>

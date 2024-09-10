@@ -1,0 +1,87 @@
+---
+title: "elasticsearch-index"
+description: "Manage attack surface data on Elasticsearch"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="4ba81e70-f033-4ad8-a4fd-e67a230a58a4"
+  name="elasticsearch-index"
+  description="Manage attack surface data on Elasticsearch"
+  category="Utilities"
+  author="trickest-mhmdiaa"
+  created_date="2023-02-08"
+  container="quay.io/trickest/elasticsearch_index:v1.1.0"
+  source_url="https://github.com/trickest/elasticsearch_index"
+  license="Unknown"
+  output_command="--output"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/4ba81e70-f033-4ad8-a4fd-e67a230a58a4.json"
+  inputs={ {
+  "dir": {
+    "type": "FOLDER",
+    "order": 0,
+    "command": "--dir",
+    "visible": true,
+    "description": "Directory with files to be indexed",
+  },
+  "file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--file",
+    "visible": true,
+    "description": "File to be indexed",
+  },
+  "field": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--field",
+    "visible": false,
+    "description": "Field name to use with list files",
+  },
+  "index": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--index",
+    "visible": true,
+    "description": "Name of the Elasticsearch index",
+  },
+  "query": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--query",
+    "visible": true,
+    "description": "Query to search for",
+  },
+  "config": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--config",
+    "visible": true,
+    "description": "Path to the config YAML file",
+  },
+  "file-type": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--file-type",
+    "visible": false,
+    "description": "Type of the file to be indexed",
+  },
+  "auto-index": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--auto-index",
+    "visible": false,
+    "description": "Automatically determine the index name based on the file name (e.g. subdomains.txt -> subdomains",
+  },
+  "elastic-id": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--elastic-id",
+    "visible": false,
+    "description": "Use Elasticsearch's automatically-generated IDs",
+  },
+}}
+/>

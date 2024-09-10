@@ -1,0 +1,6 @@
+# Mac Related
+.DS_Store
+# Exclude S3 directory
+**/s3/
+# Exclude .venv directory
+**/.venv/

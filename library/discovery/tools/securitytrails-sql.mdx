@@ -1,0 +1,38 @@
+---
+title: "securitytrails-sql"
+description: "Query Securitytrails API endpoint and embed the desired SQL queries."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="6bd4d12b-5969-4489-84b9-70df601cf796"
+  name="securitytrails-sql"
+  description="Query Securitytrails API endpoint and embed the desired SQL queries."
+  category="Discovery"
+  author="trickest"
+  created_date="2021-10-29"
+  container="quay.io/trickest/securitytrails-sql:v1"
+  source_url="https://github.com/trickest"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/6bd4d12b-5969-4489-84b9-70df601cf796.json"
+  inputs={ {
+  "query": {
+    "type": "STRING",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "Scroll query. MUST BE IN SINGLE QUOTES",
+  },
+  "api-key": {
+    "type": "STRING",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Specify Securitytrails API key",
+  },
+}}
+/>

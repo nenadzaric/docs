@@ -1,0 +1,143 @@
+---
+title: "jsluice"
+description: "Extract URLs, paths, secrets, and other interesting bits from JavaScript"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="d1d0a309-bd14-47c6-a01d-1f0bcc90e1ee"
+  name="jsluice"
+  description="Extract URLs, paths, secrets, and other interesting bits from JavaScript"
+  category="Discovery"
+  author="trickest-mhmdiaa"
+  created_date="2023-07-03"
+  container="quay.io/trickest/jsluice:7760081"
+  source_url="https://github.com/BishopFox/jsluice"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/d1d0a309-bd14-47c6-a01d-1f0bcc90e1ee.json"
+  inputs={ {
+  "mode": {
+    "type": "STRING",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "mode (Available modes: urls, secrets, tree, query, format)",
+  },
+  "warc": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--warc",
+    "visible": false,
+    "description": "Treat the input files as WARC (Web ARChive) files",
+  },
+  "query": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--query",
+    "visible": false,
+    "description": "Tree sitter query to run; e.g. '(string) @matches'",
+  },
+  "cookie": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--cookie",
+    "visible": false,
+    "description": "Cookies to use when making requests to the specified HTTP based arguments",
+  },
+  "format": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--format",
+    "visible": false,
+    "description": "Format source code in the output",
+  },
+  "header": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--header",
+    "visible": false,
+    "description": "Headers to use when making requests to the specified HTTP based arguments (can be specified multiple times)",
+  },
+  "unique": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--unique",
+    "visible": false,
+    "description": "Only output each URL once per input file",
+  },
+  "patterns": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--patterns",
+    "visible": false,
+    "description": "JSON file containing user-defined secret patterns to look for",
+  },
+  "input-file": {
+    "type": "FILE",
+    "order": 2,
+    "command": "",
+    "visible": true,
+    "description": "JavaScript file",
+  },
+  "raw-output": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--raw-output",
+    "visible": false,
+    "description": "Do not convert values to native types",
+  },
+  "concurrency": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--concurrency",
+    "visible": false,
+    "description": "Number of files to process concurrently (default 1)",
+  },
+  "placeholder": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--placeholder",
+    "visible": false,
+    "description": "Set the expression placeholder to a custom string (default 'EXPR')",
+  },
+  "input-folder": {
+    "type": "FOLDER",
+    "order": 2,
+    "command": "",
+    "visible": true,
+    "description": "Folder including JavaScript files",
+  },
+  "resolve-paths": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--resolve-paths",
+    "visible": false,
+    "description": "Resolve relative paths using the absolute URL provided",
+  },
+  "ignore-strings": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--ignore-strings",
+    "visible": false,
+    "description": "Ignore matches from string literals",
+  },
+  "include-source": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--include-source",
+    "visible": false,
+    "description": "Include the source code where the URL was found",
+  },
+  "include-filename": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--include-filename",
+    "visible": false,
+    "description": "Include the filename in the output",
+  },
+}}
+/>

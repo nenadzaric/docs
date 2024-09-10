@@ -1,0 +1,136 @@
+---
+title: "patator"
+description: "Patator is a multi-purpose brute-forcer, with a modular design and a flexible usage"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="7083a63d-67b5-4eb3-b72e-3febc682cace"
+  name="patator"
+  description="Patator is a multi-purpose brute-forcer, with a modular design and a flexible usage"
+  category="Scanners"
+  author="trickest-mhmdiaa"
+  created_date="2023-08-18"
+  container="quay.io/trickest/patator:4690822-patch-1"
+  source_url="https://github.com/lanjelot/patator"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/7083a63d-67b5-4eb3-b72e-3febc682cace.json"
+  inputs={ {
+  "yes": {
+    "type": "BOOLEAN",
+    "order": 6,
+    "command": "-y",
+    "visible": false,
+    "description": "automatically answer yes for all questions",
+  },
+  "stop": {
+    "type": "STRING",
+    "order": 6,
+    "command": "--stop",
+    "visible": false,
+    "description": "stop at offset N",
+  },
+  "debug": {
+    "type": "BOOLEAN",
+    "order": 6,
+    "command": "--debug",
+    "visible": false,
+    "description": "enable debug messages",
+  },
+  "hosts": {
+    "type": "FILE",
+    "order": 2,
+    "command": "",
+    "visible": true,
+    "description": "list of host:port targets",
+  },
+  "start": {
+    "type": "STRING",
+    "order": 6,
+    "command": "--start",
+    "visible": false,
+    "description": "start from offset N in the product of all payload sets",
+  },
+  "users": {
+    "type": "FILE",
+    "order": 3,
+    "command": "",
+    "visible": true,
+    "description": "usernames to test",
+  },
+  "groups": {
+    "type": "STRING",
+    "order": 6,
+    "command": "--groups",
+    "visible": false,
+    "description": "default is to iterate over the cartesian product of all payload sets, use this option to iterate over sets simultaneously instead aka pitchfork (default is '0,1..n')",
+  },
+  "module": {
+    "type": "STRING",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "module name",
+  },
+  "threads": {
+    "type": "STRING",
+    "order": 6,
+    "command": "--threads",
+    "visible": false,
+    "description": "number of threads (default is 10)",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 6,
+    "command": "--timeout",
+    "visible": false,
+    "description": "wait N seconds for a response before retrying payload (default is 0)",
+  },
+  "passwords": {
+    "type": "FILE",
+    "order": 4,
+    "command": "",
+    "visible": true,
+    "description": "passwords to test",
+  },
+  "rate-limit": {
+    "type": "STRING",
+    "order": 6,
+    "command": "--rate-limit",
+    "visible": false,
+    "description": "wait N seconds between each attempt (default is 0)",
+  },
+  "max-retries": {
+    "type": "STRING",
+    "order": 6,
+    "command": "--max-retries",
+    "visible": false,
+    "description": "skip payload after N retries (default is 4) (-1 for unlimited)",
+  },
+  "ignore-regex": {
+    "type": "STRING",
+    "order": 5,
+    "command": "",
+    "visible": true,
+    "description": "do not report responses that match this regex",
+  },
+  "auto-progress": {
+    "type": "STRING",
+    "order": 6,
+    "command": "--auto-progress",
+    "visible": false,
+    "description": "automatically display progress every N seconds",
+  },
+  "condition-delimiter": {
+    "type": "STRING",
+    "order": 6,
+    "command": "-X",
+    "visible": false,
+    "description": "delimiter string in conditions (default is ',')",
+  },
+}}
+/>

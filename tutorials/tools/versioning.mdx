@@ -1,0 +1,36 @@
+---
+title: 'Tool Versioning'
+description: 'Learn how to manage tool versions in Trickest.'
+sidebarTitle: 'Versioning'
+---
+
+Tools available in the [Library](../../user-guides/concepts/nodes/introduction#library) are versioned and build via Docker Containers. This allows you to use the same tool across different workflows and ensures that the tool version is consistent across all runs.
+
+<Tip>This tutorial is covering public Tool versioning. If you are using the [Enterprise Edition](https://trickest.com/pricing), you can also [integrate your own tools](private-tools) and manage their versions.</Tip>
+
+Trickest Team manages all public tools and their versions. When the tool is updated you can choose to use the latest version or stick to the previous one.
+
+<Info> Any version of the tool that is available in any given moment will work regardless if there is a version update.</Info>
+
+
+## Updating the tools
+
+There are two different updates to the tools:
+
+1. **Major Update**: This is a significant update to the tool. It can include new features, bug fixes, or changes to the tool's behavior. Because of complete change of the functioning of the tool and it's output, these nodes need to be re drag and dropped into editor and connections created again.
+
+When you open a workflow, in the [Right Sidebar](../..//user-guides/concepts/workflows/introduction#right-sidebar) you will see a section about `Outdated Notes` which will show you the nodes that need to be updated.
+
+When Major Updates are there, there will be a section called `Manual Update Required` in the `Outdated Nodes` section. You will need to manually update these nodes.
+
+<Frame>
+    <img src="/images/tutorials/nodes-manual-update.png" alt="Major Update Required" />
+</Frame>
+
+2. **Minor Update**: This is a minor update to the tool. It can include bug fixes, performance improvements, or other small changes. By clicking on the `Update` button, the tool will be updated to the latest version.
+
+When Minor Updates are there, there will be a section called `Quick Update` in the `Outdated Nodes` section. You will see the nodes that need to be updated.
+
+<Frame>
+    <img src="/images/tutorials/tutorials-quick-update.gif" alt="Quick Update" />
+</Frame>

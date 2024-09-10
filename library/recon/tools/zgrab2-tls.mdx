@@ -1,0 +1,283 @@
+---
+title: "zgrab2-tls"
+description: "Fast Go Application Scanner"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="1badcca6-fad5-4340-9d21-b94c390b6263"
+  name="zgrab2-tls"
+  description="Fast Go Application Scanner"
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2023-05-24"
+  container="quay.io/trickest/zgrab2-tls:911c86f-patch-2"
+  source_url="https://github.com/zmap/zgrab2"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/1badcca6-fad5-4340-9d21-b94c390b6263.json"
+  inputs={ {
+  "sct": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--sct",
+    "visible": false,
+    "description": "Request Signed Certificate Timestamps during TLS Handshake",
+  },
+  "port": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--port",
+    "visible": false,
+    "description": "Specify port to grab on (default: 80)",
+  },
+  "time": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--time",
+    "visible": false,
+    "description": "Explicit request time to use, instead of clock. YYYYMMDDhhmmss format.",
+  },
+  "debug": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--debug",
+    "visible": false,
+    "description": "Include debug fields in the output.",
+  },
+  "flush": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--flush",
+    "visible": false,
+    "description": "Flush after each line of output.",
+  },
+  "input": {
+    "type": "STRING",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Input target",
+  },
+  "no-sni": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--no-sni",
+    "visible": false,
+    "description": "Do not send domain name in TLS Handshake regardless of whether known",
+  },
+  "senders": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--senders",
+    "visible": false,
+    "description": "Number of send goroutines to use (default: 1000)",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--timeout",
+    "visible": false,
+    "description": "Set connection timeout (0 = no timeout) (default: 10s)",
+  },
+  "trigger": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--trigger",
+    "visible": false,
+    "description": "Invoke only on targets with specified tag",
+  },
+  "maxbytes": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--maxbytes",
+    "visible": false,
+    "description": "Maximum byte read limit per scan (0 = defaults)",
+  },
+  "no-ecdhe": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--no-ecdhe",
+    "visible": false,
+    "description": "Do not allow ECDHE handshakes",
+  },
+  "root-cas": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--root-cas",
+    "visible": false,
+    "description": "Set of certificates to use when verifying server certificates",
+  },
+  "gomaxprocs": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--gomaxprocs",
+    "visible": false,
+    "description": "Set GOMAXPROCS (default: 0)",
+  },
+  "heartbleed": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--heartbleed",
+    "visible": false,
+    "description": "Check if server is vulnerable to Heartbleed",
+  },
+  "input-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Input file",
+  },
+  "prometheus": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--prometheus",
+    "visible": false,
+    "description": "Address to use for Prometheus server (e.g. localhost:8080). If empty, Prometheus is disabled",
+  },
+  "dsa-enabled": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--dsa-enabled",
+    "visible": false,
+    "description": "Accept server DSA keys",
+  },
+  "max-version": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--max-version",
+    "visible": false,
+    "description": "The maximum SSL/TLS version that is acceptable. 0 means use the highest supported value.",
+  },
+  "min-version": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--min-version",
+    "visible": false,
+    "description": "The minimum SSL/TLS version that is acceptable. 0 means that SSLv3 is the minimum.",
+  },
+  "next-protos": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--next-protos",
+    "visible": false,
+    "description": "A list of supported application-level protocols",
+  },
+  "server-name": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--server-name",
+    "visible": false,
+    "description": "Server name used for certificate verification and (optionally) SNI",
+  },
+  "certificates": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--certificates",
+    "visible": false,
+    "description": "Set of certificates to present to the server",
+  },
+  "cipher-suite": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--cipher-suite",
+    "visible": false,
+    "description": "A comma-delimited list of hex cipher suites to advertise.",
+  },
+  "client-hello": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--client-hello",
+    "visible": false,
+    "description": "Set an explicit ClientHello (base64 encoded)",
+  },
+  "client-random": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--client-random",
+    "visible": false,
+    "description": "Set an explicit Client Random (base64 encoded)",
+  },
+  "session-ticket": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--session-ticket",
+    "visible": false,
+    "description": "Send support for TLS Session Tickets and output ticket if presented",
+  },
+  "certificate-map": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--certificate-map",
+    "visible": false,
+    "description": "A file mapping server names to certificates",
+  },
+  "extended-random": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--extended-random",
+    "visible": false,
+    "description": "Send TLS Extended Random Extension",
+  },
+  "keep-client-logs": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--keep-client-logs",
+    "visible": false,
+    "description": "Include the client-side logs in the TLS handshake",
+  },
+  "curve-preferences": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--curve-preferences",
+    "visible": false,
+    "description": "A list of elliptic curves used in an ECDHE handshake, in order of preference.",
+  },
+  "heartbeat-enabled": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--heartbeat-enabled",
+    "visible": false,
+    "description": "If set, include the heartbeat extension",
+  },
+  "read-limit-per-host": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--read-limit-per-host",
+    "visible": false,
+    "description": "Maximum total kilobytes to read for a single host (default 96kb) (default: 96)",
+  },
+  "connections-per-host": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--connections-per-host",
+    "visible": false,
+    "description": "Number of times to connect to each host (results in more output) (default: 1)",
+  },
+  "signature-algorithms": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--signature-algorithms",
+    "visible": false,
+    "description": "Signature and hash algorithms that are acceptable",
+  },
+  "extended-master-secret": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--extended-master-secret",
+    "visible": false,
+    "description": "Offer RFC 7627 Extended Master Secret extension",
+  },
+  "verify-server-certificate": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--verify-server-certificate",
+    "visible": false,
+    "description": "ail if the server certificate does not match the server-name, or does not chain to a trusted root.",
+  },
+}}
+/>

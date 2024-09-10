@@ -1,0 +1,73 @@
+---
+title: "find-gh-poc"
+description: "Find CVE PoCs on GitHub"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="6dc1d58b-b31f-48f9-9f31-459ec499c1a2"
+  name="find-gh-poc"
+  description="Find CVE PoCs on GitHub"
+  category="Vulnerabilities"
+  author="trickest-mhmdiaa"
+  created_date="2022-11-09"
+  container="quay.io/trickest/find-gh-poc:v1.1"
+  source_url="https://github.com/trickest/find-gh-poc"
+  license="Unknown"
+  output_command="-o"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/6dc1d58b-b31f-48f9-9f31-459ec499c1a2.json"
+  inputs={ {
+  "delay": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-delay",
+    "visible": false,
+    "description": "Time delay after every GraphQL request [ms]",
+  },
+  "silent": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-silent",
+    "visible": false,
+    "description": "Don't print JSON output to stdout",
+  },
+  "query-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-query-file",
+    "visible": true,
+    "description": "File to read GraphQL search query from",
+  },
+  "token-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-token-file",
+    "visible": true,
+    "description": "File to read Github token from",
+  },
+  "adjust-delay": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-adjust-delay",
+    "visible": false,
+    "description": "Automatically adjust time delay between requests",
+  },
+  "query-string": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-query-string",
+    "visible": false,
+    "description": "GraphQL search query",
+  },
+  "token-string": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-token-string",
+    "visible": false,
+    "description": "Github token",
+  },
+}}
+/>

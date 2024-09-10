@@ -1,0 +1,38 @@
+---
+title: "whois-verify-targets"
+description: "Verify target organization from whois results and get ip-ranges for further scanning."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="1ef40272-f31b-4c51-9ec7-41dd7635167b"
+  name="whois-verify-targets"
+  description="Verify target organization from whois results and get ip-ranges for further scanning."
+  category="Utilities"
+  author="stokfredrik"
+  created_date="2021-11-05"
+  container="quay.io/trickest/whois-verify-targets:v1.0.0"
+  source_url="http://github.com/trickest"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/1ef40272-f31b-4c51-9ec7-41dd7635167b.json"
+  inputs={ {
+  "target-org": {
+    "type": "STRING",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Organization that needs to be verified",
+  },
+  "whois-file": {
+    "type": "FILE",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "Whois file with all the data",
+  },
+}}
+/>

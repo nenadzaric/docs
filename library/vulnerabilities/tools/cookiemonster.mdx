@@ -1,0 +1,66 @@
+---
+title: "cookiemonster"
+description: "CookieMonster helps you detect and abuse vulnerable implementations of stateless sessions."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="1c4f1671-a8a3-4873-bff6-c572d476fcf9"
+  name="cookiemonster"
+  description="CookieMonster helps you detect and abuse vulnerable implementations of stateless sessions."
+  category="Vulnerabilities"
+  author="trickest-mhmdiaa"
+  created_date="2023-11-30"
+  container="quay.io/trickest/cookiemonster:7e8826e"
+  source_url="https://github.com/iangcarroll/cookiemonster"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/1c4f1671-a8a3-4873-bff6-c572d476fcf9.json"
+  inputs={ {
+  "url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-url",
+    "visible": true,
+    "description": "An HTTP URL to retrieve cookies from instead of providing a cookie",
+  },
+  "cookie": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-cookie",
+    "visible": true,
+    "description": "The cookie to attempt to decode and unsign",
+  },
+  "resign": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-resign",
+    "visible": false,
+    "description": "Unencoded data to resign the cookie with; presently only supported by Django",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-verbose",
+    "visible": false,
+    "description": "Enables additional output on how the cookie is decoded.",
+  },
+  "wordlist": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-wordlist",
+    "visible": false,
+    "description": "The path to load a base64-encoded wordlist from; the default is the builtin list.",
+  },
+  "concurrency": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-concurrency",
+    "visible": false,
+    "description": "How many attempts should run concurrently; the default is 100",
+  },
+}}
+/>

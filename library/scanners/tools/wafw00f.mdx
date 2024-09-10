@@ -1,0 +1,101 @@
+---
+title: "wafw00f"
+description: "WAFW00F allows one to identify and fingerprint Web Application Firewall (WAF) products protecting a website."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="0c7b9500-08fe-4b54-9a51-ded40850c970"
+  name="wafw00f"
+  description="WAFW00F allows one to identify and fingerprint Web Application Firewall (WAF) products protecting a website."
+  category="Scanners"
+  author="trickest"
+  created_date="2021-09-07"
+  container="quay.io/trickest/wafw00f:ae6a67f"
+  source_url="https://github.com/EnableSecurity/wafw00f"
+  license="Unknown"
+  output_command="--output"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/0c7b9500-08fe-4b54-9a51-ded40850c970.json"
+  inputs={ {
+  "url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Specify target url(s) url1 [url2 [url3 ... ]]",
+  },
+  "list": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--list",
+    "visible": false,
+    "description": "List all WAFs that WAFW00F is able to detect",
+  },
+  "test": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--test",
+    "visible": false,
+    "description": "Test for one specific WAF",
+  },
+  "proxy": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--proxy",
+    "visible": false,
+    "description": "Use an HTTP proxy to perform requests, examples: http://hostname:8080, socks5://hostname:1080, http://user:pass@hostname:8080",
+  },
+  "format": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--format",
+    "visible": false,
+    "description": "Force output format to csv, json or text.",
+  },
+  "findall": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--findall",
+    "visible": false,
+    "description": "Find all WAFs which match the signatures, do not stop testing on the first one",
+  },
+  "headers": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--headers",
+    "visible": false,
+    "description": "Pass custom headers via a text file to overwrite the default header set.",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--verbose",
+    "visible": false,
+    "description": "Enable verbosity",
+  },
+  "no-colors": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--no-colors",
+    "visible": false,
+    "description": "Disable ANSI colors in output.",
+  },
+  "input-file": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--input-file",
+    "visible": true,
+    "description": "Read targets from a file. Input format can be csv, json or text. For csv and json, a `url` column name or element is required.",
+  },
+  "noredirect": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--noredirect",
+    "visible": false,
+    "description": "Do not follow redirections given by 3xx responses",
+  },
+}}
+/>

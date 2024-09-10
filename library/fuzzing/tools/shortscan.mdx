@@ -1,0 +1,129 @@
+---
+title: "shortscan"
+description: "An IIS short filename enumeration tool"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="a998d942-d9bf-42a1-8c88-fd39905c6500"
+  name="shortscan"
+  description="An IIS short filename enumeration tool"
+  category="Fuzzing"
+  author="trickest-mhmdiaa"
+  created_date="2024-07-25"
+  container="quay.io/trickest/shortscan:v0.9.0-patch-3"
+  source_url="https://github.com/bitquark/shortscan"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/a998d942-d9bf-42a1-8c88-fd39905c6500.json"
+  inputs={ {
+  "urls": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "urls to scan",
+  },
+  "header": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--header",
+    "visible": false,
+    "description": "header to send with each request (use multiple times for multiple headers)",
+  },
+  "output": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--output",
+    "visible": false,
+    "description": "output format (human = human readable; json = JSON) [default: human]",
+  },
+  "is-vuln": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--isvuln",
+    "visible": false,
+    "description": "bail after determining whether the service is vulnerable [default: false]",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--timeout",
+    "visible": false,
+    "description": "per-request timeout in seconds [default: 10]",
+  },
+  "full-url": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--fullurl",
+    "visible": false,
+    "description": "display the full URL for confirmed files rather than just the filename [default: false]",
+  },
+  "patience": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--patience",
+    "visible": false,
+    "description": "patience level when determining vulnerability (0 = patient; 1 = very patient) [default: 0]",
+  },
+  "wordlist": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--wordlist",
+    "visible": false,
+    "description": "combined wordlist + rainbow table generated with shortutil",
+  },
+  "stabilise": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--stabilise",
+    "visible": false,
+    "description": "attempt to get coherent autocomplete results from an unstable server (generates more requests) [default: false]",
+  },
+  "verbosity": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--verbosity",
+    "visible": false,
+    "description": "how much noise to make (0 = quiet; 1 = debug; 2 = trace) [default: 0]",
+  },
+  "characters": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--characters",
+    "visible": false,
+    "description": "filename characters to enumerate [default: JFKGOTMYVHSPCANDXLRWEBQUIZ8549176320-_()&'!#$%@^{}~]",
+  },
+  "no-recurse": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--norecurse",
+    "visible": false,
+    "description": "don't detect and recurse into subdirectories (disabled when autocomplete is disabled) [default: false]",
+  },
+  "concurrency": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--concurrency",
+    "visible": false,
+    "description": "number of requests to make at once [default: 20]",
+  },
+  "header-file": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--header-file",
+    "visible": false,
+    "description": "headers to send with each request (one per line)",
+  },
+  "autocomplete": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--autocomplete",
+    "visible": false,
+    "description": "autocomplete detection mode (auto = autoselect; method = HTTP method magic; status = HTTP status; distance = Levenshtein distance; none = disable) [default: auto]",
+  },
+}}
+/>

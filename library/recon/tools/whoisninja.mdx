@@ -1,0 +1,108 @@
+---
+title: "whoisninja"
+description: "Reverse WHOIS lookup script"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="6c5725cb-ac7d-4d13-a6b8-ea3f8e81cd59"
+  name="whoisninja"
+  description="Reverse WHOIS lookup script"
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2023-09-25"
+  container="quay.io/trickest/whoisninja:ecebe8f"
+  source_url="https://github.com/RikunjSindhwad/Task-Ninja-Workflows"
+  license="Unknown"
+  output_command="--output"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/6c5725cb-ac7d-4d13-a6b8-ea3f8e81cd59.json"
+  inputs={ {
+  "org": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--org",
+    "visible": true,
+    "description": "Single organization (user * for wildcard)",
+  },
+  "email": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--email",
+    "visible": false,
+    "description": "Single email address (user * for wildcard)",
+  },
+  "phone": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--phone",
+    "visible": false,
+    "description": "Single phone number (user * for wildcard)",
+  },
+  "sleep": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--sleep",
+    "visible": false,
+    "description": "Sleep time between each request (default 2 seconds)",
+  },
+  "domain": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--domain",
+    "visible": false,
+    "description": "Single domain name (user * for wildcard)",
+  },
+  "api_key": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--api_key",
+    "visible": true,
+    "description": "Your Reverse WHOIS API key (whoisxmlapi.com)",
+  },
+  "historic": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--historic",
+    "visible": false,
+    "description": "Get Historical domains too (default false)",
+  },
+  "maxretry": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--maxretry",
+    "visible": false,
+    "description": "Max retry on failure (default=5)",
+  },
+  "org_list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--org_list",
+    "visible": false,
+    "description": "File containing a list of organizations",
+  },
+  "email_list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--email_list",
+    "visible": false,
+    "description": "--email_list EMAIL_LIST",
+  },
+  "phone_list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--phone_list",
+    "visible": false,
+    "description": "--phone_list PHONE_LIST",
+  },
+  "domain_list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--domain_list",
+    "visible": true,
+    "description": "--domain_list DOMAIN_LIST",
+  },
+}}
+/>

@@ -1,0 +1,52 @@
+---
+title: "dnsgen"
+description: "This tool generates a combination of domain names from the provided input. Combinations are created based on wordlist. Custom words are extracted per execution."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="4152fcdc-b5b0-4d11-81aa-fa82d4270a7c"
+  name="dnsgen"
+  description="This tool generates a combination of domain names from the provided input. Combinations are created based on wordlist. Custom words are extracted per execution."
+  category="Utilities"
+  author="trickest"
+  created_date="2021-09-07"
+  container="quay.io/trickest/dnsgen:1.0.4"
+  source_url="https://github.com/ProjectAnte/dnsgen"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/4152fcdc-b5b0-4d11-81aa-fa82d4270a7c.json"
+  inputs={ {
+  "domains": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "List of domains",
+  },
+  "word-length": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--wordlen",
+    "visible": false,
+    "description": "Min length of custom words extracted from domains.  [1<=x<=100]",
+  },
+  "custom-wordlist": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--wordlist",
+    "visible": true,
+    "description": "Custom wordlist.",
+  },
+  "fast-generation": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--fast",
+    "visible": false,
+    "description": "Fast generation",
+  },
+}}
+/>

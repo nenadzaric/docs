@@ -1,0 +1,52 @@
+---
+title: "qsreplace"
+description: "Accept URLs on stdin, replace all query string values with a user-supplied value"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="c8b6c00c-ea04-47bd-9400-ebd012286220"
+  name="qsreplace"
+  description="Accept URLs on stdin, replace all query string values with a user-supplied value"
+  category="Utilities"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/qsreplace:0b053d2"
+  source_url="https://github.com/tomnomnom/qsreplace"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/c8b6c00c-ea04-47bd-9400-ebd012286220.json"
+  inputs={ {
+  "url-list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "",
+  },
+  "replace-query-param": {
+    "type": "STRING",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "User supplied value to be replaced with",
+  },
+  "append-to-query-param": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-a",
+    "visible": false,
+    "description": "Append to query string values",
+  },
+  "each-param-combination": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-a",
+    "visible": false,
+    "description": "Only output each parameter combination",
+  },
+}}
+/>

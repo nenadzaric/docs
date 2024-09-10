@@ -1,0 +1,52 @@
+---
+title: Scheduling
+description: ''
+---
+
+On this page you will learn how to schedule workflows for execution.
+
+## Scheduling Workflows
+
+Scheduling workflows is a way to automate the execution of workflows at a specific time or interval. You can schedule workflows to run at a specific time, or at regular intervals.
+
+
+The schedule is available on the top bar inside the Workflow Editor.
+
+<Frame>
+    <img src="/images/schedule-workflow.png"/>
+</Frame>
+
+
+## Scheduling Options
+
+When you click on the `Schedule` button, you will see the scheduling options.
+
+<Frame>
+    <img width='400px' height='150px' src="/images/schedule-modal.png"></img>
+</Frame>
+
+You will be able to:
+
+- **Set the Fleet** - Choose the fleet on which the workflow will be executed.
+- **Chose number of machines** - Choose the number of machines that will be used for the execution.
+- **Set the `Start Date`** - Choose the date when the workflow will start executing.
+- **Set the Interval** - Choose the interval at which the workflow will be executed (minutes, hours, days)
+
+<Tip>If you set the interval to `0`, the workflow will be executed as soon as it finishes and start on the specified `Start Date`.</Tip>
+
+## Schedule Constraints
+
+When scheduling workflows, you need to be aware of the following constraints:
+
+- **Workflow Execution Time** - The workflow execution time should be less than the interval you set. If the workflow execution time is longer than the interval, the time will be calculated based on the last execution completition.
+- **Machine Availability** - Make sure that the number of machines you set is available at the time of execution. If the machines are not available, the workflow will be queued until the machines are available.
+- **Workflow Editing** - You will not be able to edit the workflow while it is scheduled. If you want to edit the workflow, you need to unschedule it first.
+
+## Unscheduling Workflows
+
+If you want to unschedule the workflow, you can do it by clicking the `Cancel Scheduler` button on the top bar.
+
+<Frame>
+    <img src="/images/cancel-schedule.png"/>
+</Frame>
+

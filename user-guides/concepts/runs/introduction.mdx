@@ -1,0 +1,100 @@
+---
+title: Introduction
+description: ''
+---
+
+In this section, we are going to cover what are `Runs` and how we can bring life to our [Workflows](../workflows/introduction) by executing them.
+
+## Run Mode
+
+When you open the [Workflow Editor](/concepts/workflows/introduction#builder-mode) you are in the `Builder Mode`. This mode is used to create and design workflows.
+
+The other tab, called `Run Mode` is used to monitor executions and look at the outputs of the [Nodes](/concepts/nodes/introduction) in the workflow.
+
+## Run Statuses
+
+When you execute a workflow, you will be switched to the `Run Mode` where you can see the status of the run.
+
+Possilble statuses are:
+
+- **Pending**: Run is waiting to be executed.
+- **Running**: Run is currently running.
+- **Succeeded**: Run has been successfully executed.
+- **Stopping**: Run is in the process of stopping.
+- **Stopped**: Run has been stopped in the execution.
+- **Failed**: Run has failed to execute.
+
+## Running Workflows
+
+To run a workflow, you need to click on the `Execute` Button in the middle of the canvas.
+
+<Frame title="Commands for workflow execution in Builder Tab"> 
+  <img src="/images/execute-button.png" alt="Execute Button" width="300px"/>
+</Frame>
+
+## Running Example Workflow
+
+Let's run a workflow that we created in the [previous section](../workflows/introduction).
+
+<Frame title="Example Workflow"> 
+  <img src="/images/example-workflow.png" alt="Example Workflow"/>
+</Frame>
+
+If you click on the `Execute` button, you will see new window opens up offering different options to run the workflow.
+
+<Frame title="Execution Modal"> 
+  <img src="/images/execute-modal.gif" alt="Execute Modal"/>
+</Frame>
+
+This modal shows on how many machines you can run your workflow. Additionally, you can run your workflows on [Trickest Managed](machines#managed-machines) or [Self-Hosted](machines#self-hosted-machines) machines.
+
+For now, let's run this workflow on 1 Managed Machine.
+
+## Your First Run
+
+When you click on the `Execute` button, new Run will be created and you will be switched to `Run Mode` and you can follow the execution of the workflow.
+
+<Frame title="Execution Modal"> 
+  <img src="/images/executed-workflow.png" alt="First Run"/>
+</Frame>
+
+
+## Node Live Results (Stdout)
+
+While node (either tool or a script) is running, you can see the live output **(stdout)** of the node in the `Run Mode`. This is useful for debugging and monitoring the progress of the workflow.
+
+<Frame title="Node Live Results"> 
+  <img src="/images/node-stdout.gif" alt="Node Live Results"/>
+</Frame>
+
+## Node Live Results (Stderr)
+
+While node (either tool or a script) is running, you can see the live log of the tool execution along with other useful information of the node in the `Run Mode`.
+
+<Frame title="Node Live Results"> 
+  <img src="/images/node-stderr.gif" alt="Node Live Results"/>
+</Frame>
+
+## Node Statuses
+
+Nodes can have different statuses during the execution. Here are the possible statuses:
+
+- **Pending**: Node is waiting to be executed, either because of the dependencies or the machines are just scaling up.
+- **Running**: Node is currently running.
+- **Succeeded**: Node has beeng successfully executed.
+- **Failed**: Node has failed to execute.
+- **Stopping**: Node is in the process of stopping.
+- **Stopped**: Node has been stopped in the execution.
+
+## Node outputs
+
+When the node is executed, you can see the output of the node in the `Run Mode`. This tab will be automatically opened when the node is in `Completed` status.
+
+<Frame title="Node Outputs"> 
+  <img src="/images/node-outputs.gif" alt="Node Outputs"/>
+</Frame>
+
+<Tip> Check out Tutorial on [downloading the results.](../../../tutorials/downloading-results)</Tip>
+
+
+Just like you would execute tools or scripts with custom output path, Trickest handles all of that for you. The data is stored and you can access it by clicking on each node in the workflow.

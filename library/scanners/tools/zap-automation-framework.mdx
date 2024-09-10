@@ -1,0 +1,171 @@
+---
+title: "zap-automation-framework"
+description: "Run ZAP via a single YAML file"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="4c7b9d9b-d092-4c13-a6f4-42ea538cc9fb"
+  name="zap-automation-framework"
+  description="Run ZAP via a single YAML file"
+  category="Scanners"
+  author="trickest-mhmdiaa"
+  created_date="2023-09-11"
+  container="quay.io/trickest/zap-automation-framework:v2.15.0-patch-3"
+  source_url="https://github.com/zaproxy/zaproxy"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/4c7b9d9b-d092-4c13-a6f4-42ea538cc9fb.json"
+  inputs={ {
+  "host": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-host",
+    "visible": false,
+    "description": "Overrides the host of the main proxy, specified in the configuration file",
+  },
+  "port": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-port",
+    "visible": false,
+    "description": "Overrides the port of the main proxy, specified in the configuration file",
+  },
+  "notel": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-notel",
+    "visible": false,
+    "description": "Turns off telemetry calls",
+  },
+  "config": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-config",
+    "visible": false,
+    "description": "Overrides the specified key=value pair in the configuration file",
+  },
+  "lowmem": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-lowmem",
+    "visible": false,
+    "description": "Use the database instead of memory as much as possible - this is still experimental",
+  },
+  "script": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-script",
+    "visible": false,
+    "description": "Run the specified script from commandline",
+  },
+  "silent": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-silent",
+    "visible": false,
+    "description": "Ensures ZAP does not make any unsolicited requests, including check for updates",
+  },
+  "autorun": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-autorun",
+    "visible": true,
+    "description": "Run the automation jobs specified in the file",
+  },
+  "session": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-session",
+    "visible": false,
+    "description": "Opens the given session after starting ZAP",
+  },
+  "certload": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-certload",
+    "visible": false,
+    "description": "Loads the Root CA certificate from the specified file name",
+  },
+  "nostdout": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-nostdout",
+    "visible": false,
+    "description": "Disables the default logging through standard output",
+  },
+  "quickurl": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-quickurl",
+    "visible": true,
+    "description": "The URL to attack, e.g. http://www.example.com",
+  },
+  "configfile": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-configfile",
+    "visible": false,
+    "description": "Overrides the key=value pairs with those in the specified properties file",
+  },
+  "graphqlurl": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-graphqlurl",
+    "visible": false,
+    "description": "Imports a GraphQL Schema from a URL",
+  },
+  "openapiurl": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-openapiurl",
+    "visible": false,
+    "description": "Imports an OpenAPI definition from the specified URL",
+  },
+  "graphqlfile": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-graphqlfile",
+    "visible": false,
+    "description": "Imports a GraphQL Schema from a File",
+  },
+  "openapifile": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-openapifile",
+    "visible": false,
+    "description": "Imports an OpenAPI definition from the specified file name",
+  },
+  "graphqlendurl": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-graphqlendurl",
+    "visible": false,
+    "description": "Sets the Endpoint URL",
+  },
+  "quickprogress": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-quickprogress",
+    "visible": false,
+    "description": "Display progress bars while scanning",
+  },
+  "experimentaldb": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-experimentaldb",
+    "visible": false,
+    "description": "Use the experimental generic database code, which is not surprisingly also still experimental",
+  },
+  "openapitargeturl": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-openapitargeturl",
+    "visible": false,
+    "description": "The Target URL, to override the server URL present in the OpenAPI definition. Refer to the help for supported format.",
+  },
+}}
+/>

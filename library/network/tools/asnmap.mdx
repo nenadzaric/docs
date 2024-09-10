@@ -1,0 +1,129 @@
+---
+title: "asnmap"
+description: "Go CLI for quickly mapping organization network ranges using ASN information."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="0f6fe2f2-1ed8-4402-84d0-e41ab9c91054"
+  name="asnmap"
+  description="Go CLI for quickly mapping organization network ranges using ASN information."
+  category="Network"
+  author="trickest-mhmdiaa"
+  created_date="2023-03-24"
+  container="quay.io/trickest/asnmap:v1.0.6"
+  source_url="https://github.com/projectdiscovery/asnmap"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/0f6fe2f2-1ed8-4402-84d0-e41ab9c91054.json"
+  inputs={ {
+  "ip": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-ip",
+    "visible": true,
+    "description": "target ip to lookup, example: 100.19.12.21",
+  },
+  "v6": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-v6",
+    "visible": false,
+    "description": "display ipv6 cidr ranges in cli output",
+  },
+  "asn": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-asn",
+    "visible": true,
+    "description": "target asn to lookup, example: AS5650",
+  },
+  "csv": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-csv",
+    "visible": false,
+    "description": "display csv format output",
+  },
+  "org": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-org",
+    "visible": true,
+    "description": "target organization to lookup, example: GOOGLE",
+  },
+  "file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-file",
+    "visible": false,
+    "description": "targets to lookup from file",
+  },
+  "json": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-json",
+    "visible": false,
+    "description": "display json format output",
+  },
+  "proxy": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-proxy",
+    "visible": false,
+    "description": "list of proxy to use (comma separated)",
+  },
+  "config": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-config",
+    "visible": false,
+    "description": "asnmap configuration file",
+  },
+  "domain": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-domain",
+    "visible": true,
+    "description": "target domain to lookup, example: google.com",
+  },
+  "silent": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-silent",
+    "visible": false,
+    "description": "display silent output",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-verbose",
+    "visible": false,
+    "description": "display verbose output",
+  },
+  "resolvers": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-resolvers",
+    "visible": false,
+    "description": "list of resolvers to use",
+  },
+  "proxy-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-proxy",
+    "visible": false,
+    "description": "list of proxy to use",
+  },
+  "disable-update-check": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-disable-update-check",
+    "visible": false,
+    "description": "disable automatic asnmap update check",
+  },
+}}
+/>

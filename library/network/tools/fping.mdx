@@ -1,0 +1,38 @@
+---
+title: "fping"
+description: "fping is a program like ping which uses the Internet Control Message Protocol (ICMP) echo request to determine if a target host is responding.  fping differs from ping in that you can specify any number of targets on the command line, or specify a file containing the lists of targets to ping."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="9f2295c1-1f48-4709-a560-9d56c28f659b"
+  name="fping"
+  description="fping is a program like ping which uses the Internet Control Message Protocol (ICMP) echo request to determine if a target host is responding.  fping differs from ping in that you can specify any number of targets on the command line, or specify a file containing the lists of targets to ping."
+  category="Network"
+  author="trickest"
+  created_date="2021-11-08"
+  container="quay.io/trickest/fping:4.2-1"
+  source_url="https://github.com/schweikert/fping"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/9f2295c1-1f48-4709-a560-9d56c28f659b.json"
+  inputs={ {
+  "generate-list": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-g",
+    "visible": true,
+    "description": "Generate a target list from a supplied IP netmask, or a starting and ending IP.  Specify the netmask or start/end in the targets portion of the command line. If a network with netmask is given, the network and broadcast addresses will be excluded. ex. To ping the network 192.168.1.0/24, the specified command line could look like either: fping -g 192.168.1.0/24 or fping -g 192.168.1.1 192.168.1.254",
+  },
+  "generate-from-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-f",
+    "visible": true,
+    "description": "Read list of targets from a file.  This option can only be used by the root user.",
+  },
+}}
+/>

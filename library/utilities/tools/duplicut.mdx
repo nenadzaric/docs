@@ -1,0 +1,73 @@
+---
+title: "duplicut"
+description: "Remove duplicates from a wordlist without sorting it to maintain order of probability."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="b791a60b-4552-40b3-a490-dcec59b52631"
+  name="duplicut"
+  description="Remove duplicates from a wordlist without sorting it to maintain order of probability."
+  category="Utilities"
+  author="trickest-mhmdiaa"
+  created_date="2022-01-21"
+  container="quay.io/trickest/duplicut:f80390d"
+  source_url="https://github.com/nil0x42/duplicut"
+  license="Unknown"
+  output_command="-o"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/b791a60b-4552-40b3-a490-dcec59b52631.json"
+  inputs={ {
+  "input": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "File to deduplicate",
+  },
+  "threads": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--threads",
+    "visible": false,
+    "description": "Max threads to use (default max)",
+  },
+  "lowercase": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--lowercase",
+    "visible": false,
+    "description": "Convert wordlist to lowercase",
+  },
+  "printable": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--printable",
+    "visible": false,
+    "description": "Filter ascii printable lines",
+  },
+  "uppercase": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--uppercase",
+    "visible": false,
+    "description": "Convert wordlist to uppercase",
+  },
+  "memory-limit": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--memlimit",
+    "visible": false,
+    "description": "Limit max used memory (default max)",
+  },
+  "maximum-line-size": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--line-max-size",
+    "visible": false,
+    "description": "Max line size (default 64)",
+  },
+}}
+/>

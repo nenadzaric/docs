@@ -1,0 +1,101 @@
+---
+title: "unfurl"
+description: "Pull out bits of URLs provided on stdin"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="bfae4c28-6dac-4781-bc15-53f715503515"
+  name="unfurl"
+  description="Pull out bits of URLs provided on stdin"
+  category="Utilities"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/unfurl:v0.4.3"
+  source_url="https://github.com/tomnomnom/unfurl"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/bfae4c28-6dac-4781-bc15-53f715503515.json"
+  inputs={ {
+  "json": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "json",
+    "visible": false,
+    "description": "JSON encoded url/format objects",
+  },
+  "keys": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "keys",
+    "visible": false,
+    "description": "Keys from the query string (one per line)",
+  },
+  "urls": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "List of URLs",
+  },
+  "paths": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "paths",
+    "visible": false,
+    "description": "The request path (e.g. /users)",
+  },
+  "apexes": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "apexes",
+    "visible": false,
+    "description": "The apex domain (e.g. example.com from sub.example.com)",
+  },
+  "format": {
+    "type": "STRING",
+    "order": 2,
+    "command": "format",
+    "visible": false,
+    "description": "Specify a custom format",
+  },
+  "unique": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--unique",
+    "visible": false,
+    "description": "Only output unique values",
+  },
+  "values": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "values",
+    "visible": false,
+    "description": "Values from the query string (one per line)",
+  },
+  "domains": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "domains",
+    "visible": false,
+    "description": "The hostname (e.g. sub.example.com)",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--verbose",
+    "visible": false,
+    "description": "Verbose mode (output URL parse errors)",
+  },
+  "keypairs": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "keypairs",
+    "visible": false,
+    "description": "Key=value pairs from the query string (one per line)",
+  },
+}}
+/>

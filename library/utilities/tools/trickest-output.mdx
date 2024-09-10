@@ -1,0 +1,115 @@
+---
+title: "trickest-output"
+description: "Download the output of a Trickest workflow"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="52e24a8a-28a6-45ab-a01b-af63743d8422"
+  name="trickest-output"
+  description="Download the output of a Trickest workflow"
+  category="Utilities"
+  author="trickest-mhmdiaa"
+  created_date="2023-11-09"
+  container="quay.io/trickest/trickest-output:v1.7.2"
+  source_url="https://github.com/trickest/trickest-cli"
+  license="Unknown"
+  output_command="--output-dir"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/52e24a8a-28a6-45ab-a01b-af63743d8422.json"
+  inputs={ {
+  "all": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--all",
+    "visible": false,
+    "description": "Download output data for all runs",
+  },
+  "run": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--run",
+    "visible": false,
+    "description": "Download output data of a specific run",
+  },
+  "url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--url",
+    "visible": true,
+    "description": "URL for referencing a workflow, project, or space",
+  },
+  "runs": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--runs",
+    "visible": false,
+    "description": "Number of recent runs which outputs should be downloaded (default 1)",
+  },
+  "files": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--files",
+    "visible": false,
+    "description": "A comma-separated list of file names that should be downloaded from the selected node",
+  },
+  "nodes": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--nodes",
+    "visible": false,
+    "description": "A comma-separated list of nodes whose outputs should be downloaded",
+  },
+  "space": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--space",
+    "visible": true,
+    "description": "Space name",
+  },
+  "token": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--token",
+    "visible": true,
+    "description": "Trickest authentication token",
+  },
+  "config": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--config",
+    "visible": false,
+    "description": "YAML file to determine which nodes output(s) should be downloaded",
+  },
+  "project": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--project",
+    "visible": true,
+    "description": "Project name",
+  },
+  "workflow": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--workflow",
+    "visible": true,
+    "description": "Workflow name",
+  },
+  "dependency": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--node-dependency",
+    "visible": false,
+    "description": "This flag doesn't affect the execution logic of the CLI in any way and is intended for controlling node execution order on the Trickest platform only.",
+  },
+  "token-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--token-file",
+    "visible": false,
+    "description": "Trickest authentication token file",
+  },
+}}
+/>

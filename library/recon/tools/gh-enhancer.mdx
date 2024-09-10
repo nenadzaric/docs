@@ -1,0 +1,66 @@
+---
+title: "gh-enhancer"
+description: "Process GitHub Archive URLs and generate unique repositories and users CSV files"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="5c7879f9-90bb-4820-bce0-fcd6ce39cdcc"
+  name="gh-enhancer"
+  description="Process GitHub Archive URLs and generate unique repositories and users CSV files"
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2023-05-04"
+  container="quay.io/trickest/gh_enhancer:3ceb9f0"
+  source_url="https://github.com/carlospolop/github_archive_scraper"
+  license="Unknown"
+  output_command="--output-folder"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/5c7879f9-90bb-4820-bce0-fcd6ce39cdcc.json"
+  inputs={ {
+  "token": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--token",
+    "visible": false,
+    "description": "Github token to use for API calls.",
+  },
+  "threads": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--threads",
+    "visible": false,
+    "description": "The number of threads to use.",
+  },
+  "batch-size": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--batch-size",
+    "visible": false,
+    "description": "The size of the batch to ask Github graphql API at the same time.",
+  },
+  "repos-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--repos-file",
+    "visible": true,
+    "description": "The path of the file containing the repos csv files.",
+  },
+  "users-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--users-file",
+    "visible": true,
+    "description": "The path of the file containing the users csv files.",
+  },
+  "file-tokens": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--file-tokens",
+    "visible": true,
+    "description": "File containing Github tokens to use for API calls.",
+  },
+}}
+/>

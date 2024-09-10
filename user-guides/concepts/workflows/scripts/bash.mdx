@@ -1,0 +1,162 @@
+---
+title: Bash
+description: ''
+---
+
+Scripts are used to automate and extend the functionality of the workflow. Scripts can be written in [Python] or [Bash] and can be used to perform a wide range of tasks, from simple to complex.
+
+Scripts in Trickest platform are used for plethora of functionalities. They are used to:
+
+* Parse different tools outputs to make it compatible with the other tools input
+* Extract relevant information from the tool to make it more clear what is important
+* Create custom reports, images or files from the other tools outputs
+* And much more.
+
+In this section, we are going to cover how we can parse `ffuf` output and extract relevant information from it which we covered in [Tools](../tools) section.
+
+## Tools Output
+
+
+In the previous section, we've created `ffuf` node with certain inputs. Let's execute it locally first, to check how it's output looks like.
+
+```bash
+ffuf -u https://trickest.com/FUZZ -w common.txt -timeout 10 -o output.txt
+```
+
+
+```json
+"commandline":"ffuf -u https://trickest.com/FUZZ -w /hive/in/http-input-1/common.txt -timeout 10 -o /hive/out/output.txt",
+   "time":"2024-09-02T12:44:03Z",
+   "results":[
+      {
+         "input":{
+            "FFUFHASH":"7d4bae3",
+            "FUZZ":"about-us"
+         },
+         "position":227,
+         "status":301,
+         "length":58216,
+         "words":187,
+         "lines":198,
+         "content-type":"text/html; charset=UTF-8",
+         "redirectlocation":"/about-us/",
+         "scraper":{
+            
+         },
+         "duration":290119000,
+         "resultfile":"",
+         "url":"https://trickest.com/about-us",
+         "host":"trickest.com"
+      },
+      ...
+   ],
+   "config":{
+      ...
+   }
+}
+```
+
+This JSON output is very big and we don't need all of this data. We are interested in what URLs are found with additional data around them. These are `url`, `status`, `content-type`, `length`, `words`, `redirectlocation`.
+
+Let's create a simple `bash` script which will extract this data, and learn how to use this script in Trickest Platform to parse it whenever we want to brute-force different web server.
+
+
+```bash
+
+# Define input and output file paths
+input_file="ffuf-output.txt"
+output_dir="out"
+output_file="${output_dir}/output.txt"
+
+# Use jq to extract relevant fields and format them into a single line per entry
+jq -r '.results[] | "URL: \(.url), Status: \(.status), Content-Type: \(.["content-type"]), Length: \(.length), Words: \(.words), Redirect Location: \(.redirectlocation)"' "$input_file" > "$output_file"
+
+echo "Data has been saved to $output_file."
+
+```
+
+Let's execute and see the output
+
+```
+URL: https://trickest.com/, Status: 200, Content-Type: text/html; charset=UTF-8, Length: 223844, Words: 4748, Redirect Location: 
+URL: https://trickest.com/404, Status: 200, Content-Type: text/html; charset=UTF-8, Length: 85465, Words: 1592, Redirect Location: 
+URL: https://trickest.com/about-us, Status: 301, Content-Type: text/html; charset=UTF-8, Length: 58216, Words: 187, Redirect Location: /about-us/
+```
+
+## Using Scripts in Trickest Platform
+
+Now, let's take a look how Trickest is handling scripts nodes. If you remember from [Tools](tools) section, they have their inputs parameters, configurations and file and folder outputs. Scripts are slightly different.
+
+Think about Scripts as a little virtual machines that are spinning up and executing the code you provided. They have their own inputs and outputs, and they can be connected to the other nodes as well.
+
+In the Left Sidebar, we can search for `custom-script` and drag & drop it to the canvas.
+
+<Frame caption="Python Script Node example">
+ <img src="/images/custom-script.png"></img>
+</Frame>
+
+<Tip>If you want to use the `file` output from bash scripts outputs and connect it to other nodes, that file must be in `out/output.txt` path</Tip>
+
+
+The difference between the tools and scripts is that scripts **don't have input parameters**. They have `file` and `folder` inputs and `file` and `folder` outputs.
+
+## Using Scripts to parse `ffuf` output
+
+Now, let's get back to our `ffuf` workflow and add custom bash script. We are also going to connect `ffuf` output to the `custom-script` input.
+
+<Frame caption="Connecting Custom Script to `ffuf`">
+ <img src="/images/custom-script-ffuf.gif"></img>
+</Frame>
+
+Now, let's copy the script we created above and paste it in the `custom-script` node.
+
+<Frame caption="Pasting the script">
+ <img src="/images/custom-script-paste-script.gif"></img>
+</Frame>
+
+Now, the paths in the script we've created are not right. In Trickest, paths inside of scripts nodes are generated based on the nodes that are connected to them.
+
+They go in a pattern similar to this
+
+* For `File` inputs
+
+   ```
+   in/<NODE-ID>/output.txt
+
+* For `Folder` inputs
+
+   ```
+   in/<NODE-ID>/
+   ```
+
+### Generated Paths
+
+<div style={{ display: 'flex', alignItems: 'left' }}>
+  <div style={{ flex: '1', paddingRight: '20px' }}>
+    If we take a look at our particular example, the generated input from `ffuf` is
+   `in/ffuf-1/output.txt`
+
+   These paths are generated automatically based on the `node-id` every node has.
+
+   In our example `ffuf` node has `ffuf-1` as `node-id`,
+   and `python-script` node has `python-script-1` as `node-id`.
+  </div>
+  <div style={{ flex: '2' }}>
+  <Frame>
+    <img src="/images/custom-script-generated-paths.png" alt="Workflow Editor Right Sidebar" style={{ width: '200px', height: '100%' }} />
+  </Frame>
+  </div>
+  </div>
+
+### Changing the script
+
+In our example we need to change path we used to test out the script, to the generated path in Trickest.
+
+```python
+
+input_file = 'ffuf-output.txt' -> input_file = 'in/ffuf-1/output.txt'
+
+```
+
+Now, everything should be ready for execution. 
+

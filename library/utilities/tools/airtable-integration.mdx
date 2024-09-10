@@ -1,0 +1,150 @@
+---
+title: "airtable-integration"
+description: "Airtable integration for importing/exporting/linking data."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="167ae2eb-c01e-49b8-8c45-64034295dcc9"
+  name="airtable-integration"
+  description="Airtable integration for importing/exporting/linking data."
+  category="Utilities"
+  author="trickest"
+  created_date="2022-01-10"
+  container="quay.io/trickest/airtable:v1.1.0"
+  source_url="https://github.com/trickest/airtable-integration"
+  license="Unknown"
+  output_command="-o"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/167ae2eb-c01e-49b8-8c45-64034295dcc9.json"
+  inputs={ {
+  "base": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--base",
+    "visible": false,
+    "description": "Airtable Base ID",
+  },
+  "field": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--field",
+    "visible": false,
+    "description": "Name of the field  (for use with --input-list)",
+  },
+  "table": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--table",
+    "visible": false,
+    "description": "Name of the table where the file will be imported",
+  },
+  "config": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--config",
+    "visible": false,
+    "description": "Config file that contains JQ queries.",
+  },
+  "expand": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--expand",
+    "visible": false,
+    "description": "Flag to determine if linked fields should be expanded",
+  },
+  "fields": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--fields",
+    "visible": false,
+    "description": "Specify table fields you want to export (a comma-separated list)",
+  },
+  "update": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--update",
+    "visible": false,
+    "description": "Update the records in the table instead of creating new records",
+  },
+  "api-key": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--api-key",
+    "visible": false,
+    "description": "Airtable API key",
+  },
+  "formula": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--formula",
+    "visible": false,
+    "description": "Formula used to filter the table",
+  },
+  "input-json": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--input-json",
+    "visible": false,
+    "description": "Input JSON",
+  },
+  "input-list": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--input-list",
+    "visible": false,
+    "description": "Input list",
+  },
+  "link-field": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--link-field",
+    "visible": false,
+    "description": "Name of the common field between the main table and the link table",
+  },
+  "link-table": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--link-table",
+    "visible": false,
+    "description": "Name of the table to link to",
+  },
+  "export-mode": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "export",
+    "visible": false,
+    "description": "Get a table from Airtable while resolving links to other tables",
+  },
+  "import-mode": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "import",
+    "visible": false,
+    "description": "Import a JSON file into Airtable and optionally link records to another table",
+  },
+  "max-records": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--max-records",
+    "visible": false,
+    "description": "The maximum total number of records that will be returned",
+  },
+  "expand-fields": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--expand-fields",
+    "visible": false,
+    "description": "Specify linked table fields you want to expand (a comma-separated list)",
+  },
+  "primary-field": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--primary",
+    "visible": false,
+    "description": "Name of the primary field (required with --update)",
+  },
+}}
+/>

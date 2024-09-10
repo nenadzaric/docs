@@ -1,0 +1,31 @@
+---
+title: "decant-file"
+description: "Decant can be used to expand CIDR ranges into a list of IP addresses easily."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="ce5d3c5c-e81d-4e49-bc2f-0c67a69860b3"
+  name="decant-file"
+  description="Decant can be used to expand CIDR ranges into a list of IP addresses easily."
+  category="Network"
+  author="trickest"
+  created_date="2021-11-08"
+  container="quay.io/trickest/decant-file:f812965"
+  source_url="https://github.com/Cgboal/Decant"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/ce5d3c5c-e81d-4e49-bc2f-0c67a69860b3.json"
+  inputs={ {
+  "cidr-addresses": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "File containing cidr addresses",
+  },
+}}
+/>

@@ -1,0 +1,101 @@
+---
+title: "tko-subs"
+description: "A tool that can help detect and takeover subdomains with dead DNS records"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="371bf4d4-434b-48b5-beea-f3261cd19d3f"
+  name="tko-subs"
+  description="A tool that can help detect and takeover subdomains with dead DNS records"
+  category="Vulnerabilities"
+  author="trickest"
+  created_date="2021-08-27"
+  container="quay.io/trickest/tko-subs:5fd34e8"
+  source_url="https://github.com/anshumanbh/tko-subs"
+  license="Unknown"
+  output_command="-output"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/371bf4d4-434b-48b5-beea-f3261cd19d3f.json"
+  inputs={ {
+  "port": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-port",
+    "visible": false,
+    "description": "The DNS server port (you shouldn't have to change this) (default: 53).",
+  },
+  "domain": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-domain",
+    "visible": false,
+    "description": "Domains separated by ,.",
+  },
+  "server": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-server",
+    "visible": false,
+    "description": "A DNS server to direct queries to (default: 8.8.8.8).",
+  },
+  "domains": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-domains",
+    "visible": true,
+    "description": "List of domains to check",
+  },
+  "threads": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-threads",
+    "visible": false,
+    "description": "Number of threads to run parallel (default: 5).",
+  },
+  "takeover": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-takeover",
+    "visible": false,
+    "description": "Flag to denote if a vulnerable domain needs to be taken over or not (default: false).",
+  },
+  "github-token": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-githubtoken",
+    "visible": false,
+    "description": "Github personal access token.",
+  },
+  "heroku-api-key": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-herokuapikey",
+    "visible": false,
+    "description": "Heroku API key.",
+  },
+  "heroku-app-name": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-herokuappname",
+    "visible": false,
+    "description": "Heroku app name.",
+  },
+  "heroku-username": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-herokuusername",
+    "visible": false,
+    "description": "Heroku username.",
+  },
+  "cms-providers-csv": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-data",
+    "visible": false,
+    "description": "CSV file containing CMS providers' string for identification (default: providers-data.csv).",
+  },
+}}
+/>

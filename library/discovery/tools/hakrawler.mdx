@@ -1,0 +1,94 @@
+---
+title: "hakrawler"
+description: "Fast golang web crawler for gathering URLs and JavaSript file locations. This is basically a simple implementation of the awesome Gocolly library."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="0c5cb264-ca8c-4fa5-9ad4-f1080c2f43c1"
+  name="hakrawler"
+  description="Fast golang web crawler for gathering URLs and JavaSript file locations. This is basically a simple implementation of the awesome Gocolly library."
+  category="Discovery"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/hakrawler:6190559"
+  source_url="https://github.com/hakluke/hakrawler"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/0c5cb264-ca8c-4fa5-9ad4-f1080c2f43c1.json"
+  inputs={ {
+  "urls": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "List of urls",
+  },
+  "proxy": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-proxy",
+    "visible": false,
+    "description": "Proxy URL. E.g. -proxy http://127.0.0.1:8080",
+  },
+  "threads": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-t",
+    "visible": false,
+    "description": "Number of threads to utilise. (default 8)",
+  },
+  "insecure": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-insecure",
+    "visible": false,
+    "description": "Disable TLS verification.",
+  },
+  "json-output": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-json",
+    "visible": false,
+    "description": "Output as json",
+  },
+  "custom-header": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-h",
+    "visible": false,
+    "description": "Custom headers separated by two semi-colons. E.g. -h Cookie: foo=bar;;Referer: http://example.com/",
+  },
+  "depth-to-crawl": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-d",
+    "visible": false,
+    "description": "Depth to crawl. (default 2)",
+  },
+  "show-source-url": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-s",
+    "visible": false,
+    "description": "Show the source of URL based on where it was found (href, form, script, etc.)",
+  },
+  "only-unique-urls": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-u",
+    "visible": false,
+    "description": "Show only unique urls.",
+  },
+  "include-subdomains": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-subs",
+    "visible": false,
+    "description": "Include subdomains for crawling.",
+  },
+}}
+/>

@@ -1,0 +1,45 @@
+---
+title: "urlhunter"
+description: "Urlhunter is a recon tool that allows searching on URLs that are exposed via shortener services such as bit.ly and goo.gl. The project is written in Go. It works by brute forcing the URL shortener services and publishing matched results on a daily basis. Urlhunter downloads their collections and lets you analyse them."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="d86bb085-e814-4f78-a1c6-d96001be5572"
+  name="urlhunter"
+  description="Urlhunter is a recon tool that allows searching on URLs that are exposed via shortener services such as bit.ly and goo.gl. The project is written in Go. It works by brute forcing the URL shortener services and publishing matched results on a daily basis. Urlhunter downloads their collections and lets you analyse them."
+  category="Discovery"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/urlhunter:eab5909"
+  source_url="https://github.com/utkusen/urlhunter"
+  license="Unknown"
+  output_command="-o"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/d86bb085-e814-4f78-a1c6-d96001be5572.json"
+  inputs={ {
+  "date": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--date",
+    "visible": false,
+    "description": "You may specify either a single date, or a range; Using a single date will set the present as the end of the range. Single date: 2020-11-20. Range: 2020-11-10:2020-11-20.",
+  },
+  "archives": {
+    "type": "FOLDER",
+    "order": 0,
+    "command": "--archives",
+    "visible": false,
+    "description": "The directory where you're storing your archive files. If this is your first time running this tool, the archives will be downloaded on a new ./archives folder",
+  },
+  "keywords": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--keywords",
+    "visible": true,
+    "description": "Path to a file that contains strings to search.",
+  },
+}}
+/>

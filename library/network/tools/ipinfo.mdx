@@ -1,0 +1,66 @@
+---
+title: "ipinfo"
+description: "Command Line Interface for the IPinfo API (IP geolocation and other types of IP data)"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="0ee5f685-2918-46a2-98bd-2d064c07789d"
+  name="ipinfo"
+  description="Command Line Interface for the IPinfo API (IP geolocation and other types of IP data)"
+  category="Network"
+  author="trickest-mhmdiaa"
+  created_date="2022-12-08"
+  container="quay.io/trickest/ipinfo:v2.10.0-patch-1"
+  source_url="https://github.com/ipinfo/cli"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/0ee5f685-2918-46a2-98bd-2d064c07789d.json"
+  inputs={ {
+  "csv": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--csv",
+    "visible": false,
+    "description": "output CSV format",
+  },
+  "json": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--json",
+    "visible": false,
+    "description": "output JSON format",
+  },
+  "field": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--field",
+    "visible": false,
+    "description": "comma-sneparated list of fields to look up in the output",
+  },
+  "no-cache": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--nocache",
+    "visible": false,
+    "description": "do not use the cache.",
+  },
+  "token-file": {
+    "type": "FILE",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "API token file",
+  },
+  "ip-addresses": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "List of IP addresses",
+  },
+}}
+/>

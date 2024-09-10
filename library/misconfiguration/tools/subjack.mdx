@@ -1,0 +1,87 @@
+---
+title: "subjack"
+description: "Subjack is a Subdomain Takeover tool written in Go designed to scan a list of subdomains concurrently and identify ones that are able to be hijacked. With Go's speed and efficiency, this tool really stands out when it comes to mass-testing. Always double-check the results manually to rule out false positives"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="090e028b-1073-4b41-b78e-61ec10bc3811"
+  name="subjack"
+  description="Subjack is a Subdomain Takeover tool written in Go designed to scan a list of subdomains concurrently and identify ones that are able to be hijacked. With Go's speed and efficiency, this tool really stands out when it comes to mass-testing. Always double-check the results manually to rule out false positives"
+  category="Misconfiguration"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/subjack:49c51e5-patch-1"
+  source_url="https://github.com/haccer/subjack"
+  license="Unknown"
+  output_command="-o"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/090e028b-1073-4b41-b78e-61ec10bc3811.json"
+  inputs={ {
+  "domain": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-d",
+    "visible": false,
+    "description": "Domain",
+  },
+  "threads": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-t",
+    "visible": false,
+    "description": "Number of concurrent threads (Default: 10).",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-v",
+    "visible": false,
+    "description": "Display more information per each request.",
+  },
+  "wordlist": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-w",
+    "visible": true,
+    "description": "Wordlist file.",
+  },
+  "force-ssl": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-ssl",
+    "visible": false,
+    "description": "Force HTTPS connections (May increase accuracy (Default: http://).",
+  },
+  "config-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-c",
+    "visible": false,
+    "description": "Path to configuration file.",
+  },
+  "timeout-sec": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-timeout",
+    "visible": false,
+    "description": "Seconds to wait before connection timeout (Default: 10).",
+  },
+  "find-hidden-gems": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-a",
+    "visible": false,
+    "description": "Find those hidden gems by sending requests to every URL. (Default: Requests are only sent to URLs with identified CNAMEs)",
+  },
+  "presence-of-dead-record": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-m",
+    "visible": false,
+    "description": "Flag the presence of a dead record, but valid CNAME entry.",
+  },
+}}
+/>

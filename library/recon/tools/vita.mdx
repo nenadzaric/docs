@@ -1,0 +1,87 @@
+---
+title: "vita"
+description: "Vita is a tool to gather subdomains from passive sources."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="be87c986-9209-4c74-89d8-73405f2f7ae7"
+  name="vita"
+  description="Vita is a tool to gather subdomains from passive sources."
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2022-02-05"
+  container="quay.io/trickest/vita:0.1.16"
+  source_url="https://github.com/junnlikestea/vita"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/be87c986-9209-4c74-89d8-73405f2f7ae7.json"
+  inputs={ {
+  "exclude": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--exclude",
+    "visible": false,
+    "description": "Excludes sources from data collection",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--timeout",
+    "visible": false,
+    "description": "Connection timeouts can be useful if you don't want to wait for sources like wayback archive which quite a while. Default is 10 seconds. [default: 15]",
+  },
+  "subs-only": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--subs-only",
+    "visible": false,
+    "description": "Filter the results to only those which have the same subdomain",
+  },
+  "all-sources": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--all",
+    "visible": false,
+    "description": "Use sources which require an Api key",
+  },
+  "concurrency": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--concurrency",
+    "visible": false,
+    "description": "The number of domains to fetch data for concurrently [default: 200]",
+  },
+  "domains-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--file",
+    "visible": false,
+    "description": "List of domains",
+  },
+  "target-domain": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-d",
+    "visible": true,
+    "description": "Target domain",
+  },
+  "verbosity-level": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--verbosity",
+    "visible": false,
+    "description": "Different levels of verbosity you can set for debugging, values include: debug, info and warn",
+  },
+  "instant-print-stdout": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--flush",
+    "visible": true,
+    "description": "Prints results to stdout as they're received. Results will still be filtered, but no deduplication will be done",
+  },
+}}
+/>

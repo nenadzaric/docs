@@ -1,0 +1,66 @@
+---
+title: "enumerepo"
+description: "List all public repositories for (valid) Github usernames"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="ad26f198-d535-4199-acb8-ea4c3a0fb747"
+  name="enumerepo"
+  description="List all public repositories for (valid) Github usernames"
+  category="OSINT"
+  author="trickest-mhmdiaa"
+  created_date="2022-03-29"
+  container="quay.io/trickest/enumerepo:f0202b2"
+  source_url="https://github.com/trickest/enumerepo"
+  license="Unknown"
+  output_command="-o"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/ad26f198-d535-4199-acb8-ea4c3a0fb747.json"
+  inputs={ {
+  "delay": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-delay",
+    "visible": false,
+    "description": "Time delay after every GraphQL request [ms]",
+  },
+  "silent": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-silent",
+    "visible": false,
+    "description": "Don't print output to stdout",
+  },
+  "usernames": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-usernames",
+    "visible": true,
+    "description": "File to read usernames from",
+  },
+  "token-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-token-file",
+    "visible": true,
+    "description": "File to read Github token from",
+  },
+  "adjust-delay": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-adjust-delay",
+    "visible": false,
+    "description": "Automatically adjust time delay between requests",
+  },
+  "token-string": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-token-string",
+    "visible": true,
+    "description": "Github token",
+  },
+}}
+/>

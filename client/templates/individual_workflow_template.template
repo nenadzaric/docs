@@ -1,0 +1,17 @@
+---
+title: "{{name}}"
+description: "{{description}}"
+mode: "custom"
+---
+
+import { WorkflowPage } from '/snippets/WorkflowDetail.mdx';
+
+<WorkflowPage 
+title="{{name}}"
+category="{{category}}"
+description="{{description}}"
+createdOn="{{created_on}}"
+author="{{publisher}}"
+workflowUrl="{{workflow_url}}"
+id="{{id}}"
+/>

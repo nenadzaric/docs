@@ -1,0 +1,73 @@
+---
+title: "dawnscanner"
+description: "Dawnscanner is a source code scanner designed to review your ruby code for security issues.Dawnscanner is able to scan plain ruby scripts (e.g. command line applications) but all its features are unleashed when dealing with web applications source code. dawnscanner is able to scan major MVC (Model View Controller) frameworks."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="68c4d2ca-d175-45b8-aede-000e68c78378"
+  name="dawnscanner"
+  description="Dawnscanner is a source code scanner designed to review your ruby code for security issues.Dawnscanner is able to scan plain ruby scripts (e.g. command line applications) but all its features are unleashed when dealing with web applications source code. dawnscanner is able to scan major MVC (Model View Controller) frameworks."
+  category="Static Code Analysis"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/dawnscanner:2.0.0.rc4"
+  source_url="https://github.com/thesp0nge/dawnscanner"
+  license="Unknown"
+  output_command="-j -F"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/68c4d2ca-d175-45b8-aede-000e68c78378.json"
+  inputs={ {
+  "target-dir": {
+    "type": "FOLDER",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "Target directory",
+  },
+  "dependencies": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-d",
+    "visible": false,
+    "description": "Force dawn to scan only for vulnerabilities affecting dependencies in Gemfile.lock",
+  },
+  "disable-code-style": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--disable-code-style",
+    "visible": false,
+    "description": "Disable all code style checks",
+  },
+  "disable-owasp-top-10": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--disable-owasp-top-10",
+    "visible": false,
+    "description": "Disable all Owasp Top 10 checks",
+  },
+  "disable-cve-bulletins": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--disable-cve-bulletins",
+    "visible": false,
+    "description": "Disable all CVE security check",
+  },
+  "disable-code-quality-checks": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--disable-code-quality",
+    "visible": false,
+    "description": "Disable all code quality checks",
+  },
+  "disable-owasp-ror-cheatsheet": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--disable-owasp-ror-cheatsheet",
+    "visible": false,
+    "description": "Disable all Owasp Ruby on Rails cheatsheet checks",
+  },
+}}
+/>

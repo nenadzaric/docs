@@ -1,0 +1,122 @@
+---
+title: "evilscan-loop"
+description: "Nodejs Simple Network Scanner with a wrapper to run on a list of targets"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="07bd04a9-e6cc-4276-80bc-453e62002adb"
+  name="evilscan-loop"
+  description="Nodejs Simple Network Scanner with a wrapper to run on a list of targets"
+  category="Network"
+  author="trickest-mhmdiaa"
+  created_date="2023-03-01"
+  container="quay.io/trickest/evilscan-loop:v1.9.1"
+  source_url="https://github.com/eviltik/evilscan"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/07bd04a9-e6cc-4276-80bc-453e62002adb.json"
+  inputs={ {
+  "geoip": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--geo",
+    "visible": false,
+    "description": "Display geoip (free maxmind)",
+  },
+  "ports": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--port",
+    "visible": true,
+    "description": "Port(s) you want to scan, example: --port=21,22,23,5900-5902",
+  },
+  "banner": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--banner",
+    "visible": false,
+    "description": "Display banner",
+  },
+  "status": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--status",
+    "visible": false,
+    "description": "Ports status wanted in results ( T(timeout), R(refused), O(open, default), U(unreachable))",
+  },
+  "targets": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "List of targets (IP addresses or subnets) to scan",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--timeout",
+    "visible": false,
+    "description": "Maximum number of milliseconds before closing the connection (default 2000)",
+  },
+  "hugescan": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--hugescan",
+    "visible": false,
+    "description": "Allow number of ip/port combinaison greater than 16580355",
+  },
+  "progress": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--progress",
+    "visible": false,
+    "description": "Display progress indicator each seconds",
+  },
+  "valid-dns": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--reversevalid",
+    "visible": false,
+    "description": "Only display results having a valid reverse dns, except if ports specified",
+  },
+  "concurrency": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--concurrency",
+    "visible": false,
+    "description": "Max number of simultaneous socket opened (default 500)",
+  },
+  "scan-method": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--scan",
+    "visible": false,
+    "description": "Scan method (tcpconnect (full connect, default), tcpsyn (half opened, not yet implemented), udp (not yet implemented)",
+  },
+  "banner-length": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--bannerlen",
+    "visible": false,
+    "description": "Set banner length grabing (default 512)",
+  },
+  "result-format": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--display",
+    "visible": false,
+    "description": "Display result format (json,xml,console)",
+  },
+  "display-dns-lookup": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--reverse",
+    "visible": false,
+    "description": "Display DNS reverse lookup",
+  },
+}}
+/>

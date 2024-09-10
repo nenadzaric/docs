@@ -1,0 +1,136 @@
+---
+title: "tplmap"
+description: "Server-Side Template Injection and Code Injection Detection and Exploitation Tool"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="cc251d0a-58ab-4211-9009-0e68cc45ddf6"
+  name="tplmap"
+  description="Server-Side Template Injection and Code Injection Detection and Exploitation Tool"
+  category="Vulnerabilities"
+  author="trickest"
+  created_date="2021-09-07"
+  container="quay.io/trickest/tplmap:6f21501"
+  source_url="https://github.com/epinna/tplmap"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/cc251d0a-58ab-4211-9009-0e68cc45ddf6.json"
+  inputs={ {
+  "url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--url",
+    "visible": true,
+    "description": "Target URL.",
+  },
+  "proxy": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--proxy",
+    "visible": false,
+    "description": "Use a proxy to connect to the target URL",
+  },
+  "cookie": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-c",
+    "visible": false,
+    "description": "Cookies (e.g. 'Field1=Value1').",
+  },
+  "header": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-H",
+    "visible": false,
+    "description": "Extra headers (e.g. 'Header1: Value1').",
+  },
+  "tpl-code": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--tpl-code",
+    "visible": false,
+    "description": "Inject code in the template engine.",
+  },
+  "post-data": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--data",
+    "visible": false,
+    "description": "Data string to be sent through POST. It must be as query string: param1=value1&param2=value2.",
+  },
+  "technique": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-t",
+    "visible": false,
+    "description": "Techniques R(endered) T(ime-based blind). Default: RT.",
+  },
+  "user-agent": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-A",
+    "visible": false,
+    "description": "HTTP User-Agent header value.",
+  },
+  "force-level": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--force-level",
+    "visible": false,
+    "description": "Force a LEVEL and CLEVEL to test.",
+  },
+  "http-method": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-X",
+    "visible": false,
+    "description": "Force usage of given HTTP method (e.g. PUT).",
+  },
+  "upload-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--upload",
+    "visible": false,
+    "description": "Upload file to target.",
+  },
+  "injection-tag": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--injection-tag",
+    "visible": false,
+    "description": "Use string as injection tag (default '*').",
+  },
+  "backend-engine": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-e",
+    "visible": false,
+    "description": "Force back-end template engine to this value.",
+  },
+  "os-cmd-to-execte": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--os-cmd",
+    "visible": false,
+    "description": "Execute an operating system command.",
+  },
+  "level-code-context": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--level",
+    "visible": false,
+    "description": "Level of code context escape to perform (1-5, Default:1).",
+  },
+  "force-overwrite-uploaded-files": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--force-overwrite",
+    "visible": false,
+    "description": "Force file overwrite when uploading.",
+  },
+}}
+/>

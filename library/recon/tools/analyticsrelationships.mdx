@@ -1,0 +1,38 @@
+---
+title: "analyticsrelationships"
+description: "Get related domains / subdomains by looking at Google Analytics IDs"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="abc471c8-3dd1-4268-8773-1ae0365a9383"
+  name="analyticsrelationships"
+  description="Get related domains / subdomains by looking at Google Analytics IDs"
+  category="Recon"
+  author="youssef"
+  created_date="2023-04-05"
+  container="quay.io/trickest/analyticsrelationships:56223e2"
+  source_url="https://github.com/Josue87/AnalyticsRelationships"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/abc471c8-3dd1-4268-8773-1ae0365a9383.json"
+  inputs={ {
+  "urls": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "URLs to scan",
+  },
+  "chain-mode": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-ch",
+    "visible": false,
+    "description": "only output the important information. No decorations",
+  },
+}}
+/>

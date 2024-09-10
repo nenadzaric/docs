@@ -1,0 +1,178 @@
+---
+title: "whatweb"
+description: "WhatWeb identifies websites. WhatWeb recognises web technologies including content management systems (CMS), blogging platforms, statistic/analytics packages, JavaScript libraries, web servers, and embedded devices."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="e9f36ef6-9545-42d0-b591-0579ab4d276b"
+  name="whatweb"
+  description="WhatWeb identifies websites. WhatWeb recognises web technologies including content management systems (CMS), blogging platforms, statistic/analytics packages, JavaScript libraries, web servers, and embedded devices."
+  category="Misconfiguration"
+  author="trickest"
+  created_date="2021-08-04"
+  container="quay.io/trickest/whatweb:v0.5.5"
+  source_url="https://github.com/urbanadventurer/WhatWeb"
+  license="Unknown"
+  output_command="--log-json"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/e9f36ef6-9545-42d0-b591-0579ab4d276b.json"
+  inputs={ {
+  "Proxy": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--proxy",
+    "visible": false,
+    "description": "Set proxy hostname and port. Format: hostname[:port]",
+  },
+  "Cookies": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-c",
+    "visible": false,
+    "description": "Provide cookies, e.g. “name=value; name2=value2”.",
+  },
+  "targets": {
+    "type": "STRING",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "URLs, hostnames, IP addresses, or IP ranges in CIDR, x.x.x-x, or x.x.x.x-x.x.x.x format",
+  },
+  "http-auth": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-u",
+    "visible": false,
+    "description": "Http basic authentication. Format: user:password",
+  },
+  "input-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--input-file",
+    "visible": true,
+    "description": "Read targets from a file.",
+  },
+  "proxy-user": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--proxy-user",
+    "visible": false,
+    "description": "Set proxy user and password. Format: username:password",
+  },
+  "user-agent": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-U",
+    "visible": false,
+    "description": "Identify as AGENT instead of WhatWeb/0.5.2.",
+  },
+  "Http-header": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-H",
+    "visible": false,
+    "description": "Add an HTTP header. Specifying an empty value, eg. “User-Agent:” will remove the header.",
+  },
+  "Cookies-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--cookiejar",
+    "visible": false,
+    "description": "Read cookies from a file",
+  },
+  "color-output": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--color",
+    "visible": false,
+    "description": "Control whether colour is used. Options: “never”, “always”, “auto”",
+  },
+  "google-dorks": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-dorks",
+    "visible": false,
+    "description": "List Google dorks for the selected plugin",
+  },
+  "open-timeout": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--open-timeout",
+    "visible": false,
+    "description": "Timeout for opening the connection in seconds. Default: 15.",
+  },
+  "plugins-list": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-l",
+    "visible": false,
+    "description": "List all plugins",
+  },
+  "read-timeout": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--read-timeout",
+    "visible": false,
+    "description": "Timeout for reading the answer in seconds. Default: 30.",
+  },
+  "custom-plugin": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--custom-plugin",
+    "visible": false,
+    "description": "Define a custom plugin named Custom-Plugin. Example: “:text=> ’powered by abc’ ”",
+  },
+  "Select-plugins": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-p",
+    "visible": false,
+    "description": "Select plugins from a comma delimited list. Default is all.",
+  },
+  "follow-redirect": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--follow-redirect",
+    "visible": false,
+    "description": "Control when to follow redirects. Options: “never”, “http-only”, “meta-only”, “same-site”, or “always”. Default: “always”.",
+  },
+  "aggression-level": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-a",
+    "visible": false,
+    "description": "Controls trade-off between speed/stealth and reliability. Levels: “Stealthy” - One http request per target; “Agressive” - If a level 1 plugin is matched, additional requests will be made; “Heavy” - Makes a lot of http requests per target. Aggressive tests from all plugins are used for all URL’s.",
+  },
+  "No-error-messages": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--no-errors",
+    "visible": false,
+    "description": "Suppress error messages",
+  },
+  "number-of-threads": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-t",
+    "visible": false,
+    "description": "Number of threads. Default: 25.",
+  },
+  "Search-string-regexp": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-g",
+    "visible": false,
+    "description": "Search for String or Regular Expression. Shows only results that match.",
+  },
+  "maximum-number-of-redirects": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--max-redirects",
+    "visible": false,
+    "description": "Maximum number of contiguous redirects. Default: 10",
+  },
+}}
+/>

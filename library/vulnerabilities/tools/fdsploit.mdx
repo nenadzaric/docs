@@ -1,0 +1,115 @@
+---
+title: "fdsploit"
+description: "FDsploit can be used to discover and exploit Local/Remote File Inclusion and directory traversal vulnerabilities automatically."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="558bbf22-3335-424f-93dd-f580f994a4e6"
+  name="fdsploit"
+  description="FDsploit can be used to discover and exploit Local/Remote File Inclusion and directory traversal vulnerabilities automatically."
+  category="Vulnerabilities"
+  author="trickest"
+  created_date="2021-09-07"
+  container="quay.io/trickest/fdsploit:4522f53"
+  source_url="https://github.com/chrispetrou/FDsploit"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/558bbf22-3335-424f-93dd-f580f994a4e6.json"
+  inputs={ {
+  "url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--url",
+    "visible": true,
+    "description": "Specify URL",
+  },
+  "depth": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--depth",
+    "visible": false,
+    "description": "Specify max depth for payload [default 5]",
+  },
+  "param": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--params",
+    "visible": false,
+    "description": "Specify POST parameters to use (applied only with POST requests) Form: param1:value1,param2:value2,...",
+  },
+  "keyword": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--keyword",
+    "visible": false,
+    "description": "Search for a certain keyword(s) on the response [default: None]",
+  },
+  "payload": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--payload",
+    "visible": false,
+    "description": "Specify a payload-file to look for",
+  },
+  "b64-encode": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--b64",
+    "visible": false,
+    "description": "Use base64 encoding [default False]",
+  },
+  "url-encode": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-e",
+    "visible": false,
+    "description": "Url-encode the payload [default: False]",
+  },
+  "user-agent": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--useragent",
+    "visible": false,
+    "description": "Use a random user-agent [default user-agent: FDsploit_1.2_agent]",
+  },
+  "target-urls": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--file",
+    "visible": true,
+    "description": "Specify a file containing urls",
+  },
+  "request-type": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--verb",
+    "visible": false,
+    "description": "Specify request type ('GET' or 'POST') [default GET]",
+  },
+  "cmd-to-execute": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--cmd",
+    "visible": false,
+    "description": "Test for command execution through PHP functions [default command: None]",
+  },
+  "specify-cookie": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--cookie",
+    "visible": false,
+    "description": "Specify a session-cookie to use [default None]",
+  },
+  "termination-character": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--tchar",
+    "visible": false,
+    "description": "Use a termination character ('%00' or '?') [default None]",
+  },
+}}
+/>

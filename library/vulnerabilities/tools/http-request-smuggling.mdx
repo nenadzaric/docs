@@ -1,0 +1,59 @@
+---
+title: "http-request-smuggling"
+description: "http-request-smuggling is a python tool used to detect if target/list of targets are vulnerable against HTTP Request Smuggling vulnerability"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="a8f26898-38bd-48cd-bf5f-6875f6d1310f"
+  name="http-request-smuggling"
+  description="http-request-smuggling is a python tool used to detect if target/list of targets are vulnerable against HTTP Request Smuggling vulnerability"
+  category="Vulnerabilities"
+  author="trickest-mhmdiaa"
+  created_date="2022-06-07"
+  container="quay.io/trickest/http-request-smuggling:e57aced"
+  source_url="https://github.com/anshumanpattnaik/http-request-smuggling"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/a8f26898-38bd-48cd-bf5f-6875f6d1310f.json"
+  inputs={ {
+  "timeout": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--timeout",
+    "visible": false,
+    "description": "Set socket timeout, default - 10",
+  },
+  "urls-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--urls",
+    "visible": true,
+    "description": "Set list of target urls. i.e (urls.txt)",
+  },
+  "single-url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-u",
+    "visible": true,
+    "description": "Set target url i.e (https://target.com)",
+  },
+  "http-method": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--method",
+    "visible": false,
+    "description": "Set HTTP Method i.e (GET or POST), default POST",
+  },
+  "retry-payload": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--retry",
+    "visible": false,
+    "description": "Set the retry count to re-execute the payload, default - 2",
+  },
+}}
+/>

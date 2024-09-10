@@ -1,0 +1,94 @@
+---
+title: "pymeta"
+description: "Search the web for files on a domain to download and extract metadata. This technique can be used to identify: domains, usernames, software/version numbers and naming conventions."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="48bb1ade-d0db-4c6e-a5d4-e81833a63908"
+  name="pymeta"
+  description="Search the web for files on a domain to download and extract metadata. This technique can be used to identify: domains, usernames, software/version numbers and naming conventions."
+  category="OSINT"
+  author="trickest-mhmdiaa"
+  created_date="2022-12-12"
+  container="quay.io/trickest/pymeta:723fea6-patch-3"
+  source_url="https://github.com/m8sec/pymeta"
+  license="Unknown"
+  output_command="-o"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/48bb1ade-d0db-4c6e-a5d4-e81833a63908.json"
+  inputs={ {
+  "proxy": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--proxy",
+    "visible": false,
+    "description": "Proxy requests (IP:Port)",
+  },
+  "domain": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-d",
+    "visible": true,
+    "description": "Target domain",
+  },
+  "jitter": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-j",
+    "visible": false,
+    "description": "Jitter between requests (Default=1)",
+  },
+  "threads": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-T",
+    "visible": false,
+    "description": "Max threads for file download (Default=5)",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-t",
+    "visible": false,
+    "description": "Max timeout per search (Default=8)",
+  },
+  "file-types": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--file-type",
+    "visible": false,
+    "description": "File types to search",
+  },
+  "proxy-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--proxy-file",
+    "visible": false,
+    "description": "Load proxies from file for rotation",
+  },
+  "max-results": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-m",
+    "visible": false,
+    "description": "Max results per type search",
+  },
+  "report-name": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-f",
+    "visible": false,
+    "description": "Custom report name (pymeta_report.csv)",
+  },
+  "search-engines": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--search",
+    "visible": false,
+    "description": "Search Engine (Default='google,bing')",
+  },
+}}
+/>

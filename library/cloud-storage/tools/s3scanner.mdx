@@ -1,0 +1,73 @@
+---
+title: "s3scanner"
+description: "A tool to find open S3 buckets and dump their contents."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="8396fea5-0d04-4560-b792-d155ba22769c"
+  name="s3scanner"
+  description="A tool to find open S3 buckets and dump their contents."
+  category="Cloud Storage"
+  author="trickest"
+  created_date="2021-09-07"
+  container="quay.io/trickest/s3scanner:2.0.2"
+  source_url="https://github.com/sa7mon/S3Scanner"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/8396fea5-0d04-4560-b792-d155ba22769c.json"
+  inputs={ {
+  "dump": {
+    "type": "BOOLEAN",
+    "order": 4,
+    "command": "dump",
+    "visible": true,
+    "description": "Dump the contents of buckets",
+  },
+  "scan": {
+    "type": "BOOLEAN",
+    "order": 4,
+    "command": "scan",
+    "visible": true,
+    "description": "Scan bucket permissions",
+  },
+  "threads": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--threads",
+    "visible": false,
+    "description": "Number of threads to use. Default: 4",
+  },
+  "insecure": {
+    "type": "BOOLEAN",
+    "order": 3,
+    "command": "--insecure",
+    "visible": false,
+    "description": "Do not verify SSL",
+  },
+  "buckets-file": {
+    "type": "FILE",
+    "order": 5,
+    "command": "--buckets-file",
+    "visible": true,
+    "description": "File containing bucket names.",
+  },
+  "endpoint-url": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--endpoint-url",
+    "visible": false,
+    "description": "Please specify endpoint URL",
+  },
+  "endpoint-address-style": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--endpoint-address-style",
+    "visible": false,
+    "description": "{path,vhost}",
+  },
+}}
+/>

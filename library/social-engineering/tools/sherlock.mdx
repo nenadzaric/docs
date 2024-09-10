@@ -1,0 +1,101 @@
+---
+title: "sherlock"
+description: "A tool for finding usernames across many social networks"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="70db6511-712e-42f0-9fcc-9082f28c78a6"
+  name="sherlock"
+  description="A tool for finding usernames across many social networks"
+  category="Social Engineering"
+  author="trickest"
+  created_date="2021-08-04"
+  container="quay.io/trickest/sherlock:b7cd7ab"
+  source_url="https://github.com/sherlock-project/sherlock"
+  license="Unknown"
+  output_command="--output"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/70db6511-712e-42f0-9fcc-9082f28c78a6.json"
+  inputs={ {
+  "csv": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--csv",
+    "visible": false,
+    "description": "Create Comma-Separated Values (CSV) File.",
+  },
+  "nsfw": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--nsfw",
+    "visible": false,
+    "description": "Include checking of NSFW sites from default list.",
+  },
+  "xlsx": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--xlsx",
+    "visible": false,
+    "description": "Create the standard file for the modern Microsoft Excel spreadsheet (xslx).",
+  },
+  "print-all": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--print-all",
+    "visible": false,
+    "description": "Output sites where the username was not found.",
+  },
+  "proxy-url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--proxy",
+    "visible": false,
+    "description": "Make requests over a proxy. e.g.socks5://127.0.0.1:1080",
+  },
+  "usernames": {
+    "type": "STRING",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "One or more usernames to check across social networks.",
+  },
+  "print-found": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--print-found",
+    "visible": false,
+    "description": "Output sites where the username was found.",
+  },
+  "no-color-output": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--no-color",
+    "visible": false,
+    "description": "Don't color terminal output",
+  },
+  "load-data-from-json": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--json",
+    "visible": false,
+    "description": "Load data from a JSON file or an online, valid, JSON file",
+  },
+  "limit-analysis-to-sites": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--site",
+    "visible": false,
+    "description": "Limit analysis to just the listed sites.",
+  },
+  "time-to-wait-for-response": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--timeout",
+    "visible": false,
+    "description": "Time (in seconds) to wait for response to requests (Default: 60)",
+  },
+}}
+/>

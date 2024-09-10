@@ -1,0 +1,136 @@
+---
+title: "dvcsripper-git"
+description: "Git ripper. It can rip repositories even when directory browsing is turned off."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="842c4d0d-3bc5-488a-9f76-9f4e58665a88"
+  name="dvcsripper-git"
+  description="Git ripper. It can rip repositories even when directory browsing is turned off."
+  category="Static Code Analysis"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/dvcsripper-git:2c1bbc6"
+  source_url="https://github.com/kost/dvcs-ripper"
+  license="Unknown"
+  output_command="-o"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/842c4d0d-3bc5-488a-9f76-9f4e58665a88.json"
+  inputs={ {
+  "url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-u",
+    "visible": true,
+    "description": "Url with .git folder.",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-v",
+    "visible": false,
+    "description": "Verbose mode",
+  },
+  "use-agent": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-a",
+    "visible": false,
+    "description": "Use agent <s> (default: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:10.0.2) Gecko/20100101 Firefox/10.0.2)",
+  },
+  "use-proxy": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-p",
+    "visible": false,
+    "description": "Use proxy <h> for connections",
+  },
+  "use-redis": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-e",
+    "visible": false,
+    "description": "Use redis <s> server as server:port",
+  },
+  "use-branch": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-b",
+    "visible": false,
+    "description": "Use branch <s> (default: master)",
+  },
+  "git-checkout-f": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-c",
+    "visible": false,
+    "description": "perform 'git checkout -f' on end (default)",
+  },
+  "dont-verify-ssl": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-s",
+    "visible": false,
+    "description": "Do not verify SSL cert",
+  },
+  "set-basic-auth-key": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-ba",
+    "visible": false,
+    "description": "Set basic auth key",
+  },
+  "dont-override-files": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-n",
+    "visible": false,
+    "description": "Do not overwrite files",
+  },
+  "guess-packed-refs-name": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-g",
+    "visible": false,
+    "description": "Try to inteligently guess name of packed refs",
+  },
+  "use-session-name-redis": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-k",
+    "visible": false,
+    "description": "Use session name <s> for redis (default: random)",
+  },
+  "brute-force-packed-refs": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-x",
+    "visible": false,
+    "description": "Brute force packed refs (extremely slow!!)",
+  },
+  "max-number-of-redirects": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-r",
+    "visible": false,
+    "description": "Specify max number of redirects (default: 0)",
+  },
+  "number-of-parallel-tasks": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-t",
+    "visible": false,
+    "description": "Use <i> parallel tasks",
+  },
+  "mkdir-url-name-for-output": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-m",
+    "visible": false,
+    "description": "Mkdir URL name when outputting (works good with -o)",
+  },
+}}
+/>

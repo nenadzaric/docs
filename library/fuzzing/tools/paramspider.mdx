@@ -1,0 +1,59 @@
+---
+title: "paramspider"
+description: "Finds parameters from web archives of the entered domain. Finds parameters from subdomains as well. Gives support to exclude urls with specific extensions. It mines the parameters from web archives (without interacting with the target host)."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="8475d732-ff73-4529-9908-4e6a03100b25"
+  name="paramspider"
+  description="Finds parameters from web archives of the entered domain. Finds parameters from subdomains as well. Gives support to exclude urls with specific extensions. It mines the parameters from web archives (without interacting with the target host)."
+  category="Fuzzing"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/paramspider:e21624c"
+  source_url="https://github.com/devanshbatham/ParamSpider"
+  license="Unknown"
+  output_command="--output"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/8475d732-ff73-4529-9908-4e6a03100b25.json"
+  inputs={ {
+  "domain": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--domain",
+    "visible": true,
+    "description": "Specify the domain to scan",
+  },
+  "exclude-subdomain": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--subs",
+    "visible": false,
+    "description": "Exclude subdomains [for parameters from domain+subdomains, do not specify this argument",
+  },
+  "nested-parameters": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--level",
+    "visible": false,
+    "description": "Level for finding nested parameters. Example: nested-parameters: high",
+  },
+  "custom-placeholder": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--placeholder",
+    "visible": false,
+    "description": "Use a custom placeholder. Default is FUZZ",
+  },
+  "exclude-url-extension": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--exclude",
+    "visible": false,
+    "description": "Exclude the urls with specific extensions",
+  },
+}}
+/>

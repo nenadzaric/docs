@@ -1,0 +1,241 @@
+---
+title: "hydra"
+description: "Parallelized login cracker which supports numerous protocols to attack. It is very fast and flexible, and new modules are easy to add. This tool makes it possible for researchers and security consultants to show how easy it would be to gain unauthorized access to a system remotely."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="068c1997-a7a8-48f7-96d8-004b6d16576f"
+  name="hydra"
+  description="Parallelized login cracker which supports numerous protocols to attack. It is very fast and flexible, and new modules are easy to add. This tool makes it possible for researchers and security consultants to show how easy it would be to gain unauthorized access to a system remotely."
+  category="Passwords"
+  author="trickest-mhmdiaa"
+  created_date="2023-07-14"
+  container="quay.io/trickest/thchydra:93abd60-patch-3"
+  source_url="https://github.com/vanhauser-thc/thc-hydra"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/068c1997-a7a8-48f7-96d8-004b6d16576f.json"
+  inputs={ {
+  "ipv4": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-4",
+    "visible": false,
+    "description": "use IPv4 addresses (default)",
+  },
+  "ipv6": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-6",
+    "visible": false,
+    "description": "use IPv6 addresses (put always in [] also in servers-to-attack)",
+  },
+  "port": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-s",
+    "visible": false,
+    "description": "if the service is on a different default port, define it here",
+  },
+  "debug": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-d",
+    "visible": false,
+    "description": "debug mode",
+  },
+  "login": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-l",
+    "visible": false,
+    "description": "login with login name",
+  },
+  "quiet": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-q",
+    "visible": false,
+    "description": "do not print messages about connection errors",
+  },
+  "logins": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-L",
+    "visible": true,
+    "description": "load several logins from file",
+  },
+  "server": {
+    "type": "STRING",
+    "order": 1,
+    "command": "",
+    "visible": false,
+    "description": "the target: DNS, IP or 192.168.0.0/24 (this OR the servers-to-attack option)",
+  },
+  "old-ssl": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-O",
+    "visible": false,
+    "description": "use old SSL v2 and v3",
+  },
+  "servers": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-M",
+    "visible": true,
+    "description": "List of servers to attack, one entry per line, ':' to specify port",
+  },
+  "service": {
+    "type": "STRING",
+    "order": 2,
+    "command": "",
+    "visible": true,
+    "description": "the service to crack. Supported: adam6500 asterisk cisco cisco-enable cvs ftp[s] http[s]-{head|get|post} http[s]-{get|post}-form http-proxy http-proxy-urlenum icq imap[s] irc ldap2[s] ldap3[-{cram|digest}md5][s] mssql mysql(v4) nntp oracle-listener oracle-sid pcanywhere pcnfs pop3[s] redis rexec rlogin rpcap rsh rtsp s7-300 sip smb smtp[s] smtp-enum snmp socks5 ssh sshkey teamspeak telnet[s] vmauthd vnc xmpp",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-v",
+    "visible": false,
+    "description": "verbose mode",
+  },
+  "password": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-p",
+    "visible": false,
+    "description": "try password",
+  },
+  "passwords": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-P",
+    "visible": true,
+    "description": "load several passwords from FILE",
+  },
+  "exit-found": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-f",
+    "visible": false,
+    "description": "exit when a login/pass pair is found per host",
+  },
+  "pass-gen-nsr": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-e",
+    "visible": false,
+    "description": "try n null password, s login as pass and/or r reversed login",
+  },
+  "output-format": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-b",
+    "visible": false,
+    "description": "output format: text(default), json, jsonv1",
+  },
+  "threads-global": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-T",
+    "visible": false,
+    "description": "run a number of connects in parallel overall (default: 64)",
+  },
+  "login-pass-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-C",
+    "visible": false,
+    "description": "colon separated login:pass format, instead of usernames/passwords files",
+  },
+  "pass-generation": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-x",
+    "visible": false,
+    "description": "MIN:MAX:CHARSET  password bruteforce generation. e.g 5:8:A1 generate passwords from length 5 to 8 with uppercase characters and numbers",
+  },
+  "show-login-pass": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-V",
+    "visible": false,
+    "description": "show login+pass for each attempt",
+  },
+  "dont-redo-failed": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-K",
+    "visible": false,
+    "description": "do not redo failed attempts (good for servers-to-attack mass scanning)",
+  },
+  "exit-found-global": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-F",
+    "visible": false,
+    "description": "exit when any login/pass pair is found globally",
+  },
+  "loop-arround-users": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-u",
+    "visible": false,
+    "description": "loop around users, not passwords (effective! implied with -x)",
+  },
+  "threads-per-target": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-t",
+    "visible": false,
+    "description": "Run a number of connects in parallel per target (default: 16)",
+  },
+  "pass-gen-non-random": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-r",
+    "visible": false,
+    "description": "use a non-random shuffling method for option -x",
+  },
+  "perform-ssl-connect": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-S",
+    "visible": false,
+    "description": "perform an SSL connect",
+  },
+  "wait-time-per-login": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-c",
+    "visible": false,
+    "description": "wait time per login attempt over all threads (enforces threads-per-target: 1)",
+  },
+  "wait-time-for-response": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-w",
+    "visible": false,
+    "description": "wait time for a response (default: 32)",
+  },
+  "pass-gen-disable-symbols": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-y",
+    "visible": false,
+    "description": "disable use of symbols in bruteforce",
+  },
+  "wait-time-between-connects": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-W",
+    "visible": false,
+    "description": "wait time between connects per thread (default: 0)",
+  },
+}}
+/>

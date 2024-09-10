@@ -1,0 +1,129 @@
+---
+title: "crithit"
+description: "Website Directory and file brute forcing at extreme scale. CritHit takes a single wordlist item and tests it one by one over a large collection of hosts before moving onto the next wordlist item. The intention of brute foricng in this manner is to avoid low limit Web Application Firewall (WAF) bans and to allow brute forcing to run faster than it normally would when approaching any single host with multiple simultaneous requests."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="05248cdf-dda4-43cc-ade9-f2a7fc647898"
+  name="crithit"
+  description="Website Directory and file brute forcing at extreme scale. CritHit takes a single wordlist item and tests it one by one over a large collection of hosts before moving onto the next wordlist item. The intention of brute foricng in this manner is to avoid low limit Web Application Firewall (WAF) bans and to allow brute forcing to run faster than it normally would when approaching any single host with multiple simultaneous requests."
+  category="Fuzzing"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/crithit:35f3621"
+  source_url="https://github.com/codingo/crithit"
+  license="Unknown"
+  output_command="--output"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/05248cdf-dda4-43cc-ade9-f2a7fc647898.json"
+  inputs={ {
+  "proxy": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--proxy",
+    "visible": false,
+    "description": "A file containing list of proxy names and port [IP:port].",
+  },
+  "target": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--target",
+    "visible": true,
+    "description": "The target URL.",
+  },
+  "verify": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--verify",
+    "visible": false,
+    "description": "Verify successful results with different proxies.",
+  },
+  "threads": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--threads",
+    "visible": false,
+    "description": "Number of threads to use (default: 4).",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--verbose",
+    "visible": false,
+    "description": "Be verbose with output.",
+  },
+  "read-for": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--read-for",
+    "visible": false,
+    "description": "Wait N seconds to receive data from server (default: 10).",
+  },
+  "wait-for": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--wait-for",
+    "visible": false,
+    "description": "Wait N seconds to connect/send data to server (default: 5).",
+  },
+  "word-list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--word-list",
+    "visible": true,
+    "description": "(required) A filename containing list of words to use.",
+  },
+  "exceptions": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--exceptions",
+    "visible": false,
+    "description": "File containing words.",
+  },
+  "signatures": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--signatures",
+    "visible": true,
+    "description": "File containing list of signatures to look out for in top-level domains.",
+  },
+  "max-sockets": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--max-sockets",
+    "visible": false,
+    "description": "Number of sockets to use.",
+  },
+  "statuscodes": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--statuscodes",
+    "visible": false,
+    "description": "Positive status codes (will be overwritten with statuscodesblacklist if set) (default: 200,204,301,302,307,401,403,408).",
+  },
+  "target-list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--target-list",
+    "visible": true,
+    "description": "A file containing the list of targets.",
+  },
+  "randomize-agent": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--randomize-agent",
+    "visible": false,
+    "description": "Use random user agents for requests.",
+  },
+  "statuscodesblacklist": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--statuscodesblacklist",
+    "visible": false,
+    "description": "Negative status codes (will override statuscodes if set).",
+  },
+}}
+/>

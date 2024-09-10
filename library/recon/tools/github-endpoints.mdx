@@ -1,0 +1,87 @@
+---
+title: "github-endpoints"
+description: "Find endpoints on GitHub"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="6155a543-1b73-4053-940a-c3b6360de054"
+  name="github-endpoints"
+  description="Find endpoints on GitHub"
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2022-02-08"
+  container="quay.io/trickest/github-endpoints:32efa73"
+  source_url="https://github.com/gwen001/github-endpoints"
+  license="Unknown"
+  output_command="-o"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/6155a543-1b73-4053-940a-c3b6360de054.json"
+  inputs={ {
+  "all": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-all",
+    "visible": false,
+    "description": "displays urls of all other domains",
+  },
+  "raw": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-raw",
+    "visible": false,
+    "description": "raw output",
+  },
+  "quick": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-q",
+    "visible": false,
+    "description": "quick mode, avoid extra searches with languages and noise added",
+  },
+  "domain": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-d",
+    "visible": true,
+    "description": "domain you are looking for (required)",
+  },
+  "tokens": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-t",
+    "visible": false,
+    "description": "list of tokens separated by comma",
+  },
+  "relative": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-r",
+    "visible": false,
+    "description": "display relative urls, default=false",
+  },
+  "tokens-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-t",
+    "visible": true,
+    "description": "a file containing 1 token per line",
+  },
+  "extended-mode": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-e",
+    "visible": false,
+    "description": "extended mode, also look for <dummy>example.com",
+  },
+  "exit-when-tokens-get-limited": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-k",
+    "visible": false,
+    "description": "exit the program when all tokens have been disabled",
+  },
+}}
+/>

@@ -1,0 +1,22 @@
+---
+title: "Workflows"
+description: "Explore a collection of powerful and efficient workflows in the {{ category_name }} category to enhance your productivity and security."
+sidebarTitle: "Workflows"
+---
+
+import { WorkflowCard } from '/snippets/WorkflowCard.mdx';
+
+<CardGroup cols={2}>
+{% for workflow in workflows %}
+  <WorkflowCard
+    cardTitle="{{ workflow.name }}"
+    description="{{ workflow.description }}"
+    iframeUrl="{{ workflow.iframe_url }}"
+    href="{{ workflow.href }}"
+    id="{{ workflow.id }}"
+    category="{{ workflow.category }}"
+    complexity={{ workflow.complexity }}
+    publisher="{{ workflow.publisher }}"
+  />
+{% endfor %}
+</CardGroup>

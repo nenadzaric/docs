@@ -1,0 +1,80 @@
+---
+title: "crlfuzz"
+description: "A fast tool to scan CRLF vulnerability written in Go"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="af0309a6-42e3-4b58-899c-3b48988e4bdb"
+  name="crlfuzz"
+  description="A fast tool to scan CRLF vulnerability written in Go"
+  category="Misconfiguration"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/crlfuzz:a797092"
+  source_url="https://github.com/dwisiswant0/crlfuzz"
+  license="Unknown"
+  output_command="-o"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/af0309a6-42e3-4b58-899c-3b48988e4bdb.json"
+  inputs={ {
+  "Proxy": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-x",
+    "visible": false,
+    "description": "Use specified proxy to fuzz",
+  },
+  "url-to-fuzz": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-u",
+    "visible": true,
+    "description": "Define single URL to fuzz",
+  },
+  "Request-data": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-d",
+    "visible": false,
+    "description": "Define request data",
+  },
+  "custom-header": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-H",
+    "visible": false,
+    "description": "Pass custom header to target",
+  },
+  "method-to-use": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-X",
+    "visible": false,
+    "description": "Specify request method to use( default: GET)",
+  },
+  "url-list-to-fuzz": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-l",
+    "visible": true,
+    "description": "Fuz URLs within file",
+  },
+  "concurrency-level": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-c",
+    "visible": false,
+    "description": "Set the concurrency level (default: 25)",
+  },
+  "only-vulnerable-targets": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-s",
+    "visible": false,
+    "description": "See only vulnerable targets",
+  },
+}}
+/>

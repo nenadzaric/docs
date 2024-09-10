@@ -1,0 +1,94 @@
+---
+title: "theharvester"
+description: "E-mails, subdomains and names enumeration tool"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="cb5853f0-37a3-433f-a32e-3b4ba4bf2b88"
+  name="theharvester"
+  description="E-mails, subdomains and names enumeration tool"
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2022-08-23"
+  container="quay.io/trickest/theharvester:1ba4c80"
+  source_url="https://github.com/laramies/theHarvester"
+  license="Unknown"
+  output_command="-f"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/cb5853f0-37a3-433f-a32e-3b4ba4bf2b88.json"
+  inputs={ {
+  "limit": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--limit",
+    "visible": false,
+    "description": "Limit the number of search results, default=500.",
+  },
+  "start": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--start",
+    "visible": false,
+    "description": "Start with result number X, default=0.",
+  },
+  "domain": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--domain",
+    "visible": true,
+    "description": "Company name or domain to search.",
+  },
+  "shodan": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--shodan",
+    "visible": false,
+    "description": "Use Shodan to query discovered hosts.",
+  },
+  "source": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--source",
+    "visible": false,
+    "description": "anubis, baidu, bevigil, binaryedge, bing, bingapi, bufferoverun, censys, certspotter, crtsh, dnsdumpster, duckduckgo, fullhunt, github-code, hackertarget, hunter, intelx, omnisint, otx, pentesttools, projectdiscovery, qwant, rapiddns, rocketreach, securityTrails, sublist3r, threatcrowd, threatminer, urlscan, virustotal, yahoo, zoomeye",
+  },
+  "dns-brute": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--dns-brute",
+    "visible": false,
+    "description": "Perform a DNS brute force on the domain.",
+  },
+  "take-over": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--take-over",
+    "visible": false,
+    "description": "Check for takeovers.",
+  },
+  "dns-lookup": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--dns-lookup",
+    "visible": false,
+    "description": "Enable DNS server lookup, default False.",
+  },
+  "dns-server": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--dns-server",
+    "visible": false,
+    "description": "DNS server to use for lookup.",
+  },
+  "virtual-host": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--virtual-host",
+    "visible": false,
+    "description": "Verify host name via DNS resolution and search for virtual hosts",
+  },
+}}
+/>

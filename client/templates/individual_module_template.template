@@ -1,0 +1,18 @@
+---
+title: "{{ name }}"
+description: "{{ description }}"
+---
+
+import { ModuleOverview } from '/snippets/ModuleOverview.mdx'
+
+<ModuleOverview 
+  category="{{ category }}"
+  inputs={{ inputs }}
+  outputs={{ outputs }}
+  author="{{ author }}"
+  createdDate="{{ created_date }}"
+  iframeUrl="{{ iframe_url }}"
+/>
+
+## Features
+{{ long_description }}

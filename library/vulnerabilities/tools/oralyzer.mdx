@@ -1,0 +1,66 @@
+---
+title: "oralyzer"
+description: "Oralyzer, a simple python script that is capable of finding the open redirection vulnerability in a website. It does that by fuzzing the url i.e. provided as the input."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="e7268717-6243-4b6f-90dd-cfa776e12e33"
+  name="oralyzer"
+  description="Oralyzer, a simple python script that is capable of finding the open redirection vulnerability in a website. It does that by fuzzing the url i.e. provided as the input."
+  category="Vulnerabilities"
+  author="trickest"
+  created_date="2021-08-25"
+  container="quay.io/trickest/oralyzer:5327d82"
+  source_url="https://github.com/r0075h3ll/Oralyzer"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/e7268717-6243-4b6f-90dd-cfa776e12e33.json"
+  inputs={ {
+  "url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--url",
+    "visible": true,
+    "description": "Scan single target",
+  },
+  "proxy": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--proxy",
+    "visible": false,
+    "description": "Use proxy",
+  },
+  "payload": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--payload",
+    "visible": false,
+    "description": "Use payloads from a file",
+  },
+  "wayback": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--wayback",
+    "visible": true,
+    "description": "fetch URLs from archive.org",
+  },
+  "url-list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--list",
+    "visible": true,
+    "description": "Scan multiple target",
+  },
+  "crlf-test": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-crlf",
+    "visible": false,
+    "description": "Scan for CRLF Injection",
+  },
+}}
+/>

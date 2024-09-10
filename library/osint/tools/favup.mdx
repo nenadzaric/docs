@@ -1,0 +1,87 @@
+---
+title: "favup"
+description: "Lookups for real IP starting from the favicon icon and using Shodan."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="c32ed2c8-f7e3-4551-9d10-5b9acc2d935c"
+  name="favup"
+  description="Lookups for real IP starting from the favicon icon and using Shodan."
+  category="OSINT"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/favup:30d9059"
+  source_url="https://github.com/pielco11/fav-up"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/c32ed2c8-f7e3-4551-9d10-5b9acc2d935c.json"
+  inputs={ {
+  "api-key": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-k",
+    "visible": true,
+    "description": "API key",
+  },
+  "url-list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-ul",
+    "visible": false,
+    "description": "The file that contains the full URL of all the icons to lookup for",
+  },
+  "web-list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-wl",
+    "visible": true,
+    "description": "The file that contains all the domains to lookup",
+  },
+  "favicon-url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-fu",
+    "visible": true,
+    "description": "URL where favicon resides",
+  },
+  "favicon-web": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-w",
+    "visible": false,
+    "description": "You don't know the URL of the favicon icon, but you still know that's there",
+  },
+  "api-key-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-kf",
+    "visible": false,
+    "description": "File to get the API key from",
+  },
+  "favicon-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-ff",
+    "visible": false,
+    "description": "File to lookup favicon",
+  },
+  "favicon-hash": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-fh",
+    "visible": true,
+    "description": "Use hash and search the entire internet",
+  },
+  "favicon-list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-fl",
+    "visible": true,
+    "description": "The file that contains the full path of  all the icons which you want to lookup",
+  },
+}}
+/>

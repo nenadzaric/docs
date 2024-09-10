@@ -1,0 +1,31 @@
+---
+title: "golinkfinder"
+description: "A minimal JS endpoint extractor. It's used to extract endpoints in both HTML source and embedded javascript files. Useful for bug hunters, red teamers, infosec ninjas."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="6954a9a4-b26d-4d66-a7e7-ee80e6d2cbae"
+  name="golinkfinder"
+  description="A minimal JS endpoint extractor. It's used to extract endpoints in both HTML source and embedded javascript files. Useful for bug hunters, red teamers, infosec ninjas."
+  category="Discovery"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/golinkfinder:7976a3d"
+  source_url="https://github.com/0xsha/GoLinkFinder"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/6954a9a4-b26d-4d66-a7e7-ee80e6d2cbae.json"
+  inputs={ {
+  "domain": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--domain",
+    "visible": true,
+    "description": "Input a URL.",
+  },
+}}
+/>

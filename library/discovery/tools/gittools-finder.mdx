@@ -1,0 +1,38 @@
+---
+title: "gittools-finder"
+description: "Identify websites with publicly accessible .git repositories"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="e979345d-c409-44b1-bebd-5c489d708dc6"
+  name="gittools-finder"
+  description="Identify websites with publicly accessible .git repositories"
+  category="Discovery"
+  author="trickest-mhmdiaa"
+  created_date="2023-06-19"
+  container="quay.io/trickest/gittools-finder:7cac63a"
+  source_url="https://github.com/internetwache/GitTools"
+  license="Unknown"
+  output_command="-o"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/e979345d-c409-44b1-bebd-5c489d708dc6.json"
+  inputs={ {
+  "threads": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-t",
+    "visible": false,
+    "description": "threads",
+  },
+  "input-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-i",
+    "visible": true,
+    "description": "input file",
+  },
+}}
+/>

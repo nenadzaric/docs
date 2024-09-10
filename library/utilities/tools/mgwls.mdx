@@ -1,0 +1,59 @@
+---
+title: "mgwls"
+description: "mgwls is a simple script written in GO to merge 2 wordlists"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="197f7b9a-dfe7-401d-b312-28e442461ecc"
+  name="mgwls"
+  description="mgwls is a simple script written in GO to merge 2 wordlists"
+  category="Utilities"
+  author="trickest-mhmdiaa"
+  created_date="2022-01-13"
+  container="quay.io/trickest/mgwls:b18ff47"
+  source_url="https://github.com/trickest/mgwls"
+  license="Unknown"
+  output_command="-o"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/197f7b9a-dfe7-401d-b312-28e442461ecc.json"
+  inputs={ {
+  "delimiter": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-delimiter",
+    "visible": true,
+    "description": "String delimiter to place between words",
+  },
+  "single-word": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-w",
+    "visible": false,
+    "description": "Single word to use for concatenation",
+  },
+  "wordlist-one": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-l",
+    "visible": true,
+    "description": "Wordlist one",
+  },
+  "wordlist-two": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-r",
+    "visible": true,
+    "description": "Wordlist two",
+  },
+  "single-word-side": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-side",
+    "visible": false,
+    "description": "Flag that determines the side of the single word. e.g left/right",
+  },
+}}
+/>

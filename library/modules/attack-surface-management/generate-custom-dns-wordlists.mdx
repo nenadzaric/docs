@@ -1,0 +1,80 @@
+---
+title: "Generate Custom DNS Wordlists"
+description: "Generate custom DNS brute force wordlists using known hostnames"
+---
+
+import { ModuleOverview } from '/snippets/ModuleOverview.mdx'
+
+<ModuleOverview 
+  category="Attack Surface Management"
+  inputs={ {
+  "hostnames": {
+    "name": "hostnames",
+    "type": "FILE",
+    "visible": true,
+    "description": "List of hostnames",
+  },
+}}
+  outputs={[ 
+    "level-1-wordlist",
+    "level-2-wordlist",
+    "level-3-wordlist",
+    "level-4-wordlist"
+  ]}
+  author="trickest-mhmdiaa"
+  createdDate="2024-07-04"
+  iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/9a0aebe5-1b93-4cd6-afe9-737f92200698.json"
+/>
+
+## Features
+# Generate Custom DNS Wordlists
+
+## Description
+Generate custom DNS brute force wordlists using known hostnames. This module creates wordlists suitable for both root and recursive DNS brute force that have a high likelihood of finding assets on your target domains by deriving the wordlists from existing keywords and naming conventions.
+
+## Features
+- Generates **custom wordlists** tailored to your target's unique keywords and naming conventions.
+- Creates **different types of wordlists** for root and recursive brute force.
+- Readily integrates with the **Enumerate Hostnames via Root Domain DNS Brute Force** and **Enumerate Hostnames via Recursive DNS Brute Force** modules.
+
+## Inputs
+### Required
+- **hostnames**: a list of hostnames
+```
+foo.example.com
+staging.foo.example.com
+dashboard.staging.foo.example.com
+2022.dashboard.staging.foo.example.com
+```
+
+## Outputs
+- **level-1-wordlist**: Wordlist suitable for level-1 (root) DNS brute force, including all the keywords and combinations found in the hostnames.
+```
+example
+foo
+staging
+dashboard
+2022
+staging.foo
+dashboard.staging.foo
+2022.dashboard.staging.foo
+```
+
+- **level-2-wordlist**: Wordlist suitable for level-2 DNS brute force
+```
+staging
+```
+
+- **level-3-wordlist**: Wordlist suitable for level-3 DNS brute force
+```
+dashboard
+```
+
+- **level-4-wordlist**: Wordlist suitable for level-4 DNS brute force
+```
+2022
+```
+
+## Changelog
+- v1.0
+    - Initial release

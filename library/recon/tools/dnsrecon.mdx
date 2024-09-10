@@ -1,0 +1,164 @@
+---
+title: "dnsrecon"
+description: "Author description - DNSRecon is a Python port of a Ruby script that I wrote to learn the language and about DNS in early 2007. This time I wanted to learn about Python and extend the functionality of the original tool and in the process re-learn how DNS works and how could it be used in the process of a security assessment and network troubleshooting. This tool provides the ability to perform: Check all NS Records for Zone Transfers; Enumerate General DNS Records for a given Domain (MX, SOA, NS, A, AAAA, SPF and TXT); Perform common SRV Record Enumeration; Top Level Domain (TLD) Expansion; Check for Wildcard Resolution; Brute Force subdomain and host A and AAAA records given a domain and a wordlist; Perform a PTR Record lookup for a given IP Range or CIDR; Check a DNS Server Cached records for A, AAAA and CNAME Records provided a list of host records in a text file to check."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="290b61f4-9edc-4418-a005-74942ecf526f"
+  name="dnsrecon"
+  description="Author description - DNSRecon is a Python port of a Ruby script that I wrote to learn the language and about DNS in early 2007. This time I wanted to learn about Python and extend the functionality of the original tool and in the process re-learn how DNS works and how could it be used in the process of a security assessment and network troubleshooting. This tool provides the ability to perform: Check all NS Records for Zone Transfers; Enumerate General DNS Records for a given Domain (MX, SOA, NS, A, AAAA, SPF and TXT); Perform common SRV Record Enumeration; Top Level Domain (TLD) Expansion; Check for Wildcard Resolution; Brute Force subdomain and host A and AAAA records given a domain and a wordlist; Perform a PTR Record lookup for a given IP Range or CIDR; Check a DNS Server Cached records for A, AAAA and CNAME Records provided a list of host records in a text file to check."
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2022-06-07"
+  container="quay.io/trickest/dnsrecon:e1b742e"
+  source_url="https://github.com/darkoperator/dnsrecon"
+  license="Unknown"
+  output_command="-c"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/290b61f4-9edc-4418-a005-74942ecf526f.json"
+  inputs={ {
+  "axfr": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-a",
+    "visible": false,
+    "description": "Perform AXFR with standard enumeration.",
+  },
+  "domain": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-d",
+    "visible": true,
+    "description": "Target domain",
+  },
+  "filter": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-f",
+    "visible": false,
+    "description": "Filter out of brute force domain lookup, records that resolve to the wildcard defined IP address when saving records.",
+  },
+  "threads": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--threads",
+    "visible": false,
+    "description": "Number of threads to use in reverse lookups, forward lookups, brute force and SRV record enumeration.",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--lifetime",
+    "visible": false,
+    "description": "Time to wait for a server to respond to a query. Default is 3.",
+  },
+  "use-tcp": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--tcp",
+    "visible": false,
+    "description": "Use TCP protocol to make queries.",
+  },
+  "ip-range": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-r",
+    "visible": true,
+    "description": "IP range for reverse lookup brute force in formats (first-last) or in (range/bitmask).",
+  },
+  "name-server": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-n",
+    "visible": false,
+    "description": "Domain server to use. If none is given, the SOA of the target will be used. Multiple servers can be  using a comma separated list.",
+  },
+  "enable-verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-v",
+    "visible": false,
+    "description": "Enable verbose.",
+  },
+  "whois-analysis": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-w",
+    "visible": false,
+    "description": "Perform deep whois record analysis and reverse lookup of IP ranges found through Whois when doing a standard enumeration.",
+  },
+  "crt-enumeration": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-k",
+    "visible": false,
+    "description": "Perform crt.sh enumeration with standard enumeration.",
+  },
+  "dictionary-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-D",
+    "visible": false,
+    "description": "Dictionary file of subdomain and hostnames to use for brute force. Filter out of brute force domain lookup, records that resolve to the wildcard defined IP address when saving records.",
+  },
+  "bing-enumeration": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-b",
+    "visible": false,
+    "description": "Perform Bing enumeration with standard enumeration.",
+  },
+  "dnssec-zone-walk": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-z",
+    "visible": false,
+    "description": "Performs a DNSSEC zone walk with standard enumeration.",
+  },
+  "enumeration-type": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-t",
+    "visible": false,
+    "description": "Type of enumeration to perform. Possible types: std, rvl, srv, axfr, bing, yand, snoop, tld, and zonewalk",
+  },
+  "yandex-enumeration": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-y",
+    "visible": false,
+    "description": "Perform Yandex enumeration with standard enumeration.",
+  },
+  "reverse-ipv4-lookup": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-s",
+    "visible": false,
+    "description": "Perform a reverse lookup of IPv4 ranges in the SPF record with standard enumeration.",
+  },
+  "continue-bruteforcing": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--iw",
+    "visible": false,
+    "description": "Continue brute forcing a domain even if a wildcard record is discovered.",
+  },
+  "disable-check-recursion": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--disable-check-recursion",
+    "visible": false,
+    "description": "Disables check for recursion on name servers.",
+  },
+  "disable-check-bindversion": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--disable-check-bindversion",
+    "visible": false,
+    "description": "Disables check for BIND version on name servers.",
+  },
+}}
+/>

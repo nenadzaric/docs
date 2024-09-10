@@ -1,0 +1,185 @@
+---
+title: "sudomy"
+description: "Sudomy is a subdomain enumeration tool to collect subdomains and analyzing domains performing automated reconnaissance (recon) for bug hunting / pentesting"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="64bd596e-1bc2-4b4f-a8b6-17281407c566"
+  name="sudomy"
+  description="Sudomy is a subdomain enumeration tool to collect subdomains and analyzing domains performing automated reconnaissance (recon) for bug hunting / pentesting"
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2023-08-07"
+  container="quay.io/trickest/sudomy:a34edc4-patch-2"
+  source_url="https://github.com/screetsec/Sudomy"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/64bd596e-1bc2-4b4f-a8b6-17281407c566.json"
+  inputs={ {
+  "all": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--all",
+    "visible": false,
+    "description": "Running all Enumeration, no nmap & gobuster",
+  },
+  "html": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--html",
+    "visible": false,
+    "description": "Make report output into HTML",
+  },
+  "graph": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--graph",
+    "visible": false,
+    "description": "Network Graph Visualization",
+  },
+  "httpx": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--httpx",
+    "visible": false,
+    "description": "Perform httpx multiple probers using retryablehttp",
+  },
+  "config": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Config file for API keys and webhook URLs",
+  },
+  "source": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--source",
+    "visible": false,
+    "description": "Use source for Enumerate Subdomain",
+  },
+  "db-port": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--db-port",
+    "visible": false,
+    "description": "Collecting port from 3rd Party default=shodan",
+  },
+  "domains": {
+    "type": "FILE",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "domains of the websites to scan",
+  },
+  "dnsprobe": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--dnsprobe",
+    "visible": false,
+    "description": "Perform multiple dns queries (dnsprobe)",
+  },
+  "nmap-top": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--nmap-top",
+    "visible": false,
+    "description": "Port scanning with top-ports using nmap from domain list",
+  },
+  "no-probe": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--no-probe",
+    "visible": false,
+    "description": "Do not perform httprobe",
+  },
+  "resolver": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--resolver",
+    "visible": false,
+    "description": "Convert domain lists to resolved IP lists without duplicates",
+  },
+  "takeover": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--takeover",
+    "visible": false,
+    "description": "Subdomain TakeOver Vulnerabilty Scanner",
+  },
+  "cloudfare": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--cloudfare",
+    "visible": false,
+    "description": "Check an IP is Owned by Cloudflare",
+  },
+  "gwordlist": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--gwordlist",
+    "visible": false,
+    "description": "Generate wordlist based on collecting url resources (Passive)",
+  },
+  "websocket": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--websocket",
+    "visible": false,
+    "description": "WebSocket Connection Check",
+  },
+  "bruteforce": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--bruteforce",
+    "visible": false,
+    "description": "Bruteforce Subdomain Using Gobuster (Wordlist: ALL Top SecList DNS)",
+  },
+  "no-passive": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--no-passive",
+    "visible": false,
+    "description": "Do not perform passive subdomain enumeration",
+  },
+  "ping-sweep": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--ping-sweep",
+    "visible": false,
+    "description": "Check live host using methode Ping Sweep",
+  },
+  "screenshot": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--screenshot",
+    "visible": false,
+    "description": "Screenshots a list of website (default: gowitness)",
+  },
+  "status-code": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--status-code",
+    "visible": false,
+    "description": "Get status codes, response from domain list",
+  },
+  "extract-params": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--extract-params",
+    "visible": false,
+    "description": "Collecting URL Parameter from Engine",
+  },
+  "apps-identifier": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--apps-identifier",
+    "visible": false,
+    "description": "Identify technologies on website (ex: webanalyze)",
+  },
+}}
+/>

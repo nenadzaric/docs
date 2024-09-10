@@ -1,0 +1,87 @@
+---
+title: "oneforall"
+description: "Multi-featured subdomain recon tool"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="b4f71eba-b29a-49aa-8f09-0d9b46f3f65b"
+  name="oneforall"
+  description="Multi-featured subdomain recon tool"
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2022-08-23"
+  container="quay.io/trickest/oneforall:5ad26a9"
+  source_url="https://github.com/shmilylty/OneForAll"
+  license="Unknown"
+  output_command="--path"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/b4f71eba-b29a-49aa-8f09-0d9b46f3f65b.json"
+  inputs={ {
+  "dns": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--dns",
+    "visible": false,
+    "description": "Use DNS resolution (default True)",
+  },
+  "req": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--req",
+    "visible": false,
+    "description": "HTTP request subdomains (default True)",
+  },
+  "port": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--port",
+    "visible": false,
+    "description": "The port range request to the subdomains (default port: 80)",
+  },
+  "alive": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--alive",
+    "visible": false,
+    "description": "Only export alive subdomains",
+  },
+  "brute": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--brute",
+    "visible": false,
+    "description": "Use brute module (default True)",
+  },
+  "format": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--fmt",
+    "visible": false,
+    "description": "result format (csv/json)",
+  },
+  "target": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--target",
+    "visible": true,
+    "description": "Target domain",
+  },
+  "targets": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--targets",
+    "visible": true,
+    "description": "List of domains",
+  },
+  "takeover": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--takeover",
+    "visible": false,
+    "description": "Scan subdomain takeover (default False)",
+  },
+}}
+/>

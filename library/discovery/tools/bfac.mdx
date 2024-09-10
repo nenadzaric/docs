@@ -1,0 +1,150 @@
+---
+title: "bfac"
+description: "BFAC (Backup File Artifacts Checker) is an automated tool that checks for backup artifacts that may disclose the web-application's source code. The artifacts can also lead to leakage of sensitive information, such as passwords, directory structure, etc."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="f347f79f-af58-49d0-afcb-0573df2dac41"
+  name="bfac"
+  description="BFAC (Backup File Artifacts Checker) is an automated tool that checks for backup artifacts that may disclose the web-application's source code. The artifacts can also lead to leakage of sensitive information, such as passwords, directory structure, etc."
+  category="Discovery"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/bfac:18fb0b5"
+  source_url="https://github.com/mazen160/bfac"
+  license="Unknown"
+  output_command="--verbose-output"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/f347f79f-af58-49d0-afcb-0573df2dac41.json"
+  inputs={ {
+  "host": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--host",
+    "visible": false,
+    "description": "HTTP host header value",
+  },
+  "level": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-level",
+    "visible": false,
+    "description": "Choose level",
+  },
+  "proxy": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--proxy",
+    "visible": false,
+    "description": "Proxy authentication credentials (name:password).",
+  },
+  "cookie": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--cookie",
+    "visible": false,
+    "description": "HTTP cookie header value",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--timeout",
+    "visible": false,
+    "description": "HTTP request timeout in seconds (default:5)",
+  },
+  "url-list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--list",
+    "visible": true,
+    "description": "Check a list of URLs",
+  },
+  "proxy-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--proxy-file",
+    "visible": false,
+    "description": "Use a proxy list file",
+  },
+  "single-url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-u",
+    "visible": true,
+    "description": "Check a single URL",
+  },
+  "user-agent": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-ua",
+    "visible": false,
+    "description": "HTTP User-Agent header value",
+  },
+  "request-rate": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--request-rate-throttling",
+    "visible": false,
+    "description": "Request rate throttling per second (default: 30)",
+  },
+  "results-only": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--no-text",
+    "visible": false,
+    "description": "Show the results only",
+  },
+  "extra-headers": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--headers",
+    "visible": false,
+    "description": "Extra headers (e.g. Accept-Language: fr\nETag: 123)",
+  },
+  "dvcs-tests-only": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--dvcs-test",
+    "visible": false,
+    "description": "Limit the test to exposed DVCS tests",
+  },
+  "user-agent-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--user-agents-file",
+    "visible": false,
+    "description": "Use a User-Agents file",
+  },
+  "exclude-status-code": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-xsc",
+    "visible": false,
+    "description": "Specify status codes to exclude, separated by commas",
+  },
+  "invalid-content-length": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--invalid-content-length",
+    "visible": false,
+    "description": "Manually specify the invalid Content-Length, instead of performing this check automatically.",
+  },
+  "verification-technique": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--technique",
+    "visible": false,
+    "description": "Technique to verify the availability of the file. (options: status_code, content_length, all)  (default: all)",
+  },
+  "invalid-content-length-offset": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--invalid-content-length-offset",
+    "visible": false,
+    "description": "Manually specify the Content-Length offset for invalid pages (default: 50).",
+  },
+}}
+/>

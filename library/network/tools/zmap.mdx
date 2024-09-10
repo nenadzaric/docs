@@ -1,0 +1,339 @@
+---
+title: "zmap"
+description: "ZMap is a fast single packet network scanner designed for Internet-wide network surveys."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="ad902d54-a424-4969-bf45-d63faf20d8da"
+  name="zmap"
+  description="ZMap is a fast single packet network scanner designed for Internet-wide network surveys."
+  category="Network"
+  author="trickest-mhmdiaa"
+  created_date="2023-10-25"
+  container="quay.io/trickest/zmap:v3.0.0-patch-14"
+  source_url="https://github.com/zmap/zmap"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/ad902d54-a424-4969-bf45-d63faf20d8da.json"
+  inputs={ {
+  "rate": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--rate",
+    "visible": false,
+    "description": "Set send rate in packets/sec",
+  },
+  "seed": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--seed",
+    "visible": false,
+    "description": "Seed used to select address permutation",
+  },
+  "batch": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--batch",
+    "visible": false,
+    "description": "Set the number of packets to send per iteration",
+  },
+  "cores": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--cores",
+    "visible": false,
+    "description": "Comma-separated list of cores to pin to",
+  },
+  "notes": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--notes",
+    "visible": false,
+    "description": "Inject user-specified notes into scan metadata",
+  },
+  "quiet": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--quiet",
+    "visible": false,
+    "description": "Do not print status updates",
+  },
+  "shard": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--shard",
+    "visible": false,
+    "description": "Set which shard this scan is (0 indexed) (default=`0')",
+  },
+  "config": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--config",
+    "visible": false,
+    "description": "Read a configuration file, which can specify any of these options",
+  },
+  "dryrun": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--dryrun",
+    "visible": false,
+    "description": "Don't actually send packets",
+  },
+  "probes": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--probes",
+    "visible": false,
+    "description": "Number of probes to send to each IP (default=`1')",
+  },
+  "shards": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--shards",
+    "visible": false,
+    "description": "Set the total number of shards  (default=`1'",
+  },
+  "iplayer": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--iplayer",
+    "visible": false,
+    "description": "Sends IP packets instead of Ethernet (for VPNs)",
+  },
+  "retries": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--retries",
+    "visible": false,
+    "description": "Max number of times to try to send packet if send fails  (default=`10')",
+  },
+  "bandwidth": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--bandwidth",
+    "visible": false,
+    "description": "Set send rate in bits/second (supports suffixes G, M and K)",
+  },
+  "interface": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--interface",
+    "visible": false,
+    "description": "Specify network interface to use",
+  },
+  "probe-ttl": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--probe-ttl",
+    "visible": false,
+    "description": "Set TTL value for probe IP packets (default=`255')",
+  },
+  "source-ip": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--source-ip",
+    "visible": false,
+    "description": "Source address(es) for scan packets (ip or range)",
+  },
+  "verbosity": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--verbosity",
+    "visible": false,
+    "description": "Level of log detail (0-5) (default `3')",
+  },
+  "probe-args": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--probe-args",
+    "visible": false,
+    "description": "Arguments to pass to probe module",
+  },
+  "source-mac": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--source-mac",
+    "visible": false,
+    "description": "Source MAC address",
+  },
+  "gateway-mac": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--gateway-mac",
+    "visible": false,
+    "description": "Specify gateway MAC address",
+  },
+  "max-results": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--max-results",
+    "visible": false,
+    "description": "Cap number of results to return",
+  },
+  "max-runtime": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--max-runtime",
+    "visible": false,
+    "description": "Cap length of time for sending packets",
+  },
+  "max-targets": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--max-targets",
+    "visible": false,
+    "description": "Cap number of targets to probe (as a number or a percentage of the address space)",
+  },
+  "min-hitrate": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--min-hitrate",
+    "visible": false,
+    "description": "Minimum hitrate that scan can hit before scan is aborted  (default=`-1')",
+  },
+  "output-args": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--output-args",
+    "visible": false,
+    "description": "Arguments to pass to output module",
+  },
+  "source-port": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--source-port",
+    "visible": false,
+    "description": "Source port(s) for scan packets (port or range)",
+  },
+  "target-port": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--target-port",
+    "visible": true,
+    "description": "port number to scan (for TCP and UDP scans)",
+  },
+  "probe-module": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--probe-module",
+    "visible": false,
+    "description": "Select probe module (default `tcp_synscan')",
+  },
+  "cooldown-time": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--cooldown-time",
+    "visible": false,
+    "description": "How long to continue receiving after sending last probe  (default=`8')",
+  },
+  "no-header-row": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--no-header-row",
+    "visible": false,
+    "description": "Precludes outputting any header rows in data (e.g., CSV headers)",
+  },
+  "output-fields": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--output-fields",
+    "visible": false,
+    "description": "Fields that should be output in result set",
+  },
+  "output-filter": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--output-filter",
+    "visible": false,
+    "description": "Specify a filter over the response fields to limit what responses get sent to the output module",
+  },
+  "output-module": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--output-module",
+    "visible": false,
+    "description": "Select output module",
+  },
+  "user-metadata": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--user-metadata",
+    "visible": false,
+    "description": "Inject user-specified JSON metadata into scan (JSON)",
+  },
+  "allowlist-file": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--allowlist-file",
+    "visible": true,
+    "description": "File of subnets to constrain scan to, in CIDR notation, e.g. 192.168.0.0/16",
+  },
+  "blocklist-file": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--blocklist-file",
+    "visible": false,
+    "description": "File of subnets to exclude, in CIDR notation, e.g. 192.168.0.0/16",
+  },
+  "disable-syslog": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--disable-syslog",
+    "visible": false,
+    "description": "Disables logging messages to syslog",
+  },
+  "sender-threads": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--sender-threads",
+    "visible": false,
+    "description": "Threads used to send packets (default `1')",
+  },
+  "list-of-ips-file": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--list-of-ips-file",
+    "visible": true,
+    "description": "List of individual addresses to scan in random order. Use --white-list file unless >1 million IPs",
+  },
+  "list-output-fields": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--list-output-fields",
+    "visible": false,
+    "description": "List all fields that can be output by selected probe module",
+  },
+  "list-probe-modules": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--list-probe-modules",
+    "visible": false,
+    "description": "List available probe modules",
+  },
+  "list-output-modules": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--list-output-modules",
+    "visible": false,
+    "description": "List available output modules",
+  },
+  "max-sendto-failures": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--max-sendto-failures",
+    "visible": false,
+    "description": "Maximum NIC sendto failures before scan is aborted  (default=`-1')",
+  },
+  "ignore-blocklist-errors": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--ignore-blocklist-errors",
+    "visible": false,
+    "description": "--ignore-blocklist-errors Ignore invalid entries in allowlist/blocklist",
+  },
+}}
+/>

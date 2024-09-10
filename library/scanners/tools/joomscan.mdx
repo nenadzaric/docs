@@ -1,0 +1,80 @@
+---
+title: "joomscan"
+description: "OWASP Joomla! Vulnerability Scanner (JoomScan) is an open source project, developed with the aim of automating the task of vulnerability detection and reliability assurance in Joomla CMS deployments. Implemented in Perl, this tool enables seamless and effortless scanning of Joomla installations, while leaving a minimal footprint with its lightweight and modular architecture. It not only detects known offensive vulnerabilities, but also is able to detect many misconfigurations and admin-level shortcomings that can be exploited by adversaries to compromise the system. Furthermore, OWASP JoomScan provides a user-friendly interface and compiles the final reports in both text and HTML formats for ease of use and minimization of reporting overheads."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="c3aaee3e-8c9b-4418-8bc0-9eee18ce9e69"
+  name="joomscan"
+  description="OWASP Joomla! Vulnerability Scanner (JoomScan) is an open source project, developed with the aim of automating the task of vulnerability detection and reliability assurance in Joomla CMS deployments. Implemented in Perl, this tool enables seamless and effortless scanning of Joomla installations, while leaving a minimal footprint with its lightweight and modular architecture. It not only detects known offensive vulnerabilities, but also is able to detect many misconfigurations and admin-level shortcomings that can be exploited by adversaries to compromise the system. Furthermore, OWASP JoomScan provides a user-friendly interface and compiles the final reports in both text and HTML formats for ease of use and minimization of reporting overheads."
+  category="Scanners"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/joomscan:7931539"
+  source_url="https://github.com/OWASP/joomscan"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/c3aaee3e-8c9b-4418-8bc0-9eee18ce9e69.json"
+  inputs={ {
+  "url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--url",
+    "visible": true,
+    "description": "The Joomla URL/domain to scan.",
+  },
+  "proxy": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--proxy",
+    "visible": false,
+    "description": "Use a proxy to connect to the target URL.",
+  },
+  "cookie": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--cookie",
+    "visible": false,
+    "description": "Set cookie.",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--timeout",
+    "visible": false,
+    "description": "Set timeout.",
+  },
+  "urls-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--mass",
+    "visible": false,
+    "description": "Cycle through URLs provided in txt file.",
+  },
+  "user-agent": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--user-agent",
+    "visible": false,
+    "description": "Use the specified User-Agent.",
+  },
+  "random-agent": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--random-agent",
+    "visible": false,
+    "description": "Use a random User-Agent.",
+  },
+  "enumerate-components": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--enumerate-components",
+    "visible": false,
+    "description": "Try to enumerate components.",
+  },
+}}
+/>

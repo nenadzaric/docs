@@ -1,0 +1,122 @@
+---
+title: "dnstwist"
+description: "See what sort of trouble users can get in trying to type your domain name. Find lookalike domains that adversaries can use to attack you. Can detect typosquatters, phishing attacks, fraud, and brand impersonation. Useful as an additional source of targeted threat intelligence."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="acddf5df-5a84-4811-b6ba-fff35dd8ca10"
+  name="dnstwist"
+  description="See what sort of trouble users can get in trying to type your domain name. Find lookalike domains that adversaries can use to attack you. Can detect typosquatters, phishing attacks, fraud, and brand impersonation. Useful as an additional source of targeted threat intelligence."
+  category="OSINT"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/dnstwist:6b89df1"
+  source_url="https://github.com/elceef/dnstwist"
+  license="Unknown"
+  output_command="-o"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/acddf5df-5a84-4811-b6ba-fff35dd8ca10.json"
+  inputs={ {
+  "domain": {
+    "type": "STRING",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Domain name or URL to scan",
+  },
+  "mx-check": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-m",
+    "visible": false,
+    "description": "Check if MX can be used to intercept emails",
+  },
+  "user-agent": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--useragent",
+    "visible": false,
+    "description": "User-Agent STRING to send with HTTP requests",
+  },
+  "geoip-lookup": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-g",
+    "visible": false,
+    "description": "Lookup for GeoIP location",
+  },
+  "override-url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--ssdeep-url",
+    "visible": false,
+    "description": "Override URL to fetch the original web page from",
+  },
+  "dictionary-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-d",
+    "visible": true,
+    "description": "Generate more domains using dictionary",
+  },
+  "lookup-whois-db": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-w",
+    "visible": false,
+    "description": "Lookup WHOIS database for creation date",
+  },
+  "number-of-threads": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-t",
+    "visible": false,
+    "description": "Number of urls",
+  },
+  "compare-fuzzy-hashes": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-s",
+    "visible": false,
+    "description": "Fetch web pages and compare their fuzzy hashes to evaluate similarity",
+  },
+  "dns-servers-to-query": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--nameservers",
+    "visible": false,
+    "description": "DNS servers to query (separated with commas)",
+  },
+  "show-all-dns-records": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-a",
+    "visible": false,
+    "description": "Show all DNS records",
+  },
+  "http-smtp-service-banners": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-b",
+    "visible": false,
+    "description": "Determine HTTP and SMTP service banners",
+  },
+  "show-only-registered-domains": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-r",
+    "visible": false,
+    "description": "Show only registered domain names",
+  },
+  "generate-domains-by-swapping-tld": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--tld",
+    "visible": false,
+    "description": "Generate more domains by swapping TLD from FILE",
+  },
+}}
+/>

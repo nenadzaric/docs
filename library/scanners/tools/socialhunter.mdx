@@ -1,0 +1,38 @@
+---
+title: "socialhunter"
+description: "Crawls the website and finds broken social media links that can be hijacked"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="6acb0625-44fd-4a65-8fdb-14d894c75858"
+  name="socialhunter"
+  description="Crawls the website and finds broken social media links that can be hijacked"
+  category="Scanners"
+  author="trickest-mhmdiaa"
+  created_date="2023-10-30"
+  container="quay.io/trickest/socialhunter:v0.1.1-patch-1"
+  source_url="https://github.com/utkusen/socialhunter"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/6acb0625-44fd-4a65-8fdb-14d894c75858.json"
+  inputs={ {
+  "urls": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-f",
+    "visible": true,
+    "description": "Path of the URL file",
+  },
+  "workers": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-w",
+    "visible": false,
+    "description": "Number of worker. (default 5)",
+  },
+}}
+/>

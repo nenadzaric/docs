@@ -1,0 +1,66 @@
+---
+title: "onesixtyone"
+description: "The SNMP protocol is a stateless, datagram oriented protocol. An SNMP scanner is a program that sends SNMP requests to multiple IP addresses, trying different community strings and waiting for a reply. Unfortunately SNMP servers don't respond to requests with invalid community strings and the underlying UDP protocol does not reliably report closed UDP ports."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="a8ad1c6d-aaff-4801-ae83-85cc9bf23857"
+  name="onesixtyone"
+  description="The SNMP protocol is a stateless, datagram oriented protocol. An SNMP scanner is a program that sends SNMP requests to multiple IP addresses, trying different community strings and waiting for a reply. Unfortunately SNMP servers don't respond to requests with invalid community strings and the underlying UDP protocol does not reliably report closed UDP ports."
+  category="Network"
+  author="trickest"
+  created_date="2021-09-07"
+  container="quay.io/trickest/onesixtyone:f2a4fa5"
+  source_url="https://github.com/trailofbits/onesixtyone"
+  license="Unknown"
+  output_command="-o"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/a8ad1c6d-aaff-4801-ae83-85cc9bf23857.json"
+  inputs={ {
+  "port": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-p",
+    "visible": false,
+    "description": "Specify an alternate destination SNMP port.",
+  },
+  "debug": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-d",
+    "visible": false,
+    "description": "Enable debug mode.",
+  },
+  "hosts": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-i",
+    "visible": true,
+    "description": "File with target hosts.",
+  },
+  "quiet-mode": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-q",
+    "visible": false,
+    "description": "Quiet mode, do not print log to stdout.",
+  },
+  "community-names": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-c",
+    "visible": true,
+    "description": "File with community names to try.",
+  },
+  "wait-miliseconds": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-w",
+    "visible": false,
+    "description": "Wait n milliseconds (1/1000 of a second) between sending packets (default: 10).",
+  },
+}}
+/>

@@ -1,0 +1,139 @@
+---
+title: Node Inputs
+description: ''
+---
+
+On this page you will learn what is a `Node Input` in Trickest platform is and how you can configure tools in `Trickest Editor`. 
+
+<Info>This page only cover configuring single [Nodes](introduction) and not [**Node** to **Node** connections](node-connections). For more information on how to connect nodes, please refer to the [Node Connections](node-connections) page.</Info>
+
+## Node Input
+
+A `Node Input` is a specific value that is provided to a [Node](introduction) in Trickest platform. It can be a string, file, folder or boolean value.
+
+## Required Node Inputs
+
+Some of the inputs are required for the tool to run successfully. For example, a tool might require a target URL to scan or a file containing a list of subdomains to brute force. These parameters will be enabled by default when you drag & drop a node in `Trickest Editor`.
+
+## Types of Node Inputs
+
+### String
+
+String input is a simple text value that can be provided to a node. It can be used to provide a target URL, a file path or any other text value.
+
+#### String Input Examples
+
+Some of the examples of the real world for String input values:
+
+* `threads` - Number of threads to use in a tool, e.g. `10`
+* `target` - Target URL to scan, e.g. `http://testphp.vulnweb.com`
+* `output-type` - Type of output to generate, e.g. `json`
+* `user-agent` - User agent to use in HTTP requests, e.g. `Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0
+
+<Frame caption="Trickest Tool with 2 string Node Inputs Connected">
+  <img src="/images/string-value-example.png" />
+</Frame>
+
+In this example, you can see `trickest.com` and `100` being connected to the `node` as `String` inputs.
+
+<Tip>String inputs are colored <span style={{color:'purple'}}>purple</span> in the `Trickest Editor.`</Tip>
+
+The Command for the tool execution will be automatically generated based on the input values. In this particular challenges
+```bash
+
+subfinder -domain trickest.com -t 100 -output out/subfinder-1/output.txt
+```
+
+## Boolean
+
+Boolean input is a true or false value that can be provided to a node. It can be used to enable or disable a specific feature in a tool.
+
+#### Boolean Input Examples
+
+Some of the examples of the real world for Boolean input values:
+
+* `recursive` - Enable recursive subdomain enumeration
+* `bruteforce` - Enable subdomain bruteforce
+* `verbose` - Enable verbose output
+* `json` - Enable JSON output
+
+<Frame caption="Trickest Tool with Boolean Node connected to JSON boolean parameter">
+  <img src="/images/boolean-value-example.png" />
+</Frame>
+
+
+In this example, you can see `true` being connected to the `json` parameter as `Boolean` input. Finally, the command will be generated as follows:
+
+```bash
+subfinder -domain trickest.com -t 100 -json -output out/subfinder-1/output.txt
+```
+
+<Tip>Boolean inputs are colored <span style={{color:'blue'}}>blue</span> in the `Trickest Editor.`</Tip>
+
+## File
+
+File input is a file that can be provided to a node. It can be used to provide a file containing a list of targets, a configuration file or any other file.
+
+#### File Input Examples
+
+Some of the examples of the real world for File input values:
+
+* `wordlist` - File containing a list of subdomains to brute force
+* `config` - Configuration file for the tool
+* `input-file` - File containing a list of targets to scan
+
+Now, let's see how we can enable a Node Input parameter which is not required or enabled by default.
+
+<Frame caption="Trickest Tool with Boolean Node connected to JSON boolean parameter">
+  <img src="/images/enable-file-input.gif" />
+</Frame>
+
+`list` file input has been appeared on the (Node)[/nodes] and we can delete the string input and connect the file input to the `list` parameter.
+
+<Tip>File inputs are colored <span style={{color:'orange'}}>orange</span> in the `Trickest Editor.`</Tip>
+
+<Frame caption="Trickest Tool with Boolean Node connected to JSON boolean parameter">
+  <img src="/images/file-value-example.png" />
+</Frame>
+
+### Types of File Inputs
+
+#### External URL
+
+External URL input is a URL that can be provided. It can be used to provide a URL containing file content to be used as an file input to the tool.
+
+Example
+
+```bash
+https://s3.amazonaws.com/trickest-public/wordlists/subdomains.txt
+```
+
+#### Private File from File Storage
+
+Additionally, you can upload a file to the Trickest platform and use it as a file input.
+
+<Frame caption="Trickest Tool with File Node connected to `list parameter`">
+  <img src="/images/file-upload-example.gif" />
+</Frame>
+
+## Folder
+
+Folder input is a folder that can be provided to a node. 
+
+<Warning>Currently folder inputs only support public git repositories. Private repositories are not supported yet.</Warning>
+
+#### Folder Input Examples
+
+Some of the examples of the real world for Folder input values:
+
+* `templates` - Folder containing templates for the tool
+* `screenshots` - Folder to pass screenshots
+
+
+<Frame caption="Trickest Tools with Folder Inputs connected with each other">
+  <img src="/images/folder-inputs-example-connection.png" />
+</Frame>
+
+<Tip> Folder inputs are colored <span style={{color:'yellow'}}>yellow</span> in the `Trickest Editor.` </Tip>
+
+This looks complex right? As we finished the Node Inputs, it is time to move and explain what are [Node Outputs](node-outputs) & [Node Connections](node-connections).

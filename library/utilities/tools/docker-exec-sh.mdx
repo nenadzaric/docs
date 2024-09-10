@@ -1,0 +1,38 @@
+---
+title: "docker-exec-sh"
+description: "Execute custom script for provided docker image"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="423dc5d1-c912-49c1-84d9-1982ab381bbf"
+  name="docker-exec-sh"
+  description="Execute custom script for provided docker image"
+  category="Utilities"
+  author="trickest-enterprise"
+  created_date="2022-03-17"
+  container="quay.io/trickest/docker-exec-sh:v3"
+  source_url="https://github.com/trickest/containers"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/423dc5d1-c912-49c1-84d9-1982ab381bbf.json"
+  inputs={ {
+  "image-list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "List of images where the script will be executed",
+  },
+  "script-to-be-executed": {
+    "type": "FILE",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "Script to be executed",
+  },
+}}
+/>

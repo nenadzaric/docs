@@ -1,0 +1,101 @@
+---
+title: "cloud-enum"
+description: "Multi-cloud enumeration utility"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="c3059e36-2ec1-4a40-84ca-99f0b521b04c"
+  name="cloud-enum"
+  description="Multi-cloud enumeration utility"
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2022-02-24"
+  container="quay.io/trickest/cloud-enum:bf2dd25"
+  source_url="https://github.com/initstring/cloud_enum"
+  license="Unknown"
+  output_command="--logfile"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/c3059e36-2ec1-4a40-84ca-99f0b521b04c.json"
+  inputs={ {
+  "brute": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--brute",
+    "visible": false,
+    "description": "List to brute-force Azure container names. Default: enum_tools/fuzz.txt",
+  },
+  "format": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--format",
+    "visible": false,
+    "description": "Format for log file (text,json,csv - defaults to text)",
+  },
+  "keyword": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--keyword",
+    "visible": true,
+    "description": "Bruteforce keyword",
+  },
+  "threads": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--threads",
+    "visible": false,
+    "description": "Threads for HTTP brute-force. Default = 5",
+  },
+  "mutations": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--mutations",
+    "visible": false,
+    "description": "Mutations. Default: enum_tools/fuzz.txt",
+  },
+  "quickscan": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--quickscan",
+    "visible": false,
+    "description": "Disable all mutations and second-level scans",
+  },
+  "nameserver": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--nameserver",
+    "visible": false,
+    "description": "DNS server to use in brute-force",
+  },
+  "disable-aws": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--disable-aws",
+    "visible": false,
+    "description": "Disable Amazon checks",
+  },
+  "disable-gcp": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--disable-gcp",
+    "visible": false,
+    "description": "Disable Google checks",
+  },
+  "disable-azure": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--disable-azure",
+    "visible": false,
+    "description": "Disable Azure checks",
+  },
+  "keywords-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--keyfile",
+    "visible": true,
+    "description": "Input file with a single keyword per line",
+  },
+}}
+/>

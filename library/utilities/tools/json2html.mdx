@@ -1,0 +1,45 @@
+---
+title: "json2html"
+description: "Convert complex JSON data to HTML Table representation"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="b2ac5127-5af0-4136-8ed5-bf3e305342a9"
+  name="json2html"
+  description="Convert complex JSON data to HTML Table representation"
+  category="Utilities"
+  author="trickest-mhmdiaa"
+  created_date="2022-06-01"
+  container="quay.io/trickest/json2html:1.3.0"
+  source_url="https://github.com/softvar/json2html"
+  license="Unknown"
+  output_command="--output"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/b2ac5127-5af0-4136-8ed5-bf3e305342a9.json"
+  inputs={ {
+  "json": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--json",
+    "visible": true,
+    "description": "JSON input file",
+  },
+  "encode": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--encode",
+    "visible": true,
+    "description": "Encode escaped html code",
+  },
+  "attributes": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--attributes",
+    "visible": true,
+    "description": "List of space-separated table attributes to apply to the generated table (example: 'id=foo class=bar')",
+  },
+}}
+/>

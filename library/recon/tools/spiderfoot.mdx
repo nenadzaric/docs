@@ -1,0 +1,143 @@
+---
+title: "spiderfoot"
+description: "OSINT for threat intelligence and attack surface mapping"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="2e884d78-c61f-4535-9fc0-3db8897f4917"
+  name="spiderfoot"
+  description="OSINT for threat intelligence and attack surface mapping"
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2022-12-08"
+  container="quay.io/trickest/spiderfoot:v4.0-patch-1"
+  source_url="https://github.com/smicallef/spiderfoot"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/2e884d78-c61f-4535-9fc0-3db8897f4917.json"
+  inputs={ {
+  "debug": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--debug",
+    "visible": false,
+    "description": "Enable debug output.",
+  },
+  "config": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--config",
+    "visible": true,
+    "description": "API config file",
+  },
+  "filter": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-f",
+    "visible": false,
+    "description": "Filter out other event types that weren't requested.",
+  },
+  "target": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-s",
+    "visible": true,
+    "description": "Target for the scan.",
+  },
+  "modules": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-m",
+    "visible": true,
+    "description": "Modules to enable (mod1,mod2,...).",
+  },
+  "use-case": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-u",
+    "visible": false,
+    "description": "Select modules automatically by use case",
+  },
+  "delimiter": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-D",
+    "visible": false,
+    "description": "Delimiter to use for CSV output. Default is ,.",
+  },
+  "max-length": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-S",
+    "visible": false,
+    "description": "Maximum data length to display. By default, all data is shown.",
+  },
+  "no-headers": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-H",
+    "visible": false,
+    "description": "Don't print field headers, just data.",
+  },
+  "event-types": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-t",
+    "visible": false,
+    "description": "Event types to collect; modules selected automatically (type1,type2,...).",
+  },
+  "max-threads": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-max-threads",
+    "visible": false,
+    "description": "Max number of modules to run concurrently.",
+  },
+  "strict-mode": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-x",
+    "visible": false,
+    "description": "Only enable modules that can directly consume your target, and if -t was specified only those events will be consumed by modules. This overrides -t and -m",
+  },
+  "output-format": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-o",
+    "visible": false,
+    "description": "Output format. Tab is default. (tab,csv,json)",
+  },
+  "include-source": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-r",
+    "visible": false,
+    "description": "Include the source data field in tab/csv output.",
+  },
+  "strip-newlines": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-n",
+    "visible": false,
+    "description": "Strip newlines from data.",
+  },
+  "disable-logging": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-q",
+    "visible": false,
+    "description": "Disable logging. This will also hide errors!",
+  },
+  "show-event-types": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-F",
+    "visible": false,
+    "description": "Show only a set of event types, comma-separated.",
+  },
+}}
+/>

@@ -1,0 +1,87 @@
+---
+title: "masscan-json"
+description: "This is an Internet-scale port scanner. It can scan the entire Internet in under 6 minutes, transmitting 10 million packets per second, from a single machine."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="d30b7388-8e1f-435f-b825-8ad60d410d45"
+  name="masscan-json"
+  description="This is an Internet-scale port scanner. It can scan the entire Internet in under 6 minutes, transmitting 10 million packets per second, from a single machine."
+  category="Network"
+  author="trickest-mhmdiaa"
+  created_date="2022-03-25"
+  container="quay.io/trickest/masscan:144c527"
+  source_url="https://github.com/robertdavidgraham/masscan"
+  license="Unknown"
+  output_command="-oJ"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/d30b7388-8e1f-435f-b825-8ad60d410d45.json"
+  inputs={ {
+  "rate": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--rate",
+    "visible": false,
+    "description": "Packets per second. Default: 100",
+  },
+  "ports": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-p",
+    "visible": true,
+    "description": "Port or Port range to be scanned",
+  },
+  "banners": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--banners",
+    "visible": false,
+    "description": "Grab banner information",
+  },
+  "offline": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--offline",
+    "visible": false,
+    "description": "Test in offline mode",
+  },
+  "targets": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-iL",
+    "visible": true,
+    "description": "List of targets",
+  },
+  "ip-range": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--range",
+    "visible": true,
+    "description": "Range of IP adresses to be scanned",
+  },
+  "exclude-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--excludefile",
+    "visible": false,
+    "description": "Exclude a range of ports",
+  },
+  "keep-packets-locally": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--router-mac",
+    "visible": false,
+    "description": "Keeps packets on the local network segments so that they won't go out to the Internet.",
+  },
+  "single-source-ip-address": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--source-ip",
+    "visible": false,
+    "description": "Provide a separate source ip address",
+  },
+}}
+/>

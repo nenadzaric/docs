@@ -1,0 +1,115 @@
+---
+title: "aquatone"
+description: "Aquatone is a tool for visual inspection of websites across a large number of hosts and is convenient for quickly gaining an overview of HTTP-based attack surface."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="bc292afb-f326-4408-b386-d2de57c44331"
+  name="aquatone"
+  description="Aquatone is a tool for visual inspection of websites across a large number of hosts and is convenient for quickly gaining an overview of HTTP-based attack surface."
+  category="Discovery"
+  author="trickest"
+  created_date="2021-09-07"
+  container="quay.io/trickest/aquatone:amd64_1.7.0"
+  source_url="https://github.com/michenriksen/aquatone"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/bc292afb-f326-4408-b386-d2de57c44331.json"
+  inputs={ {
+  "ports": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-ports",
+    "visible": false,
+    "description": "Ports to scan on hosts. Supported list aliases: small, medium, large, xlarge (default 80,443,8000,8080,8443)",
+  },
+  "proxy": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-proxy",
+    "visible": false,
+    "description": "Proxy to use for HTTP requests",
+  },
+  "silent": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-silent",
+    "visible": false,
+    "description": "Suppress all output except for errors",
+  },
+  "threads": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-threads",
+    "visible": false,
+    "description": "Number of concurrent threads (default number of logical CPUs)",
+  },
+  "save-body": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-save-body",
+    "visible": false,
+    "description": "Save response bodies to files (default true)",
+  },
+  "debug-mode": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-debug",
+    "visible": false,
+    "description": "Print debugging information",
+  },
+  "list-of-urls": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "List of URLs",
+  },
+  "load-session": {
+    "type": "FILE",
+    "order": 1,
+    "command": "-session",
+    "visible": false,
+    "description": "Load Aquatone session file and generate HTML report",
+  },
+  "template-path": {
+    "type": "FILE",
+    "order": 1,
+    "command": "-template-path",
+    "visible": false,
+    "description": "Path to HTML template to use for report",
+  },
+  "http-timeout-miliseconds": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-http-timeout",
+    "visible": false,
+    "description": "Timeout in miliseconds for HTTP requests (default 3000)",
+  },
+  "resolution-of-screenshot": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-resolution",
+    "visible": false,
+    "description": "Screenshot resolution (default 1440,900)",
+  },
+  "scan-timeout-miliseconds": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-scan-timeout",
+    "visible": false,
+    "description": "Timeout in miliseconds for port scans (default 100)",
+  },
+  "screenshot-timeout-miliseconds": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-screenshot-timeout",
+    "visible": false,
+    "description": "Timeout in miliseconds for screenshots (default 30000)",
+  },
+}}
+/>

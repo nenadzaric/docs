@@ -1,0 +1,45 @@
+---
+title: "portboozle"
+description: "Portboozle is a script written as a substitute for masscan."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="fde6a77e-d8e4-410e-ad4b-34d6091a8364"
+  name="portboozle"
+  description="Portboozle is a script written as a substitute for masscan."
+  category="Utilities"
+  author="trickest"
+  created_date="2021-09-07"
+  container="quay.io/trickest/portboozle:00e3b51"
+  source_url="https://github.com/fellchase/flumberboozle"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/fde6a77e-d8e4-410e-ad4b-34d6091a8364.json"
+  inputs={ {
+  "ports": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--ports",
+    "visible": true,
+    "description": "Specify target port[s] seperated by comma or just do 1-65535 or medium or large or huge or massive",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--timeout",
+    "visible": false,
+    "description": "Socket timeout for port scanning default is 0.7",
+  },
+  "massdns-output": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": false,
+    "description": "Massdns output.",
+  },
+}}
+/>

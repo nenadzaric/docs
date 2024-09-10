@@ -1,0 +1,45 @@
+---
+title: "mass-linkfinder"
+description: "A wrapper around LinkFinder to input a list of JS URLs. LinkFinder is a python script written to discover endpoints and their parameters in JavaScript files. It does so by using jsbeautifier for python in combination with a fairly large regular expression."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="6bf2fd41-37c1-4f56-93e0-797238713e34"
+  name="mass-linkfinder"
+  description="A wrapper around LinkFinder to input a list of JS URLs. LinkFinder is a python script written to discover endpoints and their parameters in JavaScript files. It does so by using jsbeautifier for python in combination with a fairly large regular expression."
+  category="Discovery"
+  author="trickest-mhmdiaa"
+  created_date="2022-03-03"
+  container="quay.io/trickest/mass-linkfinder:095bb62"
+  source_url="https://github.com/GerbenJavado/LinkFinder"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/6bf2fd41-37c1-4f56-93e0-797238713e34.json"
+  inputs={ {
+  "cookies": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-c",
+    "visible": false,
+    "description": "Add cookies to the request",
+  },
+  "urls-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "List of JS URLs to analyze",
+  },
+  "filter-regex": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-r",
+    "visible": false,
+    "description": "RegEx for filtering purposes against found endpoints (e.g. ^/api/)",
+  },
+}}
+/>

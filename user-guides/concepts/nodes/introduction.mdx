@@ -1,0 +1,60 @@
+---
+title: Nodes
+description: ''
+---
+
+On this page you will learn what is a `node` in Trickest platform and how it serves as a main building block for executing offensive cybersecurity workflows.
+
+## Trickest Node
+
+Trickest Node is a [containerized environment](https://en.wikipedia.org/wiki/Containerization_(computing)) that wraps a specific tool or script and provides a standardized way of executing it.
+
+<img src="/images/transform.png" />
+
+This way, Trickest solves 2 out of 4 challenges we mentioned previously
+
+    * ✅ **Download the tool** - You don't need to download the tools anymore, it will be available in the platform or can be imported.
+    * ✅ **Install dependencies** - The dependencies needed and optimal operating system for the tool are preinstalled, you don't need to worry about this ever again.
+    * Configure the tool
+    * Run the tool
+
+## Tool Configuration & Inputs
+
+If you remember from previous page, the tool execution and configuration comes with it's own parameters
+
+```
+bash 
+
+sample-tool -d http://trickest.com
+
+```
+
+In this example, we are running `nikto` tool with `-h` parameter that specifies the target URL.
+
+In Trickest, you can configure the tool execution and parameters in the `node` configuration. What is more important, you don't need to worry about the command parameter values, they will have a human-readable format easy to understand.
+
+<Frame caption="Trickest Tool with a parameter">
+  <img src="/images/sample-tool.png" />
+</Frame>
+
+
+## Inputs
+
+Parameter values are explicitly provided through a different node called `inputs`
+
+Inputs can be 
+
+* **String** 
+* **File**
+* **Folder**
+* **Boolean**
+
+Let's look at example of String input.
+
+<Frame caption="Trickest Tool with string input">
+  <img src="/images/sample-tool-with-string-connection.png" />
+</Frame>
+
+<Tip>In Trickest Editor, command for tool execution will be automatically generated.</Tip>
+
+Now, let's look how different inputs can be used in Trickest.

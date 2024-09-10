@@ -1,0 +1,192 @@
+---
+title: "mapcidr"
+description: "Perform multiple operations for a given subnet/CIDR ranges."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="a800a1b8-a0f3-4b02-ab7d-51fa21787e29"
+  name="mapcidr"
+  description="Perform multiple operations for a given subnet/CIDR ranges."
+  category="Network"
+  author="trickest-mhmdiaa"
+  created_date="2022-09-14"
+  container="quay.io/trickest/mapcidr:v1.1.15"
+  source_url="https://github.com/projectdiscovery/mapcidr"
+  license="Unknown"
+  output_command="-output"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/a800a1b8-a0f3-4b02-ab7d-51fa21787e29.json"
+  inputs={ {
+  "cidr": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-cidr",
+    "visible": true,
+    "description": "File containing list of CIDR/IP to process",
+  },
+  "sort": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-sort",
+    "visible": false,
+    "description": "Sort input IPs/CIDRs in ascending order",
+  },
+  "count": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-count",
+    "visible": false,
+    "description": "Count number of IPs in given CIDR",
+  },
+  "silent": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-silent",
+    "visible": false,
+    "description": "Silent mode",
+  },
+  "target": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-cidr",
+    "visible": true,
+    "description": "CIDR/IP to process",
+  },
+  "to-ipv4": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-to-ipv4",
+    "visible": false,
+    "description": "Convert IPs to IPv4 format",
+  },
+  "to-ipv6": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-to-ipv6",
+    "visible": false,
+    "description": "Convert IPs to IPv6 format",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-verbose",
+    "visible": false,
+    "description": "Verbose mode",
+  },
+  "match-ip": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-match-ip",
+    "visible": false,
+    "description": "File containing list of IP/CIDR to match",
+  },
+  "aggregate": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-aggregate",
+    "visible": false,
+    "description": "Aggregate IPs/CIDRs into minimum subnet",
+  },
+  "filter-ip": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-filter-ip",
+    "visible": false,
+    "description": "File containing list of IP/CIDR to filter",
+  },
+  "ip-format": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-ip-format",
+    "visible": false,
+    "description": "IP formats (0,1,2,3,4,5,6,7,8,9,10,11)",
+  },
+  "skip-base": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-skip-base",
+    "visible": false,
+    "description": "Skip base IPs (ending in .0) in output",
+  },
+  "shuffle-ip": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-shuffle-ip",
+    "visible": false,
+    "description": "Shuffle Input IPs in random order",
+  },
+  "filter-ipv4": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-filter-ipv4",
+    "visible": false,
+    "description": "Filter IPv4 IPs from input",
+  },
+  "filter-ipv6": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-filter-ipv6",
+    "visible": false,
+    "description": "Filter IPv6 IPs from input",
+  },
+  "shuffle-port": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-shuffle-port",
+    "visible": false,
+    "description": "Shuffle Input IP:Port in random order",
+  },
+  "sort-reverse": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-sort-reverse",
+    "visible": false,
+    "description": "Sort input IPs/CIDRs in descending order",
+  },
+  "skip-broadcast": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-skip-broadcast",
+    "visible": false,
+    "description": "Skip broadcast IPs (ending in .255) in output",
+  },
+  "slice-by-count": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-sbc",
+    "visible": false,
+    "description": "Slice CIDRs by given CIDR count",
+  },
+  "zero-pad-number": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-zero-pad-n",
+    "visible": false,
+    "description": "number of padded zero to use (default 3)",
+  },
+  "aggregate-approx": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-aggregate-approx",
+    "visible": false,
+    "description": "Aggregate sparse IPs/CIDRs into minimum approximated subnet",
+  },
+  "zero-pad-permute": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-zero-pad-permute",
+    "visible": false,
+    "description": "enable permutations from 0 to zero-pad-n for each octets",
+  },
+  "slice-by-host-count": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-sbh",
+    "visible": false,
+    "description": "Slice CIDRs by given HOST count",
+  },
+}}
+/>

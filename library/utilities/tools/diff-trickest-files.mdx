@@ -1,0 +1,52 @@
+---
+title: "diff-trickest-files"
+description: "Diff an input file against a file from your Trickest file storage"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="c9feb9e1-fca5-49c2-bdae-e4e27e4c3833"
+  name="diff-trickest-files"
+  description="Diff an input file against a file from your Trickest file storage"
+  category="Utilities"
+  author="trickest-mhmdiaa"
+  created_date="2023-03-31"
+  container="quay.io/trickest/diff_trickest_files:1a65c1c"
+  source_url="https://github.com/trickest/trickest-files"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/c9feb9e1-fca5-49c2-bdae-e4e27e4c3833.json"
+  inputs={ {
+  "token": {
+    "type": "STRING",
+    "order": 0,
+    "command": "",
+    "visible": false,
+    "description": "Trickest authentication token",
+  },
+  "new-file": {
+    "type": "FILE",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "The new file",
+  },
+  "old-file": {
+    "type": "STRING",
+    "order": 2,
+    "command": "",
+    "visible": true,
+    "description": "The name of the file as saved on the Trickest file storage",
+  },
+  "token-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Trickest authentication token file",
+  },
+}}
+/>

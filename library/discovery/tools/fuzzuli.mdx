@@ -1,0 +1,171 @@
+---
+title: "fuzzuli"
+description: "URL fuzzing tool that aims to find critical backup files by creating a dynamic wordlist based on the domain."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="c5f6a3e8-4c09-415a-a79d-3ada2e5f5182"
+  name="fuzzuli"
+  description="URL fuzzing tool that aims to find critical backup files by creating a dynamic wordlist based on the domain."
+  category="Discovery"
+  author="trickest-mhmdiaa"
+  created_date="2022-08-08"
+  container="quay.io/trickest/fuzzuli:v1.1.4"
+  source_url="https://github.com/musana/fuzzuli"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/c5f6a3e8-4c09-415a-a79d-3ada2e5f5182.json"
+  inputs={ {
+  "paths": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-pt",
+    "visible": false,
+    "description": "paths. separate with commas to use multiple paths. e.g. /,/db/,/old/ (default /)",
+  },
+  "method": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-mt",
+    "visible": false,
+    "description": "avaible methods: regular, withoutdots, withoutvowels, reverse, mixed, withoutdv, shuffle, all",
+  },
+  "prefix": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-pf",
+    "visible": false,
+    "description": "prefix to add to URLs",
+  },
+  "remove": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-rm",
+    "visible": false,
+    "description": "remove specified char",
+  },
+  "silent": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-sl",
+    "visible": false,
+    "description": "silent mode",
+  },
+  "suffix": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-sf",
+    "visible": false,
+    "description": "suffix to add to URLs",
+  },
+  "exclude": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-es",
+    "visible": false,
+    "description": "exclude domain that contains specified string or char; supports OR operand google|bing|yahoo (default #)",
+  },
+  "replace": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-rp",
+    "visible": false,
+    "description": "replace specified char",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-to",
+    "visible": false,
+    "description": "timeout in seconds. (default 10)",
+  },
+  "http-proxy": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-px",
+    "visible": false,
+    "description": "http proxy to use",
+  },
+  "input-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-f",
+    "visible": true,
+    "description": "input file containing a list of hosts/domains",
+  },
+  "print-urls": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-p",
+    "visible": false,
+    "description": "print urls that is sent request",
+  },
+  "user-agent": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-ua",
+    "visible": false,
+    "description": "user agent (default Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:100.0) Gecko/20100101 Firefox/100.0)",
+  },
+  "http-method": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-hm",
+    "visible": false,
+    "description": "HTTP Method. (default HEAD)",
+  },
+  "status-code": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-sc",
+    "visible": false,
+    "description": "match response with specified status code (default 200)",
+  },
+  "content-type": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-ct",
+    "visible": false,
+    "description": "match response with specified content type",
+  },
+  "worker-count": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-w",
+    "visible": false,
+    "description": "worker count (default 16)",
+  },
+  "domain-length": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-dl",
+    "visible": false,
+    "description": "match domain length that specified. (default 40)",
+  },
+  "just-wordlist": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-jw",
+    "visible": false,
+    "description": "just generate wordlist do not http request",
+  },
+  "content-length": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-cl",
+    "visible": false,
+    "description": "match response with specified minimum content length. e.g. >100 (default 100)",
+  },
+  "file-extensions": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-ex",
+    "visible": false,
+    "description": "default (rar, zip, tar.gz, tar, gz, jar, 7z, bz2, sql, backup, war)",
+  },
+}}
+/>

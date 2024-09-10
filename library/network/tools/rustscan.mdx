@@ -1,0 +1,122 @@
+---
+title: "rustscan"
+description: "The Modern Port Scanner. Find ports quickly (3 seconds at its fastest). Run scripts through our scripting engine (Python, Lua, Shell supported)."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="e6fc80af-4a5d-4145-bc86-2600e7dc8707"
+  name="rustscan"
+  description="The Modern Port Scanner. Find ports quickly (3 seconds at its fastest). Run scripts through our scripting engine (Python, Lua, Shell supported)."
+  category="Network"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/rustscan:v2.3.0"
+  source_url="https://github.com/RustScan/RustScan"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/e6fc80af-4a5d-4145-bc86-2600e7dc8707.json"
+  inputs={ {
+  "top": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--top",
+    "visible": false,
+    "description": "Use the top 1000 ports",
+  },
+  "ports": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--ports",
+    "visible": false,
+    "description": "A list of comma separated ports to be scanned. Example: 80,443,8080",
+  },
+  "range": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--range",
+    "visible": false,
+    "description": "A range of ports with format start-end. Example: 1-1000",
+  },
+  "tries": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--tries",
+    "visible": false,
+    "description": "The number of tries before a port is assumed to be closed. If set to 0, rustscan will correct it to 1 [default: 1]",
+  },
+  "ulimit": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--ulimit",
+    "visible": false,
+    "description": "Automatically ups the ULIMIT with the value you provided",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--timeout",
+    "visible": false,
+    "description": "The timeout in milliseconds before a port is assumed to be closed [default: 1500]",
+  },
+  "addresses": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--addresses",
+    "visible": true,
+    "description": "A comma-delimited list of separated CIDRs, IPs, or hosts to be scanned",
+  },
+  "no-config": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--no-config",
+    "visible": false,
+    "description": "Whether to ignore the configuration file or not",
+  },
+  "accessible": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--accessible",
+    "visible": false,
+    "description": "Accessible mode. Turns off features which negatively affect screen readers",
+  },
+  "batch-size": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--batch-size",
+    "visible": false,
+    "description": "The batch size for port scanning, it increases or slows the speed of scanning. Depends on the open file limit of your OS.  If you do 65535 it will do every port at the same time. Although, your OS may not support this [default: 4500]",
+  },
+  "scan-order": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--scan-order",
+    "visible": false,
+    "description": "The order of scanning to be performed. The serial option will scan ports in ascending order while the random option will scan ports randomly [default: serial]  [possible values: Serial, Random]",
+  },
+  "config-path": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--config-path",
+    "visible": false,
+    "description": "Custom path to config file",
+  },
+  "exclude-ports": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--exclude-ports",
+    "visible": false,
+    "description": "A list of comma separated ports to be excluded from scanning. Example: 80,443,8080",
+  },
+  "addresses-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--addresses",
+    "visible": true,
+    "description": "A newline-delimited file of separated CIDRs, IPs, or hosts to be scanned",
+  },
+}}
+/>

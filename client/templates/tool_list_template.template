@@ -1,0 +1,20 @@
+---
+title: "{{ category_name }} Tools"
+description: "Explore a collection of powerful and efficient tools in the {{ category_name }} category to enhance your productivity and security."
+sidebarTitle: "Tools"
+mode: "wide"
+---
+
+import { ToolCard } from '/snippets/ToolCard.mdx';
+
+<CardGroup cols={2}>
+{% for tool in tools %}
+  <ToolCard
+    cardTitle="{{ tool.name }}"
+    description="{{ tool.description }}"
+    iframeUrl="{{ tool.iframe_url }}"
+    href="{{ tool.href }}"
+    category="{{ tool.category }}"
+  />
+{% endfor %}
+</CardGroup>

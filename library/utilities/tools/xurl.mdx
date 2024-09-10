@@ -1,0 +1,66 @@
+---
+title: "xurl"
+description: "A CLI utility to pull out bits of URLs."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="c27a6ab7-654c-48bf-8a8d-61194a4edb13"
+  name="xurl"
+  description="A CLI utility to pull out bits of URLs."
+  category="Utilities"
+  author="trickest-mhmdiaa"
+  created_date="2023-12-08"
+  container="quay.io/trickest/xurl:v0.0.0"
+  source_url="https://github.com/hueristiq/xurl"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/c27a6ab7-654c-48bf-8a8d-61194a4edb13.json"
+  inputs={ {
+  "mode": {
+    "type": "STRING",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "mode (domains, apexes, paths, query, params, values, or format)",
+  },
+  "input": {
+    "type": "FILE",
+    "order": 2,
+    "command": "--input",
+    "visible": true,
+    "description": "input file",
+  },
+  "unique": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--unique",
+    "visible": false,
+    "description": "output unique values",
+  },
+  "verbosity": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--verbosity",
+    "visible": false,
+    "description": "debug, info, warning, error, fatal or silent (default: info)",
+  },
+  "monochrome": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--monochrome",
+    "visible": false,
+    "description": "disable output content coloring",
+  },
+  "format-string": {
+    "type": "STRING",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "format string",
+  },
+}}
+/>

@@ -1,0 +1,48 @@
+---
+title: Machines
+description: ''
+---
+
+On this page you will learn what are Trickest Machines and how they are being used to execute Trickest Workflows.
+
+## Trickest Machines
+
+Machines represent cloud resources required for executing workflows.
+
+Trickest provides a fixed number of virtual machines to each user, available to be used in workflow executions. Number of machines is predefined by user's [subscription package](https://trickest.com/pricing).
+
+## Managed Machines
+
+Trickest provides several types of machines based on the account. Different machine types have different allocations of CPU and memory, so are suited for workloads with different computational requirements.
+
+Here are the available machine types per user type:
+
+| Machine Type | CPU | RAM |
+|--------------|-----|-----|
+| Community    | 2   | 4GB |
+| Enterprise   | 2   | 8GB |
+
+<Info>For enterprise users, there is a possibility to request more powerful machine specification. Please [contact us](https://trickest.com/talk-with-us/) for more information.</Info>
+
+### Managed Machines States
+
+
+* *Down* - Machine is not dedicated to any workflow execution. It is on the rest and it is available to be dedicated to some run.
+* *Up* - Machine is activated (from Down to Up activation) and it is ready to execute the workflow.
+* *Running* - Machine is executing the workflow. It isn't available for any other workflow execution.
+* *Error* - Error occurred. It isn't able to do any computation at the moment.
+
+
+## Self-Hosted Machines
+
+Self-hosted machines are machines that are managed by the user. Users are able to attach their own devices to Trickest Platform to be used in execution.
+
+
+<Tip> Check out Tutorial on [using self-hosted machines.](../../../tutorials/using-self-hosted-machines) </Tip>
+
+
+## Distribution
+
+By using Trickest Execution Engine with combination of [Splitter](../workflows/splitter) nodes, you can distribute the execution of your workflow across multiple machines.
+
+<Tip> Distribution is throughly explained in the [Distributed Execution Tutorial.](../../../tutorials/distributed-execution)</Tip>

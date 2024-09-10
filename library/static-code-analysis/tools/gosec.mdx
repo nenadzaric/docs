@@ -1,0 +1,122 @@
+---
+title: "gosec"
+description: "Inspecting source code for security problems by scanning the Go AST. Rules can be found on the tool's Github page. Unfortunately, the recursive scan is not yet available on this platform, but it's going to be implemented in the future."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="fc85607b-6b3e-4c62-9148-99e2b10591d1"
+  name="gosec"
+  description="Inspecting source code for security problems by scanning the Go AST. Rules can be found on the tool's Github page. Unfortunately, the recursive scan is not yet available on this platform, but it's going to be implemented in the future."
+  category="Static Code Analysis"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/gosec:v2.7.0"
+  source_url="https://github.com/securego/gosec"
+  license="Unknown"
+  output_command="-out"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/fc85607b-6b3e-4c62-9148-99e2b10591d1.json"
+  inputs={ {
+  "tags": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-tags",
+    "visible": false,
+    "description": "Comma separated list of build tags.",
+  },
+  "nosec": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-nosec",
+    "visible": false,
+    "description": "Ignores #nosec comments when set.",
+  },
+  "quiet": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-quiet",
+    "visible": false,
+    "description": "Only show output when errors are found.",
+  },
+  "tests": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-tests",
+    "visible": false,
+    "description": "Scan tests files.",
+  },
+  "target": {
+    "type": "FOLDER",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "Target directory to scan.",
+  },
+  "exclude": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-exclude",
+    "visible": false,
+    "description": "Comma separated list of rules IDs to exclude (rule list can be viewed on tool's Github page).",
+  },
+  "include": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-include",
+    "visible": false,
+    "description": "Comma separated list of rules IDs to include (rule list can be viewed on tool's Github page).",
+  },
+  "no-fail": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-no-fail",
+    "visible": false,
+    "description": "Do not fail the scanning, even if issues were found.",
+  },
+  "severity": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-severity",
+    "visible": false,
+    "description": "Filter out the issues with a lower severity than the given value. Valid options are: low, medium, high (default: low).",
+  },
+  "nosec-tag": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-nosec-tag",
+    "visible": false,
+    "description": "Set an alternative string for #nosec. Some examples: #dontanalyze, #falsepositive.",
+  },
+  "confidence": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-confidence",
+    "visible": false,
+    "description": "Filter out the issues with a lower confidence than the given value. Valid options are: low, medium, high (default: low).",
+  },
+  "config-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-conf",
+    "visible": false,
+    "description": "Optional config file.",
+  },
+  "exclude-dir": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-exclude-dir",
+    "visible": false,
+    "description": "Exclude folder from scan (can be specified multiple times).",
+  },
+  "output-format": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-fmt",
+    "visible": false,
+    "description": "Set output format. Valid options are: json, yaml, csv, junit-xml, html, sonarqube, golint, sarif or text (default: text).",
+  },
+}}
+/>

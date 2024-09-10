@@ -1,0 +1,283 @@
+---
+title: "zdns"
+description: "Fast CLI DNS Lookup Tool"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="a8ee95b5-a838-4c1d-915b-7c2e60d4c9fb"
+  name="zdns"
+  description="Fast CLI DNS Lookup Tool"
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2024-04-02"
+  container="quay.io/trickest/zdns:610e4c7"
+  source_url="https://github.com/zmap/zdns"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/a8ee95b5-a838-4c1d-915b-7c2e60d4c9fb.json"
+  inputs={ {
+  "alexa": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--alexa",
+    "visible": false,
+    "description": "is input file from Alexa Top Million download",
+  },
+  "class": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--class",
+    "visible": false,
+    "description": "DNS class to query. Options: INET, CSNET, CHAOS, HESIOD, NONE, ANY. Default: INET. (default INET)",
+  },
+  "input": {
+    "type": "STRING",
+    "order": 0,
+    "command": "",
+    "visible": false,
+    "description": "Input target",
+  },
+  "config": {
+    "type": "FILE",
+    "order": 2,
+    "command": "--config",
+    "visible": false,
+    "description": "config file (default is $HOME/.zdns.yaml)",
+  },
+  "dnssec": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--dnssec",
+    "visible": false,
+    "description": "Requests DNSSEC records by setting the DNSSEC OK (DO) bit",
+  },
+  "module": {
+    "type": "STRING",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "module",
+  },
+  "prefix": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--prefix",
+    "visible": false,
+    "description": "name to be prepended to what's passed in (e.g., www.)",
+  },
+  "retries": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--retries",
+    "visible": false,
+    "description": "how many times should zdns retry query if timeout or temporary failure (default 1)",
+  },
+  "threads": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--threads",
+    "visible": false,
+    "description": "number of lightweight go threads (default 1000)",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--timeout",
+    "visible": false,
+    "description": "timeout for resolving an individual name (default 15)",
+  },
+  "tcp-only": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--tcp-only",
+    "visible": false,
+    "description": "Only perform lookups over TCP",
+  },
+  "udp-only": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--udp-only",
+    "visible": false,
+    "description": "Only perform lookups over UDP",
+  },
+  "conf-file": {
+    "type": "FILE",
+    "order": 2,
+    "command": "--conf-file",
+    "visible": false,
+    "description": "config file for DNS servers (default /etc/resolv.conf)",
+  },
+  "iterative": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--iterative",
+    "visible": false,
+    "description": "Perform own iteration instead of relying on recursive resolver",
+  },
+  "max-depth": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--max-depth",
+    "visible": false,
+    "description": "how deep should we recurse when performing iterative lookups (default 10)",
+  },
+  "verbosity": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--verbosity",
+    "visible": false,
+    "description": "log verbosity: 1 (lowest)--5 (highest) (default 3)",
+  },
+  "cache-size": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--cache-size",
+    "visible": false,
+    "description": "how many items can be stored in internal recursive cache (default 10000)",
+  },
+  "input-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Input file",
+  },
+  "local-addr": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--local-addr",
+    "visible": false,
+    "description": "comma-delimited list of local addresses to use",
+  },
+  "ipv4-lookup": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--ipv4-lookup",
+    "visible": false,
+    "description": "Perform an IPv4 Lookup in modules",
+  },
+  "ipv6-lookup": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--ipv6-lookup",
+    "visible": false,
+    "description": "Perform an IPv6 Lookup in modules",
+  },
+  "nanoseconds": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--nanoseconds",
+    "visible": false,
+    "description": "Use nanosecond resolution timestamps",
+  },
+  "go-processes": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--go-processes",
+    "visible": false,
+    "description": "number of OS processes (GOMAXPROCS)",
+  },
+  "name-servers": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--name-servers",
+    "visible": false,
+    "description": "List of DNS servers to use. Can be passed as comma-delimited string. If no port is specified, defaults to 53.",
+  },
+  "client-subnet": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--client-subnet",
+    "visible": false,
+    "description": "Client subnet in CIDR format for EDNS0.",
+  },
+  "mx-cache-size": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--mx-cache-size",
+    "visible": false,
+    "description": "number of records to store in MX -> A/AAAA cache (default 1000)",
+  },
+  "override-name": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--override-name",
+    "visible": false,
+    "description": "name overrides all passed in names",
+  },
+  "blacklist-file": {
+    "type": "FILE",
+    "order": 2,
+    "command": "--blacklist-file",
+    "visible": false,
+    "description": "blacklist file for servers to exclude from lookups",
+  },
+  "include-fields": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--include-fields",
+    "visible": false,
+    "description": "Comma separated list of fields to additionally output beyond result verbosity. Options: class, protocol, ttl, resolver, flags",
+  },
+  "all-nameservers": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--all-nameservers",
+    "visible": false,
+    "description": "Perform the lookup via all the nameservers for the domain.",
+  },
+  "local-interface": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--local-interface",
+    "visible": false,
+    "description": "local interface to use",
+  },
+  "recycle-sockets": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--recycle-sockets",
+    "visible": false,
+    "description": "Create long-lived unbound UDP socket for each thread at launch and reuse for all (UDP) queries (default true)",
+  },
+  "name-server-mode": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--name-server-mode",
+    "visible": false,
+    "description": "Treats input as nameservers to query with a static query rather than queries to send to a static name server",
+  },
+  "result-verbosity": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--result-verbosity",
+    "visible": false,
+    "description": "Sets verbosity of each output record. Options: short, normal, long, trace (default normal)",
+  },
+  "checking-disabled": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--checking-disabled",
+    "visible": false,
+    "description": "Sends DNS packets with the CD bit set",
+  },
+  "iteration-timeout": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--iteration-timeout",
+    "visible": false,
+    "description": "timeout for resolving a single iteration in an iterative query (default 4)",
+  },
+  "metadata-passthrough": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--metadata-passthrough",
+    "visible": false,
+    "description": "if input records have the form 'name,METADATA', METADATA will be propagated to the output",
+  },
+}}
+/>

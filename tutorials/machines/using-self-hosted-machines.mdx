@@ -1,0 +1,102 @@
+---
+title: Using Self-Hosted Machines
+description: 'Learn how to use self-hosted machines in the Trickest platform.'
+---
+
+## Using Self-Hosted Machines
+
+Self-hosted machines are user-provided and managed servers or virtual environments that can be configured to integrate with the Trickest platform, allowing for greater control over the execution environment and resource allocation for your workflows.
+
+## Introduction
+
+This guide is designed to help you attach your own machine to the Trickest platform to execute workflows seamlessly or on any infrastructure.
+
+The machines attached will be used for the workflow executions.
+
+<Tip>You can attach any device to the Trickest platform, including your local machine, a virtual machine, or a cloud instance.</Tip>
+
+## Prerequisites
+
+* Access to Trickest platform.
+* A machine ready to be attached.
+
+## Limits
+
+* There are no limits on machine creation; you can create and delete machines an infinite number of times, but with a certain number of slots available
+* If you lose `id` and `secret` keys, don't worry; delete the machine and create a new one
+* You can reuse the same machine id and secret in different instances
+* You can not register the same machine more than once
+
+## Create a Self-Hosted Fleet
+
+
+
+<Steps>
+  <Step title="Trickest Fleet Page">
+    Go to [Trickest Fleet Page](https://trickest.io/dashboard/settings/fleet) and click on `Create Self-Hosted Fleet`.
+    <Frame>
+        <img src="/images/tutorials/self-hosted-fleet-create-tutorials.png"/>
+    </Frame>
+  </Step>
+  <Step title="Creating Self-Hosted Fleet">
+    Click on `Create Self-Hosted Fleet.`
+    <Frame>
+        <img src="/images/tutorials/tutorials-create-self-hosted-fleet.gif"/>
+    </Frame>
+  </Step>
+  <Step title="A new Self-Hosted Fleet should be created.">
+    Congrats! You've successfully created a new Self-Hosted Fleet.
+  </Step>
+</Steps>
+
+## Accessing the External Machine
+
+Before integrating an external machine with the Trickest platform, it's essential to have one.
+
+Currently Tricket supports:
+
+* Virtual Machines
+* Cloud instances
+* Baremetal Machines
+* OSX Devices (Macs)
+
+## Creating a new machine
+
+### Machine Connection Wizard Overview
+
+When you are ready to connect your virtual machine to the Trickest platform, the "Machine Connection Wizard" modal will guide you through the process. This modal appears within the platform's user interface and provides a two-step process:
+
+
+#### Command for new machine
+
+Install the Trickest Agent and Connect: This step involves executing 3 commands on your external machine. The modal displays the necessary environment variables and the command to download and initialize the Trickest agent, which establishes the connection between your machine and the Trickest platform. Copy them to your clipboard or store them safely for later use.
+
+<Frame>
+    <img src="/images/tutorials/tutorials-creating-new-machines.gif"/>
+</Frame>
+
+#### Give your machine a name
+
+You will be prompted to assign a unique and meaningful name to your machine. This name is used to identify the machine within the Trickest Self-Hosted Fleet, making it easier to manage multiple machines.
+
+<Frame>
+    <img src="/images/tutorials/tutorials-new-self-hosted-machine-name.png"/>
+</Frame>
+
+<Tip>It's crucial to copy and securely store the provided Client ID and Client Secret, as they are unique to your machine and displayed only once.</Tip>
+
+By clicking on `Create` new machine will be saved and wait for external connection.
+
+You can run trickest-agent on a remote machine by executing the copied command.
+
+<Frame>
+    <img src="/images/tutorials/tutorials-agent-terminal-self-hosted.png"/>
+</Frame>
+
+After the command executes successfully, Self-Hosted fleet will show `Active` machine state.
+
+<Frame>
+    <img src="/images/tutorials/tutorials-active-machine-self-hosted.png"/>
+</Frame>
+
+You have successfully attached your machine to the Trickest platform. Now you can use this machine to execute workflows on your infrastructure.

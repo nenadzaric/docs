@@ -1,0 +1,34 @@
+---
+title: "Content Discovery Modules"
+description: "Explore a collection of powerful and efficient modules in the Content Discovery category to enhance your workflows."
+sidebarTitle: "Content Discovery"
+mode: "wide"
+---
+
+import { ModuleCard } from '/snippets/ModuleCard.mdx'
+
+<CardGroup cols={2}>
+
+  <ModuleCard
+    name="Discover Paths via Crawling"
+    category="Content Discovery"
+    inputs={["urls", "depth", "header", "rate-limit"]}
+    outputs={["url-details", "urls"]}
+    description="Crawl a list of web server URLs to discover endpoints and form a comprehensive map of each asset on your attack surface"
+    author="mhmdiaa-presales"
+    createdDate="2024-08-12"
+    iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/f119ee29-ea54-4b2e-8e38-ebce6b8e7cf3.json"
+  />
+
+  <ModuleCard
+    name="Discover Paths via Directory Brute Force"
+    category="Content Discovery"
+    inputs={["urls", "header", "wordlist", "rate-limit"]}
+    outputs={["url-details", "urls"]}
+    description="Brute force a list of web server URLs to discover hidden paths and endpoints"
+    author="mhmdiaa-presales"
+    createdDate="2024-08-12"
+    iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/73ee9035-f8b3-46f9-8217-04ab7c9037a1.json"
+  />
+
+</CardGroup>

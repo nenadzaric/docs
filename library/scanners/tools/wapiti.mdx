@@ -1,0 +1,262 @@
+---
+title: "wapiti"
+description: "Web vulnerability scanner written in Python3"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="1a7ee145-c6f9-4f11-aa7d-f510802fd2f9"
+  name="wapiti"
+  description="Web vulnerability scanner written in Python3"
+  category="Scanners"
+  author="trickest-mhmdiaa"
+  created_date="2022-09-07"
+  container="quay.io/trickest/wapiti:3.1.3"
+  source_url="https://github.com/wapiti-scanner/wapiti"
+  license="Unknown"
+  output_command="--output"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/1a7ee145-c6f9-4f11-aa7d-f510802fd2f9.json"
+  inputs={ {
+  "url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--url",
+    "visible": true,
+    "description": "The base URL used to define the scan scope",
+  },
+  "data": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--data",
+    "visible": false,
+    "description": "Urlencoded data to send with the base URL if it is a POST request",
+  },
+  "skip": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--skip",
+    "visible": false,
+    "description": "Skip attacking given parameter(s)",
+  },
+  "color": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--color",
+    "visible": false,
+    "description": "Colorize output",
+  },
+  "depth": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--depth",
+    "visible": false,
+    "description": "Set how deep the scanner should explore the website",
+  },
+  "level": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--level",
+    "visible": false,
+    "description": "Set attack level",
+  },
+  "proxy": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--proxy",
+    "visible": false,
+    "description": "Set the HTTP(S) proxy to use. Supported: http(s) and socks proxies",
+  },
+  "scope": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--scope",
+    "visible": false,
+    "description": "Set scan scope (page, folder, domain, url, or punk)",
+  },
+  "start": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--start",
+    "visible": false,
+    "description": "Adds a url to start scan with",
+  },
+  "tasks": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--tasks",
+    "visible": false,
+    "description": "Number of concurrent tasks to use for the exploration (crawling) of the target.",
+  },
+  "cookie": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--cookie",
+    "visible": false,
+    "description": "Set a JSON cookie file to use.",
+  },
+  "format": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--format",
+    "visible": false,
+    "description": "Set output format. Supported: csv, html, json, txt, xml. Default is html.",
+  },
+  "header": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--header",
+    "visible": false,
+    "description": "Set a custom header to use for every requests",
+  },
+  "module": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--module",
+    "visible": false,
+    "description": "List of modules to load",
+  },
+  "remove": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--remove",
+    "visible": false,
+    "description": "Remove this parameter from urls",
+  },
+  "exclude": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--exclude",
+    "visible": false,
+    "description": "Adds a url to exclude from the scan",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--timeout",
+    "visible": false,
+    "description": "Set timeout for requests in seconds",
+  },
+  "verbose": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--verbose",
+    "visible": false,
+    "description": "Set verbosity level (0: quiet, 1: normal, 2: verbose)",
+  },
+  "endpoint": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--endpoint",
+    "visible": false,
+    "description": "URL serving as endpoint for both attacker and target",
+  },
+  "auth-cred": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--auth-cred",
+    "visible": false,
+    "description": "Set HTTP authentication credentials",
+  },
+  "auth-type": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--auth-type",
+    "visible": false,
+    "description": "Set the authentication type to use (basic, digest, ntlm, or post)",
+  },
+  "scan-force": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--scan-force",
+    "visible": false,
+    "description": "Easy way to reduce the number of scanned and attacked URLs. Possible values: paranoid, sneaky, polite, normal, aggressive, insane",
+  },
+  "user-agent": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--user-agent",
+    "visible": false,
+    "description": "Set a custom user-agent to use for every requests",
+  },
+  "verify-ssl": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--verify-ssl",
+    "visible": false,
+    "description": "Set SSL check (0 or 1, default is 0)",
+  },
+  "dns-endpoint": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--dns-endpoint",
+    "visible": false,
+    "description": "Domain serving as DNS endpoint for Log4Shell attack",
+  },
+  "no-bugreport": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--no-bugreport",
+    "visible": false,
+    "description": "Don't send automatic bug report when an attack module fails",
+  },
+  "max-scan-time": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--max-scan-time",
+    "visible": false,
+    "description": "Set how many seconds you want the scan to last (floats accepted)",
+  },
+  "max-parameters": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--max-parameters",
+    "visible": false,
+    "description": "URLs and forms having more than MAX input parameters will be erased before attack.",
+  },
+  "drop-set-cookie": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--drop-set-cookie",
+    "visible": false,
+    "description": "Ignore Set-Cookie header from HTTP responses",
+  },
+  "max-attack-time": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--max-attack-time",
+    "visible": false,
+    "description": "Set how many seconds you want each attack module to last (floats accepted)",
+  },
+  "external-endpoint": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--external-endpoint",
+    "visible": false,
+    "description": "URL serving as endpoint for target",
+  },
+  "internal-endpoint": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--internal-endpoint",
+    "visible": false,
+    "description": "URL serving as endpoint for attacker",
+  },
+  "max-files-per-dir": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--max-files-per-dir",
+    "visible": false,
+    "description": "Set how many pages the scanner should explore per directory",
+  },
+  "max-links-per-page": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--max-links-per-page",
+    "visible": false,
+    "description": "Set how many (in-scope) links the scanner should extract for each page",
+  },
+}}
+/>

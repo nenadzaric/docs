@@ -1,0 +1,73 @@
+---
+title: "subbrute"
+description: "SubBrute is a community driven project with the goal of creating the fastest, and most accurate subdomain enumeration tool. Some of the magic behind SubBrute is that it uses open resolvers as a kind of proxy to circumvent DNS rate-limiting (https://www.us-cert.gov/ncas/alerts/TA13-088A). This design also provides a layer of anonymity, as SubBrute does not send traffic directly to the target's name servers."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="3297df47-bc77-4932-8a11-91496e4f8648"
+  name="subbrute"
+  description="SubBrute is a community driven project with the goal of creating the fastest, and most accurate subdomain enumeration tool. Some of the magic behind SubBrute is that it uses open resolvers as a kind of proxy to circumvent DNS rate-limiting (https://www.us-cert.gov/ncas/alerts/TA13-088A). This design also provides a layer of anonymity, as SubBrute does not send traffic directly to the target's name servers."
+  category="Recon"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/subbrute:07d2925"
+  source_url="https://github.com/TheRook/subbrute"
+  license="Unknown"
+  output_command="--output"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/3297df47-bc77-4932-8a11-91496e4f8648.json"
+  inputs={ {
+  "subs": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--subs",
+    "visible": true,
+    "description": "A file with list of subdomains",
+  },
+  "target": {
+    "type": "STRING",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Target domain.",
+  },
+  "targets": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--targets",
+    "visible": true,
+    "description": "A file containing a newline delimited list of domains to brute force.",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--verbose",
+    "visible": false,
+    "description": "Print debug information.",
+  },
+  "resolvers": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--resolvers",
+    "visible": true,
+    "description": "A file with list of DNS resolvers. If this is empty tool will use internal resolver (default: resolvers.txt).",
+  },
+  "print-data": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-p",
+    "visible": false,
+    "description": "Print data from found DNS records (default: False).",
+  },
+  "process-count": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--process_count",
+    "visible": false,
+    "description": "Number of lookup threads to run (default: 8).",
+  },
+}}
+/>

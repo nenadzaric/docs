@@ -1,0 +1,94 @@
+---
+title: "dnsvalidator"
+description: "Maintains a list of IPv4 DNS servers by verifying them against baseline servers, and ensuring accurate responses."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="74ef0d55-1358-47ae-9047-a9362f9a3149"
+  name="dnsvalidator"
+  description="Maintains a list of IPv4 DNS servers by verifying them against baseline servers, and ensuring accurate responses."
+  category="Network"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/dnsvalidator:b12acc0"
+  source_url="https://github.com/vortexau/dnsvalidator"
+  license="Unknown"
+  output_command="-o"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/74ef0d55-1358-47ae-9047-a9362f9a3149.json"
+  inputs={ {
+  "silent": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--silent",
+    "visible": false,
+    "description": "If set then only successfully resolved servers will be displayed and banners and other information will be redacted.",
+  },
+  "target": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-t",
+    "visible": true,
+    "description": "Specify a target DNS server to verify.",
+  },
+  "threads": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-threads",
+    "visible": false,
+    "description": "Specify the maximum number of threads to run at any one time (DEFAULT:5)",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-timeout",
+    "visible": false,
+    "description": "Specify a timeout value in seconds for any single thread (DEFAULT:600)",
+  },
+  "no-color": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--no-color",
+    "visible": false,
+    "description": "If set then any foreground or background colours will be stripped out",
+  },
+  "exclusion": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-e",
+    "visible": false,
+    "description": "Specify a target exclusion.",
+  },
+  "targets-list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-tL",
+    "visible": true,
+    "description": "Specify a list of targets or a URL to a list of targets",
+  },
+  "resolver-query": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-q",
+    "visible": false,
+    "description": "Specify a resolver query to use (default:dnsvalidator)",
+  },
+  "exclusions-list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-eL",
+    "visible": false,
+    "description": "Specify a list of targets or a URL to a list of targets to exclude.",
+  },
+  "root-domain-compare": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-r",
+    "visible": false,
+    "description": "Specify a root domain to compare to. Must be non-geolocated or most resolvers will fail.",
+  },
+}}
+/>

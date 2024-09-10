@@ -1,0 +1,144 @@
+export const ModuleCard = ({ name, category, inputs, outputs, description, author, createdDate, iframeUrl }) => (
+  <a href={`${category.replace(/\s+/g, '-').toLowerCase()}/${name.replace(/\s+/g, '-').toLowerCase()}`} style={{ textDecoration: 'none' }}>
+    <div style={{
+      background: '#1a1f2e',
+      borderRadius: '8px',
+      overflow: 'hidden',
+      transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+      height: '36rem',
+      width: '100%',
+      display: 'flex',
+      marginBottom: '16px',
+      flexDirection: 'column',
+      border: '1px solid #30363d',
+    }}
+    onMouseOver={(e) => {
+      e.currentTarget.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.2)';
+      e.currentTarget.style.transform = 'translateY(-4px)';
+    }}
+    onMouseOut={(e) => {
+      e.currentTarget.style.boxShadow = 'none';
+      e.currentTarget.style.transform = 'translateY(0)';
+    }}>
+      <div style={{
+        width: '100%',
+        height: '200px',
+        borderBottom: '1px solid #30363d',
+      }}>
+        <Frame>
+          <iframe 
+            src={iframeUrl}
+            style={{
+              width: '100%',
+              height: '100%',
+              border: 'none',
+            }}
+            scrolling="no"
+          />
+        </Frame>
+      </div>
+
+      <div style={{ padding: '12px', display: 'flex', flexDirection: 'column', height: 'calc(100% - 200px)' }}>
+        <span style={{ 
+          background: 'linear-gradient(90deg, #00a3ff, #0065ff)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          fontWeight: 'bold',
+          fontSize: '0.7rem',
+          textTransform: 'uppercase',
+          display: 'block',
+          marginBottom: '4px'
+        }}>
+          {category}
+        </span>
+        
+        <h2 style={{ 
+          color: '#ffffff', 
+          fontSize: '1.2rem', 
+          margin: '0 0 8px 0',
+        }}>
+          {name}
+        </h2>
+
+        <div style={{ marginBottom: '8px' }}>
+          <h3 style={{ 
+            fontSize: '0.8rem', 
+            margin: '0 0 4px 0',
+            color: '#a3b3bc'
+          }}>
+            Inputs
+          </h3>
+          <div>
+            {inputs.map((input, index) => (
+              <span key={index} style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                borderRadius: '8px',
+                padding: '1px 6px',
+                fontSize: '0.7rem',
+                marginRight: '4px',
+                marginBottom: '2px',
+                display: 'inline-block',
+                color: '#ffffff'
+              }}>
+                {input}
+              </span>
+            ))}
+          </div>
+        </div>
+        
+        <div style={{ marginBottom: '8px' }}>
+          <h3 style={{ 
+            fontSize: '0.8rem', 
+            margin: '0 0 4px 0',
+            color: '#a3b3bc'
+          }}>
+            Outputs
+          </h3>
+          <div>
+            {outputs.map((output, index) => (
+              <span key={index} style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                borderRadius: '8px',
+                padding: '1px 6px',
+                fontSize: '0.7rem',
+                marginRight: '4px',
+                marginBottom: '2px',
+                display: 'inline-block',
+                color: '#ffffff'
+              }}>
+                {output}
+              </span>
+            ))}
+          </div>
+        </div>
+        
+        <p style={{ 
+          color: '#a3b3bc', 
+          fontSize: '0.75rem',
+          flexGrow: 1,
+          margin: '0',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+          display: '-webkit-box',
+          WebkitLineClamp: 4,
+          WebkitBoxOrient: 'vertical',
+        }}>
+          {description}
+        </p>
+      </div>
+      
+      <div style={{ 
+        borderTop: '1px solid #30363d',
+        padding: '6px 12px',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        background: 'rgba(0, 0, 0, 0.2)',
+        marginTop: 'auto'
+      }}>
+        <span style={{ color: '#a3b3bc', fontSize: '0.7rem' }}>{author}</span>
+        <span style={{ color: '#a3b3bc', fontSize: '0.7rem' }}>{createdDate}</span>
+      </div>
+    </div>
+  </a>
+);

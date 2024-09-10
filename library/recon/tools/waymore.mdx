@@ -1,0 +1,255 @@
+---
+title: "waymore"
+description: "Find way more from the Wayback Machine"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="e7771f35-8b36-46a4-a680-dcc15b92f257"
+  name="waymore"
+  description="Find way more from the Wayback Machine"
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2022-07-01"
+  container="quay.io/trickest/waymore:v4.3"
+  source_url="https://github.com/xnl-h4ck3r/waymore"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/e7771f35-8b36-46a4-a680-dcc15b92f257.json"
+  inputs={ {
+  "mode": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-mode",
+    "visible": true,
+    "description": "The mode to run: U (retrieve URLs only), R (download Responses only) or B (Both). If -i is a domain only, then -mode will default to B. If -i is a domain with path then -mode will default to R.",
+  },
+  "input": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--input",
+    "visible": true,
+    "description": "The list of domains to find links for. This can be a domain only, or a domain with a specific path. If it is a domain only to get everything for that domain, don't prefix with www. You can also specify a TLD only by prefixing with a period, e.g. .mil, which will get all subs for all domains with that TLD (NOTE: The Alien Vault OTX source is excluded if searching for a TLD because it requires a full domain).",
+  },
+  "limit": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--limit",
+    "visible": false,
+    "description": "How many responses will be saved (if -b is not passed). A positive value will get the first N results, a negative value will will get the last N results. A value of 0 will get ALL responses (default: 5000))",
+  },
+  "config": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--config",
+    "visible": false,
+    "description": "Path to the YML config file",
+  },
+  "no-subs": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--no-subs",
+    "visible": false,
+    "description": "Don't include subdomains of the target domain (only used if input is not a domain with a specific path).",
+  },
+  "retries": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--retries",
+    "visible": false,
+    "description": "The number of retries for requests that get connection error or rate limited (default: 1)",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--timeout",
+    "visible": false,
+    "description": "For archived responses only, how many seconds to wait for the server to send data before giving up (default: 30)",
+  },
+  "to-date": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--to-date",
+    "visible": false,
+    "description": "What date to get responses to. If not specified it will get to the latest possible results. A partial value can be passed, e.g. 2021, 202112, etc.",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--verbose",
+    "visible": false,
+    "description": "Verbose output",
+  },
+  "from-date": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--from-date",
+    "visible": false,
+    "description": "What date to get responses from. If not specified it will get from the earliest possible results. A partial value can be passed, e.g. 2016, 201805, etc.",
+  },
+  "processes": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--processes",
+    "visible": false,
+    "description": "The number of processes (threads) used (default: 1)",
+  },
+  "check-only": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--check-only",
+    "visible": false,
+    "description": "This will make a few minimal requests to show you how many requests, and roughly how long it could take, to get URLs from the sources and downloaded responses from Wayback Machine.",
+  },
+  "regex-after": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--regex-after",
+    "visible": false,
+    "description": "RegEx for filtering purposes against links found from archive.org/commoncrawl.org AND responses downloaded. Only positive matches will be output.",
+  },
+  "input-domain": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--input",
+    "visible": true,
+    "description": "The target domain to find links for. This can be a domain only, or a domain with a specific path. If it is a domain only to get everything for that domain, don't prefix with www. You can also specify a TLD only by prefixing with a period, e.g. .mil, which will get all subs for all domains with that TLD (NOTE: The Alien Vault OTX source is excluded if searching for a TLD because it requires a full domain).",
+  },
+  "url-filename": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-url-filename",
+    "visible": false,
+    "description": "Set the file name of downloaded responses to the URL that generated the response, otherwise it will be set to the hash value of the response. Using the hash value means multiple URLs that generated the same response will only result in one file being saved for that response.",
+  },
+  "keywords-only": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--keywords-only",
+    "visible": false,
+    "description": "Only return links and responses that contain keywords that you are interested in. This can reduce the time it takes to get results. Keywords are given in the config.yml file with the FILTER_KEYWORDS key",
+  },
+  "limit-requests": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--limit-requests",
+    "visible": false,
+    "description": "Limit the number of requests that will be made when getting links from a source (this doesn't apply to Common Crawl). Some targets can return a huge amount of requests needed that are just not feasible to get, so this can be used to manage that situation. This defaults to 0 (Zero) which means there is no limit.",
+  },
+  "notify-discord": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--notify-discord",
+    "visible": false,
+    "description": "Whether to send a notification to Discord when waymore completes. It requires WEBHOOK_DISCORD to be provided in the config.yml file.",
+  },
+  "capture-interval": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--capture-interval",
+    "visible": false,
+    "description": "Filters the search on archive.org to only get at most 1 capture per hour (h), day (d) or month (m). This filter is used for responses only. The default is 'd' but can also be set to 'none' to not filter anything and get all responses.",
+  },
+  "exclude-url-scan": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-xus",
+    "visible": false,
+    "description": "Exclude checks for links from urlscan.io",
+  },
+  "memory-threshold": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--memory-threshold",
+    "visible": false,
+    "description": "The memory threshold percentage. If the machines memory goes above the threshold, the program will be stopped and ended gracefully before running out of memory (default: 95)",
+  },
+  "output-inline-js": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--output-inline-js",
+    "visible": false,
+    "description": "Whether to save combined inline javascript of all relevant files in the response directory when -mode R (or -mode B) has been used. The files are saved with the name combinedInline{}.js where {} is the number of the file, saving 1000 unique scripts per file. The file combinedInlineSrc.txt will also be created, containing the src value of all external scripts referenced in the files.",
+  },
+  "match-status-code": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-mc",
+    "visible": false,
+    "description": "Only Match HTTP status codes for retrieved URLs and responses. Comma separated list of codes. Passing this argument overrides the config FILTER_CODE and -fc",
+  },
+  "filter-status-code": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-fc",
+    "visible": false,
+    "description": "Filter HTTP status codes for retrieved URLs and responses. Comma separated list of codes (default: the FILTER_CODE values from config.yml). Passing this argument will override the value from config.yml",
+  },
+  "limit-common-crawl": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-lcc",
+    "visible": false,
+    "description": "Limit the number of Common Crawl index collections searched, e.g. -lcc 10 will just search the latest 10 collections (default: 3). As of July 2023 there are currently 95 collections. Setting to 0 (default) will search ALL collections. If you don't want to search Common Crawl at all, use the -xcc option.",
+  },
+  "match-keywords-only": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--keywords-only",
+    "visible": false,
+    "description": "Only return links and responses that contain keywords that you are interested in. This can reduce the time it takes to get results. you can pass a specific Regex value to use, e.g. -ko admin to only get links containing the word admin, or -ko \.js(\?|$) to only get JS files. The Regex check is NOT case sensitive.",
+  },
+  "exclude-alient-vault": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-xav",
+    "visible": false,
+    "description": "Exclude checks for links from alienvault.com",
+  },
+  "exclude-common-crawl": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-xcc",
+    "visible": false,
+    "description": "Exclude checks for links from commoncrawl.org",
+  },
+  "filter-responses-only": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--filter-responses-only",
+    "visible": false,
+    "description": "The initial links from Wayback Machine will not be filtered, only the responses that are downloaded, , e.g. it maybe useful to still see all available paths from the links even if you don't want to check the content.",
+  },
+  "limit-common-crawl-year": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-lcy",
+    "visible": false,
+    "description": "Limit the number of Common Crawl index collections searched by the year of the index data. The earliest index has data from 2008. Setting to 0 (default) will search collections or any year (but in conjuction with -lcc). For example, if you are only interested in data from 2015 and after, pass -lcy 2015. This will override the value of -lcc if passed. If you don't want to search Common Crawl at all, use the -xcc option.",
+  },
+  "exclude-wayback-matchine": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-xwm",
+    "visible": false,
+    "description": "Exclude checks for links from Wayback Machine (archive.org)",
+  },
+  "urlscan-rate-limit-retry": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--urlscan-rate-limit-retry",
+    "visible": false,
+    "description": "The number of minutes the user wants to wait for a rate limit pause on URLScan.io instead of stopping with a 429 error (default: 1)",
+  },
+  "wayback-rate-limit-retry": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--wayback-rate-limit-retry",
+    "visible": false,
+    "description": "The number of minutes the user wants to wait for a rate limit pause on Watback Machine (archive.org) instead of stopping with a 429 error (default: 3).",
+  },
+}}
+/>

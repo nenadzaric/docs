@@ -1,0 +1,66 @@
+---
+title: "assert-tool"
+description: "Interprets a file as a list of values, checks if required conditions are met and exits with corresponding message and code."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="3f87f20f-adc0-4ed3-9782-409bca5897d9"
+  name="assert-tool"
+  description="Interprets a file as a list of values, checks if required conditions are met and exits with corresponding message and code."
+  category="Utilities"
+  author="trickest-mhmdiaa"
+  created_date="2022-01-24"
+  container="quay.io/trickest/assert-tool:02717da"
+  source_url="https://github.com/trickest/assert_tool"
+  license="Unknown"
+  output_command="--output-file"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/3f87f20f-adc0-4ed3-9782-409bca5897d9.json"
+  inputs={ {
+  "match": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--match",
+    "visible": false,
+    "description": "match mode [all/any] (default: `all`)",
+  },
+  "regex": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--regex",
+    "visible": false,
+    "description": "use regex to match values",
+  },
+  "in-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--in-file",
+    "visible": true,
+    "description": "file to read",
+  },
+  "delimiter": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--delimiter",
+    "visible": false,
+    "description": "delimiter for multiple `--from-string` values (default: `,`)",
+  },
+  "from-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--from-file",
+    "visible": true,
+    "description": "match from file",
+  },
+  "from-string": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--from-string",
+    "visible": true,
+    "description": "match from string",
+  },
+}}
+/>

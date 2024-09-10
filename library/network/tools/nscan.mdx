@@ -1,0 +1,73 @@
+---
+title: "nscan"
+description: "Nscan is a fast Network scanner optimized for internet-wide scanning purposes and inspired by Masscan and Zmap. It has it's own tiny TCP/IP stack and uses Raw sockets to send TCP SYN probes. It doesn't need to set SYN Cookies so it doesn't wastes time checking if a received packet is a result of it's own scan, that makes Nscan faster than other similar scanners."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="76c323ab-b69c-483a-9db1-8c75c796420a"
+  name="nscan"
+  description="Nscan is a fast Network scanner optimized for internet-wide scanning purposes and inspired by Masscan and Zmap. It has it's own tiny TCP/IP stack and uses Raw sockets to send TCP SYN probes. It doesn't need to set SYN Cookies so it doesn't wastes time checking if a received packet is a result of it's own scan, that makes Nscan faster than other similar scanners."
+  category="Network"
+  author="trickest"
+  created_date="2021-09-07"
+  container="quay.io/trickest/nscan:4a507ca"
+  source_url="https://github.com/OffensivePython/Nscan"
+  license="Unknown"
+  output_command="-o"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/76c323ab-b69c-483a-9db1-8c75c796420a.json"
+  inputs={ {
+  "ip": {
+    "type": "STRING",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "Target IP address",
+  },
+  "port": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--port",
+    "visible": false,
+    "description": "Ports to scan",
+  },
+  "style": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-s",
+    "visible": false,
+    "description": "Scan type S:SYN U:UDP (default=S)",
+  },
+  "cooldown": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--cooldown",
+    "visible": false,
+    "description": "Every N (int) packets sent sleep P (float) (Default=1000,1)",
+  },
+  "fetch-banners": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--banner",
+    "visible": false,
+    "description": "Fetch banners",
+  },
+  "import-script": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--import",
+    "visible": false,
+    "description": "Nscan scripts to import (e.g. ssh_key:22+check_proxy:80-85,8080)",
+  },
+  "results-count": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-n",
+    "visible": false,
+    "description": "Number of results to get",
+  },
+}}
+/>

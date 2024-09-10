@@ -1,0 +1,94 @@
+---
+title: "log4j-scan"
+description: "A fully automated, accurate, and extensive scanner for finding log4j RCE CVE-2021-44228"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="edc6af8a-b240-40ea-9b8d-0587a42b1edb"
+  name="log4j-scan"
+  description="A fully automated, accurate, and extensive scanner for finding log4j RCE CVE-2021-44228"
+  category="Vulnerabilities"
+  author="trickest-mhmdiaa"
+  created_date="2022-02-05"
+  container="quay.io/trickest/log4j-scan:ceae24f"
+  source_url="https://github.com/fullhunt/log4j-scan"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/edc6af8a-b240-40ea-9b8d-0587a42b1edb.json"
+  inputs={ {
+  "url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-u",
+    "visible": true,
+    "description": "Check a single URL.",
+  },
+  "url-list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-l",
+    "visible": true,
+    "description": "Check a list of URLs.",
+  },
+  "wait-time": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--wait-time",
+    "visible": false,
+    "description": "Wait time after all URLs are processed (in seconds) - [Default: 5].",
+  },
+  "waf-bypass": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--waf-bypass",
+    "visible": false,
+    "description": "Extend scans with WAF bypass payloads.",
+  },
+  "headers-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--headers-file",
+    "visible": false,
+    "description": "Headers fuzzing list",
+  },
+  "run-all-tests": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--run-all-tests",
+    "visible": false,
+    "description": "Run all available tests on each URL.",
+  },
+  "request-method": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--request-type",
+    "visible": false,
+    "description": "Request Type: (get, post) - [Default: get].",
+  },
+  "dns-callback-provider": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--dns-callback-provider",
+    "visible": false,
+    "description": "DNS Callback provider (Options: dnslog.cn, interact.sh) - [Default: interact.sh].",
+  },
+  "custom-dns-callback-host": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--custom-dns-callback-host",
+    "visible": false,
+    "description": "Custom DNS Callback Host.",
+  },
+  "exclude-user-agent-fuzzing": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--exclude-user-agent-fuzzing",
+    "visible": false,
+    "description": "Exclude User-Agent header from fuzzing - useful to bypass weak checks on User-Agents.",
+  },
+}}
+/>

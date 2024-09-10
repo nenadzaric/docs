@@ -1,0 +1,374 @@
+---
+title: "shodan-python"
+description: "Shodan is a search engine for Internet-connected devices. Google lets you search for websites, Shodan lets you search for devices."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="b7f6895e-40b6-4b01-8058-c34d3d81b31b"
+  name="shodan-python"
+  description="Shodan is a search engine for Internet-connected devices. Google lets you search for websites, Shodan lets you search for devices."
+  category="OSINT"
+  author="trickest"
+  created_date="2021-09-30"
+  container="quay.io/trickest/shodan-python:972aa86"
+  source_url="https://github.com/achillean/shodan-python"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/b7f6895e-40b6-4b01-8058-c34d3d81b31b.json"
+  inputs={ {
+  "type": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--type",
+    "visible": false,
+    "description": "Type",
+  },
+  "force": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--force",
+    "visible": false,
+    "description": "Force",
+  },
+  "limit": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--limit",
+    "visible": false,
+    "description": "Limit number of results",
+  },
+  "facets": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--facets",
+    "visible": false,
+    "description": "List of facets to get statistics for.",
+  },
+  "fields": {
+    "type": "STRING",
+    "order": 3,
+    "command": "--fields",
+    "visible": false,
+    "description": "List of properties to output.",
+  },
+  "format": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--format",
+    "visible": false,
+    "description": "The output format for the host information. pretty, tsv",
+  },
+  "api-key": {
+    "type": "STRING",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Please specify shodan API key",
+  },
+  "history": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--history",
+    "visible": false,
+    "description": "Include historical data in the results",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--verbose",
+    "visible": false,
+    "description": "Verbose",
+  },
+  "data-set": {
+    "type": "STRING",
+    "order": 3,
+    "command": "--dataset",
+    "visible": false,
+    "description": "See the available files in the given dataset",
+  },
+  "filename": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--filename",
+    "visible": false,
+    "description": "Save the host information in the given file",
+  },
+  "no-color": {
+    "type": "BOOLEAN",
+    "order": 3,
+    "command": "--no-color",
+    "visible": false,
+    "description": "Disable colors",
+  },
+  "org-mode": {
+    "type": "STRING",
+    "order": 1,
+    "command": "org",
+    "visible": false,
+    "description": "Manage your organization's access to Shodan",
+  },
+  "data-mode": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "data",
+    "visible": false,
+    "description": "Bulk data access to Shodan",
+  },
+  "host-mdoe": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "host",
+    "visible": false,
+    "description": "View all available information for an IP address",
+  },
+  "scan-mode": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "scan",
+    "visible": false,
+    "description": "Scan an IP/ netblock using Shodan.",
+  },
+  "separator": {
+    "type": "STRING",
+    "order": 3,
+    "command": "--separator",
+    "visible": false,
+    "description": "The separator between the properties of the search results.",
+  },
+  "count-mode": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "count",
+    "visible": false,
+    "description": "Returns the number of results for a search",
+  },
+  "parse-mode": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "parse",
+    "visible": false,
+    "description": "Extract information out of compressed JSON files.",
+  },
+  "stats-mode": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "stats",
+    "visible": false,
+    "description": "Provide summary information about a search query",
+  },
+  "domain-mode": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "domain",
+    "visible": false,
+    "description": "Domain mode",
+  },
+  "domain-name": {
+    "type": "STRING",
+    "order": 3,
+    "command": "",
+    "visible": true,
+    "description": "Domain name to shodan for",
+  },
+  "search-mode": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "search",
+    "visible": false,
+    "description": "Search the Shodan database.",
+  },
+  "silent-mode": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--silent",
+    "visible": false,
+    "description": "Don't send a notification to the user",
+  },
+  "convert-mode": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "convert",
+    "visible": false,
+    "description": "Convert the given input data file into a different format.",
+  },
+  "host-mode-ip": {
+    "type": "STRING",
+    "order": 3,
+    "command": "",
+    "visible": false,
+    "description": "Host mode IP address",
+  },
+  "org-mode-add": {
+    "type": "STRING",
+    "order": 3,
+    "command": "add",
+    "visible": false,
+    "description": "Add a new member",
+  },
+  "scan-mode-ip": {
+    "type": "STRING",
+    "order": 2,
+    "command": "",
+    "visible": false,
+    "description": "IP address to scan",
+  },
+  "wait-results": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--wait",
+    "visible": false,
+    "description": "How long to wait for results to come back. If this is set",
+  },
+  "honeyscore-ip": {
+    "type": "STRING",
+    "order": 2,
+    "command": "",
+    "visible": false,
+    "description": "IP address to check if it is honeypot or not.",
+  },
+  "org-mode-info": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "info",
+    "visible": false,
+    "description": "Show an overview of the organization",
+  },
+  "data-mode-list": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "list",
+    "visible": false,
+    "description": "Data mode list",
+  },
+  "scan-mode-list": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "list",
+    "visible": false,
+    "description": "Show recently launched scans",
+  },
+  "honeyscore-mode": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "honeyscore",
+    "visible": false,
+    "description": "Check whether the IP is a honeypot or not.",
+  },
+  "org-mode-remove": {
+    "type": "STRING",
+    "order": 2,
+    "command": "remove",
+    "visible": false,
+    "description": "Remove and downgrade a member",
+  },
+  "save-information": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--save",
+    "visible": false,
+    "description": "Save the information in the a file",
+  },
+  "scan-mode-status": {
+    "type": "STRING",
+    "order": 2,
+    "command": "status",
+    "visible": false,
+    "description": "Check the status of an on-demand scan. SCAN_ID",
+  },
+  "scan-mode-submit": {
+    "type": "STRING",
+    "order": 2,
+    "command": "submit",
+    "visible": false,
+    "description": "Scan an IP/ netblock using Shodan.",
+  },
+  "stats-mode-query": {
+    "type": "STRING",
+    "order": 2,
+    "command": "",
+    "visible": false,
+    "description": "Stats mode query",
+  },
+  "search-mode-query": {
+    "type": "STRING",
+    "order": 2,
+    "command": "",
+    "visible": false,
+    "description": "Search mode query",
+  },
+  "count-search-query": {
+    "type": "STRING",
+    "order": 3,
+    "command": "",
+    "visible": false,
+    "description": "Count mode search query",
+  },
+  "data-mode-download": {
+    "type": "FILE",
+    "order": 2,
+    "command": "download",
+    "visible": false,
+    "description": "Dataset to download",
+  },
+  "parse-mode-filters": {
+    "type": "STRING",
+    "order": 3,
+    "command": "--filters",
+    "visible": false,
+    "description": "Filter the results for specific values using key:value",
+  },
+  "scan-mode-internet": {
+    "type": "STRING",
+    "order": 2,
+    "command": "internet",
+    "visible": false,
+    "description": "Scan the Internet for a specific port and protocol using the Shodan   infrastructure.",
+  },
+  "domain-mode-details": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--details",
+    "visible": false,
+    "description": "Lookup host information for any IPs in the domain results",
+  },
+  "parse-mode-filename": {
+    "type": "FILE",
+    "order": 3,
+    "command": "",
+    "visible": false,
+    "description": "Json file",
+  },
+  "scan-mode-protocols": {
+    "type": "STRING",
+    "order": 2,
+    "command": "protocols",
+    "visible": false,
+    "description": "List the protocols that you can scan with using Shodan.",
+  },
+  "convert-mode-filename": {
+    "type": "FILE",
+    "order": 2,
+    "command": "",
+    "visible": false,
+    "description": "Convert file",
+  },
+  "data-mode-search-query": {
+    "type": "STRING",
+    "order": 3,
+    "command": "",
+    "visible": false,
+    "description": "Data mode search query",
+  },
+  "convert-mode-output-format": {
+    "type": "STRING",
+    "order": 3,
+    "command": "",
+    "visible": false,
+    "description": "Convert output format. e.g  kml, csv, geo.json, images, xlsx",
+  },
+}}
+/>

@@ -1,0 +1,201 @@
+---
+title: Trickest Library
+description: Explore the components of the Trickest platform
+mode: "custom"
+---
+
+import { CategoryCard } from '/snippets/CategoryCard.mdx';
+
+<div style={{
+  position: 'relative',
+  width: '100%',
+  height: '400px',
+  overflow: 'hidden',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+  backgroundImage: 'url("/images/modules-release.png")',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  margin: '0 0 2rem 0'
+}}>
+
+  <h1 style={{
+    fontSize: '3rem',
+    fontWeight: 'bold',
+    color: '#fff',
+    textAlign: 'center',
+    margin: '0 0 1rem 0'
+  }}>
+    Welcome to Trickest Library
+  </h1>
+
+  <p style={{
+    fontSize: '1.5rem',
+    color: '#fff',
+    textAlign: 'center',
+    margin: '0 0 1rem 0'
+  }}>
+    End-to-end solutions for seamless security automation. 
+  </p>
+
+  <a class="group px-6 py-3 relative inline-flex items-center text-lg font-semibold" href="modules">
+    <span class="absolute inset-0 bg-primary-dark/80 dark:bg-primary-light/10 border-primary-light/30 dark:border group-hover:opacity-90 dark:group-hover:border-primary-light/60 rounded-xl backdrop-blur-sm"></span>
+    <div class="mr-0.5 space-x-3 flex items-center">
+      <span class="z-10 text-white dark:text-primary-light">Explore Modules</span>
+      <svg width="3" height="24" viewBox="0 -9 3 24" class="h-6 rotate-0 overflow-visible text-white/90 dark:text-primary-light">
+        <path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+      </svg>
+    </div>
+  </a>
+
+</div>
+
+
+
+
+
+<div style={{
+  display: 'flex',  
+  justifyContent: 'center',  
+  alignItems: 'center',  
+  maxWidth: '1200px',
+  margin: '0 auto 3rem auto',
+  color: '#fff',
+}}>
+  <div style={{
+    display: 'grid',
+    gridTemplateColumns: 'repeat(4, 1fr)',
+    gap: '1rem',
+  }}>
+    {[
+      { name: 'Attack Surface Management', icon: 'building', href: '/library/attack-surface-management', description: 'Monitor and manage your digital assets.' },
+      { name: 'Cloud Storage', icon: 'cloud', href: '/library/cloud-storage', description: 'Securely store and manage data in the cloud.' },
+      { name: 'Containers', icon: 'box', href: '/library/containers', description: 'Manage and secure containerized applications.' },
+      { name: 'Content Discovery', icon: 'folder', href: '/library/content-discovery', description: 'Discover hidden content and directories.' },
+      { name: 'Discovery', icon: 'binoculars', href: '/library/discovery', description: 'Identify assets and gather intelligence.' },
+      { name: 'Fuzzing', icon: 'shuffle', href: '/library/fuzzing', description: 'Detect vulnerabilities through random testing.' },
+      { name: 'Machine Learning', icon: 'brain', href: '/library/machine-learning', description: 'Leverage AI to enhance security.' },
+      { name: 'Misconfiguration', icon: 'exclamation', href: '/library/misconfiguration', description: 'Identify and fix configuration errors.' },
+      { name: 'Network', icon: 'network-wired', href: '/library/network', description: 'Analyze and secure network infrastructure.' },
+      { name: 'OSINT', icon: 'eye', href: '/library/osint', description: 'Gather intelligence from public sources.' },
+      { name: 'Passwords', icon: 'key', href: '/library/passwords', description: 'Manage and secure user credentials.' },
+      { name: 'Recon', icon: 'binoculars', href: '/library/recon', description: 'Perform reconnaissance to gather data.' },
+      { name: 'Scanners', icon: 'barcode', href: '/library/scanners', description: 'Utilize tools to detect vulnerabilities.' },
+      { name: 'Secret Discovery', icon: 'user-secret', href: '/library/secret-discovery', description: 'Find and secure exposed secrets.' },
+      { name: 'Social Engineering', icon: 'users', href: '/library/social-engineering', description: 'Learn techniques for human-based hacking.' },
+      { name: 'Static Code Analysis', icon: 'code', href: '/library/static-code-analysis', description: 'Analyze code for potential vulnerabilities.' },
+      { name: 'Threat Intelligence', icon: 'shield-virus', href: '/library/threat-intelligence', description: 'Gather data on potential threats.' },
+      { name: 'Utilities', icon: 'plug', href: '/library/utilities', description: 'Explore helpful tools for security tasks.' },
+      { name: 'Vulnerability Scanning', icon: 'bug', href: '/library/vulnerability-scanning', description: 'Track and manage security flaws.' },
+      { name: 'Need new category?', icon: 'question', href: 'https://trickest.com/talk-with-us/', description: 'Contact Us' }
+    ].map((category) => (
+      <CategoryCard key={category.name} category={category.name} icon={category.icon} href={category.href} description={category.description} />
+    ))}
+  </div>
+</div>
+
+<div style={{
+  display: 'flex',
+  justifyContent: 'center', 
+  alignItems: 'center',
+  width: '100%',
+  margin: '2rem 0',
+}}>
+  <h2 style={{
+    fontSize: '2rem',
+    color: "#fff"
+  }}>
+    Learn more about Trickest Nodes
+  </h2>
+</div>
+
+<div style={{
+  display: 'grid',
+  gridTemplateColumns: 'repeat(2, 1fr)',
+  gap: '1.5rem',
+  maxWidth: '1200px',
+  margin: '0 auto',
+}}>
+
+  <Card style={{
+    backgroundColor: '#0a0b1c',
+    borderRadius: '12px',
+    padding: '1.5rem',
+    color: '#fff',
+    display: 'flex',
+    alignItems: 'center',
+    transition: 'border 0.3s',
+    border: '2px solid transparent'
+  }} onMouseEnter={(e) => e.currentTarget.style.border = '2px solid #00CCFF'}
+     onMouseLeave={(e) => e.currentTarget.style.border = '2px solid transparent'}>
+    <img src="/images/icons/workflows.svg" alt="Workflows" style={{width: '30px', marginRight: '1rem'}} />
+    <div>
+      <h2 style={{margin: '0 0 0.5rem 0', fontSize: '1.2rem', marginTop: '0.7rem', fontWeight: '600', color: 'white'}}>Workflows</h2>
+      <p style={{margin: 0, fontSize: '0.9rem', color: '#bbb'}}>Learn More about Workflows and how they can help you automate offensive security.</p>
+      <br/>
+      <a href="../user-guides/concepts/workflows" style={{color: '#00CCFF', textDecoration: 'none', fontWeight: 'bold'}}>Explore Workflows →</a>
+    </div>
+  </Card>
+
+  <Card style={{
+    backgroundColor: '#0a0b1c',
+    borderRadius: '12px',
+    padding: '1.5rem',
+    color: '#fff',
+    display: 'flex',
+    alignItems: 'center',
+    transition: 'border 0.3s',
+    border: '2px solid transparent'
+  }} onMouseEnter={(e) => e.currentTarget.style.border = '2px solid #00CCFF'}
+     onMouseLeave={(e) => e.currentTarget.style.border = '2px solid transparent'}>
+    <img src="/images/icons/modules.svg" alt="Modules" style={{width: '30px', marginRight: '1rem'}} />
+    <div>
+      <h2 style={{margin: '0 0 0.5rem 0', fontSize: '1.2rem', marginTop: '0.7rem', fontWeight: '600', color: 'white'}}>Modules</h2>
+      <p style={{margin: 0, fontSize: '0.9rem', color: '#bbb'}}>Learn More about Modules and how they can help you achieve results faster.</p>
+      <br/>
+      <a href="../user-guides/concepts/workflows/modules" style={{color: '#00CCFF', textDecoration: 'none', fontWeight: 'bold'}}>Explore Modules →</a>
+    </div>
+  </Card>
+
+  <Card style={{
+    backgroundColor: '#0a0b1c',
+    borderRadius: '12px',
+    padding: '1.5rem',
+    color: '#fff',
+    display: 'flex',
+    alignItems: 'center',
+    transition: 'border 0.3s',
+    border: '2px solid transparent'
+  }} onMouseEnter={(e) => e.currentTarget.style.border = '2px solid #00CCFF'}
+     onMouseLeave={(e) => e.currentTarget.style.border = '2px solid transparent'}>
+    <img src="/images/icons/tools.svg" alt="Tools" style={{width: '30px', marginRight: '1rem'}} />
+    <div>
+      <h2 style={{margin: '0 0 0.5rem 0', fontSize: '1.2rem', marginTop: '0.7rem', fontWeight: '600', color: 'white'}}>Tools</h2>
+      <p style={{margin: 0, fontSize: '0.9rem', color: '#bbb'}}>Learn More about Tools and how they can help you build custom offensive security automation.</p>
+      <br/>
+      <a href="../user-guides/concepts/workflows/tools" style={{color: '#00CCFF', textDecoration: 'none', fontWeight: 'bold'}}>Explore Tools →</a>
+    </div>
+  </Card>
+
+  <Card style={{
+    backgroundColor: '#0a0b1c',
+    borderRadius: '12px',
+    padding: '1.5rem',
+    color: '#fff',
+    display: 'flex',
+    alignItems: 'center',
+    transition: 'border 0.3s',
+    border: '2px solid transparent'
+  }} onMouseEnter={(e) => e.currentTarget.style.border = '2px solid #00CCFF'}
+     onMouseLeave={(e) => e.currentTarget.style.border = '2px solid transparent'}>
+    <img src="/images/icons/scripts.svg" alt="Scripts" style={{width: '30px', marginRight: '1rem'}} />
+    <div>
+      <h2 style={{margin: '0 0 0.5rem 0', fontSize: '1.2rem', marginTop: '0.7rem', fontWeight: '600', color: 'white'}}>Scripts</h2>
+      <p style={{margin: 0, fontSize: '0.9rem', color: '#bbb'}}>Learn more about Scripts and how they can help you extract, transform and integrate your security data.</p>
+      <br/>
+      <a href="../user-guides/concepts/workflows/scripts" style={{color: '#00CCFF', textDecoration: 'none', fontWeight: 'bold'}}>Explore Scripts →</a>
+    </div>
+  </Card>
+</div>

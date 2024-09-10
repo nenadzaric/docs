@@ -1,0 +1,54 @@
+---
+title: "Fingerprint Network Services"
+description: "Identify services running on network ports"
+---
+
+import { ModuleOverview } from '/snippets/ModuleOverview.mdx'
+
+<ModuleOverview 
+  category="Attack Surface Management"
+  inputs={ {
+  "port-details": {
+    "name": "port-details",
+    "type": "FILE",
+    "visible": true,
+    "description": "JSONLines records of port discovery details from the Scan for Open Ports module",
+  },
+}}
+  outputs={[ 
+    "network-service-details"
+  ]}
+  author="trickest-mhmdiaa"
+  createdDate="2024-07-04"
+  iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/6699ec1a-977b-415f-9c0d-cd3f8f0adf9a.json"
+/>
+
+## Features
+# Fingerprint Network Services
+
+## Description
+Identify and analyze services running on network ports. This module scans for various service types, collecting detailed metadata about each identified service.
+
+## Features
+- Identifies **different types of services** like SSH, FTP, MySQL, and more.
+- Collects **metadata about the identified services**, including the protocol, banner, and products in use.
+- Capable of processing **tens of thousands of hosts** simultaneously.
+
+## Inputs
+### Required
+- **port-details**: JSONLines records of port discovery details from the "Scan for Open Ports" module
+```
+{"ip_address": "1.3.3.7", "port": 443, "hostname": "dashboard.example.com"}
+{"ip_address": "1.2.3.4", "port": 21}
+```
+
+## Outputs
+- **network-service-details**: JSONLines records of network service discovery details.
+```
+{"ip_address": "1.3.3.7", "port": 443, "protocol": "https", "hostname": "dashboard.example.com", "tls": true, "transport": "tcp", "version": "nginx", "banner": "302 Moved Temporarily", "products": ["Nginx"]}
+{"ip_address": "1.2.3.4", "port": 21, "protocol": "ssh", "tls": false, "transport": "tcp", "banner": "SSH-2.0-Go\r\n"}
+```
+
+## Changelog
+- v1.0
+    - Initial release

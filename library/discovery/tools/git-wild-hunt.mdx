@@ -1,0 +1,38 @@
+---
+title: "git-wild-hunt"
+description: "A tool to hunt for credentials in the GitHub wild AKA git*hunt."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="f8c975be-8463-4fe0-b5f8-e2d957e1d0bb"
+  name="git-wild-hunt"
+  description="A tool to hunt for credentials in the GitHub wild AKA git*hunt."
+  category="Discovery"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/git-wild-hunt:2c1b430"
+  source_url="https://github.com/d1vious/git-wild-hunt"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/f8c975be-8463-4fe0-b5f8-e2d957e1d0bb.json"
+  inputs={ {
+  "config": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Config file path (check out the repository for config file - output variable should be /hive/out/results.json)",
+  },
+  "search": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--search",
+    "visible": true,
+    "description": "Search to execute (path:.aws/ filename:credentials / extension:json path:.azure filename:accessTokens language:JSON / path:.kube filename:config)",
+  },
+}}
+/>

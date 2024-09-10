@@ -1,0 +1,108 @@
+---
+title: "shuffledns"
+description: "shuffleDNS is a wrapper around massdns written in go that allows you to enumerate valid subdomains using active bruteforce as well as resolve subdomains with wildcard handling and easy input-output support."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="58ec8d9c-bc1a-4edc-9e41-fdade0ea4431"
+  name="shuffledns"
+  description="shuffleDNS is a wrapper around massdns written in go that allows you to enumerate valid subdomains using active bruteforce as well as resolve subdomains with wildcard handling and easy input-output support."
+  category="Recon"
+  author="trickest"
+  created_date="2021-08-04"
+  container="quay.io/trickest/shuffledns:v1.0.9"
+  source_url="https://github.com/projectdiscovery/shuffledns"
+  license="Unknown"
+  output_command="-o"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/58ec8d9c-bc1a-4edc-9e41-fdade0ea4431.json"
+  inputs={ {
+  "domain": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-d",
+    "visible": true,
+    "description": "Domain to find or resolve subdomains for.",
+  },
+  "no-color": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-no-color",
+    "visible": false,
+    "description": "Don't Use colors in output",
+  },
+  "wordlist": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-w",
+    "visible": true,
+    "description": "File containing words subdomain bruteforce.",
+  },
+  "resolvers": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-r",
+    "visible": true,
+    "description": "File containing resolvers for enumeration.",
+  },
+  "subdomains": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-list",
+    "visible": true,
+    "description": "File containing list of subdomains to resolve.",
+  },
+  "massdns-input": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-raw-input",
+    "visible": false,
+    "description": "File containing full massdns output.",
+  },
+  "massdns-command": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-massdns-cmd",
+    "visible": false,
+    "description": "Optional massdns commands to run (example '-i 10')",
+  },
+  "strict-wildcard": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-strict-wildcard",
+    "visible": false,
+    "description": "Perform wildcard check on all found subdomains",
+  },
+  "massdns-resolves": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-t",
+    "visible": false,
+    "description": "Number of concurrent massdns resolves (Default: 10000)",
+  },
+  "number-of-retries": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-retries",
+    "visible": false,
+    "description": "Number of retries for DNS enumeration (Default: 5).",
+  },
+  "show-only-subdomains": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-silent",
+    "visible": false,
+    "description": "Show only subdomains in output.",
+  },
+  "number-of-wildcard-checks": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-wt",
+    "visible": false,
+    "description": "Number of concurrent wildcard checks (Default: 25).",
+  },
+}}
+/>

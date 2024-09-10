@@ -1,0 +1,73 @@
+---
+title: "httprobe"
+description: "Take a list of domains and probe for working http and https servers."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="7a4f1cc0-c02e-4ea6-a563-1a2d1ad23296"
+  name="httprobe"
+  description="Take a list of domains and probe for working http and https servers."
+  category="Network"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/httprobe:5555984"
+  source_url="https://github.com/tomnomnom/httprobe"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/7a4f1cc0-c02e-4ea6-a563-1a2d1ad23296.json"
+  inputs={ {
+  "domains": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "List of domains",
+  },
+  "threads": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-c",
+    "visible": false,
+    "description": "Number of threads",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-t",
+    "visible": false,
+    "description": "Timeout in milliseconds.",
+  },
+  "prefer-https": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--prefer-https",
+    "visible": false,
+    "description": "If you don't care about checking HTTP if HTTPS is working.",
+  },
+  "protocol-port": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-p",
+    "visible": false,
+    "description": "By default httprobe checks for HTTP on port 80 and HTTPS on port 443. You can add additional probes with this flag specifying protocol:port.",
+  },
+  "protocol-port-2": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-p",
+    "visible": false,
+    "description": "By default httprobe checks for HTTP on port 80 and HTTPS on port 443. You can add additional probes with this flag specifying protocol:port.",
+  },
+  "skip-standard-ports": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-s",
+    "visible": false,
+    "description": "If you don't want to probe for HTTP on port 80 or HTTPS on port 443, you can use this parameter. In that case, you need to specify the probes you do want using the protocol-port.",
+  },
+}}
+/>

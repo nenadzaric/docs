@@ -1,0 +1,66 @@
+---
+title: "get-trickest-files"
+description: "Get a file from your Trickest file storage"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="1c70b319-e81f-4669-a4d7-4d09bbc43be7"
+  name="get-trickest-files"
+  description="Get a file from your Trickest file storage"
+  category="Utilities"
+  author="trickest-mhmdiaa"
+  created_date="2023-02-23"
+  container="quay.io/trickest/get_trickest_files:1a65c1c"
+  source_url="https://github.com/trickest/trickest-files"
+  license="Unknown"
+  output_command="--output"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/1c70b319-e81f-4669-a4d7-4d09bbc43be7.json"
+  inputs={ {
+  "token": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--token",
+    "visible": true,
+    "description": "Trickest authentication token",
+  },
+  "dependency": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--dependency",
+    "visible": true,
+    "description": "Specify a node that will always run before this one (e.g. wait for a node to upload its output before downloading it)",
+  },
+  "file-names": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--file-names",
+    "visible": true,
+    "description": "Names of the files to get, separated by commas",
+  },
+  "token-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--token-file",
+    "visible": true,
+    "description": "Trickest authentication token file",
+  },
+  "fail-on-error": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--fail-on-error",
+    "visible": false,
+    "description": "Fail on errors such as invalid token. If not provided and an error occurs, an empty output file will be written",
+  },
+  "partial-name-match": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--partial-name-match",
+    "visible": false,
+    "description": "Get all files with a partial name match. For example, using `--file-names subdomains.txt` will retrieve files like `trickest.com-subdomains.txt`, `trickest.io-subdomains.txt`, and so on",
+  },
+}}
+/>

@@ -1,0 +1,52 @@
+---
+title: "cent"
+description: "Community edition nuclei templates, a simple tool that allows you to organize all the Nuclei templates offered by the community in one place."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="51823de2-e684-4874-bf43-d56df4f90501"
+  name="cent"
+  description="Community edition nuclei templates, a simple tool that allows you to organize all the Nuclei templates offered by the community in one place."
+  category="Utilities"
+  author="trickest"
+  created_date="2021-09-23"
+  container="quay.io/trickest/cent:1ebc728-patch-3"
+  source_url="https://github.com/xm1k3/cent"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/51823de2-e684-4874-bf43-d56df4f90501.json"
+  inputs={ {
+  "config": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "config file",
+  },
+  "console": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--console",
+    "visible": false,
+    "description": "Print console output",
+  },
+  "threads": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--threads",
+    "visible": false,
+    "description": "Number of threads to use when cloning repositories (default 10)",
+  },
+  "keepfolders": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--keepfolders",
+    "visible": false,
+    "description": "Keep folders (by default it only saves yaml files)",
+  },
+}}
+/>

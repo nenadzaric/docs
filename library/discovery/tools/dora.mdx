@@ -1,0 +1,73 @@
+---
+title: "dora"
+description: "Find exposed API keys based on RegEx and get exploitation methods for some of the keys that are found."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="c6b1cd34-44a2-4b52-b857-5d3e0d1d6390"
+  name="dora"
+  description="Find exposed API keys based on RegEx and get exploitation methods for some of the keys that are found."
+  category="Discovery"
+  author="trickest-mhmdiaa"
+  created_date="2022-02-05"
+  container="quay.io/trickest/dora:2397893"
+  source_url="https://github.com/sdushantha/dora"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/c6b1cd34-44a2-4b52-b857-5d3e0d1d6390.json"
+  inputs={ {
+  "git": {
+    "type": "FOLDER",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Folder to test",
+  },
+  "file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "File to test",
+  },
+  "debug": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-d",
+    "visible": false,
+    "description": "Debug mode",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--verbose",
+    "visible": false,
+    "description": "Verbose mode",
+  },
+  "no-color": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--no-color",
+    "visible": false,
+    "description": "No color",
+  },
+  "json-regex": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--json",
+    "visible": false,
+    "description": "Load regex data from a valid JSON file",
+  },
+  "rg-arguments": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--rg-arguments",
+    "visible": false,
+    "description": "Arguments you want to provide to ripgrep",
+  },
+}}
+/>

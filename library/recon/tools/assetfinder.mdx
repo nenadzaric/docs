@@ -1,0 +1,45 @@
+---
+title: "assetfinder"
+description: "Find domains and subdomains potentially related to a given domain."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="8d0c18c9-fc96-4e41-a06b-eb214bea4a95"
+  name="assetfinder"
+  description="Find domains and subdomains potentially related to a given domain."
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2022-02-05"
+  container="quay.io/trickest/assetfinder:v0.1.1"
+  source_url="https://github.com/tomnomnom/assetfinder"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/8d0c18c9-fc96-4e41-a06b-eb214bea4a95.json"
+  inputs={ {
+  "domain": {
+    "type": "STRING",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Specify domain name",
+  },
+  "domains": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Specify a list of domain names",
+  },
+  "subs-only": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--subs-only",
+    "visible": true,
+    "description": "Only include subdomains of search domain",
+  },
+}}
+/>

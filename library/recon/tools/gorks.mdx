@@ -1,0 +1,66 @@
+---
+title: "gorks"
+description: "Search google dorks in the specified GCSE id"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="284aa7d1-417e-48ad-9624-3151c8dd2148"
+  name="gorks"
+  description="Search google dorks in the specified GCSE id"
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2022-09-09"
+  container="quay.io/trickest/gorks:38aaae2"
+  source_url="https://github.com/carlospolop/gorks"
+  license="Unknown"
+  output_command="--json-file"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/284aa7d1-417e-48ad-9624-3151c8dd2148.json"
+  inputs={ {
+  "debug": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--debug",
+    "visible": false,
+    "description": "Debug",
+  },
+  "dorks": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--dorks",
+    "visible": true,
+    "description": "JSON dorks file",
+  },
+  "cse-id": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--cseid",
+    "visible": true,
+    "description": "ID of the custom search engine",
+  },
+  "api-key": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--api-key",
+    "visible": true,
+    "description": "API key",
+  },
+  "siterestrict": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--siterestrict",
+    "visible": false,
+    "description": "Use siterestrict api (the engine has less than 10 domains)",
+  },
+  "api-keys-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--api-keys-file",
+    "visible": true,
+    "description": "Read api keys from file",
+  },
+}}
+/>

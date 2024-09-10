@@ -1,0 +1,80 @@
+---
+title: "chaos-client"
+description: "Go client to communicate with Chaos DB API."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="f3efdc46-3d32-4ca9-abf1-3fdb2a92c9f6"
+  name="chaos-client"
+  description="Go client to communicate with Chaos DB API."
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2023-06-26"
+  container="quay.io/trickest/chaos-client:v0.5.1"
+  source_url="https://github.com/projectdiscovery/chaos-client"
+  license="Unknown"
+  output_command="-o"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/f3efdc46-3d32-4ca9-abf1-3fdb2a92c9f6.json"
+  inputs={ {
+  "key": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-key",
+    "visible": true,
+    "description": "Chaos key for API",
+  },
+  "json": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-json",
+    "visible": false,
+    "description": "Print output as json",
+  },
+  "count": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-count",
+    "visible": false,
+    "description": "Show statistics for the specified domain",
+  },
+  "domain": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-d",
+    "visible": true,
+    "description": "Domain to search for subdomains",
+  },
+  "silent": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-silent",
+    "visible": false,
+    "description": "Make the output silent",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-verbose",
+    "visible": false,
+    "description": "Verbose",
+  },
+  "domain-list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-dL",
+    "visible": true,
+    "description": "File containing domains to search for subdomains",
+  },
+  "disable-update-check": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-disable-update-check",
+    "visible": false,
+    "description": "disable automatic chaos update check",
+  },
+}}
+/>

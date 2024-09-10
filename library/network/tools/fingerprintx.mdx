@@ -1,0 +1,80 @@
+---
+title: "fingerprintx"
+description: "Standalone utility for service discovery on open ports."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="55d51f04-f43b-4685-9640-df213167f899"
+  name="fingerprintx"
+  description="Standalone utility for service discovery on open ports."
+  category="Network"
+  author="youssef"
+  created_date="2023-03-27"
+  container="quay.io/trickest/fingerprintx:v1.1.13"
+  source_url="https://github.com/praetorian-inc/fingerprintx"
+  license="Unknown"
+  output_command="-o"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/55d51f04-f43b-4685-9640-df213167f899.json"
+  inputs={ {
+  "csv": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--csv",
+    "visible": false,
+    "description": "output format in csv",
+  },
+  "udp": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-U",
+    "visible": false,
+    "description": "run UDP plugins",
+  },
+  "fast": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-f",
+    "visible": false,
+    "description": "fast mode",
+  },
+  "json": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--json",
+    "visible": false,
+    "description": "output format in json",
+  },
+  "list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-l",
+    "visible": true,
+    "description": "input file containing targets",
+  },
+  "target": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-t",
+    "visible": true,
+    "description": "target or comma separated target list",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-w",
+    "visible": false,
+    "description": "timeout (milliseconds) (default 500)",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-v",
+    "visible": false,
+    "description": "verbose mode",
+  },
+}}
+/>

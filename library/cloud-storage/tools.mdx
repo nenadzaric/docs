@@ -1,0 +1,44 @@
+---
+title: "Cloud Storage Tools"
+description: "Explore a collection of powerful and efficient tools in the Cloud Storage category to enhance your productivity and security."
+sidebarTitle: "Tools"
+mode: "wide"
+---
+
+import { ToolCard } from '/snippets/ToolCard.mdx';
+
+<CardGroup cols={2}>
+
+  <ToolCard
+    cardTitle="mass3"
+    description="Quickly enumerate through a pre-compiled list of AWS S3 buckets using DNS instead of HTTP with a list of DNS resolvers and multi-threading. Warning: Be aware that this is really shitty golang code. I wrote it without any prior knowledge of Go Lang but it seems to do the job. Feel free to contribute to make the tool better!"
+    iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/491a0f21-4b7c-48a5-be1b-5cddc7626af7.json"
+    href="/library/cloud-storage/tools/mass3"
+    category="Cloud Storage"
+  />
+
+  <ToolCard
+    cardTitle="s3reverse"
+    description="The format of various s3 buckets is convert in one format. for bugbounty and security testing."
+    iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/c0e26036-1aab-4374-b4ab-a4bcb1c0d005.json"
+    href="/library/cloud-storage/tools/s3reverse"
+    category="Cloud Storage"
+  />
+
+  <ToolCard
+    cardTitle="s3scanner"
+    description="A tool to find open S3 buckets and dump their contents."
+    iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/8396fea5-0d04-4560-b792-d155ba22769c.json"
+    href="/library/cloud-storage/tools/s3scanner"
+    category="Cloud Storage"
+  />
+
+  <ToolCard
+    cardTitle="scant3r"
+    description="Scant3r Scans all URLs with multiple HTTP Methods and Tries to look for bugs with basic exploits from Headers and URL Parameters By chaining waybackurls or gau with Scant3r you will have more time to look into functions and get Easy bugs on the way."
+    iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/1acad626-7044-49dd-bc1f-e4b216efca3a.json"
+    href="/library/cloud-storage/tools/scant3r"
+    category="Cloud Storage"
+  />
+
+</CardGroup>

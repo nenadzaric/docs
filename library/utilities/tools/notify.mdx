@@ -1,0 +1,115 @@
+---
+title: "notify"
+description: "Notify is a Go-based assistance package that enables you to stream the output of several tools (or read from a file) and publish it to a variety of supported platforms."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="544fb6d1-3861-4828-9b39-4abdf717d2e6"
+  name="notify"
+  description="Notify is a Go-based assistance package that enables you to stream the output of several tools (or read from a file) and publish it to a variety of supported platforms."
+  category="Utilities"
+  author="trickest"
+  created_date="2021-11-09"
+  container="quay.io/trickest/notify:v1.0.5"
+  source_url="https://github.com/projectdiscovery/notify"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/544fb6d1-3861-4828-9b39-4abdf717d2e6.json"
+  inputs={ {
+  "id": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-id",
+    "visible": false,
+    "description": "id to send the notification to (optional)",
+  },
+  "bulk": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-bulk",
+    "visible": true,
+    "description": "enable bulk processing",
+  },
+  "data": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-data",
+    "visible": true,
+    "description": "input file to send for notify",
+  },
+  "delay": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-delay",
+    "visible": false,
+    "description": "delay in seconds between each notification",
+  },
+  "proxy": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-proxy",
+    "visible": false,
+    "description": "http proxy to use with notify",
+  },
+  "silent": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-silent",
+    "visible": false,
+    "description": "Don't print the banner",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-v",
+    "visible": false,
+    "description": "enable verbose mode",
+  },
+  "provider": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-provider",
+    "visible": false,
+    "description": "provider to send the notification to (optional)",
+  },
+  "char-limit": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-char-limit",
+    "visible": false,
+    "description": "max character limit per message (default 4000)",
+  },
+  "msg-format": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-msg-format",
+    "visible": false,
+    "description": "add custom formatting to message",
+  },
+  "rate-limit": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-rate-limit",
+    "visible": false,
+    "description": "maximum number of HTTP requests to send per second",
+  },
+  "config-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-config",
+    "visible": false,
+    "description": "notify configuration file",
+  },
+  "provider-config-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-provider-config",
+    "visible": true,
+    "description": "provider config file",
+  },
+}}
+/>

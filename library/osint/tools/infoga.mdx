@@ -1,0 +1,59 @@
+---
+title: "infoga"
+description: "Infoga is a tool gathering email accounts informations (ip,hostname,country,...) from different public source (search engines, pgp key servers and shodan) and check if emails was leaked using haveibeenpwned.com API."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="a77d9eb7-3da6-415f-8957-c8e3a2635621"
+  name="infoga"
+  description="Infoga is a tool gathering email accounts informations (ip,hostname,country,...) from different public source (search engines, pgp key servers and shodan) and check if emails was leaked using haveibeenpwned.com API."
+  category="OSINT"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/infoga:79a1c03"
+  source_url="https://github.com/m4ll0k/infoga"
+  license="Unknown"
+  output_command="--report"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/a77d9eb7-3da6-415f-8957-c8e3a2635621.json"
+  inputs={ {
+  "info": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-i",
+    "visible": false,
+    "description": "Get email information",
+  },
+  "breach": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-b",
+    "visible": false,
+    "description": "Check if email is breached",
+  },
+  "domain": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-d",
+    "visible": true,
+    "description": "Target URL/Name",
+  },
+  "verbose": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-v",
+    "visible": false,
+    "description": "Verbosity level (1,2 or 3)",
+  },
+  "source-data": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-s",
+    "visible": false,
+    "description": "Search engine to use. Options: google, bing, yahoo, ask, baidu, dogpile, exalead, pgp (default all).",
+  },
+}}
+/>

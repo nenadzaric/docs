@@ -1,0 +1,85 @@
+export const ModuleOverview = ({ category, inputs, outputs, author, createdDate, iframeUrl }) => (
+  <div style={{
+    border: '1px solid rgba(0, 0, 0, 0.1)',
+    borderRadius: '0.5rem',
+    marginBottom: '2rem',
+    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)'
+  }}>
+    <div style={{
+      display: 'flex',
+      marginBottom: '1.5rem'
+    }}>
+      <div style={{flex: '1'}}>
+      <p style={{
+              background: '#fff',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              fontWeight: 'bold',
+              fontSize: '0.9rem',
+              textTransform: 'uppercase'
+        }}>Category</p>
+        <p style={{
+              background: 'linear-gradient(90deg, #00a3ff, #0065ff)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              fontWeight: 'bold',
+              fontSize: '0.9rem',
+              textTransform: 'uppercase'
+        }}>{category}</p>
+
+        
+        <div style={{marginBottom: '1.5rem'}}>
+          <h3 style={{fontSize: '1.25rem', fontWeight: 'semibold', marginBottom: '0.5rem'}}>Inputs</h3>
+          {Object.entries(inputs).map(([key, value]) => (
+            <ParamField
+              key={key}
+              query={key}
+              type={value.type.toLowerCase()}
+              optional={!value.visible}
+              required={value.visible}
+            >
+              {value.description}
+            </ParamField>
+          ))}
+        </div>
+      </div>
+      <div style={{
+        width: '50%',
+        height: '400px',
+        border: '1px solid rgba(0, 0, 0, 0.2)',
+        borderRadius: '0.5rem',
+        overflow: 'hidden'
+      }}>
+      <Frame width='250px' height='400px' content="Embedded Editor"> 
+        <iframe 
+          src={iframeUrl}
+          style={{width: '100%', height: '100%', border: 'none'}}
+        />
+      </Frame>
+      </div>
+    </div>
+
+    <div>
+      <h3 style={{fontSize: '1.25rem', fontWeight: 'semibold', marginBottom: '0.5rem'}}>Outputs</h3>
+      <div style={{display: 'flex', flexWrap: 'wrap', gap: '0.5rem'}}>
+        {outputs.map((output, index) => (
+          <span key={index} style={{
+            background: 'rgba(15, 21, 29, 0.25)',
+            color: '#94E8FE',
+            padding: '0.25rem 0.75rem',
+            fonrFamily: 'Inter',
+            borderRadius: '9999px',
+            fontSize: '0.875rem',
+            fontWeight: '500',
+            border: '1px solid rgba(148, 232, 254, 0.25)',
+            boxShadow: '0px -15px 15px 0px rgba(148, 232, 254, 0.15) inset',
+            transition: 'all 0.3s ease'
+          }}>
+            {output}
+          </span>
+        ))}
+      </div>
+    </div>
+  </div>
+)
+

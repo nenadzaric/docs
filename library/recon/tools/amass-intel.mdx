@@ -1,0 +1,199 @@
+---
+title: "amass-intel"
+description: "The OWASP Amass Project performs network mapping of attack surfaces and external asset discovery using open source information gathering and active reconnaissance techniques."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="c9f18a92-bdd2-4bb2-831d-eef319187ecf"
+  name="amass-intel"
+  description="The OWASP Amass Project performs network mapping of attack surfaces and external asset discovery using open source information gathering and active reconnaissance techniques."
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2022-11-07"
+  container="quay.io/trickest/amass-intel:v3.22.2"
+  source_url="https://github.com/OWASP/Amass"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/c9f18a92-bdd2-4bb2-831d-eef319187ecf.json"
+  inputs={ {
+  "ip": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-ip",
+    "visible": false,
+    "description": "Show the IP addresses for discovered names",
+  },
+  "asn": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-asn",
+    "visible": false,
+    "description": "ASNs separated by commas",
+  },
+  "org": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-org",
+    "visible": true,
+    "description": "Search string provided against AS description information",
+  },
+  "src": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-src",
+    "visible": false,
+    "description": "Print data sources for the discovered names",
+  },
+  "addr": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-addr",
+    "visible": false,
+    "description": "IPs and ranges (192.168.1.1-254) separated by commas",
+  },
+  "cidr": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-cidr",
+    "visible": false,
+    "description": "CIDRs separated by commas",
+  },
+  "demo": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-demo",
+    "visible": false,
+    "description": "Censor output to make it suitable for demonstrations",
+  },
+  "ipv4": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-ipv4",
+    "visible": false,
+    "description": "Show the IPv4 addresses for discovered names",
+  },
+  "ipv6": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-ipv6",
+    "visible": false,
+    "description": "Show the IPv6 addresses for discovered names",
+  },
+  "list": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-list",
+    "visible": false,
+    "description": "Print additional information",
+  },
+  "ports": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-p",
+    "visible": false,
+    "description": "Ports separated by commas (default: 80, 443)",
+  },
+  "whois": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-whois",
+    "visible": true,
+    "description": "All provided domains are run through reverse whois",
+  },
+  "active": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-active",
+    "visible": false,
+    "description": "Attempt certificate name grabs",
+  },
+  "config": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-config",
+    "visible": false,
+    "description": "Path to the INI configuration file",
+  },
+  "domains": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-d",
+    "visible": true,
+    "description": "Domain names separated by commas",
+  },
+  "exclude": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-exclude",
+    "visible": false,
+    "description": "Data source names separated by commas to be excluded",
+  },
+  "include": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-include",
+    "visible": false,
+    "description": "Data source names separated by commas to be included",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-timeout",
+    "visible": false,
+    "description": "Number of minutes to let enumeration run before quitting",
+  },
+  "verbose": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-v",
+    "visible": false,
+    "description": "Output status / debug / troubleshooting info",
+  },
+  "resolvers": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-r",
+    "visible": false,
+    "description": "IP addresses of preferred DNS resolvers",
+  },
+  "domains-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-df",
+    "visible": true,
+    "description": "Path to a file providing root domain names",
+  },
+  "exclude-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-ef",
+    "visible": false,
+    "description": "Path to a file providing data sources to exclude",
+  },
+  "include-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-if",
+    "visible": false,
+    "description": "Path to a file providing data sources to include",
+  },
+  "resolvers-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-rf",
+    "visible": false,
+    "description": "Path to a file providing preferred DNS resolvers",
+  },
+  "max-dns-queries": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-max-dns-queries",
+    "visible": false,
+    "description": "Maximum number of concurrent DNS queries",
+  },
+}}
+/>

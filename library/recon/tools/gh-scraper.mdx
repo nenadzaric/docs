@@ -1,0 +1,45 @@
+---
+title: "gh-scraper"
+description: "Process GitHub Archive URLs and generate unique repositories and users CSV files"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="f6cde501-75c4-4909-8f70-ad27d7f4d697"
+  name="gh-scraper"
+  description="Process GitHub Archive URLs and generate unique repositories and users CSV files"
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2023-05-04"
+  container="quay.io/trickest/gh_scraper:634d105"
+  source_url="https://github.com/carlospolop/github_archive_scraper"
+  license="Unknown"
+  output_command="--output-folder"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/f6cde501-75c4-4909-8f70-ad27d7f4d697.json"
+  inputs={ {
+  "logs-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--logs-file",
+    "visible": true,
+    "description": "The path of the file containing the GitHub Archive logs.",
+  },
+  "urls-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--urls-file",
+    "visible": true,
+    "description": "The path of the file containing the log URLs to parse.",
+  },
+  "logs-folder": {
+    "type": "FOLDER",
+    "order": 0,
+    "command": "--logs-folder",
+    "visible": true,
+    "description": "The path of the fodlder containing the GitHub Archive logs.",
+  },
+}}
+/>

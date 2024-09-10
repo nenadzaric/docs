@@ -1,0 +1,38 @@
+---
+title: "suffix-file-lines"
+description: "Add suffix (string) on each line in files."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="cb6771e6-e1b3-48f0-acc7-60a3003cafab"
+  name="suffix-file-lines"
+  description="Add suffix (string) on each line in files."
+  category="Utilities"
+  author="trickest"
+  created_date="2021-10-28"
+  container="quay.io/trickest/suffix-file-lines:v1.0.0"
+  source_url="https://github.com/trickest"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/cb6771e6-e1b3-48f0-acc7-60a3003cafab.json"
+  inputs={ {
+  "folder": {
+    "type": "FOLDER",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "Folder with files that need a prefix for each line",
+  },
+  "suffix-string": {
+    "type": "STRING",
+    "order": 2,
+    "command": "",
+    "visible": true,
+    "description": "String that will be appended to each line.",
+  },
+}}
+/>

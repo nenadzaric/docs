@@ -1,0 +1,234 @@
+---
+title: "subfinder"
+description: "Subfinder is a subdomain discovery tool that discovers valid subdomains for websites by using passive online sources. It has a simple modular architecture and is optimized for speed. Subfinder is built for doing one thing only - passive subdomain enumeration, and it does that very well."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="c8637986-e6e8-47b1-9fa4-fc1f96a22199"
+  name="subfinder"
+  description="Subfinder is a subdomain discovery tool that discovers valid subdomains for websites by using passive online sources. It has a simple modular architecture and is optimized for speed. Subfinder is built for doing one thing only - passive subdomain enumeration, and it does that very well."
+  category="Recon"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/subfinder:v2.6.6"
+  source_url="https://github.com/projectdiscovery/subfinder"
+  license="Unknown"
+  output_command="-output"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/c8637986-e6e8-47b1-9fa4-fc1f96a22199.json"
+  inputs={ {
+  "ip": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-ip",
+    "visible": false,
+    "description": "include host IP in output (-active only)",
+  },
+  "all": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-all",
+    "visible": false,
+    "description": "use all sources for enumeration (slow)",
+  },
+  "json": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-json",
+    "visible": false,
+    "description": "write output in JSONL(ines) format",
+  },
+  "list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-list",
+    "visible": false,
+    "description": "file containing list of domains for subdomain discovery",
+  },
+  "match": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-match",
+    "visible": false,
+    "description": "subdomain or list of subdomain to match (comma separated)",
+  },
+  "proxy": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-proxy",
+    "visible": false,
+    "description": "http proxy to use with subfinder",
+  },
+  "stats": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-stats",
+    "visible": false,
+    "description": "report source statistics",
+  },
+  "active": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-active",
+    "visible": false,
+    "description": "display active subdomains only",
+  },
+  "config": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-config",
+    "visible": false,
+    "description": "flag config file",
+  },
+  "domain": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-domain",
+    "visible": true,
+    "description": "domains to find subdomains for (comma separated)",
+  },
+  "filter": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-filter",
+    "visible": false,
+    "description": "subdomain or list of subdomain to filter (comma separated)",
+  },
+  "silent": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-silent",
+    "visible": false,
+    "description": "show only subdomains in output",
+  },
+  "sources": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-sources",
+    "visible": false,
+    "description": "specific sources to use for discovery (-s crtsh,github).",
+  },
+  "threads": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-t",
+    "visible": false,
+    "description": "number of concurrent goroutines for resolving (-active only) (default 10)",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-timeout",
+    "visible": false,
+    "description": "seconds to wait before timing out (default 30)",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-v",
+    "visible": false,
+    "description": "show verbose output",
+  },
+  "max-time": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-max-time",
+    "visible": false,
+    "description": "minutes to wait for enumeration results (default 10)",
+  },
+  "no-color": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-no-color",
+    "visible": false,
+    "description": "disable color in output",
+  },
+  "recursive": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-recursive",
+    "visible": false,
+    "description": "use only sources that can handle subdomains recursively (e.g. subdomain.domain.tld vs domain.tld)",
+  },
+  "resolvers": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-r",
+    "visible": false,
+    "description": "comma separated list of resolvers to use",
+  },
+  "exclude-ip": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-exclude-ip",
+    "visible": false,
+    "description": "exclude IPs from the list of domains",
+  },
+  "match-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-match",
+    "visible": false,
+    "description": "subdomain or list of subdomain to match",
+  },
+  "rate-limit": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-rate-limit",
+    "visible": false,
+    "description": "maximum number of http requests to send per second (global)",
+  },
+  "filter-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-filter",
+    "visible": false,
+    "description": "subdomain or list of subdomain to filter",
+  },
+  "rate-limits": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-rate-limits",
+    "visible": false,
+    "description": "maximum number of http requests to send per second four providers in key=value format (-rls hackertarget=10/m) (default [github=30/m, fullhunt=60/m, robtex=18446744073709551615/ms, securitytrails=1/s, shodan=1/s, virustotal=4/m, hackertarget=2/s, waybackarchive=15/m, whoisxmlapi=50/s])",
+  },
+  "resolvers-list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-rlist",
+    "visible": false,
+    "description": "file containing list of resolvers to use",
+  },
+  "collect-sources": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-collect-sources",
+    "visible": false,
+    "description": "include all sources in the output (-json only)",
+  },
+  "exclude-sources": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-exclude-sources",
+    "visible": false,
+    "description": "sources to exclude from enumeration (-es alienvault,zoomeyeapi)",
+  },
+  "provider-config": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-provider-config",
+    "visible": false,
+    "description": "provider config file",
+  },
+  "disable-update-check": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-disable-update-check",
+    "visible": false,
+    "description": "disable automatic subfinder update check",
+  },
+}}
+/>

@@ -1,0 +1,297 @@
+---
+title: "findomain"
+description: "The complete solution for domain recognition. Supports screenshotting, port scan, HTTP check, data import from other tools, subdomain monitoring."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="6c938174-439b-451e-9d05-2b053bd02529"
+  name="findomain"
+  description="The complete solution for domain recognition. Supports screenshotting, port scan, HTTP check, data import from other tools, subdomain monitoring."
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2022-02-05"
+  container="quay.io/trickest/findomain:5.1.1"
+  source_url="https://github.com/Findomain/Findomain"
+  license="Unknown"
+  output_command="--unique-output"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/6c938174-439b-451e-9d05-2b053bd02529.json"
+  inputs={ {
+  "pscan": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--pscan",
+    "visible": false,
+    "description": "Enable port scanner.",
+  },
+  "quiet": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--quiet",
+    "visible": false,
+    "description": "Remove informative messages but show fatal errors or subdomains not found message.",
+  },
+  "aempty": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--aempty",
+    "visible": false,
+    "description": "Send alert to webhooks still when no new subdomains have been found.",
+  },
+  "filter": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--filter",
+    "visible": false,
+    "description": "Filter subdomains containing specifics strings.",
+  },
+  "jobname": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--jobname",
+    "visible": false,
+    "description": "Use an database identifier for jobs. It is useful when you want to relate different targets into a same job name. To extract the data by job name identifier, use the query-jobname option.",
+  },
+  "resolved": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--resolved",
+    "visible": false,
+    "description": "Show/write only resolved subdomains.",
+  },
+  "wordlist": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--wordlist",
+    "visible": true,
+    "description": "Wordlist file to use in the bruteforce process. Using it option automatically enables bruteforce mode.",
+  },
+  "ipv6-only": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--ipv6-only",
+    "visible": false,
+    "description": "Perform a IPv6 lookup only",
+  },
+  "last-port": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--lport",
+    "visible": false,
+    "description": "Last port to scan. Default 1000.",
+  },
+  "randomize": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--randomize",
+    "visible": false,
+    "description": "Enable randomization when reading targets from files.",
+  },
+  "resolvers": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--resolvers",
+    "visible": false,
+    "description": "Path to a file containing a list of DNS IP address. If no specified then Google, Cloudflare and Quad9 DNS servers are used.",
+  },
+  "enable-dot": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--enable-dot",
+    "visible": false,
+    "description": "Enable DNS over TLS for resolving subdomains IPs.",
+  },
+  "no-monitor": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--no-monitor",
+    "visible": false,
+    "description": "Disable monitoring mode while saving data to database.",
+  },
+  "no-resolve": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--no-resolve",
+    "visible": false,
+    "description": "Disable pre-screenshotting jobs (http check and ip discover) when used as resolver to take screenshots.",
+  },
+  "rate-limit": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--rate-limit",
+    "visible": false,
+    "description": "Set the rate limit in seconds for each target during enumeration.",
+  },
+  "subdomains": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--file",
+    "visible": true,
+    "description": "Use a list of subdomains writen in a file as input.",
+  },
+  "as-resolver": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--as-resolver",
+    "visible": false,
+    "description": "Use Findomain as resolver for a list of domains in a file.",
+  },
+  "config-file": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--config",
+    "visible": false,
+    "description": "Use a configuration file. The default configuration file is findomain and the format can be toml, json, hjson, ini or yml.",
+  },
+  "http-status": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--http-status",
+    "visible": false,
+    "description": "Check the HTTP status of subdomains.",
+  },
+  "target-host": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--target",
+    "visible": true,
+    "description": "Target host.",
+  },
+  "user-agents": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--ua",
+    "visible": false,
+    "description": "Path to file containing user agents strings.",
+  },
+  "http-timeout": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--http-timeout",
+    "visible": false,
+    "description": "Value in seconds for the HTTP Status check of subdomains. Default 5",
+  },
+  "initial-port": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--iport",
+    "visible": false,
+    "description": "Initial port to scan. Default 0.",
+  },
+  "no-wildcards": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--no-wildcards",
+    "visible": false,
+    "description": "Disable wilcard detection when resolving subdomains.",
+  },
+  "verbose-mode": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--verbose",
+    "visible": false,
+    "description": "Enable verbose mode (useful to debug problems).",
+  },
+  "postgres-host": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--postgres-host",
+    "visible": false,
+    "description": "Postgresql host.",
+  },
+  "postgres-port": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--postgres-port",
+    "visible": false,
+    "description": "Postgresql port.",
+  },
+  "postgres-user": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--postgres-user",
+    "visible": false,
+    "description": "Postgresql username.",
+  },
+  "query-jobname": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--query-jobname",
+    "visible": false,
+    "description": "Extract all the subdomains from the database where the job name is the specified using the jobname option.",
+  },
+  "chrome-sandbox": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--sandbox",
+    "visible": false,
+    "description": "Enable Chrome/Chromium sandbox. It is disabled by default because a big number of users run the tool using the root user by default. Make sure you are not running the program as root user before using this option.",
+  },
+  "monitoring-mde": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--monitoring-flag",
+    "visible": false,
+    "description": "Activate Findomain monitoring mode",
+  },
+  "query-database": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--query-database",
+    "visible": false,
+    "description": "Query the findomain database to search subdomains that have already been discovered.",
+  },
+  "exclude-sources": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--exclude-sources",
+    "visible": false,
+    "description": "Exclude sources from searching subdomains in. [possible values: certspotter, crtsh, virustotal, sublist3r, facebook, spyse, bufferover, threatcrowd, virustotalapikey, anubis, urlscan, securitytrails, threatminer,archiveorg, c99, ctsearch]",
+  },
+  "show-resolved-ip": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--ip",
+    "visible": false,
+    "description": "Show/write the ip address of resolved subdomains.",
+  },
+  "import-subdomains": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--import-subdomains",
+    "visible": false,
+    "description": "Import subdomains from one or multiple files. Subdomains need to be one per line in the file to import.",
+  },
+  "postgres-database": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--postgres-database",
+    "visible": false,
+    "description": "Postgresql database.",
+  },
+  "postgres-password": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--postgres-password",
+    "visible": false,
+    "description": "Postgresql password.",
+  },
+  "external-subdomains": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--external-subdomains",
+    "visible": false,
+    "description": "Get external subdomains with amass and subfinder",
+  },
+  "exclude-subdomain-strings": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--exclude",
+    "visible": false,
+    "description": "Exclude subdomains containing specifics strings.",
+  },
+}}
+/>

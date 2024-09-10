@@ -1,0 +1,89 @@
+---
+title: "Discover Paths via Crawling"
+description: "Crawl a list of web server URLs to discover endpoints and form a comprehensive map of each asset on your attack surface"
+---
+
+import { ModuleOverview } from '/snippets/ModuleOverview.mdx'
+
+<ModuleOverview 
+  category="Content Discovery"
+  inputs={ {
+  "urls": {
+    "name": "urls",
+    "type": "FILE",
+    "visible": true,
+    "description": "List of urls",
+  },
+  "depth": {
+    "name": "depth",
+    "type": "STRING",
+    "visible": false,
+    "description": "Maximum crawling depth",
+  },
+  "header": {
+    "name": "header",
+    "type": "STRING",
+    "visible": false,
+    "description": "Header(s) to include in HTTP requests",
+  },
+  "rate-limit": {
+    "name": "rate-limit",
+    "type": "STRING",
+    "visible": false,
+    "description": "Maximum number of requests to send per second per machine",
+  },
+}}
+  outputs={[ 
+    "url-details",
+    "urls"
+  ]}
+  author="mhmdiaa-presales"
+  createdDate="2024-08-12"
+  iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/f119ee29-ea54-4b2e-8e38-ebce6b8e7cf3.json"
+/>
+
+## Features
+# Discover Paths via Crawling
+
+## Description
+Crawl a list of web server URLs to discover endpoints and form a comprehensive map of each asset on your attack surface.
+
+## Features
+- Supports **headless browser crawling** for more accurate spidering.
+- Parses **JavaScript code to discover additional endpoints** and hidden paths.
+- Can crawl **thousands of web servers** simulataneously.
+
+## Inputs
+### Required
+- **urls:** a list of URLs
+```
+https://foo.example.com
+https://bar.example.com
+```
+
+### Optional
+- **depth**: Maximum crawling depth (default: 5)
+- **headless**: Enable headless browser mode (default: false)
+- **header**: Header(s) to include in HTTP requests
+- **rate-limit**: Maximum number of requests to send per second per machine (default: 300)
+
+### Outputs
+- **urls:** List of discovered URLs.
+```
+https://foo.example.com/about
+https://foo.example.com/login
+https://bar.example.com/app.js
+https://bar.example.com/admin
+```
+
+- **url-details**: JSONLines records of URL discovery details.
+```json
+{"url": "https://foo.example.com/about", "hostname": "foo.example.com", "domain_name": "example.com", "data_source": "crawling", "status_code": 200, "content_length": 9283}
+{"url": "https://foo.example.com/login", "hostname": "foo.example.com", "domain_name": "example.com", "data_source": "crawling", "status_code": 200, "content_length": 2031}
+{"url": "https://bar.example.com/app.js", "hostname": "bar.example.com", "domain_name": "example.com", "data_source": "crawling", "status_code": 200, "content_length": 4212}
+{"url": "https://bar.example.com/admin", "hostname": "bar.example.com", "domain_name": "example.com", "data_source": "crawling", "status_code": 403, "content_length": 385}
+```
+
+## Changelog
+- v1.0
+    - Initial release

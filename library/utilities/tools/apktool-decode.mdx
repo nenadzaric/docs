@@ -1,0 +1,59 @@
+---
+title: "apktool-decode"
+description: "A tool for reverse engineering Android apk files"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="c34b6980-5fc9-466d-9b57-1a88ac65e851"
+  name="apktool-decode"
+  description="A tool for reverse engineering Android apk files"
+  category="Utilities"
+  author="trickest-mhmdiaa"
+  created_date="2023-07-10"
+  container="quay.io/trickest/apktool-decode:v2.7.0-patch-1"
+  source_url="https://bitbucket.org/iBotPeaches/apktool"
+  license="Unknown"
+  output_command="--output"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/c34b6980-5fc9-466d-9b57-1a88ac65e851.json"
+  inputs={ {
+  "no-res": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--no-res",
+    "visible": false,
+    "description": "Do not decode resources.",
+  },
+  "no-src": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--no-src",
+    "visible": false,
+    "description": "Do not decode sources.",
+  },
+  "apk-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "APK file",
+  },
+  "frame-tag": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--frame-tag",
+    "visible": false,
+    "description": "Uses framework files tagged by <tag>.",
+  },
+  "frame-path": {
+    "type": "FOLDER",
+    "order": 1,
+    "command": "--frame-path",
+    "visible": false,
+    "description": "Uses framework files located here.",
+  },
+}}
+/>

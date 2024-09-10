@@ -1,0 +1,80 @@
+---
+title: "socialscan"
+description: "Socialscan offers accurate and fast checks for email address and username usage on online platforms. Given an email or username, socialscan returns whether it is available, taken or invalid on online platforms."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="67f411eb-b2c7-4c4d-927e-87ff4909c8a1"
+  name="socialscan"
+  description="Socialscan offers accurate and fast checks for email address and username usage on online platforms. Given an email or username, socialscan returns whether it is available, taken or invalid on online platforms."
+  category="OSINT"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/socialscan:1.4.2"
+  source_url="https://github.com/iojw/socialscan"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/67f411eb-b2c7-4c4d-927e-87ff4909c8a1.json"
+  inputs={ {
+  "input": {
+    "type": "STRING",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Single username/email address to query",
+  },
+  "platform": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-p",
+    "visible": false,
+    "description": "List of platforms to query. (default: all platforms)",
+  },
+  "show-urls": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--show-urls",
+    "visible": false,
+    "description": "Display profile URLs for usernames on supported platforms. Profiles may not exist if usernames are reserved or belong to deleted/banned accounts.",
+  },
+  "input-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-i",
+    "visible": true,
+    "description": "File containing list of queries to execute",
+  },
+  "proxy-list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--proxy-list",
+    "visible": false,
+    "description": "File containing list of HTTP proxy servers to execute queries with",
+  },
+  "cache-tokens": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-c",
+    "visible": false,
+    "description": "Cache tokens for platforms requiring more than one HTTP request (Snapchat, Github, Instagram, Lastfm &Tumblr), reducing total number of requests sent",
+  },
+  "sort-results": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--view-by",
+    "visible": false,
+    "description": "Sort results by platform or by query (default: query)",
+  },
+  "only-available-and-not-used": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-a",
+    "visible": false,
+    "description": "Only print usernames/email addresses that are available and not in use",
+  },
+}}
+/>

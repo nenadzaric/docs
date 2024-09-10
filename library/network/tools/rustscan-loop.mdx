@@ -1,0 +1,101 @@
+---
+title: "rustscan-loop"
+description: "The Modern Port Scanner. Find ports quickly (3 seconds at its fastest). Run scripts through our scripting engine (Python, Lua, Shell supported)."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="9d1ea27f-5e43-4535-92fd-200fdfd10bbf"
+  name="rustscan-loop"
+  description="The Modern Port Scanner. Find ports quickly (3 seconds at its fastest). Run scripts through our scripting engine (Python, Lua, Shell supported)."
+  category="Network"
+  author="trickest-mhmdiaa"
+  created_date="2022-07-29"
+  container="quay.io/trickest/rustscan-loop:a444ab6-patch-7"
+  source_url="https://github.com/RustScan/RustScan"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/9d1ea27f-5e43-4535-92fd-200fdfd10bbf.json"
+  inputs={ {
+  "ports": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--ports",
+    "visible": true,
+    "description": "A list of comma separed ports to be scanned. Example: 80,443,8080",
+  },
+  "range": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--range",
+    "visible": false,
+    "description": "A range of ports with format start-end. Example: 1-1000",
+  },
+  "tries": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--tries",
+    "visible": false,
+    "description": "The number of tries before a port is assumed to be closed. If set to 0, rustscan will correct it to 1 [default: 1]",
+  },
+  "ulimit": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--ulimit",
+    "visible": false,
+    "description": "Automatically ups the ULIMIT with the value you provided",
+  },
+  "scripts": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--scripts",
+    "visible": false,
+    "description": "Level of scripting required for the run [default: default] [possible values: None, Default, Custom]",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--timeout",
+    "visible": false,
+    "description": "The timeout in milliseconds before a port is assumed to be closed [default: 1500]",
+  },
+  "addresses": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "A list of CIDRs, IPs, or hosts to be scanned",
+  },
+  "no-config": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--no-config",
+    "visible": false,
+    "description": "Whether to ignore the configuration file or not",
+  },
+  "top-ports": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--top",
+    "visible": false,
+    "description": "Use the top 1000 ports",
+  },
+  "batch-size": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--batch-size",
+    "visible": false,
+    "description": "The batch size for port scanning, it increases or slows the speed of scanning. Depends on the open file limit of your OS. If you do 65535 it will do every port at the same time. Although, your OS may not support this [default: 4500]",
+  },
+  "scan-order": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--scan-order",
+    "visible": false,
+    "description": "The order of scanning to be performed. The serial option will scan ports in ascending order while the random option will scan ports randomly [default: serial] [possible values: Serial, Random]",
+  },
+}}
+/>

@@ -1,0 +1,73 @@
+---
+title: "gron"
+description: "Make JSON greppable"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="72f9defd-961a-47f6-9e74-ce5b0aee8d33"
+  name="gron"
+  description="Make JSON greppable"
+  category="Utilities"
+  author="trickest-mhmdiaa"
+  created_date="2022-11-29"
+  container="quay.io/trickest/gron:v0.7.1-patch-2"
+  source_url="https://github.com/tomnomnom/gron"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/72f9defd-961a-47f6-9e74-ce5b0aee8d33.json"
+  inputs={ {
+  "url": {
+    "type": "STRING",
+    "order": 1,
+    "command": "",
+    "visible": false,
+    "description": "Input URL",
+  },
+  "file": {
+    "type": "FILE",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "Input file",
+  },
+  "json": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--json",
+    "visible": false,
+    "description": "Represent gron data as JSON stream",
+  },
+  "stream": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--stream",
+    "visible": false,
+    "description": "Treat each line of input as a separate JSON object",
+  },
+  "ungron": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--ungron",
+    "visible": false,
+    "description": "Reverse the operation (turn assignments back into JSON)",
+  },
+  "no-sort": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--no-sort",
+    "visible": false,
+    "description": "Don't sort output (faster)",
+  },
+  "insecure": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--insecure",
+    "visible": false,
+    "description": "Disable certificate validation",
+  },
+}}
+/>

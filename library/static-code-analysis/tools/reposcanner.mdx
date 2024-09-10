@@ -1,0 +1,66 @@
+---
+title: "reposcanner"
+description: "Reposcanner is a python script to search through the commit history of Git repositories looking for interesting strings such as API keys."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="c7ad510d-5405-46f1-b17c-269af852e511"
+  name="reposcanner"
+  description="Reposcanner is a python script to search through the commit history of Git repositories looking for interesting strings such as API keys."
+  category="Static Code Analysis"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/reposcanner:f6f29ba"
+  source_url="https://github.com/Dionach/reposcanner"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/c7ad510d-5405-46f1-b17c-269af852e511.json"
+  inputs={ {
+  "repo": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-r",
+    "visible": true,
+    "description": "Repo to scan",
+  },
+  "count": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-c",
+    "visible": false,
+    "description": "Number of commits to scan. Default: all",
+  },
+  "branch": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-b",
+    "visible": false,
+    "description": "Scan a specific branch",
+  },
+  "length": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-l",
+    "visible": false,
+    "description": "Maximum line length. Default: 5",
+  },
+  "entropy": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-e",
+    "visible": false,
+    "description": "Minimum entropy to report. Default: 4.3",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-v",
+    "visible": false,
+    "description": "Verbose",
+  },
+}}
+/>

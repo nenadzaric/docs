@@ -1,0 +1,73 @@
+---
+title: "openai-file"
+description: "A CLI utility and Python library for interacting with OpenAI and generating AI response through input file."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="6e74331f-61ee-4657-a72b-7ffdc9deda89"
+  name="openai-file"
+  description="A CLI utility and Python library for interacting with OpenAI and generating AI response through input file."
+  category="Utilities"
+  author="zaric"
+  created_date="2023-10-10"
+  container="quay.io/trickest/openai-file:v0.0.1"
+  source_url="https://github.com/simonw/llm"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/6e74331f-61ee-4657-a72b-7ffdc9deda89.json"
+  inputs={ {
+  "gpt-4": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "gpt4",
+    "visible": true,
+    "description": "OpenAI Chat: gpt-4 (aliases: 4, gpt4)",
+  },
+  "prompt": {
+    "type": "STRING",
+    "order": 4,
+    "command": "",
+    "visible": true,
+    "description": "Prompt to be used based on the file input",
+  },
+  "gpt-4-32k": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "4-32k",
+    "visible": true,
+    "description": "OpenAI Chat: gpt-4-32k (aliases: 4-32k)",
+  },
+  "input-file": {
+    "type": "FILE",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "Input file for LLM to read",
+  },
+  "gpt-3-5-turbo": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "chatgpt",
+    "visible": true,
+    "description": "OpenAI Chat: gpt-3.5-turbo (aliases: 3.5, chatgpt)",
+  },
+  "open-ai-api-key": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Open AI API Key",
+  },
+  "gpt-3-5-turbo-16k": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "chatgpt-16k",
+    "visible": true,
+    "description": "OpenAI Chat: gpt-3.5-turbo-16k (aliases: chatgpt-16k, 3.5-16k)",
+  },
+}}
+/>

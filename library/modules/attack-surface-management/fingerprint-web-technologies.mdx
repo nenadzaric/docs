@@ -1,0 +1,54 @@
+---
+title: "Fingerprint Web Technologies"
+description: "Identify technologies running on a list of web servers"
+---
+
+import { ModuleOverview } from '/snippets/ModuleOverview.mdx'
+
+<ModuleOverview 
+  category="Attack Surface Management"
+  inputs={ {
+  "web-servers": {
+    "name": "web-servers",
+    "type": "FILE",
+    "visible": true,
+    "description": "List of web servers",
+  },
+}}
+  outputs={[ 
+    "web-technologies"
+  ]}
+  author="trickest-mhmdiaa"
+  createdDate="2024-07-04"
+  iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/3768e3a3-9a00-4912-9597-47e24ae92a2e.json"
+/>
+
+## Features
+# Fingerprint Web Technologies
+
+## Description
+Identify technologies running on a list of web servers. This module identifies different types of web technologies, including web server software, content management systems (CMS), content delivery networks (CDN), web application firewalls (WAF), and more.
+
+## Features
+- Identifies **various types of web technologies**.
+- Collects **metadata about the identified technologies**, including the version information and technology-specific locations (such as login panels).
+- Capable of processing **tens of thousands of hosts** simultaneously.
+
+## Inputs
+### Required
+- **web-serverss**: a list of web server URLs
+```
+https://blog.example.com
+```
+
+## Outputs
+- **web-technologies**: JSONLines records of web technology discovery details.
+```
+{"asset": "https://blog.example.com", "technology": "WordPress", "location": "https://blog.example.com/wp-admin/install.php", "context": "6.5.3"}
+{"asset": "https://blog.example.com", "technology": "Bootstrap"}
+{"asset": "https://blog.example.com", "technology": "Cloudflare WAF", "location": "https://blog.example.com/?jbsmfoey=%3Cscript%3Ealert%28%22XSS%22%29%3B%3C%2Fscript%3E&xtrsrvgz=UNION+SELECT+ALL+FROM+information_schema+AND+%27+or+SLEEP%285%29+or+%27&tqvgazak=..%2F..%2F..%2F..%2Fetc%2Fpasswd", "context": "Cloudflare Inc."}
+```
+
+## Changelog
+- v1.0
+    - Initial release

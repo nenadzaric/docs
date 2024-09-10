@@ -14,8 +14,8 @@
     "name": "Home"
   },
   "modeToggle": {
-  "default": "dark",
-  "isHidden": true
+    "default": "dark",
+    "isHidden": true
   },
   "favicon": "images/favicon.png",
   "colors": {
@@ -47,6 +47,14 @@
       "url": "user-guides"
     },
     {
+      "name": "Tutorials",
+      "url": "tutorials"
+    },
+    {
+      "name": "Library",
+      "url": "library"
+    },
+    {
       "name": "Releases",
       "url": "releases"
     }
@@ -55,39 +63,308 @@
     {
       "name": "Community",
       "icon": "discord",
-      "url": "https://mintlify.com/community"
+      "url": "https://trickest.com/community"
     },
     {
       "name": "Blog",
       "icon": "newspaper",
       "url": "https://trickest.com/blog"
     }
-
   ],
   "navigation": [
     {
       "group": "Getting Started",
       "pages": [
-        "introduction",
-        "about-us"
+        "introduction"
       ]
     },
     {
       "group": "User Guides",
       "pages": [
-        "user-guides/introduction"
-        ]
+        "user-guides/introduction",
+        {
+          "group": "Nodes",
+          "icon": "hexagon",
+          "pages": [
+            "user-guides/concepts/nodes/introduction",
+            "user-guides/concepts/nodes/node-inputs",
+            "user-guides/concepts/nodes/node-outputs",
+            "user-guides/concepts/nodes/node-connections",
+            "user-guides/concepts/nodes/node-types"
+          ]
+        },
+        {
+          "group": "Workflows",
+          "icon": "diagram-project",
+          "pages": [
+            "user-guides/concepts/workflows/introduction",
+            "user-guides/concepts/workflows/tools",
+            {
+              "group": "Scripts",
+              "pages": [
+                "user-guides/concepts/workflows/scripts/python",
+                "user-guides/concepts/workflows/scripts/bash"
+              ]
+            },
+            "user-guides/concepts/workflows/saving-and-history",
+            "user-guides/concepts/workflows/scheduling"
+          ]
+        },
+        {
+          "group": "Runs",
+          "icon": "person-running",
+          "pages": [
+            "user-guides/concepts/runs/introduction",
+            "user-guides/concepts/runs/machines",
+            "user-guides/concepts/runs/fleets",
+            "user-guides/concepts/runs/scheduling"
+          ]
+        },
+        {
+          "group": "Spaces & Projects",
+          "icon": "rectangle",
+          "pages": [
+            "user-guides/concepts/spaces/introduction",
+            "user-guides/concepts/spaces/workflow-management"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Tutorials",
+      "pages": [
+        "tutorials/overview",
+        {
+          "group": "Architecture",
+          "icon": "landmark",
+          "pages": [
+            "tutorials/architecture/inputs-and-outputs"
+          ]
+        },
+        {
+          "group": "Modules",
+          "icon": "cube",
+          "pages": [
+            "tutorials/modules/introduction"
+          ]
+        },
+        {
+          "group": "Files",
+          "icon": "file",
+          "pages": [
+            "tutorials/files/uploading-and-using-private-files"
+          ]
+        },
+        {
+          "group": "Library",
+          "icon": "books",
+          "pages": [
+            "tutorials/library/copying-workflows"
+          ]
+        },
+        {
+          "group": "Machines",
+          "icon": "gear",
+          "pages": [
+            "tutorials/machines/using-self-hosted-machines",
+            "tutorials/machines/how-machines-work"
+          ]
+        },
+        {
+          "group": "Nodes",
+          "icon": "hexagon",
+          "pages": [
+            "tutorials/nodes/nodes-management"
+          ]
+        },
+        {
+          "group": "Workflows",
+          "icon": "diagram-project",
+          "pages": [
+            "tutorials/workflows/navigating-in-workflow-editor",
+            "tutorials/workflows/workflows-copy-and-share"
+          ]
+        },
+        {
+          "group": "Runs",
+          "icon": "person-running",
+          "pages": [
+            "tutorials/runs/downloading-results",
+            "tutorials/runs/monitoring",
+            "tutorials/runs/distribution"
+          ]
+        },
+        {
+          "group": "Scripts",
+          "icon": "terminal",
+          "pages": [
+            "tutorials/scripts/introduction"
+          ]
+        },
+        {
+          "group": "Tools",
+          "icon": "screwdriver-wrench",
+          "pages": [
+            "tutorials/tools/versioning",
+            "tutorials/tools/private-tools"
+          ]
+        },
+        {
+          "group": "Variables",
+          "icon": "sliders",
+          "pages": [
+            "tutorials/variables/introduction"
+          ]
+        }
+      ]
     },
     {
       "group": "Releases",
       "pages": [
-        "releases/introduction"
+        "releases/2024"
+      ]
+    },
+    {
+      "group": "Library",
+      "pages": [
+        "library/introduction",
+        {
+          "group": "Modules",
+          "icon": "cube",
+          "pages": [
+            "library/modules/attack-surface-management",
+            "library/modules/content-discovery",
+            "library/modules/vulnerability-scanning"
+          ]
+        },
+        {
+          "group": "Attack Surface Management",
+          "pages": [
+            "library/attack-surface-management/workflows"
+          ]
+        },
+        {
+          "group": "Cloud Storage",
+          "pages": [
+            "library/cloud-storage/tools"
+          ]
+        },
+        {
+          "group": "Containers",
+          "pages": [
+            "library/containers/tools"
+          ]
+        },
+        {
+          "group": "Content Discovery",
+          "pages": [
+            "library/content-discovery/workflows"
+          ]
+        },
+        {
+          "group": "Discovery",
+          "pages": [
+            "library/discovery/tools"
+          ]
+        },
+        {
+          "group": "Fuzzing",
+          "pages": [
+            "library/fuzzing/tools"
+          ]
+        },
+        {
+          "group": "Machine Learning",
+          "pages": [
+            "library/machine-learning/tools"
+          ]
+        },
+        {
+          "group": "Misconfiguration",
+          "pages": [
+            "library/misconfiguration/tools"
+          ]
+        },
+        {
+          "group": "Network",
+          "pages": [
+            "library/network/tools"
+          ]
+        },
+        {
+          "group": "OSINT",
+          "pages": [
+            "library/osint/tools"
+          ]
+        },
+        {
+          "group": "Passwords",
+          "pages": [
+            "library/passwords/tools"
+          ]
+        },
+        {
+          "group": "Recon",
+          "pages": [
+            "library/recon/workflows",
+            "library/recon/tools"
+          ]
+        },
+        {
+          "group": "Scanners",
+          "pages": [
+            "library/scanners/tools"
+          ]
+        },
+        {
+          "group": "Secret Discovery",
+          "pages": [
+            "library/secret-discovery/workflows"
+          ]
+        },
+        {
+          "group": "Social Engineering",
+          "pages": [
+            "library/social-engineering/tools"
+          ]
+        },
+        {
+          "group": "Static Code Analysis",
+          "pages": [
+            "library/static-code-analysis/tools"
+          ]
+        },
+        {
+          "group": "Threat Intelligence",
+          "pages": [
+            "library/threat-intelligence/workflows"
+          ]
+        },
+        {
+          "group": "Utilities",
+          "pages": [
+            "library/utilities/workflows",
+            "library/utilities/tools"
+          ]
+        },
+        {
+          "group": "Vulnerabilities",
+          "pages": [
+            "library/vulnerabilities/tools"
+          ]
+        },
+        {
+          "group": "Vulnerability Scanning",
+          "pages": [
+            "library/vulnerability-scanning/workflows"
+          ]
+        }
       ]
     }
   ],
   "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "x": "https://x.com/trick3st",
+    "github": "https://github.com/trickest",
+    "linkedin": "https://www.linkedin.com/company/trickest"
   }
 }

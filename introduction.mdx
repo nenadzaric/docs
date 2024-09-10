@@ -5,27 +5,37 @@ mode: "custom"
 ---
 
 <div style={{
+  position: 'relative',
+  width: '100%',
+  height: '250px',
+  overflow: 'hidden',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  padding: '2rem',
+  justifyContent: 'center',
+  backgroundImage: 'url("/images/modules-release.png")',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  margin: '0 0 2rem 0'
 }}>
 
   <h1 style={{
     fontSize: '3rem',
     fontWeight: 'bold',
-    margin: '0 0 1rem 0',
-    color: '#fff'
+    color: '#fff',
+    textAlign: 'center',
+    margin: '0 0 1rem 0'
   }}>
     Welcome to Trickest Documentation
   </h1>
 
   <p style={{
     fontSize: '1.5rem',
-    margin: '0 0 2rem 0',
     color: '#fff',
+    textAlign: 'center',
+    margin: '0 0 1rem 0'
   }}>
-    Learn how to visualize, operate, and scale offensive security workflows with Trickest.
+    Learn how to visualize, operate, and scale offensive security workflows.
   </p>
 
 </div>
@@ -37,17 +47,17 @@ mode: "custom"
 
 
 <CardGroup cols={2}>
-  <Card title="Knowledge Hub" icon="book" href="/knowledge-hub">
-    Check out step-by-step lessons on how to use some of the most popular community tools, individually or within pre-built workflows, in the Trickest Platform
+  <Card title="User Guides" icon="book" href="user-guides">
+    Check out main concepts making up the Trickest platform.
   </Card>
-  <Card title="Tutorials" icon="graduation-cap" href="/tutorials">
-    Check out Trickest Platform tutorials to get started with ease
+  <Card title="Library" icon="graduation-cap" href="library">
+    Check out Trickest Library and it's tools, scripts, modules and workflows.
   </Card>
-  <Card title="Concepts" icon="gear" href="/concepts">
-    Learn about Trickest Platform concepts and architecture
+  <Card title="Tutorials" icon="paperclip" href="tutorials">
+    Learn from beginner and advanced tutorial to make the most out of Trickest Platform.
   </Card>
-    <Card title="Release Log" icon="comment" href="release-log">
-    Learn about new releases of Trickest platform
+    <Card title="Releases" icon="comment" href="releases">
+    Learn about new releases.
   </Card>
 </CardGroup>
 </div>

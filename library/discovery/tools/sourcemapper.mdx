@@ -1,0 +1,66 @@
+---
+title: "sourcemapper"
+description: "Extract JavaScript source trees from Sourcemap files"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="e5cb7d49-4a60-4304-9178-e2c6bcc69067"
+  name="sourcemapper"
+  description="Extract JavaScript source trees from Sourcemap files"
+  category="Discovery"
+  author="trickest-mhmdiaa"
+  created_date="2024-01-23"
+  container="quay.io/trickest/sourcemapper:b37d543"
+  source_url="https://github.com/denandz/sourcemapper"
+  license="Unknown"
+  output_command="-output"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/e5cb7d49-4a60-4304-9178-e2c6bcc69067.json"
+  inputs={ {
+  "url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-url",
+    "visible": true,
+    "description": "URL to the Sourcemap file - cannot be used with jsurl",
+  },
+  "jsurl": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-jsurl",
+    "visible": true,
+    "description": "URL to JavaScript file - cannot be used with url",
+  },
+  "proxy": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-proxy",
+    "visible": false,
+    "description": "Proxy URL",
+  },
+  "header": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-header",
+    "visible": false,
+    "description": "A header to send with the request, similar to curl's -H. Can be set multiple times",
+  },
+  "insecure": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-insecure",
+    "visible": false,
+    "description": "Ignore invalid TLS certificates",
+  },
+  "sourcemap": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-url",
+    "visible": false,
+    "description": "Path to the Sourcemap file - cannot be used with jsurl",
+  },
+}}
+/>

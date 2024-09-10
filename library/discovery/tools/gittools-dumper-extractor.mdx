@@ -1,0 +1,31 @@
+---
+title: "gittools-dumper-extractor"
+description: "Download .git repositories from webservers which do not have directory listing enabled and try to recover incomplete repositories"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="7711a074-d4ac-4b6c-83ae-31cafab19ea9"
+  name="gittools-dumper-extractor"
+  description="Download .git repositories from webservers which do not have directory listing enabled and try to recover incomplete repositories"
+  category="Discovery"
+  author="trickest-mhmdiaa"
+  created_date="2023-06-20"
+  container="quay.io/trickest/gittools-dumper-extractor:7cac63a"
+  source_url="https://github.com/internetwache/GitTools"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/7711a074-d4ac-4b6c-83ae-31cafab19ea9.json"
+  inputs={ {
+  "target": {
+    "type": "STRING",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "target URL including the /.git/ folder",
+  },
+}}
+/>

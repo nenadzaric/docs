@@ -1,0 +1,108 @@
+---
+title: "zgrab2-multiple"
+description: "Fast Go Application Scanner"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="83f513a0-0c87-4bcb-b9db-e42434570c8c"
+  name="zgrab2-multiple"
+  description="Fast Go Application Scanner"
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2023-04-13"
+  container="quay.io/trickest/zgrab2-multiple:911c86f-patch-1"
+  source_url="https://github.com/zmap/zgrab2"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/83f513a0-0c87-4bcb-b9db-e42434570c8c.json"
+  inputs={ {
+  "debug": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--debug",
+    "visible": false,
+    "description": "Include debug fields in the output.",
+  },
+  "flush": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--flush",
+    "visible": false,
+    "description": "Flush after each line of output.",
+  },
+  "input": {
+    "type": "STRING",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Input target",
+  },
+  "senders": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--senders",
+    "visible": false,
+    "description": "Number of send goroutines to use (default: 1000)",
+  },
+  "gomaxprocs": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--gomaxprocs",
+    "visible": false,
+    "description": "Set GOMAXPROCS (default: 0)",
+  },
+  "input-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Input file",
+  },
+  "prometheus": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--prometheus",
+    "visible": false,
+    "description": "Address to use for Prometheus server (e.g. localhost:8080). If empty, Prometheus is disabled",
+  },
+  "config-file": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--config-file",
+    "visible": true,
+    "description": "Config file",
+  },
+  "break-on-success": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--break-on-success",
+    "visible": false,
+    "description": "If proceeding protocols succeed, do not run following protocols (default: false)",
+  },
+  "continue-on-error": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--continue-on-error",
+    "visible": false,
+    "description": "If proceeding protocols error, do not run following protocols (default: true)",
+  },
+  "read-limit-per-host": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--read-limit-per-host",
+    "visible": false,
+    "description": "Maximum total kilobytes to read for a single host (default 96kb) (default: 96)",
+  },
+  "connections-per-host": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--connections-per-host",
+    "visible": false,
+    "description": "Number of times to connect to each host (results in more output) (default: 1)",
+  },
+}}
+/>

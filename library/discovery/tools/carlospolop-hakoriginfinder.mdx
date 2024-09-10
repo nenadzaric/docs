@@ -1,0 +1,80 @@
+---
+title: "carlospolop-hakoriginfinder"
+description: "Tool for discovering the origin host behind a reverse proxy. Useful for bypassing cloud WAFs!"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="ad8a1e4c-f190-4c23-ab63-68bd4f143e5d"
+  name="carlospolop-hakoriginfinder"
+  description="Tool for discovering the origin host behind a reverse proxy. Useful for bypassing cloud WAFs!"
+  category="Discovery"
+  author="trickest-mhmdiaa"
+  created_date="2022-12-29"
+  container="quay.io/trickest/carlospolop-hakoriginfinder:d4da699"
+  source_url="https://github.com/carlospolop-forks/hakoriginfinder"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/ad8a1e4c-f190-4c23-ab63-68bd4f143e5d.json"
+  inputs={ {
+  "ssl": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-s",
+    "visible": false,
+    "description": "Original hostname is over SSL (default: false)",
+  },
+  "port": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-p",
+    "visible": false,
+    "description": "Original hostname listen port",
+  },
+  "debug": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-d",
+    "visible": false,
+    "description": "Debug: Show web servers responses (default: false)",
+  },
+  "threads": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-t",
+    "visible": false,
+    "description": "numbers of threads (default 32)",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-T",
+    "visible": false,
+    "description": "Timeout in seconds (default 5)",
+  },
+  "hostname": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-h",
+    "visible": true,
+    "description": "hostname of site, e.g. www.hakluke.com",
+  },
+  "threshold": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-l",
+    "visible": false,
+    "description": "levenshtein threshold, higher means more lenient (default 5)",
+  },
+  "urls-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Specify file with target URLs",
+  },
+}}
+/>

@@ -1,0 +1,121 @@
+export const WorkflowCard = ({ cardTitle, description, iframeUrl, href, category, complexity, publisher }) => (
+  <a href={href} style={{ 
+    textDecoration: 'none', 
+    display: 'block', 
+    outline: 'none',  
+    border: 'none',
+  }}> 
+    <div className="workflow-card" style={{
+      background: 'linear-gradient(to bottom, #1a1f2e, #0d1117)',
+      border: '1px solid #30363d',
+      borderRadius: '8px',
+      overflow: 'hidden',
+      transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+      height: '35rem',
+      display: 'flex',
+      marginBottom: '20px',
+      flexDirection: 'column',
+    }}
+    onMouseOver={(e) => {
+      e.currentTarget.style.boxShadow = '0 12px 24px rgba(0, 0, 0, 0.4)';
+      e.currentTarget.style.transform = 'translateY(-5px)';
+    }}
+    onMouseOut={(e) => {
+      e.currentTarget.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.3)';
+      e.currentTarget.style.transform = 'translateY(0)';
+    }}>
+      <div style={{ position: 'relative', paddingTop: '56.25%', flexShrink: 0 }}>
+        <iframe 
+          src={iframeUrl} 
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            border: 'none',
+          }}
+          scrolling="no"
+        ></iframe>
+      </div>
+      <div style={{ padding: '20px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+        <div style={{marginBottom: '10px', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+          <span 
+            style={{ 
+              background: 'linear-gradient(90deg, #00a3ff, #0065ff)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              fontWeight: 'bold',
+              fontSize: '0.9rem',
+              textTransform: 'uppercase'
+            }}
+          >
+            {category}
+          </span>
+        </div>
+        
+        <h2 style={{ 
+          color: '#ffffff', 
+          fontSize: '1.2rem', 
+          marginBottom: '10px',
+          textOverflow: 'ellipsis',
+        }}>
+          {cardTitle}
+        </h2>
+        
+        <p style={{ 
+          color: '#a3b3bc', 
+          marginBottom: '20px',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+          display: '-webkit-box',
+          WebkitLineClamp: 3,
+          WebkitBoxOrient: 'vertical',
+          flexGrow: 1
+        }}>
+          {description}
+        </p>
+        
+        <div style={{ 
+          display: 'flex', 
+          justifyContent: 'space-between', 
+          alignItems: 'center', 
+          marginTop: 'auto',
+          overflow: 'hidden'
+        }}>
+          <div style={{ 
+            whiteSpace: 'nowrap', 
+            overflow: 'hidden', 
+            textOverflow: 'ellipsis',
+            maxWidth: '50%'
+          }}>
+            <span style={{ color: '#a3b3bc', marginRight: '10px', fontSize: '0.8rem' }}>Complexity</span>
+            {Array.from({ length: 5 }, (_, i) => (
+              <span
+                key={i}
+                style={{
+                  display: 'inline-block',
+                  width: '8px',
+                  height: '8px',
+                  backgroundColor: i < complexity ? '#3a86ff' : '#30363d',
+                  marginRight: '3px',
+                  borderRadius: '2px',
+                }}
+              />
+            ))}
+          </div>
+          <div style={{ 
+            whiteSpace: 'nowrap', 
+            overflow: 'hidden', 
+            textOverflow: 'ellipsis',
+            maxWidth: '50%',
+            textAlign: 'right'
+          }}>
+            <span style={{ color: '#a3b3bc', marginRight: '5px', fontSize: '0.8rem' }}>Publisher</span>
+            <span style={{ color: '#a3b3bc', fontWeight: 'bold' }}>{publisher}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+);

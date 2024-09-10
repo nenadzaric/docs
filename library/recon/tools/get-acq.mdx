@@ -1,0 +1,38 @@
+---
+title: "get-acq"
+description: "GET-ACQ is a python tool used to gather all companies acquired by a given company domain name. It is done by calling SecurityTrails API."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="93a8ed69-b2be-4529-91c4-41fa81faf99f"
+  name="get-acq"
+  description="GET-ACQ is a python tool used to gather all companies acquired by a given company domain name. It is done by calling SecurityTrails API."
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2022-02-05"
+  container="quay.io/trickest/get-acq:df7da61"
+  source_url="https://github.com/kljunowsky/get-acq"
+  license="Unknown"
+  output_command="-o"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/93a8ed69-b2be-4529-91c4-41fa81faf99f.json"
+  inputs={ {
+  "domain-names": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--domains",
+    "visible": true,
+    "description": "Specify the file with list of domains",
+  },
+  "security-trails-apikey": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-a",
+    "visible": true,
+    "description": "Provide securitytrails API key",
+  },
+}}
+/>

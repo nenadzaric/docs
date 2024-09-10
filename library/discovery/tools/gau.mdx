@@ -1,0 +1,150 @@
+---
+title: "gau"
+description: "getallurls (gau) fetches known URLs from AlienVault's Open Threat Exchange, the Wayback Machine, and Common Crawl for any given domain."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="e3028104-e0ad-4085-8185-a7deab08acf2"
+  name="gau"
+  description="getallurls (gau) fetches known URLs from AlienVault's Open Threat Exchange, the Wayback Machine, and Common Crawl for any given domain."
+  category="Discovery"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/gau:v2.2.3-patch-1"
+  source_url="https://github.com/lc/gau"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/e3028104-e0ad-4085-8185-a7deab08acf2.json"
+  inputs={ {
+  "to": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--to",
+    "visible": false,
+    "description": "fetch urls to date (format: YYYYMM)",
+  },
+  "from": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--from",
+    "visible": false,
+    "description": "fetch urls from date (format: YYYYMM)",
+  },
+  "json": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--json",
+    "visible": false,
+    "description": "output as json",
+  },
+  "subs": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--subs",
+    "visible": true,
+    "description": "include subdomains of target domain",
+  },
+  "proxy": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--p",
+    "visible": false,
+    "description": "Http proxy to use",
+  },
+  "target": {
+    "type": "STRING",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Target domain",
+  },
+  "retries": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--retries",
+    "visible": false,
+    "description": "retries for HTTP client",
+  },
+  "targets": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "List of targets",
+  },
+  "threads": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--threads",
+    "visible": false,
+    "description": "number of workers to spawn (default 1)",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--timeout",
+    "visible": false,
+    "description": "timeout (in seconds) for HTTP client (default 45)",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--verbose",
+    "visible": false,
+    "description": "show verbose output",
+  },
+  "blacklist": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--blacklist",
+    "visible": false,
+    "description": "list of extensions to skip",
+  },
+  "mime-types": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--mt",
+    "visible": false,
+    "description": "list of mime-types to match",
+  },
+  "status-codes": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--mc",
+    "visible": false,
+    "description": "list of status codes to match",
+  },
+  "urls-providers": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--providers",
+    "visible": false,
+    "description": "list of providers to use (wayback,commoncrawl,otx,urlscan)",
+  },
+  "filter-mime-types": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--ft",
+    "visible": false,
+    "description": "list of mime-types to filter",
+  },
+  "filter-parameters": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--fp",
+    "visible": false,
+    "description": "remove different parameters of the same endpoint",
+  },
+  "filter-status-codes": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--fc",
+    "visible": false,
+    "description": "list of status codes to filter",
+  },
+}}
+/>

@@ -1,0 +1,241 @@
+---
+title: "gospider"
+description: "Fast web spider written in Go"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="f6623318-ab23-49d5-8a7c-8de355ca9a57"
+  name="gospider"
+  description="Fast web spider written in Go"
+  category="Discovery"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/gospider:a4244c8"
+  source_url="https://github.com/jaeles-project/gospider"
+  license="Unknown"
+  output_command="-o"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/f6623318-ab23-49d5-8a7c-8de355ca9a57.json"
+  inputs={ {
+  "raw": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--raw",
+    "visible": false,
+    "description": "Turn on raw",
+  },
+  "proxy": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-p",
+    "visible": false,
+    "description": "Proxy (Ex: http://127.0.0.1:8080)",
+  },
+  "length": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--length",
+    "visible": false,
+    "description": "Turn on length",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--verbose",
+    "visible": false,
+    "description": "Turn on verbose",
+  },
+  "debug-mode": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--debug",
+    "visible": false,
+    "description": "Turn on debug mode",
+  },
+  "user-agent": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-u",
+    "visible": false,
+    "description": "User Agent to use (web: random web user-agent, mobi: random mobile user-agent)",
+  },
+  "json-output": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--json",
+    "visible": false,
+    "description": "Enable JSON output",
+  },
+  "random-delay": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-K",
+    "visible": false,
+    "description": "RandomDelay is the extra randomized duration to wait added to Delay before creating a new request (second)",
+  },
+  "3rd-party-url": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-a",
+    "visible": false,
+    "description": "Find URLs from 3rd party (Archive.org, CommonCrawl.org, VirusTotal.com, AlienVault.com)",
+  },
+  "cookie-to-use": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--cookie",
+    "visible": false,
+    "description": "Cookie to use (testA=a; testB=b)",
+  },
+  "filter-length": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--filter-length",
+    "visible": false,
+    "description": "Turn on length filter",
+  },
+  "header-to-use": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--header",
+    "visible": false,
+    "description": "Header to use (Use multiple flag to set multiple header)",
+  },
+  "request-delay": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-k",
+    "visible": false,
+    "description": "Delay is the duration to wait before creating a new request to the matching domains (second)",
+  },
+  "site-to-crawl": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-s",
+    "visible": true,
+    "description": "Site to crawl",
+  },
+  "crawl-robot-txt": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--robots",
+    "visible": false,
+    "description": "Try to crawl robots.txt (default true)",
+  },
+  "request-timeout": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-m",
+    "visible": false,
+    "description": "Request timeout (second) (default 10)",
+  },
+  "disable-redirect": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--no-redirect",
+    "visible": false,
+    "description": "Disable redirect",
+  },
+  "whitelist-domain": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--whitelist-domain",
+    "visible": false,
+    "description": "Whitelist Domain",
+  },
+  "crawl-sitemap-xml": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--sitemap",
+    "visible": false,
+    "description": "Try to crawl sitemap.xml",
+  },
+  "html-only-content": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--base",
+    "visible": false,
+    "description": "Disable all and only use HTML content",
+  },
+  "number-of-threads": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-t",
+    "visible": false,
+    "description": "Number of threads (Run sites in parallel) (default 1)",
+  },
+  "enable-link-finder": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--js",
+    "visible": false,
+    "description": "Enable linkfinder in javascript file (default true)",
+  },
+  "include-subdomains": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--subs",
+    "visible": false,
+    "description": "Include subdomains",
+  },
+  "blacklist-url-regex": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--blacklist",
+    "visible": false,
+    "description": "Blacklist URL Regex",
+  },
+  "max-recursion-depth": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-d",
+    "visible": false,
+    "description": "MaxDepth limits the recursion depth of visited URLs. (Set it to 0 for infinite recursion) (default 1)",
+  },
+  "sites-list-to-crawl": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-S",
+    "visible": true,
+    "description": "Site list to crawl",
+  },
+  "whitelist-url-regex": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--whitelist",
+    "visible": false,
+    "description": "Whitelist URL Regex",
+  },
+  "include-3rd-party-urls": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-r",
+    "visible": false,
+    "description": "Also include other-source's urls (still crawl and request)",
+  },
+  "number-of-concurent-req": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-c",
+    "visible": false,
+    "description": "The number of the maximum allowed concurrent requests of the matching domains (default 5)",
+  },
+  "include-3rd-party-subdomains": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-w",
+    "visible": false,
+    "description": "Include subdomains crawled from 3rd party. Default is main domain",
+  },
+  "load-headers-and-strings-from-burp": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--burp",
+    "visible": false,
+    "description": "Load headers and cookie from burp raw http request",
+  },
+}}
+/>

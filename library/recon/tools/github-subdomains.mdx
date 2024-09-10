@@ -1,0 +1,73 @@
+---
+title: "github-subdomains"
+description: "Find subdomains on GitHub"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="4e268ca9-b76a-4907-afef-e5095e0be4a4"
+  name="github-subdomains"
+  description="Find subdomains on GitHub"
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2022-10-14"
+  container="quay.io/trickest/github-subdomains:2bfdf12"
+  source_url="https://github.com/gwen001/github-subdomains"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/4e268ca9-b76a-4907-afef-e5095e0be4a4.json"
+  inputs={ {
+  "raw": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-raw",
+    "visible": false,
+    "description": "raw output",
+  },
+  "quick": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-q",
+    "visible": false,
+    "description": "quick mode, avoid extra searches with languages and noise added",
+  },
+  "tokens": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-t",
+    "visible": false,
+    "description": "list of tokens separated by comma",
+  },
+  "domains": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "domains you are looking for (required)",
+  },
+  "tokens-file": {
+    "type": "FILE",
+    "order": 1,
+    "command": "-t",
+    "visible": true,
+    "description": "a file containing 1 token per line",
+  },
+  "extended-mode": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-e",
+    "visible": false,
+    "description": "extended mode, also look for <dummy>example.com",
+  },
+  "exit-when-tokens-get-limited": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-k",
+    "visible": false,
+    "description": "exit the program when all tokens have been disabled",
+  },
+}}
+/>

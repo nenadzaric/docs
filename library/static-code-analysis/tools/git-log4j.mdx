@@ -1,0 +1,52 @@
+---
+title: "git-log4j"
+description: "Git-LOG4J is checking if the git repo is using Log4J. Also, prints files that use LOG4J"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="f44f5fe7-026c-4c7b-88ea-7dcf3de1f22e"
+  name="git-log4j"
+  description="Git-LOG4J is checking if the git repo is using Log4J. Also, prints files that use LOG4J"
+  category="Static Code Analysis"
+  author="trickest-mhmdiaa"
+  created_date="2022-02-05"
+  container="quay.io/trickest/git-log4j:v1"
+  source_url="https://github.com/trickest"
+  license="Unknown"
+  output_command="-O"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/f44f5fe7-026c-4c7b-88ea-7dcf3de1f22e.json"
+  inputs={ {
+  "org-name": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-org",
+    "visible": true,
+    "description": "Organization name",
+  },
+  "repo-name": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-r",
+    "visible": true,
+    "description": "Repository name owner/repo",
+  },
+  "github-token": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-token",
+    "visible": true,
+    "description": "Specify github token",
+  },
+  "repo-owner-name": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-o",
+    "visible": true,
+    "description": "Owner of repo name owner/repo",
+  },
+}}
+/>

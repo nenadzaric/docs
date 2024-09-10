@@ -1,0 +1,133 @@
+---
+title: "Attack Surface Management Modules"
+description: "Explore a collection of powerful and efficient modules in the Attack Surface Management category to enhance your workflows."
+sidebarTitle: "Attack Surface Management"
+mode: "wide"
+---
+
+import { ModuleCard } from '/snippets/ModuleCard.mdx'
+
+<CardGroup cols={2}>
+
+  <ModuleCard
+    name="Enumerate Hostnames via OSINT Sources"
+    category="Attack Surface Management"
+    inputs={["domains", "source-configuration"]}
+    outputs={["subdomains", "subdomain-details", "potential-hostnames", "potential-hostname-details", "subdomain-wildcards", "subdomain-wildcard-details", "potential-hostname-wildcards", "potential-hostname-wildcard-details"]}
+    description="Enumerate subdomains and hostnames passively using OSINT data sources"
+    author="trickest-mhmdiaa"
+    createdDate="2024-07-04"
+    iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/bb453065-b93e-445c-8bc9-71da761f4eee.json"
+  />
+
+  <ModuleCard
+    name="Enumerate Hostnames via Root Domain DNS Brute Force"
+    category="Attack Surface Management"
+    inputs={["domains", "wordlist"]}
+    outputs={["subdomains", "subdomain-details"]}
+    description="Enumerate sub-subdomains of a list of hostnames using DNS brute force on the most likely hostnames"
+    author="trickest-mhmdiaa"
+    createdDate="2024-07-04"
+    iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/b97776d9-a676-416e-9afe-b47429a49494.json"
+  />
+
+  <ModuleCard
+    name="Enumerate Hostnames via Recursive DNS Brute Force"
+    category="Attack Surface Management"
+    inputs={["hostnames", "level-2-wordlist", "level-3-wordlist", "level-4-wordlist", "hostnames-per-level"]}
+    outputs={["hostnames", "hostname-details"]}
+    description="Enumerate sub-subdomains of a list of hostnames using DNS brute force on the most likely hostnames"
+    author="trickest-mhmdiaa"
+    createdDate="2024-07-04"
+    iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/65339daa-dca5-47f8-81ab-5af3db009925.json"
+  />
+
+  <ModuleCard
+    name="Enumerate Hostnames via DNS Permutations Brute Force"
+    category="Attack Surface Management"
+    inputs={["hostnames"]}
+    outputs={["hostnames", "hostname-details"]}
+    description="Enumerate hostnames by checking for permutations of known hostnames"
+    author="trickest-mhmdiaa"
+    createdDate="2024-07-04"
+    iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/a1976445-780a-4c2f-9e24-63bc57a0fa17.json"
+  />
+
+  <ModuleCard
+    name="Enumerate Hostnames via Crawling"
+    category="Attack Surface Management"
+    inputs={["depth", "web-servers"]}
+    outputs={["subdomains", "subdomain-details"]}
+    description="Enumerate subdomains by crawling web servers and analyzing their HTML content and headers"
+    author="trickest-mhmdiaa"
+    createdDate="2024-07-04"
+    iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/b4c23a0f-7428-47e7-8b49-a95a8f6decdf.json"
+  />
+
+  <ModuleCard
+    name="Generate Custom DNS Wordlists"
+    category="Attack Surface Management"
+    inputs={["hostnames"]}
+    outputs={["level-1-wordlist", "level-2-wordlist", "level-3-wordlist", "level-4-wordlist"]}
+    description="Generate custom DNS brute force wordlists using known hostnames"
+    author="trickest-mhmdiaa"
+    createdDate="2024-07-04"
+    iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/9a0aebe5-1b93-4cd6-afe9-737f92200698.json"
+  />
+
+  <ModuleCard
+    name="Enumerate DNS Records"
+    category="Attack Surface Management"
+    inputs={["hosts"]}
+    outputs={["dns-records", "resolving-hostnames", "ip-address-details", "ip-addresses", "subdomains", "subdomain-details", "potential-hostnames", "potential-hostname-details", "subdomain-wildcards", "subdomain-wildcard-details", "potential-hostname-wildcards", "potential-hostname-wildcard-details"]}
+    description="Enumerate DNS records for a list of hostnames, IP addresses, or IP ranges"
+    author="trickest-mhmdiaa"
+    createdDate="2024-07-04"
+    iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/3e7eaaef-c61b-4ea8-bff9-68a4fe1224b9.json"
+  />
+
+  <ModuleCard
+    name="Probe for Web Servers"
+    category="Attack Surface Management"
+    inputs={["hosts"]}
+    outputs={["web-servers", "web-server-details", "subdomains", "subdomain-details", "potential-hostnames", "potential-hostname-details", "subdomain-wildcards", "subdomain-wildcard-details", "potential-hostname-wildcards", "potential-hostname-wildcard-details"]}
+    description="Probe for web servers on a list of hostnames, IP addresses, or IP ranges"
+    author="trickest-mhmdiaa"
+    createdDate="2024-07-04"
+    iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/c3847326-8ece-4348-a0fc-c18dfc850c85.json"
+  />
+
+  <ModuleCard
+    name="Scan for Open Ports"
+    category="Attack Surface Management"
+    inputs={["hosts", "port-threshold"]}
+    outputs={["port-details", "hostname-ports", "ip-ports"]}
+    description="Scan for the top 1000 most common open ports on a list of hostnames, IP addresses, or IP ranges  "
+    author="trickest-mhmdiaa"
+    createdDate="2024-07-04"
+    iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/ebd8bdcb-9a95-4954-a870-f8d8c76159e7.json"
+  />
+
+  <ModuleCard
+    name="Fingerprint Network Services"
+    category="Attack Surface Management"
+    inputs={["port-details"]}
+    outputs={["network-service-details"]}
+    description="Identify services running on network ports"
+    author="trickest-mhmdiaa"
+    createdDate="2024-07-04"
+    iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/6699ec1a-977b-415f-9c0d-cd3f8f0adf9a.json"
+  />
+
+  <ModuleCard
+    name="Fingerprint Web Technologies"
+    category="Attack Surface Management"
+    inputs={["web-servers"]}
+    outputs={["web-technologies"]}
+    description="Identify technologies running on a list of web servers"
+    author="trickest-mhmdiaa"
+    createdDate="2024-07-04"
+    iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/3768e3a3-9a00-4912-9597-47e24ae92a2e.json"
+  />
+
+</CardGroup>

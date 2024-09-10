@@ -1,0 +1,67 @@
+---
+title: 'Monitoring Runs'
+description: 'Learn how to monitor your runs in Trickest.'
+sidebarTitle: 'Monitoring'
+---
+
+To monitor all of your runs, you can open [Runs](https://trickest.io/dashboard/runs) page. Here you can see all of your runs and their status. You can also see the run details by clicking on the run.
+
+## Runs List
+
+When you open the Runs page, you can see the list of executed runs and their status.
+
+<Frame>
+    <img src='/images/tutorials/tutorials-runs-list.png'/>
+</Frame>
+
+## Run Statuses
+
+
+### Pending status
+
+Once the workflow is executed, Run will be in `Pending` state. Nodes are in still state. Pending time refers to the time it takes for assigned [Machines](../../user-guides/concepts/runs/machines) to become up and running.
+
+<Tip>For Self-Hosted machines, the pending time is significantly lower than the cloud machines because of the time it takes to start the cloud machine.</Tip>
+
+If workflow intended for execution doesn't have **enough machines** for starting the run, it will be in the **Pending** state until there are enough available machines. The message on how many machines are missing will be in Run Details.
+
+<Frame>
+    <img src='/images/tutorials/tutorials-missing-machines.png'/>
+</Frame>
+
+### Running status
+
+Once machines are up and running, Run changes state to `Running`. First node(s) will be firstly in the `pending` state and then will start executing.
+
+<Frame>
+    <img src='/images/tutorials/tutorials-running-node.gif'/>
+</Frame>
+
+<Tip>Pending nodes will have a blinking animation to indicate that they are preparing for the executions</Tip>
+
+After initial `Pending` state, nodes will start executing and will be in the `Running` state.
+
+<Frame>
+    <img src='/images/tutorials/nodes-running-state.gif'/>
+</Frame>
+
+### Completed Status
+
+Once all nodes are executed, the Run will be in the `Completed` state. You can see the output of **each of the nodes** by clicking on them.
+
+Let's open up our node to check the output.
+
+<Frame>
+    <img src='/images/tutorials/tutorials-nodes-completed-output.gif'/>
+</Frame>
+
+### Failed Status
+
+If any of the nodes fail, the Run will be in the `Failed` state. There is an issue and you should reach to support for further investigation.
+
+### Stopping & Stopped Status
+
+If you stop the run, it will be in the `Stopping` state. Once all nodes are stopped, the Run will be in the `Stopped` state.
+
+
+

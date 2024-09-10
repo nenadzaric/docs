@@ -1,0 +1,87 @@
+---
+title: "gitleaks"
+description: "Gitleaks is a SAST tool for detecting hard coded secrets like passwords, API keys, and tokens in git repos. Gitleaks is an easy-to-use, all-in-one solution for finding secrets, past or present, in your code. Set leaks-exit-code to 0 for outputs to be saved."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="9ac7f733-dbf9-4cb0-b3df-5f26c6cde111"
+  name="gitleaks"
+  description="Gitleaks is a SAST tool for detecting hard coded secrets like passwords, API keys, and tokens in git repos. Gitleaks is an easy-to-use, all-in-one solution for finding secrets, past or present, in your code. Set leaks-exit-code to 0 for outputs to be saved."
+  category="Static Code Analysis"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/gitleaks:8.10.1"
+  source_url="https://github.com/zricethezav/gitleaks"
+  license="Unknown"
+  output_command="--report-path"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/9ac7f733-dbf9-4cb0-b3df-5f26c6cde111.json"
+  inputs={ {
+  "config": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--config",
+    "visible": false,
+    "description": "config file path",
+  },
+  "no-git": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--no-git",
+    "visible": false,
+    "description": "treat git repo as a regular directory and scan those files, --log-opts has no effect on the scan when --no-git is set",
+  },
+  "redact": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--redact",
+    "visible": false,
+    "description": "redact secrets from logs and stdout",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--verbose",
+    "visible": false,
+    "description": "show verbose output from scan",
+  },
+  "log-level": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--log-level",
+    "visible": false,
+    "description": "log level (trace, debug, info, warn, error, fatal) (default info)",
+  },
+  "log-options": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--log-opts",
+    "visible": false,
+    "description": "git log options",
+  },
+  "report-format": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--report-format",
+    "visible": false,
+    "description": "output format (json, csv, sarif) (default json)",
+  },
+  "repo-config-path": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--repo-config-path",
+    "visible": false,
+    "description": "Path to gitleaks config relative to repo root",
+  },
+  "source-git-repository": {
+    "type": "FOLDER",
+    "order": 0,
+    "command": "--source",
+    "visible": true,
+    "description": "Directory to scan",
+  },
+}}
+/>

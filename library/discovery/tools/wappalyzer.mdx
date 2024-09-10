@@ -1,0 +1,108 @@
+---
+title: "wappalyzer"
+description: "Wappalyzer identifies technologies on websites, including content management systems, eCommerce platforms, JavaScript frameworks, analytics tools and much more."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="a767854e-b334-47df-a5f9-7441d5ade150"
+  name="wappalyzer"
+  description="Wappalyzer identifies technologies on websites, including content management systems, eCommerce platforms, JavaScript frameworks, analytics tools and much more."
+  category="Discovery"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/wappalyzer:bc2e580"
+  source_url="https://github.com/AliasIO/wappalyzer"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/a767854e-b334-47df-a5f9-7441d5ade150.json"
+  inputs={ {
+  "url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "URL to be analysed",
+  },
+  "debug": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--debug",
+    "visible": false,
+    "description": "Output debug messages",
+  },
+  "delay": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--delay",
+    "visible": false,
+    "description": "Wait for ms milliseconds between requests",
+  },
+  "pretty": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--pretty",
+    "visible": false,
+    "description": "Pretty-print JSON output",
+  },
+  "max-urls": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--max-urls",
+    "visible": false,
+    "description": "Exit when num URLs have been analysed",
+  },
+  "max-wait": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--max-wait",
+    "visible": false,
+    "description": "Wait no more than ms milliseconds for page resources to load",
+  },
+  "max-depth": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--max-depth",
+    "visible": false,
+    "description": "Don't analyse pages more than num levels deep",
+  },
+  "recursive": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--recursive",
+    "visible": false,
+    "description": "Follow links on pages (crawler)",
+  },
+  "batch-size": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--batch-size",
+    "visible": false,
+    "description": "Process links in batches",
+  },
+  "user-agent": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--user-agent",
+    "visible": false,
+    "description": "Set the user agent string",
+  },
+  "html-lines-limit": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--html-max-rows",
+    "visible": false,
+    "description": "Limit the number of HTML lines processed",
+  },
+  "html-chars-per-line-limit": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--html-max-cols",
+    "visible": false,
+    "description": "Limit the number of HTML characters per line processed",
+  },
+}}
+/>

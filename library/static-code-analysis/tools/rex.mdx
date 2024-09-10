@@ -1,0 +1,59 @@
+---
+title: "rex"
+description: "regexFinder gives the matches with a directory (or github repository) of the regexes, and saves the matches of found secrets in a json format."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="d8b06c54-6ec1-4224-9b52-32c8d43991c1"
+  name="rex"
+  description="regexFinder gives the matches with a directory (or github repository) of the regexes, and saves the matches of found secrets in a json format."
+  category="Static Code Analysis"
+  author="zaric"
+  created_date="2023-10-02"
+  container="quay.io/trickest/rex:v0.1"
+  source_url="https://github.com/JaimePolop/RExpository"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/d8b06c54-6ec1-4224-9b52-32c8d43991c1.json"
+  inputs={ {
+  "threads": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-c",
+    "visible": true,
+    "description": "Threads number",
+  },
+  "gh_token": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-t",
+    "visible": true,
+    "description": "GitHub token for scanning private repositories",
+  },
+  "regex-path": {
+    "type": "FILE",
+    "order": 1,
+    "command": "-r",
+    "visible": true,
+    "description": "Path to regex.yaml",
+  },
+  "github-repo": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-g",
+    "visible": true,
+    "description": "GitHub repository to scan for secrets",
+  },
+  "directory-to-scan": {
+    "type": "FOLDER",
+    "order": 0,
+    "command": "-d",
+    "visible": true,
+    "description": "Directory with files and folders to scan for secrets",
+  },
+}}
+/>

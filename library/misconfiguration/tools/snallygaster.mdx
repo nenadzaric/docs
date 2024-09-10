@@ -1,0 +1,94 @@
+---
+title: "snallygaster"
+description: "snallygaster is a tool that looks for files accessible on web servers that shouldn't be public and can pose a security risk. Typical examples include publicly accessible git repositories, backup files potentially containing passwords or database dumps. In addition, it contains a few checks for other security vulnerabilities."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="cf8edd58-fef9-4e9c-b1fb-89fbd70b4e4b"
+  name="snallygaster"
+  description="snallygaster is a tool that looks for files accessible on web servers that shouldn't be public and can pose a security risk. Typical examples include publicly accessible git repositories, backup files potentially containing passwords or database dumps. In addition, it contains a few checks for other security vulnerabilities."
+  category="Misconfiguration"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/snallygaster:0.0.11"
+  source_url="https://github.com/hannob/snallygaster"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/cf8edd58-fef9-4e9c-b1fb-89fbd70b4e4b.json"
+  inputs={ {
+  "info": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--info",
+    "visible": false,
+    "description": "Enable all info tests (no bugs/security vulnerabilities).",
+  },
+  "path": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--path",
+    "visible": false,
+    "description": "Base path on server (scans root dir by default).",
+  },
+  "debug": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--debug",
+    "visible": false,
+    "description": "Show detailed debugging info",
+  },
+  "hosts": {
+    "type": "STRING",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "Hostname to scan.",
+  },
+  "noisy": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--noisy",
+    "visible": false,
+    "description": "Show noisy messages that indicate boring bugs, but no security issue.",
+  },
+  "nowww": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--nowww",
+    "visible": false,
+    "description": "Skip scanning www.[host].",
+  },
+  "tests": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--tests",
+    "visible": false,
+    "description": "Comma-separated tests to run.",
+  },
+  "nohttp": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--nohttp",
+    "visible": false,
+    "description": "Don't scan http.",
+  },
+  "nohttps": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--nohttps",
+    "visible": false,
+    "description": "Don't scan https.",
+  },
+  "useragent": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--useragent",
+    "visible": false,
+    "description": "User agent to send in request header.",
+  },
+}}
+/>

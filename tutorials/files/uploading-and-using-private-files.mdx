@@ -1,0 +1,50 @@
+---
+title: 'Uploading & Using Private Files'
+description: 'Learn how to upload and use private files in Trickest Editor'
+sidebarTitle: 'Uploading & Using Private Files'
+---
+
+## Uploading Files from File Page 
+
+To upload files, you can navigate to the [Files](https://trickest.io/dashboard/files) page. 
+
+<Frame>
+    <img src="/images/tutorials/tutorials-files-page.png" alt="Files Page" />
+</Frame>
+
+Here you can see all of your files.. You can upload files by clicking on the `Upload File` button.
+
+<Tip>You can also upload multiple files by dragging and dropping them into the Files page.</Tip>
+
+<Frame>
+    <img src="/images/tutorials/tutorials-upload-file-modal.png" alt="Uploading File" />
+</Frame>
+
+## Uploading Files from Workflow Editor
+
+If you have a node which is expecting a file input, you can upload the file directly from the Workflow Editor. The file uploaded from the Workflow Editor will be stored in your File Storage and will be available in your [Files](https://trickest.io/dashboard/files) page.
+
+<Frame>
+    <img src="/images/tutorials/tutorials-uploading-file-editor.gif" alt="Uploading File from Workflow Editor" />
+</Frame>
+
+<Warning>If you upload multiple Files through the Workflow Editor, the last uploaded file will be used as the input for the node.</Warning>
+
+## Uploading Files from Workflows
+
+You can also upload files from the Workflows through scripts.
+
+### Uplading Files through `put-trickest-files` tool
+
+To upload a private file from a workflow, you can use the [put-trickest-files](../library/utilities/put-trickest-files) tool. This tool enables you to upload a file, such as the output of a tool or workflow that you want to store for future use. It maintains the file name during the upload process.
+
+The `put-trickest-files` accepts three types of inputs:
+
+* Input content: Use either `input-file` or `input-folder` depending on how many files you want to upload.
+* Token: You can authenticate the node using your Trickest Token
+<Tip>You can use variable name for `TRICKEST_TOKEN` to avoid hardcoding the token in the script. Pass your token with `${{vars.TRICKEST_TOKEN}}` as `string` input.</Tip>
+
+
+<Frame>
+    <img src="/images/tutorials/tutorials-put-trickest-files.png" alt="Uploading File from Workflow Editor" />
+</Frame>

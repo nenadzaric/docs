@@ -1,0 +1,38 @@
+---
+title: "nrich"
+description: "Analyze a list of IP addresses and see which ones have open ports/vulnerabilities through Shodan"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="3a29105e-0744-4d71-88a4-5e5232c9b8c7"
+  name="nrich"
+  description="Analyze a list of IP addresses and see which ones have open ports/vulnerabilities through Shodan"
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2022-12-07"
+  container="quay.io/trickest/nrich:v0.3.1-patch-1"
+  source_url="https://gitlab.com/shodan-public/nrich"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/3a29105e-0744-4d71-88a4-5e5232c9b8c7.json"
+  inputs={ {
+  "input": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "File containing an IP per line. Non-IPs are ignored",
+  },
+  "output": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--output",
+    "visible": false,
+    "description": "Output format (shell or json) [default: shell]",
+  },
+}}
+/>

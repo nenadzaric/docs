@@ -1,0 +1,66 @@
+---
+title: "dsss"
+description: "Damn Small SQLi Scanner (DSSS) is a fully functional SQL injection vulnerability scanner (supporting GET and POST parameters) written in under 100 lines of code. As of optional settings it supports HTTP proxy together with HTTP header values User-Agent, Referer and Cookie."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="f92846f0-8a14-4577-b5a6-a04bc70ede08"
+  name="dsss"
+  description="Damn Small SQLi Scanner (DSSS) is a fully functional SQL injection vulnerability scanner (supporting GET and POST parameters) written in under 100 lines of code. As of optional settings it supports HTTP proxy together with HTTP header values User-Agent, Referer and Cookie."
+  category="Vulnerabilities"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/dsss:84ddd33"
+  source_url="https://github.com/stamparm/dsss"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/f92846f0-8a14-4577-b5a6-a04bc70ede08.json"
+  inputs={ {
+  "url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-u",
+    "visible": true,
+    "description": "Target URL (e.g. http://www.target.com/page.php?id=1)",
+  },
+  "proxy": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--proxy",
+    "visible": false,
+    "description": "HTTP proxy address (e.g. http://127.0.0.1:8080)",
+  },
+  "cookie": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--cookie",
+    "visible": false,
+    "description": "HTTP Cookie header value",
+  },
+  "referer": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--referer",
+    "visible": false,
+    "description": "HTTP Referer header value",
+  },
+  "post-data": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--data",
+    "visible": false,
+    "description": "POST data (e.g. query=test)",
+  },
+  "user-agent": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--user-agent",
+    "visible": false,
+    "description": "HTTP User-Agent header value",
+  },
+}}
+/>

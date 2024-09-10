@@ -1,0 +1,374 @@
+---
+title: "jaeles"
+description: "The Swiss Army knife for automated Web Application Testing"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="1d9b5536-ec95-4397-a456-ef72ea830ba3"
+  name="jaeles"
+  description="The Swiss Army knife for automated Web Application Testing"
+  category="Scanners"
+  author="trickest-mhmdiaa"
+  created_date="2024-01-24"
+  container="quay.io/trickest/jaeles:v0.17.1"
+  source_url="https://github.com/jaeles-project/jaeles"
+  license="Unknown"
+  output_command="--output"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/1d9b5536-ec95-4397-a456-ef72ea830ba3.json"
+  inputs={ {
+  "raw": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--raw",
+    "visible": false,
+    "description": "Raw request from Burp for origin",
+  },
+  "url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--url",
+    "visible": true,
+    "description": "URL of target",
+  },
+  "html": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--html",
+    "visible": false,
+    "description": "Generate HTML report after the scan done",
+  },
+  "json": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--json",
+    "visible": false,
+    "description": "Store output as JSON",
+  },
+  "urls": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--urls",
+    "visible": true,
+    "description": "URLs file of target",
+  },
+  "chunk": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--chunk",
+    "visible": false,
+    "description": "Enable chunk running against big input",
+  },
+  "debug": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--debug",
+    "visible": false,
+    "description": "Debug",
+  },
+  "delay": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--delay",
+    "visible": false,
+    "description": "Delay time between requests",
+  },
+  "found": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--found",
+    "visible": false,
+    "description": "Run host OS command when vulnerable found",
+  },
+  "level": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--level",
+    "visible": false,
+    "description": "Filter signature by level (default 1)",
+  },
+  "local": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--local",
+    "visible": false,
+    "description": "Enable local analyze (Accept input as local path)",
+  },
+  "no-db": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--no-db",
+    "visible": false,
+    "description": "Disable Database",
+  },
+  "proxy": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--proxy",
+    "visible": false,
+    "description": "proxy",
+  },
+  "quiet": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--quiet",
+    "visible": false,
+    "description": "Quiet Output",
+  },
+  "retry": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--retry",
+    "visible": false,
+    "description": "HTTP Retry",
+  },
+  "title": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--title",
+    "visible": false,
+    "description": "Report title name",
+  },
+  "config": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--config",
+    "visible": false,
+    "description": "config file (default is $HOME/.jaeles/config.yaml)",
+  },
+  "inline": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--inline",
+    "visible": false,
+    "description": "Inline Detections",
+  },
+  "params": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--params",
+    "visible": false,
+    "description": "Custom params -p='foo=bar' (Multiple -p flags are accepted)",
+  },
+  "report": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--report",
+    "visible": false,
+    "description": "Report name",
+  },
+  "scanID": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--scanID",
+    "visible": false,
+    "description": "Scan ID",
+  },
+  "single": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--single",
+    "visible": false,
+    "description": "Disable parallel mode (use this when you need logic in single signature",
+  },
+  "exclude": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--exclude",
+    "visible": false,
+    "description": "Exclude Signature selector (Multiple flags are accepted)",
+  },
+  "headers": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--headers",
+    "visible": false,
+    "description": "Custom headers (e.g: -H 'Referer: {{.BaseURL}}') (Multiple flags are accepted)",
+  },
+  "passive": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--passive",
+    "visible": false,
+    "description": "Turn on passive detections",
+  },
+  "refresh": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--refresh",
+    "visible": false,
+    "description": "Refresh time for background task (default 10)",
+  },
+  "rootDir": {
+    "type": "FOLDER",
+    "order": 0,
+    "command": "--rootDir",
+    "visible": false,
+    "description": "root Project (default ~/.jaeles/)",
+  },
+  "signDir": {
+    "type": "FOLDER",
+    "order": 0,
+    "command": "--signDir",
+    "visible": false,
+    "description": "Folder contain default signatures (default ~/.jaeles/base-signatures/)",
+  },
+  "threads": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--threads",
+    "visible": false,
+    "description": "Set the concurrency level inside single signature (default 10)",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--timeout",
+    "visible": false,
+    "description": "HTTP timeout (default 20)",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--verbose",
+    "visible": false,
+    "description": "Verbose output",
+  },
+  "base-url": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--ba",
+    "visible": false,
+    "description": "Shortcut for take raw input as {{.BaseURL}}'",
+  },
+  "save-raw": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--save-raw",
+    "visible": false,
+    "description": "save raw request",
+  },
+  "chunk-dir": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--chunk-dir",
+    "visible": false,
+    "description": "Temp Directory to store chunk directory",
+  },
+  "no-output": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--no-output",
+    "visible": false,
+    "description": "Do not store output",
+  },
+  "chunk-size": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--chunk-size",
+    "visible": false,
+    "description": "Chunk Size (default 20000)",
+  },
+  "signatures": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--signs",
+    "visible": false,
+    "description": "Signature selector (Multiple -s flags are accepted)",
+  },
+  "always-true": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--at",
+    "visible": false,
+    "description": "Enable Always True Detection for observe response",
+  },
+  "chunk-limit": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--chunk-limit",
+    "visible": false,
+    "description": "Limit size to trigger chunk run (default 200000)",
+  },
+  "concurrency": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--concurrency",
+    "visible": false,
+    "description": "Set the concurrency level (default 20)",
+  },
+  "local-proxy": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--lc",
+    "visible": false,
+    "description": "Shortcut for '--proxy http://127.0.0.1:8080'",
+  },
+  "quietFormat": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--quietFormat",
+    "visible": false,
+    "description": "Format for quiet output (default {{.VulnURL}})",
+  },
+  "format-input": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--format-input",
+    "visible": false,
+    "description": "Enable special input format",
+  },
+  "selectorFile": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--selectorFile",
+    "visible": false,
+    "description": "Signature selector from file",
+  },
+  "chunk-threads": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--chunk-threads",
+    "visible": false,
+    "description": "Number of Chunk Threads (default 2)",
+  },
+  "no-background": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--no-background",
+    "visible": false,
+    "description": "Do not run background task (default true)",
+  },
+  "store-verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--sverbose",
+    "visible": false,
+    "description": "Store verbose info in summary file",
+  },
+  "filtering-mode": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--fi",
+    "visible": false,
+    "description": "Enable filtering mode (to use Diff() detection)",
+  },
+  "passive-selector": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--sp",
+    "visible": false,
+    "description": "Selector for passive detections (default *)",
+  },
+  "disable-replicate-request": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--dr",
+    "visible": false,
+    "description": "Shortcut for disable replicate request (avoid sending many request to timeout)",
+  },
+}}
+/>

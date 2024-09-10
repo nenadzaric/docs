@@ -1,0 +1,38 @@
+---
+title: "hakcheckurl"
+description: "Takes a list of URLs and returns their HTTP response codes."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="f311edca-3424-4f43-af4d-ebd026d9bbd7"
+  name="hakcheckurl"
+  description="Takes a list of URLs and returns their HTTP response codes."
+  category="Discovery"
+  author="trickest"
+  created_date="2021-10-04"
+  container="quay.io/trickest/hakcheckurl:fb89a25"
+  source_url="https://github.com/hakluke/hakcheckurl"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/f311edca-3424-4f43-af4d-ebd026d9bbd7.json"
+  inputs={ {
+  "threads": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-t",
+    "visible": false,
+    "description": "Number of threads to utilise. Default is 8. (default 8)",
+  },
+  "urls-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Specify file with target URLs",
+  },
+}}
+/>

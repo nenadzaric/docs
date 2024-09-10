@@ -1,0 +1,45 @@
+---
+title: "mass3"
+description: "Quickly enumerate through a pre-compiled list of AWS S3 buckets using DNS instead of HTTP with a list of DNS resolvers and multi-threading. Warning: Be aware that this is really shitty golang code. I wrote it without any prior knowledge of Go Lang but it seems to do the job. Feel free to contribute to make the tool better!"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="491a0f21-4b7c-48a5-be1b-5cddc7626af7"
+  name="mass3"
+  description="Quickly enumerate through a pre-compiled list of AWS S3 buckets using DNS instead of HTTP with a list of DNS resolvers and multi-threading. Warning: Be aware that this is really shitty golang code. I wrote it without any prior knowledge of Go Lang but it seems to do the job. Feel free to contribute to make the tool better!"
+  category="Cloud Storage"
+  author="trickest"
+  created_date="2021-06-28"
+  container="quay.io/trickest/mass3:e1d5f1a"
+  source_url="https://github.com/smiegles/mass3"
+  license="Unknown"
+  output_command="-o"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/491a0f21-4b7c-48a5-be1b-5cddc7626af7.json"
+  inputs={ {
+  "threads": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-t",
+    "visible": false,
+    "description": "The amount of threads to use. Default: 10",
+  },
+  "bucket-list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-w",
+    "visible": true,
+    "description": "The wordlist with all the pre-compiled S3 buckets (bucketname.s3.amazonaws.com)",
+  },
+  "resolvers-list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-r",
+    "visible": false,
+    "description": "List with all the resolvers",
+  },
+}}
+/>

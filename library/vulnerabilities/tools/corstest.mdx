@@ -1,0 +1,59 @@
+---
+title: "corstest"
+description: "CORStest is a Python 3 tool to find Cross-Origin resource Sharing (CORS) misconfiguration"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="ca2818a7-c158-4e54-a433-7ec72cd1088f"
+  name="corstest"
+  description="CORStest is a Python 3 tool to find Cross-Origin resource Sharing (CORS) misconfiguration"
+  category="Vulnerabilities"
+  author="youssef"
+  created_date="2023-03-24"
+  container="quay.io/trickest/corstest:beffd0b"
+  source_url="https://github.com/RUB-NDS/CORStest"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/ca2818a7-c158-4e54-a433-7ec72cd1088f.json"
+  inputs={ {
+  "quiet": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-q",
+    "visible": false,
+    "description": "quiet, allow-credentials only",
+  },
+  "infile": {
+    "type": "FILE",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "URLs/domains to scan",
+  },
+  "cookies": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-c",
+    "visible": false,
+    "description": "Send cookie with all requests (name=value)",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-v",
+    "visible": false,
+    "description": "produce a more verbose output",
+  },
+  "processes": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-p",
+    "visible": false,
+    "description": "multiprocessing (default: 32)",
+  },
+}}
+/>

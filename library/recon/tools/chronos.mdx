@@ -1,0 +1,101 @@
+---
+title: "chronos"
+description: "Extract pieces of info from a web page's Wayback Machine history"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="bb7a8ea2-10c8-49ef-9c41-32a84d36410d"
+  name="chronos"
+  description="Extract pieces of info from a web page's Wayback Machine history"
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2022-02-08"
+  container="quay.io/trickest/chronos:e8971b5"
+  source_url="https://github.com/mhmdiaa/chronos"
+  license="Unknown"
+  output_command="-o"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/bb7a8ea2-10c8-49ef-9c41-32a84d36410d.json"
+  inputs={ {
+  "to": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-to",
+    "visible": false,
+    "description": "Match results before a specific date (Format: yyyyMMddhhmmss)",
+  },
+  "from": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-from",
+    "visible": false,
+    "description": "Match results after a specific date (Format: yyyyMMddhhmmss)",
+  },
+  "path": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-p",
+    "visible": false,
+    "description": "Path to add to the URL",
+  },
+  "target": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-t",
+    "visible": true,
+    "description": "Target URL/domain (supports wildcards)",
+  },
+  "match-mime": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-mm",
+    "visible": false,
+    "description": "Match Mime codes",
+  },
+  "concurrency": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-c",
+    "visible": false,
+    "description": "Number of concurrent threads (default 10)",
+  },
+  "filter-mime": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-fm",
+    "visible": false,
+    "description": "Filter Mime codes",
+  },
+  "match-regex": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-m",
+    "visible": false,
+    "description": "Match regex",
+  },
+  "match-status": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-ms",
+    "visible": false,
+    "description": "Match status codes (default 200)",
+  },
+  "extract-regex": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-e",
+    "visible": true,
+    "description": "Extract regex",
+  },
+  "filter-status-codes": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-fs",
+    "visible": false,
+    "description": "Filter status codes",
+  },
+}}
+/>

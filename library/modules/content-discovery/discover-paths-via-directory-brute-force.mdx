@@ -1,0 +1,96 @@
+---
+title: "Discover Paths via Directory Brute Force"
+description: "Brute force a list of web server URLs to discover hidden paths and endpoints"
+---
+
+import { ModuleOverview } from '/snippets/ModuleOverview.mdx'
+
+<ModuleOverview 
+  category="Content Discovery"
+  inputs={ {
+  "urls": {
+    "name": "urls",
+    "type": "FILE",
+    "visible": true,
+    "description": "List of URLs",
+  },
+  "header": {
+    "name": "header",
+    "type": "STRING",
+    "visible": false,
+    "description": "Header(s) to include in HTTP requests",
+  },
+  "wordlist": {
+    "name": "wordlist",
+    "type": "FILE",
+    "visible": false,
+    "description": "Custom directory brute force wordlist",
+  },
+  "rate-limit": {
+    "name": "rate-limit",
+    "type": "STRING",
+    "visible": false,
+    "description": "Maximum number of requests to send per second per machine",
+  },
+}}
+  outputs={[ 
+    "url-details",
+    "urls"
+  ]}
+  author="mhmdiaa-presales"
+  createdDate="2024-08-12"
+  iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/73ee9035-f8b3-46f9-8217-04ab7c9037a1.json"
+/>
+
+## Features
+# Discover Paths via Directory Brute Force
+
+## Description
+Brute force a list of web server URLs to discover hidden paths and endpoints.
+
+## Features
+- Includes **heuristic filtering to reduce false positives** from masked 404 pages.
+- **Built-in wordlist** with an option to **use a custom one** tailored to your target.
+- Can brute force **thousands of web servers** simulataneously.
+
+## Inputs
+### Required
+- **urls:** a list of URLs
+```
+https://foo.example.com
+https://bar.example.com
+```
+
+### Optional
+- **wordlist:** a custom directory brute force wordlist
+```
+admin
+login
+signup
+```
+- **header**: Header(s) to include in HTTP requests
+- **rate-limit**: Maximum number of requests to send per second per machine (default: 300)
+
+### Outputs
+- **urls:** List of discovered URLs.
+```
+https://foo.example.com/login
+https://bar.example.com/admin
+https://bar.example.com/signup
+```
+
+- **url-details**: JSONLines records of URL discovery details.
+```json
+{"url": "https://foo.example.com/login", "hostname": "foo.example.com", "domain_name": "example.com", "data_source": "directory_brute_force", "status_code": 200, "content_length": 2031}
+{"url": "https://bar.example.com/admin", "hostname": "bar.example.com", "domain_name": "example.com", "data_source": "directory_brute_force", "status_code": 200, "content_length": 4212}
+{"url": "https://bar.example.com/signup", "hostname": "bar.example.com", "domain_name": "example.com", "data_source": "directory_brute_force", "status_code": 403, "content_length": 385}
+```
+
+## Changelog
+- v1.0.0
+    - Initial release
+- v1.1.0
+    - Improved the filtering algorithm to reduce false positives by 50% to 80%.
+- v1.2.0
+    - Added support for using multiple wordlists in a single run.
+    - Defaulted to URL-encoding space characters in wordlists.

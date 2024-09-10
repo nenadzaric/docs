@@ -1,0 +1,318 @@
+---
+title: "kiterunner"
+description: "Kiterunner is a tool that is capable of not only performing traditional content discovery at lightning-fast speeds but also brute-forcing routes/endpoints in modern applications."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="46bdfcd3-8390-4b4b-82a7-96322e9dbede"
+  name="kiterunner"
+  description="Kiterunner is a tool that is capable of not only performing traditional content discovery at lightning-fast speeds but also brute-forcing routes/endpoints in modern applications."
+  category="Discovery"
+  author="trickest"
+  created_date="2021-11-13"
+  container="quay.io/trickest/kiterunner:7d5824c-patch-1"
+  source_url="https://github.com/assetnote/kiterunner"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/46bdfcd3-8390-4b4b-82a7-96322e9dbede.json"
+  inputs={ {
+  "delay": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--delay",
+    "visible": false,
+    "description": "Delay to place inbetween requests to a single host",
+  },
+  "hosts": {
+    "type": "FILE",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "Target hosts",
+  },
+  "quiet": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--quiet",
+    "visible": false,
+    "description": "Quiet mode. will mute unecessarry pretty text",
+  },
+  "header": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--header",
+    "visible": false,
+    "description": "Headers to add to requests (default [x-forwarded-for: 127.0.0.1])",
+  },
+  "output": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--output",
+    "visible": false,
+    "description": "Output format. Can be json,text,pretty (default pretty)",
+  },
+  "kb-mode": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "kb",
+    "visible": false,
+    "description": "Kb mode. Manipulate the kitebuilder schema",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--timeout",
+    "visible": false,
+    "description": "Timeout to use on all requests (default 3s)",
+  },
+  "verbose": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--verbose",
+    "visible": false,
+    "description": "Level of logging verbosity. can be error,info,debug,trace (default info)",
+  },
+  "wordlist": {
+    "type": "FILE",
+    "order": 2,
+    "command": "-w",
+    "visible": true,
+    "description": "Normal/ogl wordlist to use for scanning",
+  },
+  "scan-mode": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "scan",
+    "visible": true,
+    "description": "Scan mode.",
+  },
+  "brute-mode": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "brute",
+    "visible": true,
+    "description": "Bruteforce mode.",
+  },
+  "filter-api": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--filter-api",
+    "visible": false,
+    "description": "Only scan apis matching this ksuid",
+  },
+  "user-agent": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--user-agent",
+    "visible": false,
+    "description": "User agent to use for requests (default Chrome. Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36)",
+  },
+  "config-file": {
+    "type": "FILE",
+    "order": 2,
+    "command": "--config",
+    "visible": false,
+    "description": "Specify the config file.",
+  },
+  "force-method": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--force-method",
+    "visible": false,
+    "description": "Whether to ignore the methods specified in the ogl file and force this method",
+  },
+  "profile-name": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--profile-name",
+    "visible": false,
+    "description": "Name for profile output file",
+  },
+  "ignore-length": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--ignore-length",
+    "visible": false,
+    "description": "A range of content length bytes to ignore. you can have multiple. e.g. 100-105 or 1234 or 123,34-53. This is inclusive on both ends",
+  },
+  "kb-mode-debug": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "-d",
+    "visible": false,
+    "description": "Debug mode will attempt to convert the schema with error handling",
+  },
+  "kb-mode-parse": {
+    "type": "FILE",
+    "order": 1,
+    "command": "parse",
+    "visible": false,
+    "description": "Parse an kitebuilder schema and print out the prettified data",
+  },
+  "max-redirects": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--max-redirects",
+    "visible": false,
+    "description": "Maximum number of redirects to follow (default 3)",
+  },
+  "wordlist-mode": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "wordlist",
+    "visible": false,
+    "description": "Wordlist mode. Look at your cached wordlists and remote wordlists",
+  },
+  "kb-mode-replay": {
+    "type": "STRING",
+    "order": 1,
+    "command": "replay",
+    "visible": false,
+    "description": "Replay a kitebuilder request based on the input",
+  },
+  "kb-mode-convert": {
+    "type": "FILE",
+    "order": 1,
+    "command": "convert",
+    "visible": false,
+    "description": "onvert an input file format into the specified output file format",
+  },
+  "preflight-depth": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--preflight-depth",
+    "visible": false,
+    "description": "When performing preflight checks, what directory depth do we attempt to check. 0 means that only the docroot is checked (default 1)",
+  },
+  "blacklist-domain": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--blacklist-domain",
+    "visible": false,
+    "description": "Domains that are blacklisted for redirects. We will not follow redirects to these domains",
+  },
+  "disable-precheck": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--disable-precheck",
+    "visible": false,
+    "description": "Whether to skip host discovery",
+  },
+  "kitebuilder-list": {
+    "type": "FILE",
+    "order": 2,
+    "command": "--kitebuilder-list",
+    "visible": false,
+    "description": "Ogl wordlist to use for scanning",
+  },
+  "fail-status-codes": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--fail-status-codes",
+    "visible": false,
+    "description": "Which status codes blacklist as fail. if this is set, this will override success-status-codes",
+  },
+  "assetnote-wordlist": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--assetnote-wordlist",
+    "visible": true,
+    "description": "Use the wordlists from wordlist.assetnote.io. specify the type/name to use, e.g. apiroutes-210228. You can specify an additional maxlength to use only the first N values in the wordlist, e.g. apiroutes-210228;20000 will only use the first 20000 lines in that wordlist",
+  },
+  "max-parallel-hosts": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--max-parallel-hosts",
+    "visible": false,
+    "description": "Max number of concurrent hosts to scan at once (default 50)",
+  },
+  "wildcard-detection": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--wildcard-detection",
+    "visible": false,
+    "description": "Can be set to false to disable wildcard redirect detection (default true)",
+  },
+  "wordlist-mode-list": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "list",
+    "visible": false,
+    "description": "List the wordlists cached and available",
+  },
+  "wordlist-mode-save": {
+    "type": "STRING",
+    "order": 1,
+    "command": "save",
+    "visible": false,
+    "description": "Save the wordlists specified (full filename or alias)",
+  },
+  "quarantine-threshold": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--quarantine-threshold",
+    "visible": false,
+    "description": "If the host return N consecutive hits, we quarantine the host as wildcard. Set to 0 to disable (default 10)",
+  },
+  "success-status-codes": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--success-status-codes",
+    "visible": false,
+    "description": "Which status codes whitelist as success. this is the default mode",
+  },
+  "brute-mode-extensions": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--extensions",
+    "visible": false,
+    "description": "Extensions to append while scanning",
+  },
+  "kitebuilder-full-scan": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--kitebuilder-full-scan",
+    "visible": false,
+    "description": "Perform a full scan without first performing a phase scan.",
+  },
+  "max-connection-per-host": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--max-connection-per-host",
+    "visible": false,
+    "description": "Max connections to a single host (default 3)",
+  },
+  "kb-mode-compile-wordlist": {
+    "type": "FILE",
+    "order": 1,
+    "command": "compile",
+    "visible": false,
+    "description": "Compile an kitebuilder schema and write the data to the specified file",
+  },
+  "brute-mode-dirsearch-compat": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--dirsearch-compat",
+    "visible": false,
+    "description": "This will replace %EXT% with the extensions provided. backwards compat with dirsearch because shubs loves him some dirsearch",
+  },
+  "kb-mode-compile-output-file": {
+    "type": "STRING",
+    "order": 2,
+    "command": "",
+    "visible": false,
+    "description": "",
+  },
+  "kb-mode-convert-output-file-format": {
+    "type": "STRING",
+    "order": 2,
+    "command": "",
+    "visible": false,
+    "description": "kb mode convert mode output file format",
+  },
+}}
+/>

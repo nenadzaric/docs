@@ -1,0 +1,38 @@
+---
+title: "xforwardy"
+description: "XForwardy is a Host Header Injection scanning tool that can detect misconfigurations, where Host Header Injections are potentially possible. It also checks for CORS Misconfig in a URL."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="3f678e05-8a5f-4dd6-984e-deeaed94b570"
+  name="xforwardy"
+  description="XForwardy is a Host Header Injection scanning tool that can detect misconfigurations, where Host Header Injections are potentially possible. It also checks for CORS Misconfig in a URL."
+  category="Vulnerabilities"
+  author="trickest-mhmdiaa"
+  created_date="2022-02-05"
+  container="quay.io/trickest/xforwardy:136b9cb"
+  source_url="https://github.com/roottusk/xforwardy"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/3f678e05-8a5f-4dd6-984e-deeaed94b570.json"
+  inputs={ {
+  "target-url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-u",
+    "visible": true,
+    "description": "URL of target website",
+  },
+  "target-urls": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-i",
+    "visible": true,
+    "description": "Input file of the URLs",
+  },
+}}
+/>

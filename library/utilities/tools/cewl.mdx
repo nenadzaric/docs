@@ -1,0 +1,199 @@
+---
+title: "cewl"
+description: "CeWL is a ruby app which spiders a given URL to a specified depth, optionally following external links, and returns a list of words which can then be used for password crackers such as John the Ripper."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="890c08e0-a572-4a0b-8285-a0622af498f1"
+  name="cewl"
+  description="CeWL is a ruby app which spiders a given URL to a specified depth, optionally following external links, and returns a list of words which can then be used for password crackers such as John the Ripper."
+  category="Utilities"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/cewl:4ad686f"
+  source_url="https://github.com/digininja/CeWL"
+  license="Unknown"
+  output_command="--write"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/890c08e0-a572-4a0b-8285-a0622af498f1.json"
+  inputs={ {
+  "url": {
+    "type": "STRING",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "The site to spider",
+  },
+  "meta": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--meta",
+    "visible": false,
+    "description": "Include meta data.",
+  },
+  "count": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--count",
+    "visible": false,
+    "description": "Show the count for each word found.",
+  },
+  "debug": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--debug",
+    "visible": false,
+    "description": "Extra debug information.",
+  },
+  "depth": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-d",
+    "visible": false,
+    "description": "Depth to spider to, default 2.",
+  },
+  "email": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--email",
+    "visible": false,
+    "description": "Include email addresses.",
+  },
+  "groups": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--groups",
+    "visible": false,
+    "description": "Return groups of words as well",
+  },
+  "header": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--header",
+    "visible": false,
+    "description": "In format name:value - can pass multiple.",
+  },
+  "allowed": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--allowed",
+    "visible": false,
+    "description": "A regex pattern that path must match to be followed",
+  },
+  "exclude": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--exclude",
+    "visible": false,
+    "description": "A file containing a list of paths to exclude",
+  },
+  "offsite": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--offsite",
+    "visible": false,
+    "description": "Let the spider visit other sites.",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--verbose",
+    "visible": false,
+    "description": "Verbose.",
+  },
+  "auth-pass": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--auth_pass",
+    "visible": false,
+    "description": "Authentication password.",
+  },
+  "auth-type": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--auth_type",
+    "visible": false,
+    "description": "Digest or basic.",
+  },
+  "auth-user": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--auth_user",
+    "visible": false,
+    "description": "Authentication username.",
+  },
+  "lowercase": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--lowercase",
+    "visible": false,
+    "description": "Lowercase all parsed words",
+  },
+  "proxy-host": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--proxy_host",
+    "visible": false,
+    "description": "Proxy host.",
+  },
+  "proxy-port": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--proxy_port",
+    "visible": false,
+    "description": "Proxy port, default 8080.",
+  },
+  "user-agent": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--ua",
+    "visible": false,
+    "description": "User agent to send.",
+  },
+  "with-numbers": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--with-numbers",
+    "visible": false,
+    "description": "Accept words with numbers in as well as just letters",
+  },
+  "proxy-password": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--proxy_password",
+    "visible": false,
+    "description": "Password for proxy, if required.",
+  },
+  "proxy-username": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--proxy_username",
+    "visible": false,
+    "description": "Username for proxy, if required.",
+  },
+  "convert-umlauts": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--convert-umlauts",
+    "visible": false,
+    "description": "Convert common ISO-8859-1 (Latin-1) umlauts (ä-ae, ö-oe, ü-ue, ß-ss)",
+  },
+  "max-word-length": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--max_word_length",
+    "visible": false,
+    "description": "Maximum word length, default unset.",
+  },
+  "min-word-length": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--min_word_length",
+    "visible": false,
+    "description": "Minimum word length, default 3.",
+  },
+}}
+/>

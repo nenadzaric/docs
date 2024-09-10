@@ -1,0 +1,101 @@
+---
+title: "gotator"
+description: "Gotator is a tool to generate DNS wordlists through permutations."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="2417eabd-a2b2-47bc-bcc8-3547ac689b33"
+  name="gotator"
+  description="Gotator is a tool to generate DNS wordlists through permutations."
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2021-12-29"
+  container="quay.io/trickest/gotator:c80c721"
+  source_url="https://github.com/Josue87/gotator"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/2417eabd-a2b2-47bc-bcc8-3547ac689b33.json"
+  inputs={ {
+  "fast": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-fast",
+    "visible": false,
+    "description": "Don't check root domains (may go out of scope)",
+  },
+  "depth": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-depth",
+    "visible": false,
+    "description": "Configure the depth (Between 1 and 3) - Default 1.",
+  },
+  "silent": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-silent",
+    "visible": false,
+    "description": "Gotator banner is not displayed.",
+  },
+  "numbers": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-numbers",
+    "visible": false,
+    "description": "Configure the number of iterations to the numbers found in the permutations (up and down). Default 0 Skip!. This option penalizes performance, use small numbers",
+  },
+  "threads": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-t",
+    "visible": false,
+    "description": "Max Go routines (Default 100).",
+  },
+  "advanced": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-adv",
+    "visible": false,
+    "description": "Advanced option. Generate permutations words with subdomains and words with -. And joins permutation word in the back (depth 1).",
+  },
+  "prefixes": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-prefixes",
+    "visible": false,
+    "description": "Add default gotator prefixes to permutations. If not configured perm is used by default. If perm is specified with this flag you merge the permutations.",
+  },
+  "subdomains": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-sub",
+    "visible": true,
+    "description": "List of subdomains to be swapped.",
+  },
+  "extract-subs": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-md",
+    "visible": false,
+    "description": "Extract 'previous' domains and subdomains from subdomains found in the list 'sub'.",
+  },
+  "permutations": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-perm",
+    "visible": true,
+    "description": "List of permutations.",
+  },
+  "minimize-duplicates": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-mindup",
+    "visible": false,
+    "description": "Minimize duplicates. (For heavy workloads, it is recommended to activate this flag).",
+  },
+}}
+/>

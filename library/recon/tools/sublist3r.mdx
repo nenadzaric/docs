@@ -1,0 +1,66 @@
+---
+title: "sublist3r"
+description: "Sublist3r is a python tool designed to enumerate subdomains of websites using OSINT. It helps penetration testers and bug hunters collect and gather subdomains for the domain they are targeting. Sublist3r enumerates subdomains using many search engines such as Google, Yahoo, Bing, Baidu and Ask."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="ce957736-f3c6-4e21-8790-26fb8546f6d0"
+  name="sublist3r"
+  description="Sublist3r is a python tool designed to enumerate subdomains of websites using OSINT. It helps penetration testers and bug hunters collect and gather subdomains for the domain they are targeting. Sublist3r enumerates subdomains using many search engines such as Google, Yahoo, Bing, Baidu and Ask."
+  category="Recon"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/sublist3r:729d649"
+  source_url="https://github.com/aboul3la/Sublist3r"
+  license="Unknown"
+  output_command="-o"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/ce957736-f3c6-4e21-8790-26fb8546f6d0.json"
+  inputs={ {
+  "ports": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-p",
+    "visible": false,
+    "description": "Scan the found subdomains against specific tcp ports",
+  },
+  "domain": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-d",
+    "visible": true,
+    "description": "Domain name to enumerate subdomains of",
+  },
+  "engines": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-e",
+    "visible": false,
+    "description": "Specify a comma-separated list of search engines",
+  },
+  "threads": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-t",
+    "visible": false,
+    "description": "Number of threads to use for subbrute bruteforce",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-v",
+    "visible": false,
+    "description": "Enable the verbose mode and display results in realtime",
+  },
+  "bruteforce": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-b",
+    "visible": false,
+    "description": "Enable the subbrute bruteforce module",
+  },
+}}
+/>

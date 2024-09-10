@@ -1,0 +1,38 @@
+---
+title: "securitytrails-subdomains"
+description: "Get subdomains for root domain from SecurityTrails."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="ca5dccba-a406-4962-a5e9-9368d4085dcd"
+  name="securitytrails-subdomains"
+  description="Get subdomains for root domain from SecurityTrails."
+  category="Recon"
+  author="trickest"
+  created_date="2021-10-27"
+  container="quay.io/trickest/securitytrails-subdomains:v1.0.0"
+  source_url="https://github.com/trickest"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/ca5dccba-a406-4962-a5e9-9368d4085dcd.json"
+  inputs={ {
+  "api-key": {
+    "type": "STRING",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "SecurityTrails API key",
+  },
+  "root-domain": {
+    "type": "STRING",
+    "order": 2,
+    "command": "",
+    "visible": true,
+    "description": "Root domain to find and parse subdomains from response",
+  },
+}}
+/>

@@ -1,0 +1,59 @@
+---
+title: "prips"
+description: "tool that prints the IP addresses in a given range"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="842f5898-6f5b-4018-96a7-460d7e6fd9e7"
+  name="prips"
+  description="tool that prints the IP addresses in a given range"
+  category="Network"
+  author="zaric"
+  created_date="2022-09-06"
+  container="quay.io/trickest/prips:1.2.0"
+  source_url="https://gitlab.com/prips/prips"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/842f5898-6f5b-4018-96a7-460d7e6fd9e7.json"
+  inputs={ {
+  "increment": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-i",
+    "visible": false,
+    "description": "Set the increment to 'x'",
+  },
+  "range-to-cidr": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-c",
+    "visible": false,
+    "description": "print range in CIDR notation",
+  },
+  "address-format": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-f",
+    "visible": false,
+    "description": "Set the format of addresses (hex, dec, or dot)",
+  },
+  "subnet-or-cidr": {
+    "type": "STRING",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "IP Address Range (192.168.0.0 192.168.0.255 or 192.168.0.1/24)",
+  },
+  "exclude-range-or-cidr": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-l",
+    "visible": false,
+    "description": "Exclude a range from the output, e.g. -e ..4. will not print 192.168.4.[0-255]",
+  },
+}}
+/>

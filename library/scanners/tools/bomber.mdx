@@ -1,0 +1,73 @@
+---
+title: "bomber"
+description: "Scans SBoMs for security vulnerabilities"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="5aae5daf-c4b4-40ec-ac0c-e81ba360793d"
+  name="bomber"
+  description="Scans SBoMs for security vulnerabilities"
+  category="Scanners"
+  author="trickest-mhmdiaa"
+  created_date="2022-09-26"
+  container="quay.io/trickest/bomber:v0.3.2"
+  source_url="https://github.com/devops-kung-fu/bomber"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/5aae5daf-c4b4-40ec-ac0c-e81ba360793d.json"
+  inputs={ {
+  "debug": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--debug",
+    "visible": false,
+    "description": "Displays debug level log messages.",
+  },
+  "token": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--token",
+    "visible": false,
+    "description": "The API token for the provider being used.",
+  },
+  "output": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--output",
+    "visible": false,
+    "description": "How bomber should output findings (json, xml, stdout) (default stdout)",
+  },
+  "provider": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--provider",
+    "visible": false,
+    "description": "The vulnerability provider (ossindex, osv). (default osv)",
+  },
+  "username": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--username",
+    "visible": false,
+    "description": "The user name for the provider being used.",
+  },
+  "sbom-file": {
+    "type": "FILE",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "Single SBOM file",
+  },
+  "sbom-folder": {
+    "type": "FOLDER",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "Scan a folder of SBOMs",
+  },
+}}
+/>

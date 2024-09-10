@@ -1,0 +1,68 @@
+export const ToolDetails = ({
+  id,
+  name,
+  description,
+  category,
+  author,
+  inputs,
+  created_date,
+  container,
+  source_url,
+  license,
+  output_command,
+  output_type,
+  iframe_url
+}) => (
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+    <div style={{ 
+      display: 'grid', 
+      gridTemplateColumns: '1fr 1fr', 
+      gap: '0px',
+      alignItems: 'stretch',
+      height: 'auto'
+    }}>
+      <div style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+        <h2 style={{ fontSize: '1.5rem', marginBottom: '10px' }}>Details</h2>
+        <div style={{ lineHeight: '1.6' }}>
+          <p><strong>Category:</strong> {category}</p>
+          <p><strong>Publisher:</strong> {author}</p>
+          <p><strong>Created Date:</strong> {new Date(created_date).toLocaleDateString()}</p>
+          <p><strong>Container:</strong> <code>{container}</code></p>
+          <p><strong>Source URL:</strong> <a href={source_url} target="_blank" rel="noopener noreferrer">{source_url}</a></p>
+    
+        </div>
+      </div>
+
+      <div style={{ display: 'flex', height: '100%', width: '100%', padding: '30px 50px' }}>
+        <Frame style={{ width: '100%', height: '100%', display: 'flex' }}>
+          <iframe
+            src={iframe_url}
+            style={{
+              width: '100%',
+              height: '100%',
+              border: 'none',
+              borderRadius: '8px',
+              display: 'block'
+            }}
+            scrolling='no'
+          />
+        </Frame>
+      </div>
+    </div>
+
+    <div>
+      <h2 style={{ fontSize: '1.5rem', marginBottom: '15px' }}>Parameters</h2>
+      {Object.entries(inputs).map(([key, value]) => (
+        <ParamField
+          key={key}
+          query={key}
+          type={value.type.toLowerCase()}
+          optional={!value.visible}
+          required={value.visible}
+        >
+          Command: <code>{value.command}</code> - {value.description}
+        </ParamField>
+      ))}
+    </div>
+  </div>
+);

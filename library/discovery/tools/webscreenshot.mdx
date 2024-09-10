@@ -1,0 +1,220 @@
+---
+title: "webscreenshot"
+description: "A simple script to screenshot a list of websites, based on the url-to-image PhantomJS script."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="2b7f184a-886b-43f2-9e1d-45c876dce3a0"
+  name="webscreenshot"
+  description="A simple script to screenshot a list of websites, based on the url-to-image PhantomJS script."
+  category="Discovery"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/webscreenshot:16e5c2a"
+  source_url="https://github.com/maaaaz/webscreenshot"
+  license="Unknown"
+  output_command="--output-directory"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/2b7f184a-886b-43f2-9e1d-45c876dce3a0.json"
+  inputs={ {
+  "ssl": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--ssl",
+    "visible": false,
+    "description": "Enforce SSL/TLS for every connection.",
+  },
+  "url": {
+    "type": "STRING",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "Single URL target.",
+  },
+  "crop": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--crop",
+    "visible": false,
+    "description": "Rectangle <t,l,w,h> to crop the screen capture to (default to WINDOW_SIZE: '0,0,w,h'), only numbers, w(idth) and h(eight). Example: 10,20,w,h.",
+  },
+  "port": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--port",
+    "visible": false,
+    "description": "Use the specified port for each target in the input list.",
+  },
+  "label": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--label",
+    "visible": false,
+    "description": "For each screenshot, create another one displaying inside the target URL.",
+  },
+  "proxy": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--proxy",
+    "visible": false,
+    "description": "Specify a proxy. Example: http://proxy.company.com:8080.",
+  },
+  "cookie": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--cookie",
+    "visible": false,
+    "description": "Cookie string to add. Example: -c JSESSIONID=1234; YOLO=SWAG.",
+  },
+  "format": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--format",
+    "visible": false,
+    "description": "Specify an output image file format {pdf,png,jpg,jpeg,bmp,ppm} (default: png).",
+  },
+  "header": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--header",
+    "visible": false,
+    "description": "Custom or additional header. Repeat this option for every header. Example: -a Host: localhost -a Foo: bar.",
+  },
+  "quality": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--quality",
+    "visible": false,
+    "description": "Specify the output image quality, an integer between 0 and 100 (default: 75).",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--timeout",
+    "visible": false,
+    "description": "Renderer execution timeout in seconds (default: 30).",
+  },
+  "workers": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--workers",
+    "visible": false,
+    "description": "Number of parallel execution workers (default: 4).",
+  },
+  "renderer": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--renderer",
+    "visible": false,
+    "description": "Renderer to use among 'phantomjs' (legacy but best results), 'chrome', 'chromium', 'edgechromium', 'firefox' (version > 57) (default: phantomjs)",
+  },
+  "custom-js": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--custom-js",
+    "visible": false,
+    "description": "File containing JavaScript code to be executed before taking the screenshot.",
+  },
+  "input-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--input-file",
+    "visible": true,
+    "description": "File containing the target list.",
+  },
+  "label-size": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--label-size",
+    "visible": false,
+    "description": "Font size for the label (default: 60).",
+  },
+  "no-xserver": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--no-xserver",
+    "visible": false,
+    "description": "Run without an X server.",
+  },
+  "proxy-auth": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--proxy-auth",
+    "visible": false,
+    "description": "Provides authentication information for the proxy. Example: user:password.",
+  },
+  "proxy-type": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--proxy-type",
+    "visible": false,
+    "description": "Specifies the proxy type, http (default), none (disable completely), or socks5. Example: socks.",
+  },
+  "window-size": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--window-size",
+    "visible": false,
+    "description": "Width and height of the screen capture (default: 1200,800).",
+  },
+  "http-password": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--http-password",
+    "visible": false,
+    "description": "Specify a password for HTTP Basic Authentication.",
+  },
+  "http-username": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--http-username",
+    "visible": false,
+    "description": "Specify a username for HTTP Basic Authentication.",
+  },
+  "multiprotocol": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--multiprotocol",
+    "visible": false,
+    "description": "Perform screenshots over HTTP and HTTPS for each target.",
+  },
+  "no-error-file": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--no-error-file",
+    "visible": false,
+    "description": "Do not write a file with the list of URL of failed screenshots (default: false).",
+  },
+  "label-bg-color": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--label-bg-color",
+    "visible": false,
+    "description": "Label imagemagick background color (default: NavajoWhite).",
+  },
+  "renderer-binary": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--renderer-binary",
+    "visible": false,
+    "description": "Renderer executable file.",
+  },
+  "verbosity-level": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--verbosity",
+    "visible": false,
+    "description": "Verbosity level, repeat it to increase the level { -v INFO, -vv DEBUG } (default verbosity: ERROR)",
+  },
+  "ajax-max-timeouts": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--ajax-max-timeouts",
+    "visible": false,
+    "description": "Per AJAX request, and max URL timeout in milliseconds (default: 1400,1800).",
+  },
+}}
+/>

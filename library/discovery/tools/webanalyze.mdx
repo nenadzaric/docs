@@ -1,0 +1,73 @@
+---
+title: "webanalyze"
+description: "This is a port of Wappalyzer in Go. This tool is designed to be performant and allows to test huge lists of hosts."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="b2fd27c0-5c8a-435d-861e-15adca8ae585"
+  name="webanalyze"
+  description="This is a port of Wappalyzer in Go. This tool is designed to be performant and allows to test huge lists of hosts."
+  category="Discovery"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/webanalyze:71f6751"
+  source_url="https://github.com/rverton/webanalyze"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/b2fd27c0-5c8a-435d-861e-15adca8ae585.json"
+  inputs={ {
+  "host": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-host",
+    "visible": true,
+    "description": "Single host to test",
+  },
+  "crawl": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-crawl",
+    "visible": false,
+    "description": "Links to follow from the root page (default 0)",
+  },
+  "hosts": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-hosts",
+    "visible": true,
+    "description": "Filename with hosts, one host per line.",
+  },
+  "workers": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-worker",
+    "visible": false,
+    "description": "Number of worker (default: 4)",
+  },
+  "output-format": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-output",
+    "visible": false,
+    "description": "Output format (stdout|csv|json) (default: stdout)",
+  },
+  "search-all-urls": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-search",
+    "visible": false,
+    "description": "Searches all urls with same base domain (i.e. example.com and sub.example.com) (default true)",
+  },
+  "app-definition-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-apps",
+    "visible": false,
+    "description": "App definition file (default technologies.json)",
+  },
+}}
+/>

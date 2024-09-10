@@ -1,0 +1,45 @@
+---
+title: "phpmyadmin-auth-bruteforce"
+description: "phpmyadmin-authentication-bruteforce is a tool designed to brute-force PHPMyAdmin authentification"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="0c850825-95ea-48a0-bd23-a85c10853e2d"
+  name="phpmyadmin-auth-bruteforce"
+  description="phpmyadmin-authentication-bruteforce is a tool designed to brute-force PHPMyAdmin authentification"
+  category="Passwords"
+  author="trickest"
+  created_date="2021-10-14"
+  container="quay.io/trickest/phpmyadmin-authentication-bruteforce:9897dd9"
+  source_url="https://github.com/safflower/phpmyadmin-authentication-bruteforce"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/0c850825-95ea-48a0-bd23-a85c10853e2d.json"
+  inputs={ {
+  "url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-url",
+    "visible": true,
+    "description": "Target url",
+  },
+  "username": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-user",
+    "visible": true,
+    "description": "Target username",
+  },
+  "wordlist": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-dict",
+    "visible": true,
+    "description": "Wordlist with passwords",
+  },
+}}
+/>

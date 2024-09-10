@@ -1,0 +1,133 @@
+---
+title: "Enumerate DNS Records"
+description: "Enumerate DNS records for a list of hostnames, IP addresses, or IP ranges"
+---
+
+import { ModuleOverview } from '/snippets/ModuleOverview.mdx'
+
+<ModuleOverview 
+  category="Attack Surface Management"
+  inputs={ {
+  "hosts": {
+    "name": "hosts",
+    "type": "FILE",
+    "visible": true,
+    "description": "List of hostnames/IP addresses/IP ranges",
+  },
+}}
+  outputs={[ 
+    "dns-records",
+    "resolving-hostnames",
+    "ip-address-details",
+    "ip-addresses",
+    "subdomains",
+    "subdomain-details",
+    "potential-hostnames",
+    "potential-hostname-details",
+    "subdomain-wildcards",
+    "subdomain-wildcard-details",
+    "potential-hostname-wildcards",
+    "potential-hostname-wildcard-details"
+  ]}
+  author="trickest-mhmdiaa"
+  createdDate="2024-07-04"
+  iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/3e7eaaef-c61b-4ea8-bff9-68a4fe1224b9.json"
+/>
+
+## Features
+# Enumerate DNS Records
+
+## Description
+Enumerate DNS records for a list of hostnames, IP addresses, or IP ranges. Then, analyze the results to gather additional relevant data such as resolving hostnames, IP addresses, and associated hostnames.
+
+## Features
+- Enumerates `A`, `AAAA`, `CNAME`, `MX`, `NS`, `TXT`, `CAA`, and `PTR` records.
+- Identifies records with `NOERROR`, `REFUSED`, or `SERVFAIL` return codes.
+- Capable of processing **tens of thousands of hostnames** simultaneously.
+- Discovers **additional hostnames** associated with the target organization.
+- Includes a precompiled list of trusted DNS resolvers.
+
+## Inputs
+### Required
+- **hosts**: a list of hostnames, IP addresses, or IP ranges
+```
+dashboard.example.com
+5.6.7.8/24
+shop.example.com
+```
+
+## Outputs
+- **dns-records**: JSONLines DNS records.
+```
+{"host": "dashboard.example.com", "response_code": "NOERROR", "record_type": "a", "value": "1.2.3.4", "ttl": 900}
+{"host": "dashboard.example.com", "response_code": "NOERROR", "record_type": "a", "value": "5.6.7.8", "ttl": 900}
+{"host": "5.6.7.8", "response_code": "NOERROR", "record_type": "ptr", "value": "dev.example.com", "ttl": 900}
+{"host": "dashboard.example.com", "response_code": "NOERROR", "record_type": "ns", "value": "ns1.example.com", "ttl": 900}
+{"host": "shop.example.com", "response_code": "NOERROR", "record_type": "cname", "value": "example.myshopify.com", "ttl": 900}
+```
+
+- **resolving-hostnames**: List of hostnames that have at least one valid DNS record
+```
+dashboard.example.com
+shop.example.com
+```
+
+- **ip-address-details**: JSONLines records of IP address discovery details
+```
+{"ip_address": "1.2.3.4", "data_source": "dns record", "type": "IPv4", "context": "a", "linked_asset": "dashboard.example.com"}
+{"ip_address": "5.6.7.8", "data_source": "dns record", "type": "IPv4", "context": "a", "linked_asset": "dashboard.example.com"}
+```
+
+- **ip-addresses**: List of IP addresses
+```
+1.2.3.4
+5.6.7.8
+```
+
+- **subdomains**: List of discovered subdomains
+```
+dev.example.com
+ns1.example.com
+```
+
+- **subdomain-details**: JSONLines records of subdomain discovery details.
+```json
+{"hostname": "dev.example.com", "domain_name": "example.com", "data_source": "dns record", "context": "ptr", "linked_asset": "5.6.7.8"}
+{"hostname": "ns1.example.com", "domain_name": "example.com", "data_source": "dns record", "context": "ns", "linked_asset": "dashboard.example.com"}
+```
+
+- **potential-hostnames**: List of related hostnames outside the strict scope.
+```
+example.myshopify.com
+```
+
+- **potential-hostname-details**: JSONLines records of potential hostname discovery details.
+```json
+{"hostname": "example.myshopify.com", "domain_name": "myshopify.com", "data_sources": "dns record", "context": "cname", "linked_asset": "shop.example.com"}
+```
+
+- **subdomain-wildcards**: List of discovered subdomain wildcards.
+```
+*.internal.example.com
+```
+
+- **subdomain-wildcard-details**: JSONLines records of subdomain wildcard discovery details.
+```json
+{"hostname": "*.internal.example.com", "domain_name": "example.com", "data_source": "osint source", "context": "cloud tls certificate"}
+```
+
+- **potential-hostname-wildcards**: List of related hostnames with wildcards outside the strict scope.
+```
+*.proxy.example-corp.com
+```
+
+- **potential-hostname-wildcard-details**: JSONLines records of potential hostname wildcard discovery details.
+```json
+{"hostname": "*.proxy.example-corp.com", "domain_name": "example-corp.com", "data_source": "osint source", "context": "certificate transparency"}
+```
+
+**Note**: The `*-details` outputs may contain duplicates if a hostname was discovered in multiple records.
+
+## Changelog
+- v1.0
+    - Initial release

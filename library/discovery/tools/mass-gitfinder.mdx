@@ -1,0 +1,38 @@
+---
+title: "mass-gitfinder"
+description: "Identify websites with publicly accessible .git repositories"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="361f71da-1a4b-4b23-aa8f-af196a875c1e"
+  name="mass-gitfinder"
+  description="Identify websites with publicly accessible .git repositories"
+  category="Discovery"
+  author="trickest-mhmdiaa"
+  created_date="2023-06-20"
+  container="quay.io/trickest/mass-gitfinder:abb17ad"
+  source_url="https://github.com/shortcutmaniac/Gitfinder-for-Massscans"
+  license="Unknown"
+  output_command="-o"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/361f71da-1a4b-4b23-aa8f-af196a875c1e.json"
+  inputs={ {
+  "threads": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-t",
+    "visible": false,
+    "description": "threads",
+  },
+  "input-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-i",
+    "visible": true,
+    "description": "input file",
+  },
+}}
+/>

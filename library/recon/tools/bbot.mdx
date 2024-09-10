@@ -1,0 +1,269 @@
+---
+title: "bbot"
+description: "OSINT automation for hackers"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="a967689a-c2a3-45c5-8665-a029c2cb1a09"
+  name="bbot"
+  description="OSINT automation for hackers"
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2023-06-05"
+  container="quay.io/trickest/bbot:v2.0.0-patch-1"
+  source_url="https://github.com/blacklanternsecurity/bbot"
+  license="Unknown"
+  output_command="--output-dir"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/a967689a-c2a3-45c5-8665-a029c2cb1a09.json"
+  inputs={ {
+  "json": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--json",
+    "visible": false,
+    "description": "Output scan data in JSON format",
+  },
+  "name": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--name",
+    "visible": false,
+    "description": "Name of scan (default: random)",
+  },
+  "brief": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--brief",
+    "visible": false,
+    "description": "Output only the data itself",
+  },
+  "debug": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--debug",
+    "visible": false,
+    "description": "Enable debugging",
+  },
+  "flags": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--flags",
+    "visible": false,
+    "description": "Enable modules by flag.",
+  },
+  "force": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--force",
+    "visible": false,
+    "description": "Run scan even if module setups fail",
+  },
+  "config": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--config",
+    "visible": false,
+    "description": "configuration options in key=value format: 'modules.shodan.api_key=1234'",
+  },
+  "preset": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--preset",
+    "visible": false,
+    "description": "Enable BBOT preset(s)",
+  },
+  "silent": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--silent",
+    "visible": false,
+    "description": "Be quiet",
+  },
+  "dry-run": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--dry-run",
+    "visible": false,
+    "description": "Abort before executing scan",
+  },
+  "modules": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--modules",
+    "visible": false,
+    "description": "Modules to enable.",
+  },
+  "no-deps": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--no-deps",
+    "visible": false,
+    "description": "Don't install module dependencies",
+  },
+  "targets": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--targets",
+    "visible": true,
+    "description": "Targets to seed the scan",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--verbose",
+    "visible": false,
+    "description": "Be more verbose",
+  },
+  "blacklist": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--blacklist",
+    "visible": false,
+    "description": "Don't touch these things",
+  },
+  "whitelist": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--whitelist",
+    "visible": false,
+    "description": "What's considered in-scope (by default it's the same as --targets)",
+  },
+  "force-deps": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--force-deps",
+    "visible": false,
+    "description": "Force install all module dependencies",
+  },
+  "list-flags": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--list-flags",
+    "visible": false,
+    "description": "List available flags.",
+  },
+  "retry-deps": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--retry-deps",
+    "visible": false,
+    "description": "Try again to install failed module dependencies",
+  },
+  "event-types": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--event-types",
+    "visible": false,
+    "description": "Choose which event types to display",
+  },
+  "allow-deadly": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--allow-deadly",
+    "visible": false,
+    "description": "Enable the use of highly aggressive modules",
+  },
+  "list-modules": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--list-modules",
+    "visible": false,
+    "description": "List available modules.",
+  },
+  "list-presets": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--list-presets",
+    "visible": false,
+    "description": "List available presets.",
+  },
+  "strict-scope": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--strict-scope",
+    "visible": false,
+    "description": "Don't consider subdomains of target/whitelist to be in-scope",
+  },
+  "exclude-flags": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--exclude-flags",
+    "visible": false,
+    "description": "Disable modules with these flags. (e.g. -ef aggressive)",
+  },
+  "require-flags": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--require-flags",
+    "visible": false,
+    "description": "Only enable modules with these flags (e.g. -rf passive)",
+  },
+  "current-preset": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--current-preset",
+    "visible": false,
+    "description": "Show the current preset in YAML format",
+  },
+  "custom-headers": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--custom-headers",
+    "visible": false,
+    "description": "List of custom headers as key value pairs (header=value).",
+  },
+  "output-modules": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--output-modules",
+    "visible": false,
+    "description": "Output module(s). Choices: teams,emails,asset_inventory,web_report,stdout,subdomains,txt,discord,python,websocket,json,splunk,neo4j,http,csv,slack",
+  },
+  "exclude-modules": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--exclude-modules",
+    "visible": false,
+    "description": "Exclude these modules.",
+  },
+  "install-all-deps": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--install-all-deps",
+    "visible": false,
+    "description": "Install dependencies for all modules",
+  },
+  "custom-yara-rules": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--custom-yara-rules",
+    "visible": false,
+    "description": "Add custom yara rules to excavate",
+  },
+  "ignore-failed-deps": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--ignore-failed-deps",
+    "visible": false,
+    "description": "Run modules even if they have failed dependencies",
+  },
+  "current-preset-full": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--current-preset-full",
+    "visible": false,
+    "description": "Show the current preset in its full form, including defaults",
+  },
+  "list-module-options": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--list-module-options",
+    "visible": false,
+    "description": "Show all module config options",
+  },
+}}
+/>

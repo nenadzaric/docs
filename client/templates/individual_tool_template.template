@@ -1,0 +1,23 @@
+---
+title: "{{ name }}"
+description: "{{ description }}"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="{{ id }}"
+  name="{{ name }}"
+  description="{{ description }}"
+  category="{{ category }}"
+  author="{{ author }}"
+  created_date="{{ created_date }}"
+  container="{{ container }}"
+  source_url="{{ source_url }}"
+  license="{{ license }}"
+  output_command="{{ output_command }}"
+  output_type="{{ output_type }}"
+  iframe_url="{{ iframe_url }}"
+  inputs={{ inputs }}
+/>

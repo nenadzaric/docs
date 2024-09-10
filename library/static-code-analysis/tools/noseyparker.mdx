@@ -1,0 +1,150 @@
+---
+title: "noseyparker"
+description: "Nosey Parker is a command-line program that finds secrets and sensitive information in textual data and Git history."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="769c8db3-b1b1-4178-bb8c-cc5c09120284"
+  name="noseyparker"
+  description="Nosey Parker is a command-line program that finds secrets and sensitive information in textual data and Git history."
+  category="Static Code Analysis"
+  author="trickest-mhmdiaa"
+  created_date="2023-08-18"
+  container="quay.io/trickest/noseyparker:v0.14.0-patch-1"
+  source_url="https://github.com/praetorian-inc/noseyparker"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/769c8db3-b1b1-4178-bb8c-cc5c09120284.json"
+  inputs={ {
+  "jobs": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--jobs",
+    "visible": false,
+    "description": "Use N parallel scanning jobs [default: 10]",
+  },
+  "color": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--color",
+    "visible": false,
+    "description": "Enable or disable colored output [default: auto] [possible values: auto, never, always]",
+  },
+  "rules": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--rules",
+    "visible": false,
+    "description": "Use custom rules from the specified file",
+  },
+  "ignore": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--ignore",
+    "visible": false,
+    "description": "Use custom path-based ignore rules from the specified file",
+  },
+  "git-url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--git-url",
+    "visible": true,
+    "description": "Clone and scan the Git repository at the specified URL",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--verbose",
+    "visible": false,
+    "description": "Enable verbose output",
+  },
+  "progress": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--progress",
+    "visible": false,
+    "description": "Enable or disable progress bars [default: auto] [possible values: auto, never, always]",
+  },
+  "input-file": {
+    "type": "FILE",
+    "order": 1,
+    "command": "",
+    "visible": false,
+    "description": "Scan the specified file",
+  },
+  "github-user": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--github-user",
+    "visible": true,
+    "description": "Clone and scan accessible repositories belonging to the specified GitHub user",
+  },
+  "blob-metadata": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--blob-metadata",
+    "visible": false,
+    "description": "Specify which blobs will have metadata recorded [default: matching] [possible values: all, matching, none]",
+  },
+  "max-file-size": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--max-file-size",
+    "visible": false,
+    "description": "Do not scan files larger than the specified size [default: 100]",
+  },
+  "git-clone-mode": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--git-clone-mode",
+    "visible": false,
+    "description": "Use the specified method for cloning Git repositories [default: bare] [possible values: bare, mirror]",
+  },
+  "github-api-url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--github-api-url",
+    "visible": false,
+    "description": "Use the specified URL for GitHub API access [default: https://api.github.com/]",
+  },
+  "snippet-length": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--snippet-length",
+    "visible": false,
+    "description": "Include up to the specified number of bytes before and after each match [default: 256]",
+  },
+  "input-directory": {
+    "type": "FOLDER",
+    "order": 1,
+    "command": "",
+    "visible": false,
+    "description": "Scan the specified directory or local Git repository",
+  },
+  "rules-directory": {
+    "type": "FOLDER",
+    "order": 0,
+    "command": "--rules",
+    "visible": false,
+    "description": "Use custom rules from the specified directory",
+  },
+  "git-blob-provenance": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--git-blob-provenance",
+    "visible": false,
+    "description": "Specify which Git commit provenance metadata will be collected [default: first-seen] [possible values: first-seen, minimal]",
+  },
+  "github-organization": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--github-organization",
+    "visible": true,
+    "description": "Clone and scan accessible repositories belonging to the specified GitHub organization",
+  },
+}}
+/>

@@ -1,0 +1,54 @@
+---
+title: 'Downloading Results'
+description: 'Learn how to download results from the Workflow Runs.'
+---
+
+Workflow is set of in interconnected [Nodes.](../../user-guides/concepts/nodes/introduction)
+
+Each node executes individually within a [Run](../../user-guides/concepts/runs/introduction) and produces its own result. Hence, there is no single workflow result. Workflow Result is contained of independent nodes results.
+
+## Downloading a Result
+
+<Tip>Use Workflow Runs to go through all of your Runs and open a particular run.</Tip>
+
+When you open a run, you can see the results of each node in the OUTPUT tab. You can view the result by clicking particular nodes and download it by clicking on the `Download` button.
+
+<Frame>
+    <img src="/images/tutorials/tutorials-downloading-results.gif" alt="Downloading Results"/>
+</Frame>
+
+
+<Tip> You can **scroll** through the result content in the OUTPUT tab. </Tip>
+
+## Splitter Nodes Result
+
+In case of using a Splitter node, for each iteration of affected tool single result is generated and is available to be viewed and downloaded.
+
+<Frame>
+    <img src="/images/tutorials/tutorials-splitter-downloading-results.gif" alt="Downloading Results from Splitter"/>
+</Frame>
+
+## Aggregating Splitter Outputs
+
+If you don't want to click on each of the iteration of the Splitter Nodes, you can use the `recursively-cat-all` script to aggregate all the results into a single file.
+
+<Tip>Connecing Splitter Nodes with `recursively-cat-all` `folder` input will aggregate all the results into a single file.</Tip>
+
+This is the structure of the outputs comming from Splitter Node in the gif below:
+
+```
+in/get-js-1/0/output.txt
+in/get-js-1/1/output.txt
+in/get-js-1/2/output.txt
+in/get-js-1/3/output.txt
+```
+
+So, the `recursively-cat-all` script will aggregate all the results into a single file by finding all the files in the `in` directory and concatenating them into a single file.
+
+```bash
+find in -type f -exec cat {} + | tee out/output.txt
+```
+
+<Frame>
+    <img src="/images/tutorials/tutorials-splitter-aggregation-2.png" alt="Aggregating Splitter Outputs"/>
+</Frame>

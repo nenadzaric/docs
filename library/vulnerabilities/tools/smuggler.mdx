@@ -1,0 +1,73 @@
+---
+title: "smuggler"
+description: "An HTTP Request Smuggling / Desync testing tool written in Python 3"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="8c8f0e4d-6151-4ea3-a215-bd76024bd70b"
+  name="smuggler"
+  description="An HTTP Request Smuggling / Desync testing tool written in Python 3"
+  category="Vulnerabilities"
+  author="trickest-mhmdiaa"
+  created_date="2022-02-05"
+  container="quay.io/trickest/smuggler:2be871e"
+  source_url="https://github.com/defparam/smuggler"
+  license="Unknown"
+  output_command="-l"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/8c8f0e4d-6151-4ea3-a215-bd76024bd70b.json"
+  inputs={ {
+  "url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-u",
+    "visible": true,
+    "description": "Target URL with Endpoint",
+  },
+  "quiet": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--quiet",
+    "visible": false,
+    "description": "Quiet mode will only log issues found",
+  },
+  "vhost": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--vhost",
+    "visible": false,
+    "description": "Specify a virtual host",
+  },
+  "method": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--method",
+    "visible": false,
+    "description": "HTTP method to use (e.g GET, POST) Default: POST",
+  },
+  "no-color": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--no-color",
+    "visible": false,
+    "description": "Suppress color codes",
+  },
+  "configfile": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--configfile",
+    "visible": true,
+    "description": "Filepath to the configuration file of payloads",
+  },
+  "exit-early": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--exit_early",
+    "visible": false,
+    "description": "Exit scan on first finding",
+  },
+}}
+/>

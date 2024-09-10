@@ -1,0 +1,45 @@
+---
+title: "goaltdns"
+description: "GoAltdns is a permutation generation tool that can take a list of subdomains, permute them using a wordlist, insert indexes, numbers, dashes and increase your chance of finding that estoeric subdomain that no-one found during bug-bounty or pentest."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="b02eb222-4f98-4055-b0fa-85b3420664a0"
+  name="goaltdns"
+  description="GoAltdns is a permutation generation tool that can take a list of subdomains, permute them using a wordlist, insert indexes, numbers, dashes and increase your chance of finding that estoeric subdomain that no-one found during bug-bounty or pentest."
+  category="Recon"
+  author="trickest"
+  created_date="2021-06-28"
+  container="quay.io/trickest/goaltdns:2b3e8a3"
+  source_url="https://github.com/subfinder/goaltdns"
+  license="Unknown"
+  output_command="-o"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/b02eb222-4f98-4055-b0fa-85b3420664a0.json"
+  inputs={ {
+  "wordlist": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-w",
+    "visible": true,
+    "description": "Pass a custom wordlist",
+  },
+  "live-hosts": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-l",
+    "visible": true,
+    "description": "Provide a list of live hosts",
+  },
+  "host-to-permutate": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-h",
+    "visible": true,
+    "description": "Provide a single host",
+  },
+}}
+/>

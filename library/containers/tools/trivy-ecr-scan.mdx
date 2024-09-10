@@ -1,0 +1,150 @@
+---
+title: "trivy-ecr-scan"
+description: "Scanner for vulnerabilities in container images, file systems, and Git repositories, as well as for configuration issues"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="0a118f54-1b60-4963-9f33-7032de42220a"
+  name="trivy-ecr-scan"
+  description="Scanner for vulnerabilities in container images, file systems, and Git repositories, as well as for configuration issues"
+  category="Containers"
+  author="trickest-mhmdiaa"
+  created_date="2022-06-07"
+  container="quay.io/trickest/trivy-ecr-scan:v0.24.4"
+  source_url="https://github.com/aquasecurity/trivy"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/0a118f54-1b60-4963-9f33-7032de42220a.json"
+  inputs={ {
+  "light": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--light",
+    "visible": false,
+    "description": "deprecated (default: false) [$TRIVY_LIGHT]",
+  },
+  "format": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--format",
+    "visible": false,
+    "description": "format (table, json, sarif, template) (default: table) [$TRIVY_FORMAT]",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--timeout",
+    "visible": false,
+    "description": "timeout (default: 5m0s) [$TRIVY_TIMEOUT]",
+  },
+  "insecure": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--insecure",
+    "visible": false,
+    "description": "allow insecure server connections when using SSL (default: false) [$TRIVY_INSECURE]",
+  },
+  "severity": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--severity",
+    "visible": false,
+    "description": "severities of vulnerabilities to be displayed (comma separated) (default: UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL) [$TRIVY_SEVERITY]",
+  },
+  "exit-code": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--exit-code",
+    "visible": false,
+    "description": "Exit code when vulnerabilities were found (default: 0) [$TRIVY_EXIT_CODE]",
+  },
+  "skip-dirs": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--skip-dirs",
+    "visible": false,
+    "description": "specify the directories where the traversal is skipped [$TRIVY_SKIP_DIRS]",
+  },
+  "vuln-type": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--vuln-type",
+    "visible": false,
+    "description": "comma-separated list of vulnerability types (os,library) (default: os,library) [$TRIVY_VULN_TYPE]",
+  },
+  "image-list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "List of images line by line to be scanned",
+  },
+  "skip-files": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--skip-files",
+    "visible": false,
+    "description": "specify the file paths to skip traversal [$TRIVY_SKIP_FILES]",
+  },
+  "no-progress": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--no-progress",
+    "visible": false,
+    "description": "suppress progress bar (default: false) [$TRIVY_NO_PROGRESS]",
+  },
+  "removed-pkgs": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--removed-pkgs",
+    "visible": false,
+    "description": "detect vulnerabilities of removed packages (only for Alpine) (default: false) [$TRIVY_REMOVED_PKGS]",
+  },
+  "ignore-policy": {
+    "type": "FILE",
+    "order": 2,
+    "command": "--ignore-policy",
+    "visible": false,
+    "description": "specify the Rego file to evaluate each vulnerability [$TRIVY_IGNORE_POLICY]",
+  },
+  "list-all-pkgs": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--list-all-pkgs",
+    "visible": false,
+    "description": "enabling the option will output all packages regardless of vulnerability (default: false) [$TRIVY_LIST_ALL_PKGS]",
+  },
+  "ignore-unfixed": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--ignore-unfixed",
+    "visible": false,
+    "description": "display only fixed vulnerabilities (default: false) [$TRIVY_IGNORE_UNFIXED]",
+  },
+  "skip-db-update": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--skip-db-update",
+    "visible": false,
+    "description": "skip updating vulnerability database (default: false) [$TRIVY_SKIP_UPDATE, $TRIVY_SKIP_DB_UPDATE]",
+  },
+  "aws-credentials": {
+    "type": "FILE",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "Credentials to be used to log into ECR. Format: 'AWS_ACCESS_KEY_ID:AWS_SECRET_ACCESS_KEY:AWS_DEFAULT_REGION' (colon-separated)",
+  },
+  "security-checks": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--security-checks",
+    "visible": false,
+    "description": "comma-separated list of what security issues to detect (vuln,config) (default: vuln) [$TRIVY_SECURITY_CHECKS]",
+  },
+}}
+/>

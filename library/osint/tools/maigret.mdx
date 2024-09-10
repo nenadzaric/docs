@@ -1,0 +1,290 @@
+---
+title: "maigret"
+description: "Collect a dossier on a person by username from thousands of sites"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="a98fc55f-e16d-4998-9b57-d62b15144994"
+  name="maigret"
+  description="Collect a dossier on a person by username from thousands of sites"
+  category="OSINT"
+  author="trickest-mhmdiaa"
+  created_date="2022-11-28"
+  container="quay.io/trickest/maigret:v0.4.4"
+  source_url="https://github.com/soxoj/maigret"
+  license="Unknown"
+  output_command="--folderoutput"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/a98fc55f-e16d-4998-9b57-d62b15144994.json"
+  inputs={ {
+  "db": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--db",
+    "visible": false,
+    "description": "Load Maigret database from a JSON file or HTTP web resource.",
+  },
+  "csv": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--csv",
+    "visible": false,
+    "description": "Create a CSV report (one report per username).",
+  },
+  "pdf": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--pdf",
+    "visible": false,
+    "description": "Generate a PDF report (general report on all usernames).",
+  },
+  "txt": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--txt",
+    "visible": true,
+    "description": "Create a TXT report (one report per username).",
+  },
+  "html": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--html",
+    "visible": false,
+    "description": "Create an HTML report file (general report on all usernames).",
+  },
+  "info": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--info",
+    "visible": false,
+    "description": "Display extra/service information and metrics.",
+  },
+  "json": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--json",
+    "visible": false,
+    "description": "Generate a JSON report of specific type: simple, ndjson (one report per username).",
+  },
+  "site": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--site",
+    "visible": false,
+    "description": "Limit analysis to just the specified sites.",
+  },
+  "tags": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--tags",
+    "visible": false,
+    "description": "Specify tags of sites (see `--stats`).",
+  },
+  "debug": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--debug",
+    "visible": false,
+    "description": "Display extra/service/debug information and metrics, save responses in debug.log.",
+  },
+  "graph": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--graph",
+    "visible": false,
+    "description": "Generate a graph report (general report on all usernames).",
+  },
+  "parse": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--parse",
+    "visible": false,
+    "description": "Parse page by URL and extract username and IDs to use for search.",
+  },
+  "proxy": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--proxy",
+    "visible": false,
+    "description": "Make requests over a proxy. e.g. socks5://127.0.0.1:1080",
+  },
+  "stats": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--stats",
+    "visible": false,
+    "description": "Show database statistics (most frequent sites engines and tags).",
+  },
+  "xmind": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--xmind",
+    "visible": false,
+    "description": "Generate an XMind 8 mindmap report (one report per username).",
+  },
+  "submit": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--submit",
+    "visible": false,
+    "description": "URL of existing profile in new site to submit.",
+  },
+  "id-type": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--id-type",
+    "visible": false,
+    "description": "Specify identifier(s) type (default: username)",
+  },
+  "retries": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--retries",
+    "visible": false,
+    "description": "Attempts to restart temporarily failed requests.",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--timeout",
+    "visible": false,
+    "description": "Time in seconds to wait for response to requests (default 30s). A longer timeout will be more likely to get results from slow sites. On the other hand, this may cause a long delay to gather all results.",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--verbose",
+    "visible": false,
+    "description": "Display extra information and metrics.",
+  },
+  "no-color": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--no-color",
+    "visible": false,
+    "description": "Don't color terminal output",
+  },
+  "all-sites": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--all-sites",
+    "visible": false,
+    "description": "Use all sites for scan.",
+  },
+  "i2p-proxy": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--i2p-proxy",
+    "visible": false,
+    "description": "Specify URL of your I2P gateway. Default is http://127.0.0.1:4444",
+  },
+  "top-sites": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--top-sites",
+    "visible": false,
+    "description": "Count of sites for scan ranked by Alexa Top (default: 500).",
+  },
+  "tor-proxy": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--tor-proxy",
+    "visible": false,
+    "description": "Specify URL of your Tor gateway. Default is socks5://127.0.0.1:9050",
+  },
+  "usernames": {
+    "type": "STRING",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "One or more usernames to search by (separated by spaces)",
+  },
+  "ignore-ids": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--ignore-ids",
+    "visible": false,
+    "description": "ignore-ids",
+  },
+  "self-check": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--self-check",
+    "visible": false,
+    "description": "Do self check for sites and database and disable non-working ones.",
+  },
+  "no-recursion": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--no-recursion",
+    "visible": false,
+    "description": "Disable recursive search by additional data extracted from pages.",
+  },
+  "print-errors": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--print-errors",
+    "visible": false,
+    "description": "Print errors messages: connection, captcha, site country ban, etc.",
+  },
+  "with-domains": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--with-domains",
+    "visible": false,
+    "description": "Enable (experimental) feature of checking domains on usernames.",
+  },
+  "no-extracting": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--no-extracting",
+    "visible": false,
+    "description": "Disable parsing pages for additional data and other usernames.",
+  },
+  "no-progressbar": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--no-progressbar",
+    "visible": false,
+    "description": "Don't show progressbar.",
+  },
+  "max-connections": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--max-connections",
+    "visible": false,
+    "description": "Allowed number of concurrent connections (default 100).",
+  },
+  "print-not-found": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--print-not-found",
+    "visible": false,
+    "description": "Print sites where the username was not found.",
+  },
+  "reports-sorting": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--reports-sorting",
+    "visible": false,
+    "description": "Method of results sorting in reports (default: in order of getting the result)",
+  },
+  "cookies-jar-file": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--cookies-jar-file",
+    "visible": false,
+    "description": "File with cookies.",
+  },
+  "use-disabled-sites": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--use-disabled-sites",
+    "visible": false,
+    "description": "Use disabled sites to search (may cause many false positives).",
+  },
+}}
+/>

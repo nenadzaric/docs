@@ -1,0 +1,248 @@
+---
+title: "sslyze"
+description: "Fast and powerful SSL/TLS scanner"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="59f393f6-3ae4-4e6c-bb94-a337b8f5438d"
+  name="sslyze"
+  description="Fast and powerful SSL/TLS scanner"
+  category="Scanners"
+  author="trickest-mhmdiaa"
+  created_date="2022-04-14"
+  container="quay.io/trickest/sslyze:5.0.3"
+  source_url="https://github.com/nabla-c0d3/sslyze"
+  license="Unknown"
+  output_command="--json_out"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/59f393f6-3ae4-4e6c-bb94-a337b8f5438d.json"
+  inputs={ {
+  "key": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--key",
+    "visible": false,
+    "description": "Client private key file.",
+  },
+  "sni": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--sni",
+    "visible": false,
+    "description": "Use Server Name Indication to specify the hostname to connect to. Will only affect TLS 1.0+ connections.",
+  },
+  "cert": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--cert",
+    "visible": false,
+    "description": "Client certificate chain filename. The certificates must be in PEM format and must be sorted starting with the subject's client certificate, followed by intermediate CA certificates if applicable.",
+  },
+  "pass": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--pass",
+    "visible": false,
+    "description": "Client private key passphrase.",
+  },
+  "quiet": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--quiet",
+    "visible": false,
+    "description": "Do not output anything to stdout",
+  },
+  "reneg": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--reneg",
+    "visible": false,
+    "description": "Test a server for for insecure TLS renegotiation and client-initiated renegotiation.",
+  },
+  "resum": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--resum",
+    "visible": false,
+    "description": "Test a server for TLS 1.2 session resumption support using session IDs and TLS tickets.",
+  },
+  "robot": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--robot",
+    "visible": false,
+    "description": "Test a server for the ROBOT vulnerability.",
+  },
+  "sslv2": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--sslv2",
+    "visible": false,
+    "description": "Test a server for SSL 2.0 support.",
+  },
+  "sslv3": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--sslv3",
+    "visible": false,
+    "description": "Test a server for SSL 3.0 support.",
+  },
+  "tlsv1": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--tlsv1",
+    "visible": false,
+    "description": "Test a server for TLS 1.0 support.",
+  },
+  "target": {
+    "type": "STRING",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "The server to scan",
+  },
+  "keyform": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--keyform",
+    "visible": false,
+    "description": "Client private key format. DER or PEM (default).",
+  },
+  "tlsv1-1": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--tlsv1_1",
+    "visible": false,
+    "description": "Test a server for TLS 1.1 support.",
+  },
+  "tlsv1-2": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--tlsv1_2",
+    "visible": false,
+    "description": "Test a server for TLS 1.2 support.",
+  },
+  "tlsv1-3": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--tlsv1_3",
+    "visible": false,
+    "description": "Test a server for TLS 1.3 support.",
+  },
+  "xmpp-to": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--xmpp_to",
+    "visible": false,
+    "description": "Optional setting for STARTTLS XMPP. XMPP_TO should be the hostname to be put in the 'to' attribute of the XMPP stream. Default is the server's hostname.",
+  },
+  "certinfo": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--certinfo",
+    "visible": false,
+    "description": "Retrieve and analyze a server's certificate(s) to verify its validity.",
+  },
+  "fallback": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--fallback",
+    "visible": false,
+    "description": "Test a server for the TLS_FALLBACK_SCSV mechanism to prevent downgrade attacks.",
+  },
+  "starttls": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--starttls",
+    "visible": false,
+    "description": "Perform a StartTLS handshake when connecting to the target server(s). StartTLS should be one of: auto, smtp, xmpp, xmpp_server, pop3, imap, ftp, ldap, rdp, postgres. The 'auto' option will cause SSLyze to deduce the protocol (ftp, imap, etc.) from the supplied port number, for each target servers.",
+  },
+  "early-data": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--early_data",
+    "visible": false,
+    "description": "Test a server for TLS 1.3 early data support.",
+  },
+  "heartbleed": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--heartbleed",
+    "visible": false,
+    "description": "Test a server for the OpenSSL Heartbleed vulnerability.",
+  },
+  "targets-in": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--targets_in",
+    "visible": true,
+    "description": "Read the list of targets to scan from a file. It should contain one host:port per line.",
+  },
+  "compression": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--compression",
+    "visible": false,
+    "description": "Test a server for TLS compression support, which can be leveraged to perform a CRIME attack.",
+  },
+  "openssl-ccs": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--openssl_ccs",
+    "visible": false,
+    "description": "Test a server for the OpenSSL CCS Injection vulnerability (CVE-2014-0224).",
+  },
+  "http-headers": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--http_headers",
+    "visible": false,
+    "description": "Test a server for the presence of security-related HTTP headers.",
+  },
+  "https-tunnel": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--https_tunnel",
+    "visible": false,
+    "description": "Tunnel all traffic to the target server(s) through an HTTP CONNECT proxy. HTTP_TUNNEL should be the proxy's URL: 'http://USER:PW@HOST:PORT/'. For proxies requiring authentication, only Basic Authentication is supported.",
+  },
+  "mozilla-config": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--mozilla_config",
+    "visible": false,
+    "description": "Shortcut to queue various scan commands needed to check the server's TLS configurations against one of Mozilla's recommended TLS configuration. Set to 'intermediate' by default. Use 'disable' to disable this check.",
+  },
+  "resum-attempts": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--resum_attempts",
+    "visible": false,
+    "description": "To be used with --resum. Number of session resumptions (both with Session IDs and TLS Tickets) that SSLyze should attempt. The default value is 5, but a higher value such as 100 can be used to get a more accurate measure of how often session resumption succeeds or fails with the server.",
+  },
+  "elliptic-curves": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--elliptic_curves",
+    "visible": false,
+    "description": "Test a server for supported elliptic curves.",
+  },
+  "slow-connection": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--slow_connection",
+    "visible": false,
+    "description": "Greatly reduce the number of concurrent connections initiated by SSLyze. This will make the scans slower but more reliable if the connection between your host and the server is slow, or if the server cannot handle many concurrent connections. Enable this option if you are getting a lot of timeouts or errors.",
+  },
+  "certinfo-ca-file": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--certinfo_ca_file",
+    "visible": false,
+    "description": "To be used with 'certinfo'. File containing root certificates in PEM format that will be used to verify the validity of the server's certificate.",
+  },
+}}
+/>

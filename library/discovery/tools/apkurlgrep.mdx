@@ -1,0 +1,31 @@
+---
+title: "apkurlgrep"
+description: "ApkUrlGrep is a tool that allows extract endpoints from APK files."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="855b88f7-efcc-4480-bdf8-e03dfa1af92f"
+  name="apkurlgrep"
+  description="ApkUrlGrep is a tool that allows extract endpoints from APK files."
+  category="Discovery"
+  author="trickest"
+  created_date="2021-09-17"
+  container="quay.io/trickest/apkurlgrep:a188a98"
+  source_url="https://github.com/ndelphit/apkurlgrep"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/855b88f7-efcc-4480-bdf8-e03dfa1af92f.json"
+  inputs={ {
+  "apk-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--apk",
+    "visible": true,
+    "description": "Specify the APK file.",
+  },
+}}
+/>

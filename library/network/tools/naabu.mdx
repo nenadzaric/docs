@@ -1,0 +1,332 @@
+---
+title: "naabu"
+description: "Naabu is a port scanning tool written in Go that allows you to enumerate valid ports for hosts in a fast and reliable manner. It is a really simple tool that does fast SYN scans on the host/list of hosts and lists all ports that return a reply."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="33f8efa7-a592-465a-b415-bbdf5888f89d"
+  name="naabu"
+  description="Naabu is a port scanning tool written in Go that allows you to enumerate valid ports for hosts in a fast and reliable manner. It is a really simple tool that does fast SYN scans on the host/list of hosts and lists all ports that return a reply."
+  category="Network"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/naabu:v2.3.1"
+  source_url="https://github.com/projectdiscovery/naabu"
+  license="Unknown"
+  output_command="-o"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/33f8efa7-a592-465a-b415-bbdf5888f89d.json"
+  inputs={ {
+  "cdn": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-display-cdn",
+    "visible": false,
+    "description": "display cdn in use",
+  },
+  "host": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-host",
+    "visible": true,
+    "description": "hosts to scan ports for (comma-separated)",
+  },
+  "rate": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-rate",
+    "visible": false,
+    "description": "Rate of port scan probe request (default 1000)",
+  },
+  "proxy": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-proxy",
+    "visible": false,
+    "description": "socks5 proxy (ip[:port] / fqdn[:port])",
+  },
+  "stats": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-stats",
+    "visible": false,
+    "description": "Display stats of the running scan",
+  },
+  "nd-ping": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-nd-ping",
+    "visible": false,
+    "description": "IPv6 Neighbor Discovery (host discovery needs to be enabled)",
+  },
+  "passive": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-passive",
+    "visible": false,
+    "description": "display passive open ports using shodan internetdb api",
+  },
+  "threads": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-c",
+    "visible": false,
+    "description": "General internal worker threads (default 25)",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-timeout",
+    "visible": false,
+    "description": "Millisecond to wait before timing out (default 700)",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-v",
+    "visible": false,
+    "description": "Show verbose output",
+  },
+  "arp-ping": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-arp-ping",
+    "visible": false,
+    "description": "ARP ping (host discovery needs to be enabled)",
+  },
+  "no-colors": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-no-color",
+    "visible": false,
+    "description": "Don't Use colors in output",
+  },
+  "resolvers": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-r",
+    "visible": false,
+    "description": "list of custom resolvers for dns resolution",
+  },
+  "scan-type": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-scan-type",
+    "visible": false,
+    "description": "type of port scan (SYN/CONNECT) (default s)",
+  },
+  "source-ip": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-source-ip",
+    "visible": false,
+    "description": "source ip and port (x.x.x.x:yyy)",
+  },
+  "top-ports": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-top-ports",
+    "visible": false,
+    "description": "Top Ports to scan (default top 100)",
+  },
+  "csv-output": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-csv",
+    "visible": false,
+    "description": "Write output in CSV format",
+  },
+  "debug-mode": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-debug",
+    "visible": false,
+    "description": "display debugging information",
+  },
+  "hosts-list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-l",
+    "visible": true,
+    "description": "List of hosts to scan ports",
+  },
+  "ip-version": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-ip-version",
+    "visible": false,
+    "description": "ip version to scan of hostname (4,6) - (default 4)",
+  },
+  "ping-probe": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-ping",
+    "visible": false,
+    "description": "Perform ping probe to detect alive hosts",
+  },
+  "ports-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-ports-file",
+    "visible": false,
+    "description": "File containing ports to scan for",
+  },
+  "proxy-auth": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-proxy-auth",
+    "visible": false,
+    "description": "socks5 proxy authentication (username:password)",
+  },
+  "exclude-cdn": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-exclude-cdn",
+    "visible": false,
+    "description": "Skip full port scans for CDNs (only checks for 80,443)",
+  },
+  "json-output": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-json",
+    "visible": false,
+    "description": "Write output in JSON lines format",
+  },
+  "exclude-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-exclude-file",
+    "visible": false,
+    "description": "List of hosts to exclude from scan",
+  },
+  "scan-all-ips": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-scan-all-ips",
+    "visible": false,
+    "description": " Scan all the ips",
+  },
+  "warm-up-time": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-warm-up-time",
+    "visible": false,
+    "description": "Time in seconds between scan phases (default 2)",
+  },
+  "exclude-hosts": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-exclude-hosts",
+    "visible": false,
+    "description": "hosts to exclude from the scan (comma-separated)",
+  },
+  "exclude-ports": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-exclude-ports",
+    "visible": false,
+    "description": "Ports to exclude from scan",
+  },
+  "probe-tcp-ack": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-probe-tcp-ack",
+    "visible": false,
+    "description": "TCP ACK Ping (host discovery needs to be enabled)",
+  },
+  "probe-tcp-syn": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-probe-tcp-syn",
+    "visible": false,
+    "description": "TCP SYN Ping (host discovery needs to be enabled)",
+  },
+  "host-discovery": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-host-discovery",
+    "visible": false,
+    "description": "Run Host Discovery scan",
+  },
+  "port-threshold": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-port-threshold",
+    "visible": false,
+    "description": "port threshold to skip port scan for the host",
+  },
+  "stats-interval": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-si",
+    "visible": false,
+    "description": "number of seconds to wait between showing a statistics update (default 5)",
+  },
+  "validate-ports": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-verify",
+    "visible": false,
+    "description": "Validate the ports again",
+  },
+  "probe-icmp-echo": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-probe-icmp-echo",
+    "visible": false,
+    "description": "ICMP echo request Ping (host discovery needs to be enabled)",
+  },
+  "ports-to-exclude": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-exclude-ports",
+    "visible": false,
+    "description": "Ports to exclude from enumeration",
+  },
+  "ports-to-enumerate": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-port",
+    "visible": true,
+    "description": "Ports to enumerate for on hosts (top-100, top-1000, full, custom)",
+  },
+  "skip-host-discovery": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-skip-host-discovery",
+    "visible": false,
+    "description": "Skip Host discovery",
+  },
+  "probe-icmp-timestamp": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-probe-icmp-timestamp",
+    "visible": false,
+    "description": "ICMP timestamp request Ping (host discovery needs to be enabled)",
+  },
+  "probe-icmp-address-mask": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-probe-icmp-address-mask",
+    "visible": false,
+    "description": "ICMP address mask request Ping (host discovery needs to be enabled)",
+  },
+  "only-host-port-in-output": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-silent",
+    "visible": false,
+    "description": "Show only host:ports in output",
+  },
+  "number-of-retries-for-port-scan": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-retries",
+    "visible": false,
+    "description": "Number of retries for the port scan probe (default 1)",
+  },
+}}
+/>

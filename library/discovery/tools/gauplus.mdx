@@ -1,0 +1,80 @@
+---
+title: "gauplus"
+description: "A modified version of (http://wwww.github.com/lc/gau)"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="0e46011f-4b57-4285-8db9-02c5178f4ca5"
+  name="gauplus"
+  description="A modified version of (http://wwww.github.com/lc/gau)"
+  category="Discovery"
+  author="trickest"
+  created_date="2021-10-04"
+  container="quay.io/trickest/gauplus:ad421ba"
+  source_url="https://github.com/bp0lr/gauplus"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/0e46011f-4b57-4285-8db9-02c5178f4ca5.json"
+  inputs={ {
+  "threads": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-t",
+    "visible": false,
+    "description": "Amount of parallel workers (default 5)",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-v",
+    "visible": false,
+    "description": "Enable verbose mode",
+  },
+  "providers": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-providers",
+    "visible": false,
+    "description": "Providers to fetch urls for (default wayback,otx,commoncrawl)",
+  },
+  "output-json": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-json",
+    "visible": false,
+    "description": "Write output as json",
+  },
+  "include-subs": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-subs",
+    "visible": false,
+    "description": "nclude subdomains of target domain",
+  },
+  "se-random-agent": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-random-agent",
+    "visible": false,
+    "description": "Uuser-agent",
+  },
+  "targets-domains": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Target domains",
+  },
+  "extension-to-skip": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-b",
+    "visible": false,
+    "description": "Extensions to skip, ex: ttf,woff,svg,png,jpg",
+  },
+}}
+/>

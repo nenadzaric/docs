@@ -1,0 +1,78 @@
+---
+title: "Enumerate Hostnames via Root Domain DNS Brute Force"
+description: "Enumerate sub-subdomains of a list of hostnames using DNS brute force on the most likely hostnames"
+---
+
+import { ModuleOverview } from '/snippets/ModuleOverview.mdx'
+
+<ModuleOverview 
+  category="Attack Surface Management"
+  inputs={ {
+  "domains": {
+    "name": "domains",
+    "type": "FILE",
+    "visible": true,
+    "description": "List of domain names",
+  },
+  "wordlist": {
+    "name": "wordlist",
+    "type": "FILE",
+    "visible": false,
+    "description": "Custom subdomain enumeration wordlist",
+  },
+}}
+  outputs={[ 
+    "subdomains",
+    "subdomain-details"
+  ]}
+  author="trickest-mhmdiaa"
+  createdDate="2024-07-04"
+  iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/b97776d9-a676-416e-9afe-b47429a49494.json"
+/>
+
+## Features
+# Enumerate Hostnames via Root Domain DNS Brute Force
+
+## Description
+Enumerate subdomains of a list of domains via DNS brute force. The module uses an effective built-in subdomain enumeration wordlist and provides the option to provide a custom list tailored to your organization's naming conventions. For accuracy and reliability, it relies on a daily updated list of DNS resolvers and cross-checks findings with a curated set of trusted resolvers. Additionally, it includes a wildcard filter to weed out any false positives.
+
+## Features
+- **Built-in wordlist** with an option to **use a custom one** tailored to your target.
+- A **daily validated list of resolvers** to ensure accuracy.
+- Result **verification using manually curated trusted resolvers**.
+- A **wildcard filter** takes care of false positives.
+- Can enumerate **thousands of domains** simultaneously.
+
+## Inputs
+### Required
+- **domains:** a list of domain names
+```
+example.com
+```
+
+### Optional
+- **wordlist:** a custom subdomain enumeration wordlist
+```
+acme-admin
+my-product
+custom-name
+```
+
+### Outputs
+- **subdomains**: a list of found subdomains
+```
+foo.example.com
+bar.example.com
+baz.example.com
+```
+
+- **subdomain-details:** JSONLines records of subdomain discovery details.
+```json
+{"hostname": "foo.example.com", "domain_name": "example.com", "data_source": "dns brute force", "context": "root domain brute force"}
+{"hostname": "bar.example.com", "domain_name": "example.com", "data_source": "dns brute force", "context": "root domain brute force"}
+{"hostname": "baz.example.com", "domain_name": "example.com", "data_source": "dns brute force", "context": "root domain brute force"}
+```
+
+## Changelog
+- v1.0
+    - Initial release

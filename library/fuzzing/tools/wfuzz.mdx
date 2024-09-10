@@ -1,0 +1,346 @@
+---
+title: "wfuzz"
+description: "Wfuzz can be used to look for hidden content, such as files and directories, within a web server, allowing to find further attack vectors. It is worth noting that, the success of this task depends highly on the dictionaries used."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="cd0eb06d-8e0b-4536-9bf5-c695f6d736cc"
+  name="wfuzz"
+  description="Wfuzz can be used to look for hidden content, such as files and directories, within a web server, allowing to find further attack vectors. It is worth noting that, the success of this task depends highly on the dictionaries used."
+  category="Fuzzing"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/wfuzz:3.1.0"
+  source_url="https://github.com/xmendez/wfuzz"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/cd0eb06d-8e0b-4536-9bf5-c695f6d736cc.json"
+  inputs={ {
+  "field": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--field",
+    "visible": false,
+    "description": "Do not show the payload but only the specified language expression. Repeat for various fields.",
+  },
+  "cookie": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-b",
+    "visible": false,
+    "description": "Specify a cookie for the requests. Repeat option for various cookies.",
+  },
+  "efield": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--efield",
+    "visible": false,
+    "description": "Show the specified language expression together with the current payload. Repeat for various fields.",
+  },
+  "header": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-H",
+    "visible": false,
+    "description": "Use header (ex:Cookie:id=1312321&user=FUZZ). Repeat option for various headers.",
+  },
+  "recipe": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--recipe",
+    "visible": false,
+    "description": "Reads options from a recipe. Repeat for various recipes.",
+  },
+  "ip-proxy": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-p",
+    "visible": false,
+    "description": "Use Proxy in format ip:port:type. Repeat option for using various proxies.",
+  },
+  "wordlist": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-w",
+    "visible": true,
+    "description": "Specify a wordlist file (alias for -z file,wordlist).",
+  },
+  "ntlm-auth": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--ntlm",
+    "visible": false,
+    "description": "in format user:pass or FUZZ:FUZZ or domain\FUZ2Z:FUZZ",
+  },
+  "post-data": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-d",
+    "visible": false,
+    "description": "Use post data (ex: id=FUZZ&catalogue=1)",
+  },
+  "scan-mode": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-Z",
+    "visible": false,
+    "description": "Scan mode (Connection errors will be ignored)",
+  },
+  "basic-auth": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--basic",
+    "visible": false,
+    "description": "in format user:pass or FUZZ:FUZZ or domain\FUZ2Z:FUZZ",
+  },
+  "digest-auth": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--digest",
+    "visible": false,
+    "description": "in format user:pass or FUZZ:FUZZ or domain\FUZ2Z:FUZZ",
+  },
+  "dump-recipe": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--dump-recipe",
+    "visible": false,
+    "description": "Prints current options as a recipe",
+  },
+  "http-method": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-X",
+    "visible": false,
+    "description": "Specify an HTTP method for the request, ie. HEAD or FUZZ",
+  },
+  "script-scan": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--script",
+    "visible": false,
+    "description": "Equivalent to --script=default",
+  },
+  "color-output": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-c",
+    "visible": false,
+    "description": "Output with colors",
+  },
+  "payload-args": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--zP",
+    "visible": false,
+    "description": "Arguments for the specified payload (it must be preceded by -z or -w).",
+  },
+  "filter-payload": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--slice",
+    "visible": false,
+    "description": "Filter payload's elements using the specified expression. It must be preceded by -z.",
+  },
+  "max-link-depth": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-D",
+    "visible": false,
+    "description": "Maximum link depth level.",
+  },
+  "no-http-request": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--dry-run",
+    "visible": false,
+    "description": "Print the results of applying the requests without actually making any HTTP request.",
+  },
+  "payload-encoder": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--zE",
+    "visible": false,
+    "description": "Encoder for the specified payload (it must be preceded by -z or -w).",
+  },
+  "request-timeout": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--req-delay",
+    "visible": false,
+    "description": "Sets the maximum time in seconds the request is allowed to take (CURLOPT_TIMEOUT). Default 90.",
+  },
+  "specify-payload": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-z",
+    "visible": false,
+    "description": "Specify a payload for each FUZZ keyword used in the form of name[,parameter][,encoder].A list of encoders can be used, ie. md5-sha1. Encoders can be chained, ie. md5@sha1.  Encoders category can be used. ie. url",
+  },
+  "url-for-request": {
+    "type": "STRING",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "Specify a URL for the request.",
+  },
+  "filter-responses": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--filter",
+    "visible": false,
+    "description": "Show/hide responses using the specified filter expression (Use BBB for taking values from baseline)",
+  },
+  "payload-iterator": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-m",
+    "visible": false,
+    "description": "Specify an iterator for combining payloads",
+  },
+  "connection-timeout": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--conn-delay",
+    "visible": false,
+    "description": "Sets the maximum time in seconds the connection phase to the server to take (CURLOPT_CONNECTTIMEOUT). Default 90.",
+  },
+  "hide-response-code": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--hc",
+    "visible": false,
+    "description": "Hide responses with the specified code (Use BBB for taking values from baseline)",
+  },
+  "show-response-code": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--sc",
+    "visible": false,
+    "description": "Show responses with the specified code (Use BBB for taking values from baseline)",
+  },
+  "hide-response-chars": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--hh",
+    "visible": false,
+    "description": "Hide responses with the specified code/lines/words/chars (Use BBB for taking values from baseline)",
+  },
+  "hide-response-lines": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--hl",
+    "visible": false,
+    "description": "Hide responses with the specified lines (Use BBB for taking values from baseline)",
+  },
+  "hide-response-words": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--hw",
+    "visible": false,
+    "description": "Hide responses with the specified words (Use BBB for taking values from baseline)",
+  },
+  "max-recursion-level": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-R",
+    "visible": false,
+    "description": "Recursive path discovery being depth the maximum recursion level.",
+  },
+  "show-response-chars": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--sh",
+    "visible": false,
+    "description": "Show responses with the specified chars (Use BBB for taking values from baseline)",
+  },
+  "show-response-lines": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--sl",
+    "visible": false,
+    "description": "Show responses with the specified lines (Use BBB for taking values from baseline)",
+  },
+  "show-response-words": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--sw",
+    "visible": false,
+    "description": "Show responses with the specified words (Use BBB for taking values from baseline)",
+  },
+  "concurent-connections": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-t",
+    "visible": false,
+    "description": "Specify the number of concurrent connections (10 default)",
+  },
+  "disable-plugins-cache": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--no-cache",
+    "visible": false,
+    "description": "Disable plugins cache. Every request will be scanned.",
+  },
+  "filter-before-fuzzing": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--prefilter",
+    "visible": false,
+    "description": "Filter items before fuzzing using the specified expression. Repeat for concatenating filters.",
+  },
+  "previous-http-request": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--prev",
+    "visible": false,
+    "description": "Print the previous HTTP requests (only when using payloads generating fuzzresults)",
+  },
+  "all-params-bruteforcing": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-V",
+    "visible": false,
+    "description": "All parameters bruteforcing (allvars and allpost). No need for FUZZ keyword.",
+  },
+  "provide-args-to-scripts": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--script-args",
+    "visible": false,
+    "description": "Provide arguments to scripts. ie. --script-args grep.regex=<A href=\(.*?)\>",
+  },
+  "follow-http-redirections": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-L",
+    "visible": false,
+    "description": "Follow HTTP redirections",
+  },
+  "ip-and-port-to-connect-to": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--ip",
+    "visible": false,
+    "description": "Specify an IP to connect to instead of the URL's host in the format ip:port",
+  },
+  "filter-items-before-fuzzing": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--prefilter",
+    "visible": false,
+    "description": "Filter items before fuzzing using the specified expression. Repeat for concatenating filters.",
+  },
+  "time-delay-between-requestts": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-s",
+    "visible": false,
+    "description": "Specify time delay between requests",
+  },
+}}
+/>

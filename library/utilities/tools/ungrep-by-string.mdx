@@ -1,0 +1,38 @@
+---
+title: "ungrep-by-string"
+description: "Ungrep content in files by input string."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="32342263-a310-4d0b-ab9e-88149f4d48b3"
+  name="ungrep-by-string"
+  description="Ungrep content in files by input string."
+  category="Utilities"
+  author="trickest"
+  created_date="2021-10-26"
+  container="quay.io/trickest/ungrep-by-string:v1.0.0"
+  source_url="https://github.com/trickest"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/32342263-a310-4d0b-ab9e-88149f4d48b3.json"
+  inputs={ {
+  "ungrep-string": {
+    "type": "STRING",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "String that needs to be ungrepped.",
+  },
+  "folder-with-files": {
+    "type": "FOLDER",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Folders with files that need to be ungrepped.",
+  },
+}}
+/>

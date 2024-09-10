@@ -1,0 +1,129 @@
+---
+title: "searchsploit"
+description: "Search through exploits and shellcodes"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="66015647-258d-44cd-96e3-63f9dd434cd5"
+  name="searchsploit"
+  description="Search through exploits and shellcodes"
+  category="Vulnerabilities"
+  author="trickest-mhmdiaa"
+  created_date="2023-11-23"
+  container="quay.io/trickest/searchsploit:d66aada8-patch-1"
+  source_url="https://gitlab.com/exploit-database/exploitdb"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/66015647-258d-44cd-96e3-63f9dd434cd5.json"
+  inputs={ {
+  "id": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--id",
+    "visible": false,
+    "description": "Display the EDB-ID value rather than local path",
+  },
+  "cve": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--cve",
+    "visible": false,
+    "description": "Search for Common Vulnerabilities and Exposures (CVE) value",
+  },
+  "www": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--www",
+    "visible": false,
+    "description": "Show URLs to Exploit-DB.com rather than the local path",
+  },
+  "case": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--case",
+    "visible": false,
+    "description": "Perform a case-sensitive search (Default is inSEnsITiVe)",
+  },
+  "json": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--json",
+    "visible": false,
+    "description": "Show result in JSON format",
+  },
+  "nmap": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--nmap",
+    "visible": false,
+    "description": "Checks all results in Nmap's XML output with service version",
+  },
+  "path": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--path",
+    "visible": false,
+    "description": "Show the full path to an exploit (and also copies the path to the clipboard if possible)",
+  },
+  "term": {
+    "type": "STRING",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Search term",
+  },
+  "exact": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--exact",
+    "visible": false,
+    "description": "Perform an EXACT & order match on exploit title (Default is an AND match on each term) [Implies --title] (e.g. WordPress 4.1 would not be detect WordPress Core 4.1)",
+  },
+  "title": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--title",
+    "visible": false,
+    "description": "Search JUST the exploit title (Default is title AND the file's path)",
+  },
+  "strict": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--strict",
+    "visible": false,
+    "description": "Perform a strict search, so input values must exist, disabling fuzzy search for version range (e.g. 1.1 would not be detected in 1.0 < 1.3)",
+  },
+  "exclude": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--exclude",
+    "visible": false,
+    "description": "Remove values from results. By using | to separate, you can chain multiple values (e.g. term1|term2|term3)",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--verbose",
+    "visible": false,
+    "description": "Display more information in output",
+  },
+  "overflow": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--overflow",
+    "visible": false,
+    "description": "Exploit titles are allowed to overflow their columns",
+  },
+  "disable-colour": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--disable-colour",
+    "visible": false,
+    "description": "Disable colour highlighting in search results",
+  },
+}}
+/>

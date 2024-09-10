@@ -1,0 +1,136 @@
+---
+title: "wascan"
+description: "WAScan ((W)eb (A)pplication (Scan)ner) is a Open Source web application security scanner. It is designed to find various vulnerabilities using black-box method, that means it won't study the source code of web applications but will work like a fuzzer, scanning the pages of the deployed web application, extracting links and forms and attacking the scripts, sending payloads and looking for error messages,..etc."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="96b30515-062b-4c8c-9ba3-8afc5971c57f"
+  name="wascan"
+  description="WAScan ((W)eb (A)pplication (Scan)ner) is a Open Source web application security scanner. It is designed to find various vulnerabilities using black-box method, that means it won't study the source code of web applications but will work like a fuzzer, scanning the pages of the deployed web application, extracting links and forms and attacking the scripts, sending payloads and looking for error messages,..etc."
+  category="Scanners"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/wascan:cf2f61d"
+  source_url="https://github.com/R3dFruitRollUp/WAScan"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/96b30515-062b-4c8c-9ba3-8afc5971c57f.json"
+  inputs={ {
+  "auth": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-a",
+    "visible": false,
+    "description": "HTTP Basic Authentication (user:pass)",
+  },
+  "data": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-d",
+    "visible": false,
+    "description": "Data to be sent via POST method",
+  },
+  "host": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-h",
+    "visible": false,
+    "description": "HTTP Host header value",
+  },
+  "proxy": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-p",
+    "visible": false,
+    "description": "Use a proxy, (host:port)",
+  },
+  "cookie": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-c",
+    "visible": false,
+    "description": "HTTP Cookie header value",
+  },
+  "headers": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-H",
+    "visible": false,
+    "description": "Extra Headers (e.g: Host:site.com)",
+  },
+  "referer": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-R",
+    "visible": false,
+    "description": "HTTP Referer header value",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-t",
+    "visible": false,
+    "description": "Seconds to wait before timeout connection",
+  },
+  "redirect": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-n",
+    "visible": false,
+    "description": "Set redirect target URL False (default=True)",
+  },
+  "bruteforce": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-b",
+    "visible": false,
+    "description": "Bruteforce hidden parameters",
+  },
+  "proxy-auth": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-P",
+    "visible": false,
+    "description": "Proxy Authentication, (user:pass)",
+  },
+  "target-url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-u",
+    "visible": true,
+    "description": "Target URL",
+  },
+  "user-agent": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-A",
+    "visible": false,
+    "description": "HTTP User-agent header value",
+  },
+  "http-method": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-m",
+    "visible": false,
+    "description": "HTTP method, GET or POST",
+  },
+  "scan-option": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-s",
+    "visible": true,
+    "description": "Choose scan option: 0 - Fingerprint, 1 - Attacks, 2 - Audit, 3 - Bruteforce, 4 - Disclosure, 5 - Full scan",
+  },
+  "random-agent": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-r",
+    "visible": false,
+    "description": "Use random User-agent header value",
+  },
+}}
+/>

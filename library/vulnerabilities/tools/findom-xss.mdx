@@ -1,0 +1,31 @@
+---
+title: "findom-xss"
+description: "FinDOM-XSS with file input. FinDOM-XSS is a tool that allows you to finding for possible and/ potential DOM based XSS vulnerability in a fast manner."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="41d42c7a-d6d3-4a3f-b1b1-08ef013bde3d"
+  name="findom-xss"
+  description="FinDOM-XSS with file input. FinDOM-XSS is a tool that allows you to finding for possible and/ potential DOM based XSS vulnerability in a fast manner."
+  category="Vulnerabilities"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/findom-xss:31bb355"
+  source_url="https://github.com/dwisiswant0/findom-xss"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/41d42c7a-d6d3-4a3f-b1b1-08ef013bde3d.json"
+  inputs={ {
+  "urls-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "File with line by line urls to scan.",
+  },
+}}
+/>

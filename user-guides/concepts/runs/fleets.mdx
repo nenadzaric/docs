@@ -1,0 +1,75 @@
+---
+title: Fleets
+description: ''
+---
+
+On this page you will learn what are Trickest Fleets and how they are being utilized when you are executing workflows.
+
+## Trickest Fleets
+
+
+Trickest Fleet is a group of machines that are used to execute workflows. There are two types of fleets:
+
+- **Managed Fleet** - Fleet of machines that are managed by Trickest. You can use them to execute workflows without any additional configurations.
+- **Self-Hosted Fleet** - Fleet of machines that are attached to your account. You can use them to execute workflows on your own machines. These can be any device on any operating system.
+
+Trickest Fleet Page is located in the `Settings` menu. It provides an overview of all available machines and their status. You can see the list of all machines, their type, status, and the list of running workflows on each machine.
+
+
+<Frame>
+    <img src="/images/fleet-overview.png"/>
+</Frame>
+
+<Warning>Depending on your account type, you might have different number of [Self-Hosted](machines#self-hosted-machines) and [Managed](machines#managed-machines) machines.</Warning>
+
+## Machines Management
+
+During the workflow execution, Trickest Execution Engine will automatically assign the machines to the workflow. Additionally, you will be able to choose `Fleet` you want workflow to be executed on.
+
+<Tip>Check out Tutorial for [Attaching a Self-Hosted Machines](../../../tutorials/using-self-hosted-machines)</Tip>
+
+
+### One Managed Machine Execution Example
+
+Let's execute workflow which is using `python-script` and printing out `Hello World!` message.
+
+```python
+print('Hello World!')
+```
+
+<Frame>
+    <img src="/images/hello-world-fleets.png"/>
+</Frame>
+
+After you execute the workflow, if you open the [Fleet page](https://trickest.io/dashboard/settings/fleet), you will see that the workflow is executed on the `Managed fleet` and you can follow it's execution.
+
+<Frame>
+    <img src="/images/hello-world-fleets-execution.png"/>
+</Frame>
+
+
+## Self-Hosted Machines Execution Example
+
+If you have a Self-Hosted machine attached to your account, during the execution you can choose `Self-Hosted Fleet` and execute the workflow on your machine.
+
+<Tip>Self-Hosted Machines can be attached to any device and don't require any custom network configurations.</Tip>
+
+### Prerequisites
+
+In order tu utilize self-hosted machines, you need to have at least one machines attached to Self-Hosted Fleet.
+
+<Frame>
+    <img src="/images/self-hosted-fleet-one-machine.png"/>
+</Frame>
+
+If you succesfully attached self-hosted machine, Self-Hosted fleet will appear in the dropdown menu during the workflow execution.
+
+<Frame width='500px' height='500px'>
+    <img src="/images/self-hosted-fleet-dropdown.png" width='500px' height='500px'/>
+</Frame>
+
+The same as the managed machine, you can follow the execution of the workflow on the [Fleet page](https://trickest.io/dashboard/settings/fleet).
+
+<Frame>
+    <img src="/images/self-hosted-fleet-execution.png"/>
+</Frame>

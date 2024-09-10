@@ -1,0 +1,52 @@
+---
+title: "openredirex"
+description: "Asynchronous Open redirect Fuzzer. Key features are: taking a url or list of urls and fuzzes them for Open redirect issues, specifying own payloads through 'payloads.txt' and showing Location header history (if any)."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="c4c78783-bf3f-48b0-b376-81bd1b2fdcf5"
+  name="openredirex"
+  description="Asynchronous Open redirect Fuzzer. Key features are: taking a url or list of urls and fuzzes them for Open redirect issues, specifying own payloads through 'payloads.txt' and showing Location header history (if any)."
+  category="Vulnerabilities"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/openredirex:b7327b9"
+  source_url="https://github.com/devanshbatham/OpenRedireX"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/c4c78783-bf3f-48b0-b376-81bd1b2fdcf5.json"
+  inputs={ {
+  "url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--url",
+    "visible": true,
+    "description": "Url to be tested",
+  },
+  "keyword": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--keyword",
+    "visible": false,
+    "description": "Keyword in urls to replace with payload (default is FUZZ)",
+  },
+  "urls-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--list",
+    "visible": true,
+    "description": "File of urls with parameters to test",
+  },
+  "payloads-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--payloads",
+    "visible": true,
+    "description": "File of payloads",
+  },
+}}
+/>

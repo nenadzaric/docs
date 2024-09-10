@@ -1,0 +1,143 @@
+---
+title: "zap-api-scan"
+description: "Run a full scan against an API defined by OpenAPI/Swagger, SOAP or GraphQL using ZAP"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="5055366e-a4ba-4863-967a-4bbfe28466ac"
+  name="zap-api-scan"
+  description="Run a full scan against an API defined by OpenAPI/Swagger, SOAP or GraphQL using ZAP"
+  category="Scanners"
+  author="trickest-mhmdiaa"
+  created_date="2022-05-25"
+  container="quay.io/trickest/zap-api-scan:v2.11.1"
+  source_url="https://github.com/zaproxy/zaproxy"
+  license="Unknown"
+  output_command="-J"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/5055366e-a4ba-4863-967a-4bbfe28466ac.json"
+  inputs={ {
+  "ajax": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-j",
+    "visible": false,
+    "description": "use the Ajax spider in addition to the traditional one",
+  },
+  "user": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-U",
+    "visible": false,
+    "description": "username to use for authenticated scans - must be defined in the given context file",
+  },
+  "alpha": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-a",
+    "visible": false,
+    "description": "include the alpha active and passive scan rules as well",
+  },
+  "debug": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-d",
+    "visible": false,
+    "description": "show debug messages in stdout",
+  },
+  "delay": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-D",
+    "visible": false,
+    "description": "delay in seconds to wait for passive scanning",
+  },
+  "level": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-l",
+    "visible": false,
+    "description": "minimum level to show: PASS, IGNORE, INFO, WARN or FAIL, use with -s (short-output) to hide example URLs",
+  },
+  "format": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-f",
+    "visible": true,
+    "description": "API format: openapi, soap, or graphql",
+  },
+  "schema": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--schema",
+    "visible": false,
+    "description": "GraphQL schema URL, e.g. https://www.example.com/schema.graphqls",
+  },
+  "max-time": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-T",
+    "visible": false,
+    "description": "max time in minutes to wait for ZAP to start and the passive scan to run",
+  },
+  "override": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-O",
+    "visible": false,
+    "description": "the hostname to override in the (remote) OpenAPI spec",
+  },
+  "safe-mode": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-S",
+    "visible": false,
+    "description": "Safe mode this will skip the active scan and perform a baseline scan",
+  },
+  "config_file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-c",
+    "visible": false,
+    "description": "config file to use to INFO, IGNORE or FAIL warnings",
+  },
+  "zap-options": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-z",
+    "visible": false,
+    "description": "ZAP command line options",
+  },
+  "context-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-n",
+    "visible": false,
+    "description": "context file which will be loaded prior to scanning the target",
+  },
+  "short-output": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-s",
+    "visible": false,
+    "description": "short output format - dont show PASSes or example URLs",
+  },
+  "target-definition": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-t",
+    "visible": true,
+    "description": "target API definition file, OpenAPI or SOAP",
+  },
+  "target-endpoint-url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-t",
+    "visible": true,
+    "description": "target API definition URL (e.g. https://www.example.com/openapi.json, https://www.example.com/graphql)",
+  },
+}}
+/>

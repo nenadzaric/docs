@@ -1,0 +1,171 @@
+---
+title: "cdncheck"
+description: "A utility to detect various technology for a given IP address."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="be4fb8df-1428-4bd5-8529-28534bf5d2fd"
+  name="cdncheck"
+  description="A utility to detect various technology for a given IP address."
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2023-06-27"
+  container="quay.io/trickest/cdncheck:v1.0.9"
+  source_url="https://github.com/projectdiscovery/cdncheck"
+  license="Unknown"
+  output_command="-output"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/be4fb8df-1428-4bd5-8529-28534bf5d2fd.json"
+  inputs={ {
+  "cdn": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-cdn",
+    "visible": false,
+    "description": "display only cdn in cli output",
+  },
+  "waf": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-waf",
+    "visible": false,
+    "description": "display only waf in cli output",
+  },
+  "resp": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-resp",
+    "visible": false,
+    "description": "display technology name in cli output",
+  },
+  "cloud": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-cloud",
+    "visible": false,
+    "description": "display only cloud in cli output",
+  },
+  "input": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-input",
+    "visible": false,
+    "description": "ip / dns to process",
+  },
+  "jsonl": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-jsonl",
+    "visible": false,
+    "description": "write output in json(line) format",
+  },
+  "retry": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-retry",
+    "visible": false,
+    "description": "maximum number of retries for dns resolution (must be at least 1) (default 2)",
+  },
+  "inputs": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-input",
+    "visible": true,
+    "description": "list of ip / dns to process",
+  },
+  "silent": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-silent",
+    "visible": false,
+    "description": "only display results in output",
+  },
+  "exclude": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-exclude",
+    "visible": false,
+    "description": "exclude detected ip from output",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-verbose",
+    "visible": false,
+    "description": "display verbose output",
+  },
+  "no-color": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-no-color",
+    "visible": false,
+    "description": "disable colors in cli output",
+  },
+  "resolver": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-resolver",
+    "visible": false,
+    "description": "list of resolvers to use (comma separated)",
+  },
+  "match-cdn": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-match-cdn",
+    "visible": false,
+    "description": "match host with specified cdn provider (cloudfront, fastly, google, leaseweb, stackpath)",
+  },
+  "match-waf": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-match-waf",
+    "visible": false,
+    "description": "match host with specified waf provider (akamai, cloudflare, incapsula, sucuri)",
+  },
+  "resolvers": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-resolver",
+    "visible": false,
+    "description": "list of resolvers to use",
+  },
+  "filter-cdn": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-filter-cdn",
+    "visible": false,
+    "description": "filter host with specified cdn provider (cloudfront, fastly, google, leaseweb, stackpath)",
+  },
+  "filter-waf": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-filter-waf",
+    "visible": false,
+    "description": "filter host with specified waf provider (akamai, cloudflare, incapsula, sucuri)",
+  },
+  "match-cloud": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-match-cloud",
+    "visible": false,
+    "description": "match host with specified cloud provider (zscaler, aws, azure, google, office365, oracle)",
+  },
+  "filter-cloud": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-filter-cloud",
+    "visible": false,
+    "description": "filter host with specified cloud provider (zscaler, aws, azure, google, office365, oracle)",
+  },
+  "disable-update-check": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-disable-update-check",
+    "visible": false,
+    "description": "disable automatic cdncheck update check",
+  },
+}}
+/>

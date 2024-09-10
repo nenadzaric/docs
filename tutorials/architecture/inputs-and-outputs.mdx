@@ -1,0 +1,83 @@
+---
+title: 'Inputs & Outputs'
+description: 'Learn how the file system works in Trickest Editor'
+sidebarTitle: 'Inputs & Outputs'
+---
+
+In Trickest, nodes are interconnected to form workflows, with data passed between nodes through input and output file paths. Each node’s input files are stored in the in/ directory, and its outputs are stored in the out/ directory. Let's explore three practical examples to understand how these files and folders are structured.
+
+## Three Nodes Workflow
+
+<Frame>
+    <img src="/images/tutorials/tutorials-inputs-outputs-example-1.png" alt="Three Nodes Workflow" />
+</Frame>
+
+Workflow Description: This workflow demonstrates how data is processed sequentially by multiple nodes.
+
+Nodes Involved:
+
+* `amass`: Uses the `amass` tool to perform subdomain enumeration.
+* `cat-all-in`: Uses the `cat-all-in` script to concatenate outputs.
+* `httpx`: Uses the `httpx` tool to check HTTP status of the discovered subdomains.
+
+### Step 1: Node A - `amass` Tool Execution
+
+The "amass" tool generates an output file containing subdomain enumeration results. Output path is `out/output.txt`, and output type is `file`.
+
+### Step 2: Connecting Node A to Node B - `cat-all-in` script
+
+Connection Setup: amass's output (`out/output.txt`) is used as input for `cat-all-in`.
+
+When connecting `amass` to `cat-all-in` in the workflow editor, the input path in `cat-all-in` is automatically set to `in/amass-1/output.txt`. The execution result is that `cat-all-in` concatenates the input files and saves the result in `out/output.txt`.
+
+<Frame>
+    <img src="/images/tutorials/tutorials-cat-all-in-example.png" alt="cat-all-in script" />
+</Frame>
+
+### Step 3: Connecting `cat-all-in` to `httpx`
+
+`cat-all-in`s output is used to as input to `httpx`. Input path in `httpx` is `in/cat-all-in-0/output.txt`. The execution result is that `httpx` processes the input file to check HTTP status and outputs the results in `out/output.txt`.
+
+<Frame>
+    <img src="/images/tutorials/tutorials-httpx-example.png " alt="httpx tool" />
+</Frame>
+
+By following these examples, you can clearly understand how Trickest nodes handle file and folder structures when connected. Each node reads its input from the `in/` directory, performs its task, and outputs the results to the `out/` directory. This setup allows you to create complex workflows by chaining nodes together and managing data efficiently.
+
+<Tip>Absolute path for `in` and `out` folders is `hive/in` and `hive/out` respectively.</Tip>
+
+### Splitter Outputs File Structure - Folder Connection
+
+If the node is connected to splitter, the output files are stored in the `out/` directory with the following structure:
+
+```
+out/
+├── tool-1/1/output.txt
+├── tool-1/2/output.txt
+├── tool-1/3/output.txt
+```
+
+<Frame>
+    <img src="/images/tutorials/tutorials-splitter-aggregation.png" alt="Splitter Output Example" />
+</Frame>
+
+In this example, the `splitter` node splits the input file into three parts, and each part is processed by the connected tool.
+
+<Tip>If node that is connected to splitter is connected to `folder` output, it will break the splitter chain and aggregate all outputs in the structure mentioned above.</Tip>
+
+### Splitter Outputs File Structure - File Connection
+
+If the node is connected to a file, the output files are stored in the `out/` directory with the following structure:
+
+```
+out/
+├── tool-1/output.txt
+```
+
+As you might see, the structure is the same as the regular node output structure. This is because the next node will continue to distribute the tasks of the same branch.
+
+<Frame>
+    <img src="/images/tutorials/tutorials-splitter-continue.png" alt="Splitter Output Example" />
+</Frame>
+
+<Tip>Connecting node coming from splitter to `file` output will continue the chain of the splitter and distribute the tasks to the next node.</Tip>

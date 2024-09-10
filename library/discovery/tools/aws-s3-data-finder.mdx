@@ -1,0 +1,150 @@
+---
+title: "aws-s3-data-finder"
+description: "Find suspicious files (e.g. data backups, PII, credentials) across a large set of AWS S3 buckets and write the first 200k keys (by default) of listable buckets to a .json or .xml file (in buckets/) via AWS CLI or unauthenticated via HTTP requests."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="a9f6557f-e0e0-44d8-bd18-26b5a0da4eb5"
+  name="aws-s3-data-finder"
+  description="Find suspicious files (e.g. data backups, PII, credentials) across a large set of AWS S3 buckets and write the first 200k keys (by default) of listable buckets to a .json or .xml file (in buckets/) via AWS CLI or unauthenticated via HTTP requests."
+  category="Discovery"
+  author="trickest"
+  created_date="2021-09-07"
+  container="quay.io/trickest/aws-s3-data-finder:244701a"
+  source_url="https://github.com/Ucnt/aws-s3-data-finder"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/a9f6557f-e0e0-44d8-bd18-26b5a0da4eb5.json"
+  inputs={ {
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-v",
+    "visible": false,
+    "description": "Print verbose (Critical and errors)",
+  },
+  "endpoint": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--endpoint",
+    "visible": false,
+    "description": "Endpoint to use if doing an unauth scan. Auth scan will use region in awscli",
+  },
+  "num-keys": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-nk",
+    "visible": false,
+    "description": "Number of keys to get per bucket",
+  },
+  "test-mdoe": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--test",
+    "visible": false,
+    "description": "Test mode to just print the bucket names being run",
+  },
+  "characters": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--characters",
+    "visible": false,
+    "description": "Characters to run via random/bruteforce, e.g. abcdefg..",
+  },
+  "bucket-name": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-n",
+    "visible": false,
+    "description": "Name to run",
+  },
+  "start-after": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-sa",
+    "visible": false,
+    "description": "For all_chars, start after this string",
+  },
+  "buckets-list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-nl",
+    "visible": true,
+    "description": "List of names to run",
+  },
+  "very-verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-vv",
+    "visible": false,
+    "description": "Print very verbose (critical, errors, and warnings)",
+  },
+  "run-all-chars": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-ac",
+    "visible": false,
+    "description": "Run all chars",
+  },
+  "prefix-postfix": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-pp",
+    "visible": false,
+    "description": "Run with prefixes and/or postfixes - options: prefix, postfix, both",
+  },
+  "unauthenticated": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--unauthenticated",
+    "visible": false,
+    "description": "Run the search unauthenticated, via web request",
+  },
+  "ignore-redirects": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--no_follow_redirect",
+    "visible": false,
+    "description": "Don't follow redirects",
+  },
+  "rerun-previously": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--rerun",
+    "visible": false,
+    "description": "Rerun previously searched buckets",
+  },
+  "run-random-chars": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-rc",
+    "visible": false,
+    "description": "Run random chars",
+  },
+  "bucket-name-length": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-nc",
+    "visible": false,
+    "description": "Length of bucket name",
+  },
+  "print-bucket-names": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-p",
+    "visible": false,
+    "description": "Print buket names as you go",
+  },
+  "realert-previously": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--realert",
+    "visible": false,
+    "description": "Realert previously alerted suspicious files",
+  },
+}}
+/>

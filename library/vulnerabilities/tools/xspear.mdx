@@ -1,0 +1,129 @@
+---
+title: "xspear"
+description: "XSpear is XSS Scanner on ruby gems."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="56375c23-4a2c-4c28-b9da-c72a3ad0f162"
+  name="xspear"
+  description="XSpear is XSS Scanner on ruby gems."
+  category="Vulnerabilities"
+  author="trickest"
+  created_date="2021-09-07"
+  container="quay.io/trickest/xspear:1.4.1"
+  source_url="https://github.com/hahwul/XSpear"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/56375c23-4a2c-4c28-b9da-c72a3ad0f162.json"
+  inputs={ {
+  "param": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--param",
+    "visible": false,
+    "description": "Test paramters",
+  },
+  "cookie": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--cookie",
+    "visible": false,
+    "description": "Add Cookie",
+  },
+  "no-xss": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--no-xss",
+    "visible": false,
+    "description": "Don't test XSS, only parameters analysis",
+  },
+  "headers": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--headers",
+    "visible": false,
+    "description": "Add HTTP Headers",
+  },
+  "raw-ssl": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--raw-ssl",
+    "visible": false,
+    "description": "http/https switch for burp raw file",
+  },
+  "threads": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--threads",
+    "visible": false,
+    "description": "Threads , default: 10",
+  },
+  "post-data": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--data",
+    "visible": false,
+    "description": "POST Method Body data",
+  },
+  "target-url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--url",
+    "visible": true,
+    "description": "Target Url",
+  },
+  "config-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--config",
+    "visible": false,
+    "description": "Use config file",
+  },
+  "blind-vector": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-b",
+    "visible": false,
+    "description": "Add vector of Blind XSS. With XSS Hunter, ezXSS, HBXSS... e.g: https://hahwul.xss.ht",
+  },
+  "burp-raw-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--raw",
+    "visible": false,
+    "description": "Load raw file(e.g raw_sample.txt)",
+  },
+  "output-format": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--output",
+    "visible": false,
+    "description": "Output format (cli , json, html)",
+  },
+  "verbose-level": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--verbose",
+    "visible": false,
+    "description": "Show log depth. 0: quite mode(only result) 1: show scanning status(default) 2: show scanning logs 3: show detail log(req/res)",
+  },
+  "test-all-params": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--test-all-params",
+    "visible": false,
+    "description": "Test to all params(include not reflected)",
+  },
+  "custom-payload-json-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--custom-payload",
+    "visible": false,
+    "description": "Load custom payload json file",
+  },
+}}
+/>

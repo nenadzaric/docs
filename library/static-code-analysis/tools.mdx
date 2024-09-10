@@ -1,0 +1,124 @@
+---
+title: "Static Code Analysis Tools"
+description: "Explore a collection of powerful and efficient tools in the Static Code Analysis category to enhance your productivity and security."
+sidebarTitle: "Tools"
+mode: "wide"
+---
+
+import { ToolCard } from '/snippets/ToolCard.mdx';
+
+<CardGroup cols={2}>
+
+  <ToolCard
+    cardTitle="bandit"
+    description="Bandit is a tool designed to find common security issues in Python code. To do this Bandit processes each file, builds an AST from it, and runs appropriate plugins against the AST nodes. Once Bandit has finished scanning all the files it generates a report.Bandit was originally developed within the OpenStack Security Project and later rehomed to PyCQA."
+    iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/90653c2e-163d-4c62-9534-f5cafddcaad4.json"
+    href="/library/static-code-analysis/tools/bandit"
+    category="Static Code Analysis"
+  />
+
+  <ToolCard
+    cardTitle="dawnscanner"
+    description="Dawnscanner is a source code scanner designed to review your ruby code for security issues.Dawnscanner is able to scan plain ruby scripts (e.g. command line applications) but all its features are unleashed when dealing with web applications source code. dawnscanner is able to scan major MVC (Model View Controller) frameworks."
+    iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/68c4d2ca-d175-45b8-aede-000e68c78378.json"
+    href="/library/static-code-analysis/tools/dawnscanner"
+    category="Static Code Analysis"
+  />
+
+  <ToolCard
+    cardTitle="dumpsterdiver"
+    description="DumpsterDiver is a tool, which can analyze big volumes of data in search of hardcoded secrets like keys (e.g. AWS Access Key, Azure Share Key or SSH keys) or passwords. Additionally, it allows creating a simple search rules with basic conditions (e.g. report only csv files including at least 10 email addresses). The main idea of this tool is to detect any potential secret leaks."
+    iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/da093a74-c0dc-4bb6-97f6-91936a548b7c.json"
+    href="/library/static-code-analysis/tools/dumpsterdiver"
+    category="Static Code Analysis"
+  />
+
+  <ToolCard
+    cardTitle="dvcsripper-git"
+    description="Git ripper. It can rip repositories even when directory browsing is turned off."
+    iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/842c4d0d-3bc5-488a-9f76-9f4e58665a88.json"
+    href="/library/static-code-analysis/tools/dvcsripper-git"
+    category="Static Code Analysis"
+  />
+
+  <ToolCard
+    cardTitle="gitleaks"
+    description="Gitleaks is a SAST tool for detecting hard coded secrets like passwords, API keys, and tokens in git repos. Gitleaks is an easy-to-use, all-in-one solution for finding secrets, past or present, in your code. Set leaks-exit-code to 0 for outputs to be saved."
+    iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/9ac7f733-dbf9-4cb0-b3df-5f26c6cde111.json"
+    href="/library/static-code-analysis/tools/gitleaks"
+    category="Static Code Analysis"
+  />
+
+  <ToolCard
+    cardTitle="git-log4j"
+    description="Git-LOG4J is checking if the git repo is using Log4J. Also, prints files that use LOG4J"
+    iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/f44f5fe7-026c-4c7b-88ea-7dcf3de1f22e.json"
+    href="/library/static-code-analysis/tools/git-log4j"
+    category="Static Code Analysis"
+  />
+
+  <ToolCard
+    cardTitle="gosec"
+    description="Inspecting source code for security problems by scanning the Go AST. Rules can be found on the tool's Github page. Unfortunately, the recursive scan is not yet available on this platform, but it's going to be implemented in the future."
+    iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/fc85607b-6b3e-4c62-9148-99e2b10591d1.json"
+    href="/library/static-code-analysis/tools/gosec"
+    category="Static Code Analysis"
+  />
+
+  <ToolCard
+    cardTitle="leakos"
+    description="Search leaks in a github org or in the responses of urls"
+    iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/1e3957ff-c512-40d2-8155-6c34679ff831.json"
+    href="/library/static-code-analysis/tools/leakos"
+    category="Static Code Analysis"
+  />
+
+  <ToolCard
+    cardTitle="noseyparker"
+    description="Nosey Parker is a command-line program that finds secrets and sensitive information in textual data and Git history."
+    iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/769c8db3-b1b1-4178-bb8c-cc5c09120284.json"
+    href="/library/static-code-analysis/tools/noseyparker"
+    category="Static Code Analysis"
+  />
+
+  <ToolCard
+    cardTitle="reposcanner"
+    description="Reposcanner is a python script to search through the commit history of Git repositories looking for interesting strings such as API keys."
+    iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/c7ad510d-5405-46f1-b17c-269af852e511.json"
+    href="/library/static-code-analysis/tools/reposcanner"
+    category="Static Code Analysis"
+  />
+
+  <ToolCard
+    cardTitle="retire-js"
+    description="There is a plethora of JavaScript libraries for use on the Web and in Node.JS apps out there. This greatly simplifies development,but we need to stay up-to-date on security fixes. Using Components with Known Vulnerabilities is now a part of the OWASP Top 10 list of security risks and insecure libraries can pose a huge risk to your Web app. The goal of Retire.js is to help you detect the use of JS-library versions with known vulnerabilities."
+    iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/e52583b2-3e37-41f4-ad9a-3d17a17e9d80.json"
+    href="/library/static-code-analysis/tools/retire-js"
+    category="Static Code Analysis"
+  />
+
+  <ToolCard
+    cardTitle="rex"
+    description="regexFinder gives the matches with a directory (or github repository) of the regexes, and saves the matches of found secrets in a json format."
+    iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/d8b06c54-6ec1-4224-9b52-32c8d43991c1.json"
+    href="/library/static-code-analysis/tools/rex"
+    category="Static Code Analysis"
+  />
+
+  <ToolCard
+    cardTitle="secretfinder"
+    description="SecretFinder is a python script based on LinkFinder (version for burpsuite here), written to discover sensitive data like apikeys, accesstoken, authorizations, jwt,..etc in JavaScript files. It does so by using jsbeautifier for python in combination with a fairly large regular expression."
+    iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/1aae8426-c821-46b9-990a-d5692f63a738.json"
+    href="/library/static-code-analysis/tools/secretfinder"
+    category="Static Code Analysis"
+  />
+
+  <ToolCard
+    cardTitle="trufflehog"
+    description="Find credentials all over the place"
+    iframeUrl="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/bb3dbaea-cf8d-45bf-bcc7-be12ff0f3676.json"
+    href="/library/static-code-analysis/tools/trufflehog"
+    category="Static Code Analysis"
+  />
+
+</CardGroup>

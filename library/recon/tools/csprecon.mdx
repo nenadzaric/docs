@@ -1,0 +1,87 @@
+---
+title: "csprecon"
+description: "Discover new target domains using Content Security Policy"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="88a08353-e173-4c89-b25b-80c54c347ffb"
+  name="csprecon"
+  description="Discover new target domains using Content Security Policy"
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2024-05-07"
+  container="quay.io/trickest/csprecon:v0.1.0"
+  source_url="https://github.com/edoardottt/csprecon"
+  license="Unknown"
+  output_command="-output"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/88a08353-e173-4c89-b25b-80c54c347ffb.json"
+  inputs={ {
+  "url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-url",
+    "visible": true,
+    "description": "Input domain",
+  },
+  "cidr": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-cidr",
+    "visible": false,
+    "description": "Interpret input as CIDR",
+  },
+  "list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-list",
+    "visible": true,
+    "description": "File containing input domains",
+  },
+  "domain": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-domain",
+    "visible": false,
+    "description": "Filter results belonging to these domains (comma separated)",
+  },
+  "silent": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-silent",
+    "visible": false,
+    "description": "Silent output. Print only results",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-timeout",
+    "visible": false,
+    "description": "Connection timeout in seconds (default 10)",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-verbose",
+    "visible": false,
+    "description": "Verbose output",
+  },
+  "rate-limit": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-rate-limit",
+    "visible": false,
+    "description": "Set a rate limit (per second)",
+  },
+  "concurrency": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-concurrency",
+    "visible": false,
+    "description": "Concurrency level (default 50)",
+  },
+}}
+/>

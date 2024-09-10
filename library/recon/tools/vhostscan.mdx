@@ -1,0 +1,143 @@
+---
+title: "vhostscan"
+description: "A virtual host scanner that can be used with pivot tools, detect catch-all scenarios, aliases and dynamic default pages."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="a42571f2-1aa7-4b0e-b316-c83400748880"
+  name="vhostscan"
+  description="A virtual host scanner that can be used with pivot tools, detect catch-all scenarios, aliases and dynamic default pages."
+  category="Recon"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/vhostscan:4a3a1ee"
+  source_url="https://github.com/codingo/VHostScan"
+  license="Unknown"
+  output_command="-oN"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/a42571f2-1aa7-4b0e-b316-c83400748880.json"
+  inputs={ {
+  "ssl": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--ssl",
+    "visible": false,
+    "description": "If set then connections will be made over HTTPS instead of HTTP.",
+  },
+  "waf": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--waf",
+    "visible": false,
+    "description": "If set then simple WAF bypass headers will be sent.",
+  },
+  "port": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-p",
+    "visible": false,
+    "description": "Set the port to use (default 80).",
+  },
+  "base-host": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-b",
+    "visible": false,
+    "description": "Set host to be used during substitution in wordlist (default to TARGET).",
+  },
+  "real-port": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-r",
+    "visible": false,
+    "description": "The real port of the webserver to use in headers when not 80 (see RFC2616 14.23), useful when pivoting through ssh/nc etc (default to PORT).",
+  },
+  "wordlists": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-w",
+    "visible": false,
+    "description": "Set the wordlist(s) to use. You may specify multiple wordlists in comma delimited format (e.g. -w ./wordlists/simple.txt, ./wordlists/hackthebox.txt (default ./wordlists/virtual-host-scanning.txt).",
+  },
+  "user-agent": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--user-agent",
+    "visible": false,
+    "description": "Specify a user agent to use for scans.",
+  },
+  "fuzzy-logic": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--fuzzy-logic",
+    "visible": false,
+    "description": "If set then all unique content replies are compared and a similarity ratio is given for each pair. This helps to isolate vhosts in situations where a default page isn't static (such as having the time on it).",
+  },
+  "random-agent": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--random-agent",
+    "visible": false,
+    "description": "If set, each scan will use a random user-agent from a predefined list.",
+  },
+  "target-hosts": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-t",
+    "visible": true,
+    "description": "Set the target host.",
+  },
+  "ignore-http-codes": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--ignore-http-codes",
+    "visible": false,
+    "description": "Comma separated list of http codes to ignore with virtual host scans (default 404).",
+  },
+  "ignore-content-length": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--ignore-content-length",
+    "visible": false,
+    "description": "Ignore content lengths of specificed amount.",
+  },
+  "Delay-between-each-scan": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--rate-limit",
+    "visible": false,
+    "description": "Amount of time in seconds to delay between each scan (default 0).",
+  },
+  "Disable-reverse-lookups": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--no-lookups",
+    "visible": false,
+    "description": "Disbale reverse lookups (identifies new targets and append to wordlist, on by default).",
+  },
+  "First-successful-result": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--first-hit",
+    "visible": false,
+    "description": "Return first successful result. Only use in scenarios where you are sure no catch-all is configured (such as a CTF).",
+  },
+  "Suffix-to-items-in-wordlist": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--suffix",
+    "visible": false,
+    "description": "Add a suffix to each item in the wordlist, to add <word>dev, <word>dev",
+  },
+  "Prefix-to-items-in-wordlists": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--prefix",
+    "visible": false,
+    "description": "Add a prefix to each item in the wordlist, to add dev-<word>, test-<word> etc",
+  },
+}}
+/>

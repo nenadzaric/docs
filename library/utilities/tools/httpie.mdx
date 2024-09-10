@@ -1,0 +1,213 @@
+---
+title: "httpie"
+description: "HTTPie (pronounced aitch-tee-tee-pie) is a command-line HTTP client. Its goal is to make CLI interaction with web services as human-friendly as possible. HTTPie is designed for testing, debugging, and generally interacting with APIs & HTTP servers."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="1a59f4b5-94d8-4bab-9e7c-5b293554ea2a"
+  name="httpie"
+  description="HTTPie (pronounced aitch-tee-tee-pie) is a command-line HTTP client. Its goal is to make CLI interaction with web services as human-friendly as possible. HTTPie is designed for testing, debugging, and generally interacting with APIs & HTTP servers."
+  category="Utilities"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/httpie:2.6.0"
+  source_url="https://github.com/httpie/httpie"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/1a59f4b5-94d8-4bab-9e7c-5b293554ea2a.json"
+  inputs={ {
+  "url": {
+    "type": "STRING",
+    "order": 3,
+    "command": "",
+    "visible": true,
+    "description": "Request URL",
+  },
+  "http": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "http",
+    "visible": true,
+    "description": "Httpie http method",
+  },
+  "https": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "https",
+    "visible": true,
+    "description": "Httpie https method",
+  },
+  "proxy": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--proxy",
+    "visible": false,
+    "description": "Format: Protocol:PROXY_URL. String mapping protocol to the URL of the proxy.",
+  },
+  "verify": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--verify",
+    "visible": false,
+    "description": "Set to no or false to skip checking the host's SSL certificate. Default: yes or true. You can set REQUESTS_CA_BUNDLE environment variable.",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-timeout",
+    "visible": false,
+    "description": "The connection timeout of the request in seconds.",
+  },
+  "boundary": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--boundary",
+    "visible": false,
+    "description": "Specify a custom boundary string for multipart/form-data requests. Has effect only with --form.",
+  },
+  "compress": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-x",
+    "visible": false,
+    "description": "Content compressed (encoded) with Deflate algorithm. The Content-Encoding header is set to deflate.",
+  },
+  "auth-type": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--auth-type",
+    "visible": false,
+    "description": "The authentication mechanism to use. Default: basic. Options: basic - Basic HTTP auth;  digest -  Digest HTTP auth.",
+  },
+  "multipart": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--multipart",
+    "visible": false,
+    "description": "Always sends a multipart/form-data request.",
+  },
+  "certificate": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--cert",
+    "visible": false,
+    "description": "Specify a certificate to use as cliend side SSL certificate.",
+  },
+  "http-method": {
+    "type": "STRING",
+    "order": 2,
+    "command": "",
+    "visible": false,
+    "description": "Http method",
+  },
+  "max-headers": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--max-headers",
+    "visible": false,
+    "description": "The maximum number of response headers to be read before giving up.",
+  },
+  "private-key": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--cert-key",
+    "visible": false,
+    "description": "The private key to use with SSL. Only needed if there is no key in provided certificate file.",
+  },
+  "check-status": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--check-status",
+    "visible": false,
+    "description": "By default, HTTPie exits with 0 when no network or other fatal errors occur.",
+  },
+  "http-headers": {
+    "type": "STRING",
+    "order": 4,
+    "command": "",
+    "visible": false,
+    "description": "Http Headers. Use : as a key-value separator. Example:  Cookie:foo=bar.",
+  },
+  "max-redirects": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--max-redirects",
+    "visible": false,
+    "description": "By default, requests have a limit of 30 redirects (works with -f).",
+  },
+  "authentication": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-a",
+    "visible": false,
+    "description": "Format :  USER:PASS",
+  },
+  "url-parameters": {
+    "type": "STRING",
+    "order": 4,
+    "command": "",
+    "visible": false,
+    "description": "URL parameters to be appended to the request URI. Use == as a key-value separator. Example: search==httpie.",
+  },
+  "open-ssl-cipher": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--ciphers",
+    "visible": false,
+    "description": "A string in the OpenSSL cipher list format.",
+  },
+  "data-fields-json": {
+    "type": "STRING",
+    "order": 4,
+    "command": "",
+    "visible": false,
+    "description": "Data fields to be serialized into a JSON object (use with -j). or form data (use with -f). Example: name=HTTPie.",
+  },
+  "follow-redirects": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-F",
+    "visible": false,
+    "description": "Follow 30x Location redirects.",
+  },
+  "protocol-version": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--ssl",
+    "visible": false,
+    "description": "The desired protocol version to use. This will default to SSL v2.3.",
+  },
+  "bypass-dot-segment": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--path-as-is",
+    "visible": false,
+    "description": "Bypass dot segment (/../ or /./) URL squashing.",
+  },
+  "serialize-as-form-fields": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-f",
+    "visible": false,
+    "description": "Data items from the command line are serialized as form fields. The Content-Type ise set to application/x-www-form-urlencoded (if not specified). The presence of any file fields results in a multipart/form-data request.",
+  },
+  "serialize-as-json-object": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-j",
+    "visible": false,
+    "description": "Data items from the command line are serialized as a Json Object. The Content-Type and Accept headers are set to application/json(if not specified).",
+  },
+  "non-string-json-data-fields": {
+    "type": "STRING",
+    "order": 4,
+    "command": "",
+    "visible": false,
+    "description": "Non-string JSON data fields (only with -j). Use := as a separator. Example:  awesome:=true.",
+  },
+}}
+/>

@@ -1,0 +1,388 @@
+---
+title: "feroxbuster"
+description: "A fast, simple, recursive content discovery tool written in Rust."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="1025b686-e6be-4ee6-99f0-896a791b4378"
+  name="feroxbuster"
+  description="A fast, simple, recursive content discovery tool written in Rust."
+  category="Discovery"
+  author="trickest-mhmdiaa"
+  created_date="2022-09-07"
+  container="quay.io/trickest/feroxbuster:2.10.1-patch-1"
+  source_url="https://github.com/epi052/feroxbuster"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/1025b686-e6be-4ee6-99f0-896a791b4378.json"
+  inputs={ {
+  "data": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--data",
+    "visible": false,
+    "description": "Request's Body - The file name starts with an `@` (ex: @post.bin)",
+  },
+  "json": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--json",
+    "visible": true,
+    "description": "Emit JSON logs to output instead of normal text",
+  },
+  "depth": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--depth",
+    "visible": false,
+    "description": "Maximum recursion depth, a depth of 0 is infinite recursion (default: 4)",
+  },
+  "proxy": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--proxy",
+    "visible": false,
+    "description": "Proxy to use for requests (ex: http(s)://host:port, socks5(h)://host:port)",
+  },
+  "query": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--query",
+    "visible": false,
+    "description": "Request's URL query parameters (ex: token=stuff)",
+  },
+  "quiet": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--quiet",
+    "visible": false,
+    "description": "Hide progress bars and banner",
+  },
+  "smart": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--smart",
+    "visible": false,
+    "description": "Set --extract-links, --auto-tune, --collect-words, and --collect-backups to true",
+  },
+  "silent": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--silent",
+    "visible": false,
+    "description": "Only print URLs",
+  },
+  "cookies": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--cookies",
+    "visible": false,
+    "description": "Specify HTTP cookies to be used in each request (ex: stuff=things)",
+  },
+  "headers": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--headers",
+    "visible": false,
+    "description": "Specify HTTP headers to be used in each request (ex: Header:val)",
+  },
+  "methods": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--methods",
+    "visible": false,
+    "description": "Which HTTP request method(s) should be sent (default: GET)",
+  },
+  "threads": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--threads",
+    "visible": false,
+    "description": "Number of concurrent threads (default: 50)",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--timeout",
+    "visible": false,
+    "description": "Number of seconds before a client's request times out (default: 7)",
+  },
+  "insecure": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--insecure",
+    "visible": false,
+    "description": "Disables TLS certificate validation in the client",
+  },
+  "no-state": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--no-state",
+    "visible": false,
+    "description": "Disable state output file (*.state)",
+  },
+  "parallel": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--parallel",
+    "visible": false,
+    "description": "Run parallel feroxbuster instances",
+  },
+  "thorough": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--thorough",
+    "visible": false,
+    "description": "Use the same settings as --smart and set --collect-extensions to true",
+  },
+  "url-list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "List of target URLs",
+  },
+  "wordlist": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--wordlist",
+    "visible": true,
+    "description": "Wordlist",
+  },
+  "add-slash": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--add-slash",
+    "visible": false,
+    "description": "Append / to each request's URL",
+  },
+  "auto-bail": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--auto-bail",
+    "visible": false,
+    "description": "Automatically stop scanning when an excessive amount of errors are encountered",
+  },
+  "auto-tune": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--auto-tune",
+    "visible": false,
+    "description": "Automatically lower scan rate when an excessive amount of errors are encountered",
+  },
+  "dont-scan": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--dont-scan",
+    "visible": false,
+    "description": "URL(s) or Regex Pattern(s) to exclude from recursion/scans",
+  },
+  "redirects": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--redirects",
+    "visible": false,
+    "description": "Allow client to follow redirects",
+  },
+  "verbosity": {
+    "type": "STRING",
+    "order": 1,
+    "command": "",
+    "visible": false,
+    "description": "Increase verbosity level (use -vv or more for greater effect. [CAUTION] 4 v's is probably too much)",
+  },
+  "client-key": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--client-key",
+    "visible": false,
+    "description": "Add a PEM encoded private key for mutual authentication (mTLS)",
+  },
+  "extensions": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--extensions",
+    "visible": false,
+    "description": "File extension(s) to search for (ex: php pdf js)",
+  },
+  "rate-limit": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--rate-limit",
+    "visible": false,
+    "description": "Limit number of requests per second (per directory) (default: 0, i.e. no limit)",
+  },
+  "scan-limit": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--scan-limit",
+    "visible": false,
+    "description": "Limit total number of concurrent scans (default: 0, i.e. no limit)",
+  },
+  "time-limit": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--time-limit",
+    "visible": false,
+    "description": "Limit total run time of all scans (ex: --time-limit 10m)",
+  },
+  "user-agent": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--user-agent",
+    "visible": false,
+    "description": "Sets the User-Agent (default: feroxbuster/2.7.1)",
+  },
+  "client-cert": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--client-cert",
+    "visible": false,
+    "description": "Add a PEM encoded certificate for mutual authentication (mTLS)",
+  },
+  "dont-filter": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--dont-filter",
+    "visible": false,
+    "description": "Don't auto-filter wildcard responses",
+  },
+  "filter-size": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--filter-size",
+    "visible": false,
+    "description": "Filter out messages of a particular size (ex: 4927,1970)",
+  },
+  "resume-from": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--resume-from",
+    "visible": false,
+    "description": "State file from which to resume a partially complete scan (ex. --resume-from ferox-1606586780.state)",
+  },
+  "dont-collect": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--dont-collect",
+    "visible": false,
+    "description": "File extension(s) to Ignore while collecting extensions (only used with `collect-extensions`)",
+  },
+  "filter-lines": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--filter-lines",
+    "visible": false,
+    "description": "Filter out messages of a particular line count (ex: 31,30)",
+  },
+  "filter-regex": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--filter-regex",
+    "visible": false,
+    "description": "Filter out messages via regular expression matching on the response's body (ex: ^ignore me$)",
+  },
+  "filter-words": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--filter-words",
+    "visible": false,
+    "description": "Filter out messages of a particular word count (ex: 91,82)",
+  },
+  "no-recursion": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--no-recursion",
+    "visible": false,
+    "description": "Do not scan recursively",
+  },
+  "random-agent": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--random-agent",
+    "visible": false,
+    "description": "Use a random User-Agent",
+  },
+  "replay-codes": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--replay-codes",
+    "visible": false,
+    "description": "Status Codes to send through a Replay Proxy when found (default: --status-codes value)",
+  },
+  "replay-proxy": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--replay-proxy",
+    "visible": false,
+    "description": "Send only unfiltered requests through a Replay Proxy, instead of all requests",
+  },
+  "server-certs": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--server-certs",
+    "visible": false,
+    "description": "Add custom root certificate(s) for servers with unknown certificates",
+  },
+  "status-codes": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--status-codes",
+    "visible": false,
+    "description": "Status Codes to include (allow list) (default: 200 204 301 302 307 308 401 403 405)",
+  },
+  "collect-words": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--collect-words",
+    "visible": false,
+    "description": "Automatically discover important words from within responses and add them to the wordlist",
+  },
+  "filter-status": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--filter-status",
+    "visible": false,
+    "description": "Filter out status codes (deny list) (ex: 401)",
+  },
+  "collect-backups": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--collect-backups",
+    "visible": false,
+    "description": "Automatically request likely backup extensions for found urls",
+  },
+  "force-recursion": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--force-recursion",
+    "visible": false,
+    "description": "Force recursion attempts on all 'found' endpoints (still respects recursion depth)",
+  },
+  "filter-similar-to": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--filter-similar-to",
+    "visible": false,
+    "description": "Filter out pages that are similar to the given page (ex: http://site.xyz/soft404)",
+  },
+  "collect-extensions": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--collect-extensions",
+    "visible": false,
+    "description": "Automatically discover extensions and add them to --extensions (unless they're in `dont-collect`)",
+  },
+  "dont-extract-links": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--dont-extract-links",
+    "visible": false,
+    "description": "Don't extract links from response body (html, javascript, etc...",
+  },
+}}
+/>

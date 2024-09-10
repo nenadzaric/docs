@@ -1,0 +1,262 @@
+---
+title: "pydictor"
+description: "pydictor - A powerful and useful hacker dictionary builder for a brute-force attack"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="6ad7096c-83ae-415b-8f0f-2d10463bf724"
+  name="pydictor"
+  description="pydictor - A powerful and useful hacker dictionary builder for a brute-force attack"
+  category="Passwords"
+  author="trickest"
+  created_date="2021-09-20"
+  container="quay.io/trickest/pydictor:6591797"
+  source_url="https://github.com/LandGrey/pydictor"
+  license="Unknown"
+  output_command="-o"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/6ad7096c-83ae-415b-8f0f-2d10463bf724.json"
+  inputs={ {
+  "mode": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-tool",
+    "visible": false,
+    "description": "Specify mode. [handler,shredder,hybrider,comparer,combiner,uniqbiner,counter,uniqifer]",
+  },
+  "plug": {
+    "type": "STRING",
+    "order": 2,
+    "command": "-plug",
+    "visible": false,
+    "description": "Specify plugin. (pid4,scratch,birthday,pid8,ftp,pid6) [e.g pid6(id card last6 char wordlist)]",
+  },
+  "chunk": {
+    "type": "STRING",
+    "order": 2,
+    "command": "-chunk",
+    "visible": false,
+    "description": "Specify chunk. [chunk1] [chunk2] ...",
+  },
+  "d-m-y": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--dmy",
+    "visible": false,
+    "description": "Use ddMMyyyy format date, default date format: yyyyMMdd",
+  },
+  "length": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--len",
+    "visible": false,
+    "description": "Specify length of password. [e.g (minlen) (maxlen)]",
+  },
+  "base-type": {
+    "type": "STRING",
+    "order": 2,
+    "command": "-base",
+    "visible": true,
+    "description": "Base type. Choose from [d, L, c, dL, dc, Lc, dLc]. (d=digital [0 - 9], L=lowercase letters [a - z], c=capital letters [A - Z], dL=mix d and L [0-9 a-z], dc=Mix d and c [0-9 A-Z], Lc= Mix L and c [a-z A-Z], dLc= Mix d, L and dL [0-9 a-z A-Z])",
+  },
+  "set-level": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--level",
+    "visible": false,
+    "description": "Set the word list rule level.",
+  },
+  "add-prefix": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--head",
+    "visible": false,
+    "description": "Add items prefix.",
+  },
+  "add-suffix": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--tail",
+    "visible": false,
+    "description": "Add items suffix.",
+  },
+  "custom-char": {
+    "type": "STRING",
+    "order": 2,
+    "command": "-char",
+    "visible": false,
+    "description": "Custom char",
+  },
+  "enable-leet": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--leet",
+    "visible": false,
+    "description": "Enable 1337 mode [code] (0, 1, 2, 11-19, 21-29)",
+  },
+  "encode-type": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--encode",
+    "visible": false,
+    "description": "Please specify encodee type. [test,b16,sha512,des,md516,rsa,b64,b32,none,execjs,url,hmac,sha1,sha256,md5]",
+  },
+  "pattern-file": {
+    "type": "FILE",
+    "order": 2,
+    "command": "--pattern",
+    "visible": false,
+    "description": "Please specify pattern file",
+  },
+  "filter-by-occur": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--occur",
+    "visible": false,
+    "description": "Please specify occur filter. [letter] [digital] [special]",
+  },
+  "filter-by-regex": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--regex",
+    "visible": false,
+    "description": "Please specify regex filter.",
+  },
+  "filter-by-types": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--types",
+    "visible": false,
+    "description": "Please specify filter types. [letter] [digital] [special]",
+  },
+  "filter-by-repeat": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--repeat",
+    "visible": false,
+    "description": "Filter by consecutive repeat times of letter, digital, special chars",
+  },
+  "counter-mode-file": {
+    "type": "FILE",
+    "order": 1,
+    "command": "",
+    "visible": false,
+    "description": "Specify the counter mode file.",
+  },
+  "counter-mode-mode": {
+    "type": "STRING",
+    "order": 1,
+    "command": "",
+    "visible": false,
+    "description": "Specify the counter mode. ['v','s','vs']",
+  },
+  "handler-mode-file": {
+    "type": "FILE",
+    "order": 1,
+    "command": "",
+    "visible": false,
+    "description": "Specify the handler mode file.",
+  },
+  "shredder-mode-dir": {
+    "type": "FOLDER",
+    "order": 1,
+    "command": "",
+    "visible": false,
+    "description": "Specify the shredder mode dir.",
+  },
+  "configuration-file": {
+    "type": "FILE",
+    "order": 2,
+    "command": "--conf",
+    "visible": false,
+    "description": "Specify configuration file.",
+  },
+  "pattern-expression": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--pattern",
+    "visible": false,
+    "description": "Please specify file with pattern expression.",
+  },
+  "shredder-mode-file": {
+    "type": "FILE",
+    "order": 1,
+    "command": "",
+    "visible": false,
+    "description": "Specify the shredder mode file.",
+  },
+  "uniqbiner-mode-dir": {
+    "type": "FOLDER",
+    "order": 1,
+    "command": "",
+    "visible": false,
+    "description": "Specify the uniqbiner mode dir.",
+  },
+  "uniqifer-mode-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": false,
+    "description": "Specify the uniquer mode file.",
+  },
+  "counter-mode-number": {
+    "type": "STRING",
+    "order": 1,
+    "command": "",
+    "visible": false,
+    "description": "Specify counter mode number. [view_num]",
+  },
+  "hybrider-mode-file1": {
+    "type": "FILE",
+    "order": 1,
+    "command": "",
+    "visible": false,
+    "description": "Specify the hybrider mode first file.",
+  },
+  "hybrider-mode-file2": {
+    "type": "FILE",
+    "order": 1,
+    "command": "",
+    "visible": false,
+    "description": "Specify the hybrider mode second.",
+  },
+  "combiner-mode-folder": {
+    "type": "FOLDER",
+    "order": 1,
+    "command": "",
+    "visible": false,
+    "description": "Specify directory for combiner mode.",
+  },
+  "wordlist-to-permutate": {
+    "type": "FILE",
+    "order": 2,
+    "command": "-extend",
+    "visible": true,
+    "description": "Extend wordlist based on rules. [e.g names.txt]",
+  },
+  "configuration-expression": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--conf",
+    "visible": false,
+    "description": "Specify configuration expression.",
+  },
+  "comparer-mode-minuend-file": {
+    "type": "FILE",
+    "order": 1,
+    "command": "",
+    "visible": false,
+    "description": "Specify the minuend file for comparer mode.",
+  },
+  "word-to-create-password-of": {
+    "type": "STRING",
+    "order": 2,
+    "command": "-extend",
+    "visible": false,
+    "description": "Extend wordlist based on rules. [e.g bob]",
+  },
+}}
+/>

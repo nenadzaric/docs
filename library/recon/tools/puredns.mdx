@@ -1,0 +1,136 @@
+---
+title: "puredns"
+description: "Puredns is a fast domain resolver and subdomain bruteforcing tool that can accurately filter out wildcard subdomains and DNS poisoned entries."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="be9935e6-a952-40c9-aaed-82dbdfa339f0"
+  name="puredns"
+  description="Puredns is a fast domain resolver and subdomain bruteforcing tool that can accurately filter out wildcard subdomains and DNS poisoned entries."
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2021-12-29"
+  container="quay.io/trickest/puredns:v2.1.1"
+  source_url="https://github.com/d3mondev/puredns"
+  license="Unknown"
+  output_command="-w"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/be9935e6-a952-40c9-aaed-82dbdfa339f0.json"
+  inputs={ {
+  "mode": {
+    "type": "STRING",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Available modes: bruteforce, resolve",
+  },
+  "quiet": {
+    "type": "BOOLEAN",
+    "order": 3,
+    "command": "--quiet",
+    "visible": false,
+    "description": "quiet mode",
+  },
+  "domain": {
+    "type": "STRING",
+    "order": 2,
+    "command": "",
+    "visible": true,
+    "description": "Domain name (available in 'bruteforce' mode only)",
+  },
+  "domains": {
+    "type": "FILE",
+    "order": 3,
+    "command": "--domains",
+    "visible": true,
+    "description": "text file containing domains to bruteforce",
+  },
+  "threads": {
+    "type": "STRING",
+    "order": 3,
+    "command": "--threads",
+    "visible": false,
+    "description": "number of threads to use while filtering wildcards (default 100)",
+  },
+  "wordlist": {
+    "type": "FILE",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "Wordlist used for bruteforcing in 'bruteforce' mode or list of domains in 'resolve' mode",
+  },
+  "resolvers": {
+    "type": "FILE",
+    "order": 3,
+    "command": "--resolvers",
+    "visible": true,
+    "description": "text file containing public resolvers",
+  },
+  "rate-limit": {
+    "type": "STRING",
+    "order": 3,
+    "command": "--rate-limit",
+    "visible": false,
+    "description": "limit total queries per second for public resolvers (0 = unlimited) (default unlimited)",
+  },
+  "trusted-only": {
+    "type": "BOOLEAN",
+    "order": 3,
+    "command": "--trusted-only",
+    "visible": false,
+    "description": "use only trusted resolvers (implies --skip-validation)",
+  },
+  "skip-sanitize": {
+    "type": "BOOLEAN",
+    "order": 3,
+    "command": "--skip-sanitize",
+    "visible": false,
+    "description": "do not sanitize the list of domains to test",
+  },
+  "wildcard-batch": {
+    "type": "STRING",
+    "order": 3,
+    "command": "--wildcard-batch",
+    "visible": false,
+    "description": "number of subdomains to test for wildcards in a single batch (0 = unlimited) (default unlimited)",
+  },
+  "wildcard-tests": {
+    "type": "STRING",
+    "order": 3,
+    "command": "--wildcard-tests",
+    "visible": false,
+    "description": "number of tests to perform to detect DNS load balancing (default 3)",
+  },
+  "skip-validation": {
+    "type": "BOOLEAN",
+    "order": 3,
+    "command": "--skip-validation",
+    "visible": false,
+    "description": "do not validate results with trusted resolvers",
+  },
+  "resolvers-trusted": {
+    "type": "FILE",
+    "order": 3,
+    "command": "--resolvers-trusted",
+    "visible": true,
+    "description": "text file containing trusted resolvers",
+  },
+  "rate-limit-trusted": {
+    "type": "STRING",
+    "order": 3,
+    "command": "--rate-limit-trusted",
+    "visible": false,
+    "description": "limit total queries per second for trusted resolvers (0 = unlimited) (default 500)",
+  },
+  "skip-wildcard-filter": {
+    "type": "BOOLEAN",
+    "order": 3,
+    "command": "--skip-wildcard-filter",
+    "visible": false,
+    "description": "do not perform wildcard detection and filtering",
+  },
+}}
+/>

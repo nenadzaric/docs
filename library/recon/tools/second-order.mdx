@@ -1,0 +1,66 @@
+---
+title: "second-order"
+description: "Crawler and second-order subdomain takeover scanner"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="0c36e14e-bb3d-4b42-8485-7499480151a3"
+  name="second-order"
+  description="Crawler and second-order subdomain takeover scanner"
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2022-02-08"
+  container="quay.io/trickest/second-order:242569b"
+  source_url="https://github.com/mhmdiaa/second-order"
+  license="Unknown"
+  output_command="-output"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/0c36e14e-bb3d-4b42-8485-7499480151a3.json"
+  inputs={ {
+  "depth": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-depth",
+    "visible": false,
+    "description": "Depth to crawl (default 1)",
+  },
+  "config": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-config",
+    "visible": true,
+    "description": "Configuration file",
+  },
+  "header": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-header",
+    "visible": false,
+    "description": "Header name and value separated by a colon 'Name: Value' (can be used more than once)",
+  },
+  "target": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-target",
+    "visible": true,
+    "description": "Target URL",
+  },
+  "threads": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-threads",
+    "visible": false,
+    "description": "Number of threads (default 10)",
+  },
+  "insecure": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-insecure",
+    "visible": false,
+    "description": "Accept untrusted SSL/TLS certificates",
+  },
+}}
+/>

@@ -1,0 +1,59 @@
+---
+title: "netscan"
+description: "Scan a network for ports that are open on an ip/ip range, and ips that are in use on that network."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="cbf9dabf-c694-4466-9468-5da0b139c229"
+  name="netscan"
+  description="Scan a network for ports that are open on an ip/ip range, and ips that are in use on that network."
+  category="Network"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/netscan:b457232"
+  source_url="https://github.com/jessfraz/netscan"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/cbf9dabf-c694-4466-9468-5da0b139c229.json"
+  inputs={ {
+  "debug": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--debug",
+    "visible": false,
+    "description": "Enable debug logging (default: false)",
+  },
+  "ports": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--ports",
+    "visible": true,
+    "description": "Ports to scan (ex. 80-443 or 80,443,8080 or 1-20,22,80-443) (default 80,443,8001,9001)",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--timeout",
+    "visible": false,
+    "description": "Timeout for ping of port (default: 1s)",
+  },
+  "protocol": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--proto",
+    "visible": false,
+    "description": "Protocol to use (can be set more than once) (default tcp)",
+  },
+  "ip-address": {
+    "type": "STRING",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "Cidr (192.168.0.1/24) or single ip (192.168.104.30)",
+  },
+}}
+/>

@@ -3,12 +3,57 @@ title: Introduction
 description: ''
 ---
 
-## What you will learn
+On this page you will learn what are main concepts of Trickest Platform architecture and how it utilizes workflow approach to build and deploy wide range of offensive security applications.
 
-Here, you will learn what are main concepts of Trickest Platform architecture and how it utilizes workflow approach to build and deploy wide range of offensive security applications.
+## Current Challenges in Offensive Security Automation
 
-Platform is built with **workflow-first** architecture.
+The current approach to manging and executing offensive security tooling has been harder and harder as the processes needed and threats to be solved becoming increasingly complex. The current approach consists of finding or building Command Line tool or a script for a specific process and installing it either localy or on external infrastructure.
+This is very slow, ineffective and error prone process. 
+
+It requires a lot of manual work and is not scalable because of these main reasons:
+
+* **Infrastructure Management**
+
+    There is a big overhead in infrastructure maintenance, management and expertise used to execute cybersecurity tooling.
+
+<Tip>See how [Hyperscalable Trickest Execution Engine](https://trickest.com/hyperscalability) can help you with this problem.</Tip>
+
+* **Data Persistence & Management**
+
+    Execution of tools and their disjointment often leads to unstructured data and impossible ways to get insight from outputs. Clear communication with other stakeholders in the company responsible for fixing the vulnerabilitis and taking care of the infrastructure is increasingly more complex as infrastructure grows. Companies need an easy, clear and efficient way to do data analysis and communicate issues to other departments in order to keep companies safe.
+
+<Tip> See how Trickest Solutions for [Attack Surface Management](https://trickest.com/solutions/attack-surface-management), [Vulnerability Scanning](https://trickest.com/solutions/vulnerability-scanning), [DAST](https://trickest.com/solutions/dast) and more can revolutionize they way you work with the data.</Tip>
+ 
+* **Tool Installation, Updates & Management**
+
+    Configuring and executing the vast majority of tools (300+ currently on the platform) is a tedious and time-consuming job. Each tool comes with it's own set of dependencies which makes their updates and management even more complex.
+
+<Tip>Trickest Platform contains [300+ Command Line Tools](library/tools), and more than [30 Modules](library/modules) which are pre-installed and ready for execution</Tip>
+
+* **Automation**
+
+    Since there is no standardized way of providing a framework for tool and custom script connection for automated processes, security teams often choose to build it in-house, making it eventually completely unscalable and very difficult to maintain.
+
+<Tip> We are all about automation, check out [Platform](https://trickest.com/platform) for more information on how Trickest can help you automate your security processes.</Tip>
 
 
-## Nodes
+## Regular Way
 
+Today, if you want to use a tool, you have to go through these steps:
+
+1. **Manual Installation**
+
+    * Download the tool
+    * Install dependencies
+    * Configure the tool
+    * Run the tool
+
+<Frame caption="Traditional Tool Usage Example">
+  <img src="/images/terminal-example.png" />
+</Frame>
+
+If you succesfully installed the tool on your operating system, installed all dependencies, configure it properly, this is usually an example on what you will see. No very pretty sight, right?
+
+At Trickest, we wanted to solve these problems by wrapping the tools into main workflow components called **nodes**.
+
+Let's take a look at what is the [Node](concepts/nodes/introduction) and how it solves these issues.

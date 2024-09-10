@@ -1,0 +1,59 @@
+---
+title: "generate-yaml-report"
+description: "Generate a yaml report from the outputs of multiple tools"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="b1104ee6-5a40-476d-a320-e0e609238252"
+  name="generate-yaml-report"
+  description="Generate a yaml report from the outputs of multiple tools"
+  category="Utilities"
+  author="trickest-mhmdiaa"
+  created_date="2022-09-02"
+  container="quay.io/trickest/generate-yaml-report:v0.1.2"
+  source_url="https://github.com/trickest/machinery"
+  license="Unknown"
+  output_command="--output"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/b1104ee6-5a40-476d-a320-e0e609238252.json"
+  inputs={ {
+  "httpx-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--httpx",
+    "visible": true,
+    "description": "httpx JSON file",
+  },
+  "naabu-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--naabu",
+    "visible": true,
+    "description": "naabu JSON file",
+  },
+  "nuclei-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--nuclei",
+    "visible": true,
+    "description": "nuclei JSON file",
+  },
+  "sslyze-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--sslyze",
+    "visible": true,
+    "description": "sslyze JSON file",
+  },
+  "webanalyze-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--webanalyze",
+    "visible": true,
+    "description": "webanalyze JSON file",
+  },
+}}
+/>

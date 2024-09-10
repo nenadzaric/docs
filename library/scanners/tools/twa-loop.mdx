@@ -1,0 +1,59 @@
+---
+title: "twa-loop"
+description: "A tiny web auditor with strong opinions."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="1b4e6365-d855-4b0a-8d38-f03cadf1541b"
+  name="twa-loop"
+  description="A tiny web auditor with strong opinions."
+  category="Scanners"
+  author="trickest-mhmdiaa"
+  created_date="2023-06-20"
+  container="quay.io/trickest/twa-loop:80ac87d"
+  source_url="https://github.com/trailofbits/twa"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/1b4e6365-d855-4b0a-8d38-f03cadf1541b.json"
+  inputs={ {
+  "domains": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Domain hostnames to scan.",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-v",
+    "visible": false,
+    "description": "Audit a site, and be verbose (on stderr).",
+  },
+  "no-ports": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-d",
+    "visible": false,
+    "description": "Audit a site without scanning common development ports.",
+  },
+  "test-ssl": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-s",
+    "visible": false,
+    "description": "Audit a site and include testssl.",
+  },
+  "check-www": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-w",
+    "visible": false,
+    "description": "Audit a site and its www subdomain.",
+  },
+}}
+/>

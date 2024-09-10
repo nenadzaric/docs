@@ -1,0 +1,38 @@
+---
+title: "pup"
+description: "pup is a command-line tool for processing HTML. It reads from stdin, prints to stdout, and allows the user to filter parts of the page using CSS selectors."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="b32b033f-51dc-46d4-9bb1-48fc0b26d0f9"
+  name="pup"
+  description="pup is a command-line tool for processing HTML. It reads from stdin, prints to stdout, and allows the user to filter parts of the page using CSS selectors."
+  category="Utilities"
+  author="trickest"
+  created_date="2021-09-07"
+  container="quay.io/trickest/pup:681d7bb"
+  source_url="https://github.com/ericchiang/pup"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/b32b033f-51dc-46d4-9bb1-48fc0b26d0f9.json"
+  inputs={ {
+  "file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Input file",
+  },
+  "input": {
+    "type": "STRING",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "Input flags and selectors. (e.g td :contains(.example.com) text{})",
+  },
+}}
+/>

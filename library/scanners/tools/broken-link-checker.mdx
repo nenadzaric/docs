@@ -1,0 +1,115 @@
+---
+title: "broken-link-checker"
+description: "Find broken links, missing images, etc within your HTML."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="e065e45e-73ab-4c74-89d8-98743ea9fcd7"
+  name="broken-link-checker"
+  description="Find broken links, missing images, etc within your HTML."
+  category="Scanners"
+  author="trickest-mhmdiaa"
+  created_date="2022-09-07"
+  container="quay.io/trickest/broken-link-checker:0.7.8"
+  source_url="https://github.com/stevenvachon/broken-link-checker"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/e065e45e-73ab-4c74-89d8-98743ea9fcd7.json"
+  inputs={ {
+  "get": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--get",
+    "visible": false,
+    "description": "Change request method to GET.",
+  },
+  "input": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--input",
+    "visible": true,
+    "description": "URL to an HTML document.",
+  },
+  "follow": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--follow",
+    "visible": false,
+    "description": "Force-follow robot exclusions.",
+  },
+  "exclude": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--exclude",
+    "visible": false,
+    "description": "A keyword/glob to match links against",
+  },
+  "ordered": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--ordered",
+    "visible": false,
+    "description": "Maintain the order of links as they appear in their HTML document.",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--verbose",
+    "visible": false,
+    "description": "Display excluded links.",
+  },
+  "requests": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--requests",
+    "visible": false,
+    "description": "Concurrent requests limit.",
+  },
+  "recrusive": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--recrusive",
+    "visible": false,
+    "description": "Recursively scan (crawl) the HTML document(s).",
+  },
+  "user-agent": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--user-agent",
+    "visible": false,
+    "description": "The user agent to use for link checks.",
+  },
+  "filter-level": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--filter-level",
+    "visible": false,
+    "description": "The types of tags and attributes that are considered links. (options: 0 -> clickable links, 1 -> 0 + media; iframes; meta refreshes, 2 -> 1 + stylesheets; scripts; forms, 3 -> 2 + metadata)",
+  },
+  "host-requests": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--host-requests",
+    "visible": false,
+    "description": "Concurrent requests limit per host.",
+  },
+  "exclude-external": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--exclude-external",
+    "visible": false,
+    "description": "Will not check external links.",
+  },
+  "exclude-internal": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--exclude-internal",
+    "visible": false,
+    "description": "Will not check internal links.",
+  },
+}}
+/>

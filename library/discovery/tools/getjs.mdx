@@ -1,0 +1,80 @@
+---
+title: "getjs"
+description: "getJS is a tool to extract all the javascript files from a set of given urls. The urls can also be piped to gets, or you can specify a single url."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="28d6f20c-c3bd-4d57-9012-1a7611ebc4ff"
+  name="getjs"
+  description="getJS is a tool to extract all the javascript files from a set of given urls. The urls can also be piped to gets, or you can specify a single url."
+  category="Discovery"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/getjs:04c72bf"
+  source_url="https://github.com/003random/getJS"
+  license="Unknown"
+  output_command="--output"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/28d6f20c-c3bd-4d57-9012-1a7611ebc4ff.json"
+  inputs={ {
+  "url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--url",
+    "visible": true,
+    "description": "The url to get the javascript sources from",
+  },
+  "no-color": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--nocolors",
+    "visible": false,
+    "description": "Don't color the output",
+  },
+  "complete-urls": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--complete",
+    "visible": false,
+    "description": "Complete the urls. e.g. /js/index.js -> https://example.com/js/index.js",
+  },
+  "input-url-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--input",
+    "visible": true,
+    "description": "Input file with urls",
+  },
+  "request-timeout": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--timeout",
+    "visible": false,
+    "description": "The request timeout. Default: 10 (secs)",
+  },
+  "custom-request-header": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--header",
+    "visible": false,
+    "description": "Custom request header(s). -H Authorization: Bearer token",
+  },
+  "skip-ssl-verification": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--insecure",
+    "visible": false,
+    "description": "Skip SSL certificate verification. Use when the cert is expired or invalid",
+  },
+  "filter-non-existing-files": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--resolve",
+    "visible": false,
+    "description": "Resolve the output and filter out the non existing files (Can only be used in combination with --complete)",
+  },
+}}
+/>

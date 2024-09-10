@@ -1,0 +1,66 @@
+---
+title: "bevigil"
+description: "bevigil-cli provides a unified command line interface and python library for using BeVigil OSINT API"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="ea1f96a7-ad87-4158-a3c1-60f7cca6628b"
+  name="bevigil"
+  description="bevigil-cli provides a unified command line interface and python library for using BeVigil OSINT API"
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2023-08-10"
+  container="quay.io/trickest/bevigil:v1.0.14"
+  source_url="https://github.com/Bevigil/BeVigil-OSINT-CLI"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/ea1f96a7-ad87-4158-a3c1-60f7cca6628b.json"
+  inputs={ {
+  "domain": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--domain",
+    "visible": false,
+    "description": "domain (requires the asset-type to be packages, subdomains, or urls)",
+  },
+  "api_key": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "API Key to use",
+  },
+  "keyword": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--keyword",
+    "visible": false,
+    "description": "Keyword to request S3 buckets information for (requires the asset-type to be s3)",
+  },
+  "package": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--package",
+    "visible": false,
+    "description": "Package to request hosts for (requires the asset-type to be host, params, s3, or wordlist)",
+  },
+  "subdomain": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--subdomain",
+    "visible": false,
+    "description": "subdomain (requires the asset-type to be packages)",
+  },
+  "asset-type": {
+    "type": "STRING",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "Asset type (hosts, packages, params, s3, subdomains, urls, or wordlist)",
+  },
+}}
+/>

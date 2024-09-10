@@ -1,0 +1,108 @@
+---
+title: "meg"
+description: "Meg is a tool for fetching lots of URLs but still being 'nice' to servers. It can be used to fetch many paths for many hosts; fetching one path for all hosts before moving on to the next path and repeating."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="67243805-579e-449e-a00f-c6ddec5d1268"
+  name="meg"
+  description="Meg is a tool for fetching lots of URLs but still being 'nice' to servers. It can be used to fetch many paths for many hosts; fetching one path for all hosts before moving on to the next path and repeating."
+  category="Discovery"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/meg:9daab00"
+  source_url="https://github.com/tomnomnom/meg"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/67243805-579e-449e-a00f-c6ddec5d1268.json"
+  inputs={ {
+  "path": {
+    "type": "STRING",
+    "order": 1,
+    "command": "",
+    "visible": false,
+    "description": "If you want to request just one path, you can specify it directly as an argument. You should use path or paths-file, arguments excludes one other.",
+  },
+  "delay": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-d",
+    "visible": false,
+    "description": "Milliseconds between requests to the same host (default: 5000)",
+  },
+  "concurency": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-c",
+    "visible": false,
+    "description": "Set the concurrency level (defaut: 20)",
+  },
+  "hosts-file": {
+    "type": "FILE",
+    "order": 2,
+    "command": "",
+    "visible": true,
+    "description": "Line by line hosts with a protocol",
+  },
+  "paths-file": {
+    "type": "FILE",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "File with line by line paths",
+  },
+  "http-method": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-X",
+    "visible": false,
+    "description": "HTTP method (default: GET)",
+  },
+  "http-timeout": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-t",
+    "visible": false,
+    "description": "Set the HTTP timeout (default: 10000)",
+  },
+  "request-body": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-b",
+    "visible": false,
+    "description": "Set the request body",
+  },
+  "custom-header": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-H",
+    "visible": false,
+    "description": "Send a custom HTTP header",
+  },
+  "rawhttp-library": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-r",
+    "visible": false,
+    "description": "Use the rawhttp library for requests (experimental)",
+  },
+  "follow-redirects": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-L",
+    "visible": false,
+    "description": "Follow redirects / location header",
+  },
+  "save-only-responses": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-s",
+    "visible": false,
+    "description": "Save only responses with specific status code",
+  },
+}}
+/>

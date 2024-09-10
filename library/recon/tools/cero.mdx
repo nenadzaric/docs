@@ -1,0 +1,66 @@
+---
+title: "cero"
+description: "Scrape domain names from SSL certificates of arbitrary hosts"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="8245c257-b587-4977-9d1a-2230150488e3"
+  name="cero"
+  description="Scrape domain names from SSL certificates of arbitrary hosts"
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2022-05-12"
+  container="quay.io/trickest/cero:v1.3.0"
+  source_url="https://github.com/glebarez/cero"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/8245c257-b587-4977-9d1a-2230150488e3.json"
+  inputs={ {
+  "ports": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-p",
+    "visible": false,
+    "description": "TLS ports to use, if not specified explicitly in host address. Use comma-separated list (default: 443)",
+  },
+  "targets": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Concurrency level (default 100)",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-v",
+    "visible": false,
+    "description": "Be verbose: Output results as 'addr -- [result list]', output errors to stderr as 'addr -- error message'",
+  },
+  "concurrency": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-c",
+    "visible": false,
+    "description": "Concurrency level (default 100)",
+  },
+  "tls-timeout": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-t",
+    "visible": false,
+    "description": "TLS Connection timeout in seconds (default 4)",
+  },
+  "filter-output": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-d",
+    "visible": false,
+    "description": "Output only valid domain names (e.g. strip IPs, wildcard domains and gibberish)",
+  },
+}}
+/>

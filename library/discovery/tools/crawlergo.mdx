@@ -1,0 +1,185 @@
+---
+title: "crawlergo"
+description: "A powerful browser crawler for web vulnerability scanners"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="87933e32-f54e-448f-ada2-5ada9454fcb7"
+  name="crawlergo"
+  description="A powerful browser crawler for web vulnerability scanners"
+  category="Discovery"
+  author="trickest-mhmdiaa"
+  created_date="2022-12-26"
+  container="quay.io/trickest/crawlergo:v0.4.4-patch-2"
+  source_url="https://github.com/Qianlitp/crawlergo"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/87933e32-f54e-448f-ada2-5ada9454fcb7.json"
+  inputs={ {
+  "url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "URLs to scan, separated by spaces (must be same host)",
+  },
+  "fuzz-path": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--fuzz-path",
+    "visible": false,
+    "description": "whether to fuzz the target with common paths. (default: false)",
+  },
+  "log-level": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--log-level",
+    "visible": false,
+    "description": "log print Level, options include debug, info, warn, error and fatal. (default: Info)",
+  },
+  "post-data": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--post-data",
+    "visible": false,
+    "description": "set PostData to target and use POST method.",
+  },
+  "encode-url": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--encode-url",
+    "visible": false,
+    "description": "whether to encode url with detected charset. (default: false)",
+  },
+  "filter-mode": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--filter-mode",
+    "visible": false,
+    "description": "filtering Mode used for collected requests. Allowed mode:simple, smart or strict. (default: smart)",
+  },
+  "form-values": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--form-values",
+    "visible": false,
+    "description": "custom filling text for each form type. e.g.: -fv username=crawlergo_nice -fv password=admin123",
+  },
+  "output-mode": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--output-mode",
+    "visible": false,
+    "description": "console print or serialize output. Allowed mode:console ,json or none. (default: console)",
+  },
+  "robots-path": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--robots-path",
+    "visible": false,
+    "description": "whether to resolve paths from /robots.txt. (default: false)",
+  },
+  "max-tab-count": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--max-tab-count",
+    "visible": false,
+    "description": "maximum Number of tabs allowed. (default: 8)",
+  },
+  "push-pool-max": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--push-pool-max",
+    "visible": false,
+    "description": "maximum Number of concurrency when pushing results to proxy. (default: 10)",
+  },
+  "push-to-proxy": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--push-to-proxy",
+    "visible": false,
+    "description": "every request in 'req_list' will be pushed to the proxy Address",
+  },
+  "request-proxy": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--request-proxy",
+    "visible": false,
+    "description": "all requests connect through defined proxy server.",
+  },
+  "custom-headers": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--custom-headers",
+    "visible": false,
+    "description": "add additional Headers to each request. The input string will be called json.Unmarshal (default: {Spider-Name: crawlergo, User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.0 Safari/537.36})",
+  },
+  "fuzz-path-dict": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--fuzz-path-dict",
+    "visible": false,
+    "description": "Fuzz dict",
+  },
+  "tab-run-timeout": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--tab-run-timeout",
+    "visible": false,
+    "description": "the Timeout of a single tab task. (default: 20s)",
+  },
+  "before-exit-delay": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--before-exit-delay",
+    "visible": false,
+    "description": "the Time of waiting before crawler exit. (default: 1s)",
+  },
+  "max-crawled-count": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--max-crawled-count",
+    "visible": false,
+    "description": "the maximum Number of URLs visited by the crawler in this task. (default: 200)",
+  },
+  "event-trigger-mode": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--event-trigger-mode",
+    "visible": false,
+    "description": "this Value determines how the crawler automatically triggers events.Allowed mode:async or sync. (default: async)",
+  },
+  "form-keyword-values": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--form-keyword-values",
+    "visible": false,
+    "description": "custom filling text, fuzzy matched by keyword. e.g.: -fkv user=crawlergo_nice -fkv pass=admin123",
+  },
+  "ignore-url-keywords": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--ignore-url-keywords",
+    "visible": false,
+    "description": "crawlergo will not crawl these URLs matched by Keywords. Default [logout quit exit])",
+  },
+  "event-trigger-interval": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--event-trigger-interval",
+    "visible": false,
+    "description": "the Interval of triggering each event. (default: 100ms)",
+  },
+  "wait-dom-content-loaded-timeout": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--wait-dom-content-loaded-timeout",
+    "visible": false,
+    "description": "the Timeout of waiting for a page dom ready. (default: 5s)",
+  },
+}}
+/>

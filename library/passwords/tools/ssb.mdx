@@ -1,0 +1,80 @@
+---
+title: "ssb"
+description: "Secure Shell Bruteforcer: A faster & simpler way to bruteforce SSH servers"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="1d26dc48-6e24-4205-a69d-2398a23926a0"
+  name="ssb"
+  description="Secure Shell Bruteforcer: A faster & simpler way to bruteforce SSH servers"
+  category="Passwords"
+  author="trickest"
+  created_date="2021-08-04"
+  container="quay.io/trickest/ssb:8ebaeee"
+  source_url="https://github.com/kitabisa/ssb"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/1d26dc48-6e24-4205-a69d-2398a23926a0.json"
+  inputs={ {
+  "host": {
+    "type": "STRING",
+    "order": 2,
+    "command": "",
+    "visible": true,
+    "description": "Host for brute-forcing.",
+  },
+  "port": {
+    "type": "STRING",
+    "order": 3,
+    "command": "-p",
+    "visible": false,
+    "description": "Port to connect to on the remote host (default 22).",
+  },
+  "user": {
+    "type": "STRING",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "User for brute-forcing.",
+  },
+  "retries": {
+    "type": "STRING",
+    "order": 3,
+    "command": "-r",
+    "visible": false,
+    "description": "Specify the connection retries (default 1).",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 3,
+    "command": "-t",
+    "visible": false,
+    "description": "Connection timeout (default 30s).",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 3,
+    "command": "-v",
+    "visible": false,
+    "description": "Verbose mode.",
+  },
+  "wordlist": {
+    "type": "FILE",
+    "order": 3,
+    "command": "-w",
+    "visible": true,
+    "description": "Path to wordlist file.",
+  },
+  "concurrent": {
+    "type": "STRING",
+    "order": 3,
+    "command": "-c",
+    "visible": false,
+    "description": "Concurrency/threads level (default 100).",
+  },
+}}
+/>

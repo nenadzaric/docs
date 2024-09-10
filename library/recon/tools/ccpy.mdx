@@ -1,0 +1,59 @@
+---
+title: "ccpy"
+description: "Extracting URLs of a specific target based on the results of commoncrawl.org."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="92457d0a-fdcd-4e2a-973d-ef464cdaca27"
+  name="ccpy"
+  description="Extracting URLs of a specific target based on the results of commoncrawl.org."
+  category="Recon"
+  author="trickest"
+  created_date="2021-09-07"
+  container="quay.io/trickest/cc.py:6b52e14"
+  source_url="https://github.com/si9int/cc.py"
+  license="Unknown"
+  output_command="-o"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/92457d0a-fdcd-4e2a-973d-ef464cdaca27.json"
+  inputs={ {
+  "year": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--year",
+    "visible": false,
+    "description": "Limit the result to a specific year (default: all)",
+  },
+  "domain": {
+    "type": "STRING",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Domain which will be crawled for",
+  },
+  "crawl-index": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--index",
+    "visible": false,
+    "description": "Crawl for a specific index (this will crawl all pages!)",
+  },
+  "list-indexes": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--list",
+    "visible": false,
+    "description": "Lists all available indexes",
+  },
+  "update-index-file": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--update",
+    "visible": false,
+    "description": "Update index file",
+  },
+}}
+/>

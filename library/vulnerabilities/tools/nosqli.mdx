@@ -1,0 +1,73 @@
+---
+title: "nosqli"
+description: "A fast NoSQL scanner and injector. For finding sites vulnerable to NoSQL injection, Mongo in particular."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="9598e170-0743-4b7c-a8cc-02bd117a3dff"
+  name="nosqli"
+  description="A fast NoSQL scanner and injector. For finding sites vulnerable to NoSQL injection, Mongo in particular."
+  category="Vulnerabilities"
+  author="trickest"
+  created_date="2021-09-07"
+  container="quay.io/trickest/nosqli:6fce3eb"
+  source_url="https://github.com/Charlie-belmer/nosqli"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/9598e170-0743-4b7c-a8cc-02bd117a3dff.json"
+  inputs={ {
+  "data": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--data",
+    "visible": false,
+    "description": "Specify default post data (should not include any injection strings)",
+  },
+  "https": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--https",
+    "visible": false,
+    "description": "Always send requests as HTTPS (Defaults to HTTP when using request files)",
+  },
+  "proxy": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--proxy",
+    "visible": false,
+    "description": "Proxy requests through this proxy URL.",
+  },
+  "config": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--config",
+    "visible": false,
+    "description": "config file",
+  },
+  "target": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--target",
+    "visible": true,
+    "description": "Target url eg. http://site.com/page?arg=1",
+  },
+  "request": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--request",
+    "visible": false,
+    "description": "Load in a request from a file, such as a request generated in Burp or ZAP.",
+  },
+  "user-agent": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--user-agent",
+    "visible": false,
+    "description": "Specify a user agent",
+  },
+}}
+/>

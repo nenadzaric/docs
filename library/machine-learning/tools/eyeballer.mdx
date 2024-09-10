@@ -1,0 +1,52 @@
+---
+title: "eyeballer"
+description: "Eyeballer is meant for large-scope network penetration tests where you need to find interesting targets from a huge set of web-based hosts. Go ahead and use your favorite screenshotting tool like normal (EyeWitness or GoWitness) and then run them through Eyeballer to tell you what's likely to contain vulnerabilities, and what isn't."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="50664d89-4316-4829-9044-e2a81bdd171e"
+  name="eyeballer"
+  description="Eyeballer is meant for large-scope network penetration tests where you need to find interesting targets from a huge set of web-based hosts. Go ahead and use your favorite screenshotting tool like normal (EyeWitness or GoWitness) and then run them through Eyeballer to tell you what's likely to contain vulnerabilities, and what isn't."
+  category="Machine Learning"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/eyeballer:d1d5182"
+  source_url="https://github.com/BishopFox/eyeballer"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/50664d89-4316-4829-9044-e2a81bdd171e.json"
+  inputs={ {
+  "heatmap": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--heatmap",
+    "visible": false,
+    "description": "Create a heatmap graphfor the prediction",
+  },
+  "weights": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--weights",
+    "visible": true,
+    "description": "Weights file for input/output. Check https://github.com/BishopFox/eyeballer/releases.",
+  },
+  "threshold": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--threshold",
+    "visible": false,
+    "description": "Threshold confidence for labeling",
+  },
+  "predict-folder": {
+    "type": "FOLDER",
+    "order": 1,
+    "command": "predict",
+    "visible": true,
+    "description": "Folder with screenshots. For best results, make sure you screenshot your websites in a native 1.6x aspect ratio i.e. 1440x900.",
+  },
+}}
+/>

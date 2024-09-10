@@ -1,0 +1,45 @@
+---
+title: "fgrep-by-string"
+description: "Fgrep content in files by input string."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="c044e290-f944-43cd-8ed0-373c8cde46a5"
+  name="fgrep-by-string"
+  description="Fgrep content in files by input string."
+  category="Utilities"
+  author="trickest"
+  created_date="2021-12-20"
+  container="quay.io/trickest/fgrep-by-string:v1.0.0"
+  source_url="https://github.com/trickest"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/c044e290-f944-43cd-8ed0-373c8cde46a5.json"
+  inputs={ {
+  "file": {
+    "type": "FILE",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "Files that need to be fgrepped.",
+  },
+  "fgrep-string": {
+    "type": "STRING",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "String that needs to be ungrepped.",
+  },
+  "folder-with-files": {
+    "type": "FOLDER",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "Folders with files that need to be fgrepped.",
+  },
+}}
+/>

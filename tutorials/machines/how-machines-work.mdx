@@ -1,0 +1,67 @@
+---
+title: 'How Machines Work'
+description: 'Learn how machines work in Trickest'
+---
+
+In Trickest, machines are virtual environments that execute your workflows. They are responsible for running your [Nodes](../../user-guides/concepts/nodes/introduction) (tools, scripts & modules), and you can configure them to suit your needs. This guide will help you understand how machines work in Trickest and how you can manage them effectively.
+
+### Machine Calculation
+
+When you execute a workflow, Trickest calculates the number of machines required based on the number of nodes and branches in your workflow. Each node is assigned to a machine, and the **maximum** number of machines depends on the workflow complexity.
+
+### One Machine Workflow
+
+### Single Node Workflow
+
+In a simple workflow with a single node, Trickest assigns one machine to execute the node. The machine will run the node and produce the output.
+
+<Frame>
+    <img src="/images/sample-tool-with-string-connection.png" alt="One Machine Workflow" />
+</Frame>
+
+### Single Branch Workflow
+
+In a workflow with multiple nodes connected in a single branch, Trickest assigns one machine to execute each node. The machines run the nodes sequentially, passing the output from one node to the next. 
+
+Multiple machines can not be used because of the dependency between the nodes. The output of the first node is required as input for the second node.
+
+<Frame>
+    <img src="/images/tutorials/single-branch-workflow.png" alt="Single Branch Workflow" />
+</Frame>
+
+For each of the nodes in the screenshot (`subfinder`, `httprobe` and `ffuf-multi`), the same machine will be used to execute the nodes.
+
+### Multiple Branches Workflow
+
+If we copy the entire branch and put it underneath the existing branch, Trickest will assign a new machine to execute the nodes in the second branch, which will end up in **maximum* number of machines for this particular worklfow to `2`.
+
+
+<Frame>
+    <img src="/images/tutorials/multiple-branches-workflow.png" alt="Multiple Branches Workflow" />
+</Frame>
+
+### Multiple Horizontal Nodes
+
+If we add multiple nodes horizontally, Trickest will calculate a new machine to execute each node. This means that each node will be executed in parallel.
+
+Let's add a couple of more nodes horizontally.
+
+<Frame>
+    <img src="/images/tutorials/multiple-horizontal-nodes.png" alt="Multiple mulHorizontal Nodes" />
+</Frame>
+
+In this example, we've added `subfinder`, `assetfinder` and `amass` nodes. Each of these nodes will be executed in parallel on separate machines. This is why platform will calculate `3` machines for this particular workflow.
+
+### Splitter and Maximum Number of Machines
+
+In this example, we are going to use `sed-add-at-end` script to add a `FUZZ` at the end of each line (in this case web servers) and then we are going to use `ffuf` tool to fuzz the web servers. But, instead of directly connecting `sed-add-at-end` with `ffuf` we are going to add `splitter` node in between.
+
+<Frame>
+    <img src="/images/tutorials/splitter-maximum-machines.png" alt="Splitter and Maximum Number of Machines" />
+</Frame>
+
+In this example, we've added `sed-add-at-end`, `splitter` and `ffuf` nodes. The `splitter` node will split the input file into multiple chunks and each chunk will be processed by a separate machine. In this case, the platform will use **maximum number of machines in your [fleet](../../user-guides/concepts/runs/fleets)** that can be used to execute the nodes.
+
+### Machine Management
+
+You can monitor your machines in the [Machines](https://trickest.io/dashboard/machines) page. Here you can see all of your machines and their status.

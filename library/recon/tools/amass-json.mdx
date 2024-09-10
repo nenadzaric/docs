@@ -1,0 +1,283 @@
+---
+title: "amass-json"
+description: "The OWASP Amass Project performs network mapping of attack surfaces and external asset discovery using open source information gathering and active reconnaissance techniques. This version produces JSON output"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="6a80942a-aec2-4130-89e9-20ff253e2f51"
+  name="amass-json"
+  description="The OWASP Amass Project performs network mapping of attack surfaces and external asset discovery using open source information gathering and active reconnaissance techniques. This version produces JSON output"
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2022-02-22"
+  container="quay.io/trickest/amass:v3.22.2"
+  source_url="https://github.com/OWASP/Amass"
+  license="Unknown"
+  output_command="-json"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/6a80942a-aec2-4130-89e9-20ff253e2f51.json"
+  inputs={ {
+  "ports": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-p",
+    "visible": false,
+    "description": "Ports separated by commas (default: 443)",
+  },
+  "domain": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-d",
+    "visible": true,
+    "description": "Domain names separated by commas (can be used multiple times)",
+  },
+  "no-alts": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-noalts",
+    "visible": false,
+    "description": "Disable generation of altered names",
+  },
+  "passive": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-passive",
+    "visible": false,
+    "description": "A purely passive mode of execution",
+  },
+  "show-ip": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-ip",
+    "visible": false,
+    "description": "Show the IP addresses for discovered names",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-timeout",
+    "visible": false,
+    "description": "Number of minutes to execute the enumeration",
+  },
+  "blacklist": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-bl",
+    "visible": false,
+    "description": "Blacklist of subdomain names that will not be investigated",
+  },
+  "show-ipv4": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-ipv4",
+    "visible": false,
+    "description": "Show the IPv4 addresses for discovered names",
+  },
+  "show-ipv6": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-ipv6",
+    "visible": false,
+    "description": "Show the IPv6 addresses for discovered names",
+  },
+  "domain-list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-df",
+    "visible": false,
+    "description": "Path to a file providing root domain names",
+  },
+  "active-methods": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-active",
+    "visible": false,
+    "description": "Enable active recon methods",
+  },
+  "wordlist-brute": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-w",
+    "visible": false,
+    "description": "Path to a different wordlist file",
+  },
+  "bruteforce-flag": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-brute",
+    "visible": false,
+    "description": "Perform brute force subdomain enumeration",
+  },
+  "ini-config-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-config",
+    "visible": false,
+    "description": "Path to the INI configuration file",
+  },
+  "max-dns-queries": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-max-dns-queries",
+    "visible": false,
+    "description": "Deprecated flag to be replaced by dns-qps in version 4.0",
+  },
+  "no-recursive-bf": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-norecursive",
+    "visible": false,
+    "description": "Turn off recursive brute forcing",
+  },
+  "trusted-resolver": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-tr",
+    "visible": false,
+    "description": "IP addresses of trusted DNS resolver",
+  },
+  "exclude-data-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-ef",
+    "visible": false,
+    "description": "Path to a file providing data sources to exclude",
+  },
+  "min-for-recursive": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-min-for-recursive",
+    "visible": false,
+    "description": "Subdomain labels seen before recursive brute forcing (Default: 1)",
+  },
+  "print-data-sources": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-src",
+    "visible": false,
+    "description": "Print data sources for the discovered names",
+  },
+  "untrusted-resolver": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-r",
+    "visible": false,
+    "description": "IP addresses of untrusted DNS resolver",
+  },
+  "exclude-source-names": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-exclude",
+    "visible": false,
+    "description": "Data source names separated by commas to be excluded",
+  },
+  "include-data-sources": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-include",
+    "visible": false,
+    "description": "Data source names separated by commas to be included",
+  },
+  "wordlist-alternations": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-aw",
+    "visible": false,
+    "description": "Path to a different wordlist file for alterations",
+  },
+  "dns-queries-per-second": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-dns-qps",
+    "visible": false,
+    "description": "Maximum number of DNS queries per second",
+  },
+  "trusted-resolvers-file": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-trf",
+    "visible": false,
+    "description": "Path to a file providing trusted DNS resolvers",
+  },
+  "graph-database-directory": {
+    "type": "FOLDER",
+    "order": 0,
+    "command": "-dir",
+    "visible": false,
+    "description": "Path to the directory containing the graph database",
+  },
+  "untrusted-resolvers-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-rf",
+    "visible": false,
+    "description": "Path to a file providing untrusted DNS resolvers",
+  },
+  "include-data-sources-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-if",
+    "visible": false,
+    "description": "Path to a file providing data sources to include",
+  },
+  "trusted-dns-resolvers-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-trf",
+    "visible": false,
+    "description": "Path to a file providing trusted DNS resolvers",
+  },
+  "blacklisted-subdomains-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-blf",
+    "visible": false,
+    "description": "Path to a file providing blacklisted subdomains",
+  },
+  "no-resolver-rate-monitoring": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-noresolvrate",
+    "visible": false,
+    "description": "Disable resolver rate monitoring",
+  },
+  "untrusted-dns-resolvers-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-rf",
+    "visible": false,
+    "description": "Path to a file providing preferred DNS resolvers",
+  },
+  "already-known-subdomain-names": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-nf",
+    "visible": false,
+    "description": "Path to a file providing already known subdomain names (from other tools/sources)",
+  },
+  "no-resolver-reliability-score": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-noresolvscore",
+    "visible": false,
+    "description": "Disable resolver reliability scoring",
+  },
+  "trusted-dns-max-queries-per-second": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-trqps",
+    "visible": false,
+    "description": "Maximum number of DNS queries per second for each trusted resolvers",
+  },
+  "untrusted-dns-max-queries-per-second": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-rqps",
+    "visible": false,
+    "description": "Maximum number of DNS queries per second for untrusted resolvers",
+  },
+}}
+/>

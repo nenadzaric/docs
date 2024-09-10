@@ -1,0 +1,87 @@
+---
+title: "crlfmap"
+description: "CRLFMap is a tool to find HTTP Splitting vulnerabilities"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="32ae7262-d4b6-4227-b2a1-253ff4cc7fe9"
+  name="crlfmap"
+  description="CRLFMap is a tool to find HTTP Splitting vulnerabilities"
+  category="Vulnerabilities"
+  author="trickest"
+  created_date="2021-11-02"
+  container="quay.io/trickest/crlfmap:63ea414"
+  source_url="https://github.com/ryandamour/crlfmap"
+  license="Unknown"
+  output_command="--output"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/32ae7262-d4b6-4227-b2a1-253ff4cc7fe9.json"
+  inputs={ {
+  "threads": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--threads",
+    "visible": false,
+    "description": "Number of threads to run crlfmap on (default 1)",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--timeout",
+    "visible": false,
+    "description": "The amount of time needed to close a connection that could be hung (default 10)",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "--verbose",
+    "visible": false,
+    "description": "Verbose output.",
+  },
+  "payloads": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--payloads",
+    "visible": false,
+    "description": "Location of payloads to generate on requests (default payloads.txt)",
+  },
+  "scan-mode": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "scan",
+    "visible": true,
+    "description": "Scan mode",
+  },
+  "user-agent": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--user-agent",
+    "visible": false,
+    "description": "User agent for requests (default Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36)",
+  },
+  "delay-milisec": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--delay",
+    "visible": false,
+    "description": "The time each threads waits between requests in milliseconds",
+  },
+  "slack-webhook": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--slack-webhook",
+    "visible": false,
+    "description": "Slack webhook to send findings to a channel",
+  },
+  "target-domains": {
+    "type": "FILE",
+    "order": 1,
+    "command": "-d",
+    "visible": true,
+    "description": "Location of domains with parameters to scan",
+  },
+}}
+/>

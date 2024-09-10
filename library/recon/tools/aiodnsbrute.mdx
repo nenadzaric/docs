@@ -1,0 +1,101 @@
+---
+title: "aiodnsbrute"
+description: "A Python 3.5+ tool that uses asyncio to brute force domain names asynchronously. It's fast. Benchmarks on small VPS hosts put around 100k DNS resolutions at 1.5-2mins. An amazon M3 box was used to make 1 mil requests in just over 3 minutes. Your mileage may vary. It's probably best to avoid using Google's resolvers if you're purely interested in speed. Trickest currently supports only json output for aiodnsbrute."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="9fb4d551-4217-4e70-9999-2e4854ce9cfe"
+  name="aiodnsbrute"
+  description="A Python 3.5+ tool that uses asyncio to brute force domain names asynchronously. It's fast. Benchmarks on small VPS hosts put around 100k DNS resolutions at 1.5-2mins. An amazon M3 box was used to make 1 mil requests in just over 3 minutes. Your mileage may vary. It's probably best to avoid using Google's resolvers if you're purely interested in speed. Trickest currently supports only json output for aiodnsbrute."
+  category="Recon"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/aiodnsbrute:e773a4c"
+  source_url="https://github.com/blark/aiodnsbrute"
+  license="Unknown"
+  output_command="--outfile"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/9fb4d551-4217-4e70-9999-2e4854ce9cfe.json"
+  inputs={ {
+  "domain": {
+    "type": "STRING",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "Domain to bruteforce",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--verbosity",
+    "visible": false,
+    "description": "Increase output verbosity.",
+  },
+  "wildcard": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--wildcard",
+    "visible": false,
+    "description": "Wildcard detection. Enabled by default.",
+  },
+  "wordlist": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--wordlist",
+    "visible": true,
+    "description": "Wordlist to use for brute force.",
+  },
+  "max-tasks": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--max-tasks",
+    "visible": false,
+    "description": "Maximum number of tasks to run asynchronosly.",
+  },
+  "no-wildcard": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--no-wildcard",
+    "visible": false,
+    "description": "No wildcard detection.",
+  },
+  "resolvers-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--resolver-file",
+    "visible": true,
+    "description": "A text file containing a list of DNS resolvers to use, one per line, comments start with #. Default: use system resolvers.",
+  },
+  "dns-lookup-type": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--query",
+    "visible": false,
+    "description": "DNS lookup type to use query is faster, but won't return CNAME information. Enabled by default.",
+  },
+  "get-host-by-name": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--gethostbyname",
+    "visible": false,
+    "description": "Detects CNAMEs which can be handy for potential subdomain takeover detection.",
+  },
+  "verify-domain-name": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--verify",
+    "visible": false,
+    "description": "Verify domain name is sane before beginning. Enabled by default.",
+  },
+  "dont-verify-domain-name": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--no-verify",
+    "visible": false,
+    "description": "Do not verify domain name.",
+  },
+}}
+/>

@@ -1,0 +1,73 @@
+---
+title: "subzy"
+description: "Subzy is subdomain takeover tool which works based on matching response fingerprings from can-i-take-over-xyz."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="e1c719c9-1166-4919-8915-880ac5ae7191"
+  name="subzy"
+  description="Subzy is subdomain takeover tool which works based on matching response fingerprings from can-i-take-over-xyz."
+  category="Vulnerabilities"
+  author="trickest"
+  created_date="2021-09-07"
+  container="quay.io/trickest/subzy:6ba1639"
+  source_url="https://github.com/LukaSikic/subzy"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/e1c719c9-1166-4919-8915-880ac5ae7191.json"
+  inputs={ {
+  "target": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-target",
+    "visible": true,
+    "description": "Single or multiple subdomains separated by comma",
+  },
+  "targets": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-targets",
+    "visible": true,
+    "description": "File path to list of subdomains to be scanned",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-timeout",
+    "visible": false,
+    "description": "Request timeout in seconds (default 10)",
+  },
+  "hide-fails": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-hide_fails",
+    "visible": false,
+    "description": "Don't display failed results",
+  },
+  "concurrency": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-concurrency",
+    "visible": false,
+    "description": "Number of concurrent checks (default 10)",
+  },
+  "force-https": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-https",
+    "visible": false,
+    "description": "Force https protocol if not no protocol defined for target (default false)",
+  },
+  "dont-verify-ssl": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-verify_ssl",
+    "visible": false,
+    "description": "If set to true it won't check sites with insecure SSL and return HTTP Error",
+  },
+}}
+/>

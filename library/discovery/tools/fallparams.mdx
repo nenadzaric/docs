@@ -1,0 +1,101 @@
+---
+title: "fallparams"
+description: "Find All Parameters - Tool to crawl pages, find potential parameters and generate a custom target parameter wordlist"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="ac7410c6-d0e0-4900-8db3-c4517d7f66f1"
+  name="fallparams"
+  description="Find All Parameters - Tool to crawl pages, find potential parameters and generate a custom target parameter wordlist"
+  category="Discovery"
+  author="trickest-mhmdiaa"
+  created_date="2024-01-23"
+  container="quay.io/trickest/fallparams:v1.0.7"
+  source_url="https://github.com/ImAyrix/fallparams"
+  license="Unknown"
+  output_command="-output"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/ac7410c6-d0e0-4900-8db3-c4517d7f66f1.json"
+  inputs={ {
+  "url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-url",
+    "visible": true,
+    "description": "Input URL",
+  },
+  "urls": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-url",
+    "visible": true,
+    "description": "Input URLs file",
+  },
+  "crawl": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-crawl",
+    "visible": false,
+    "description": "Crawl pages to extract their parameters",
+  },
+  "depth": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-depth",
+    "visible": false,
+    "description": "maximum depth to crawl (default 2)",
+  },
+  "files": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-files",
+    "visible": false,
+    "description": "Stored requests/responses files directory path (offline)",
+  },
+  "sleep": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-sleep",
+    "visible": false,
+    "description": "Time for sleep after sending each request",
+  },
+  "header": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-header",
+    "visible": false,
+    "description": "Header Name: Value, separated by colon. Multiple -H flags are accepted.",
+  },
+  "thread": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-thread",
+    "visible": false,
+    "description": "Number Of Thread [Number] (default 1)",
+  },
+  "max-length": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-max-length",
+    "visible": false,
+    "description": "Maximum length of words (default 30)",
+  },
+  "headless-crawl": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-headless-crawl",
+    "visible": false,
+    "description": "Enable headless hybrid crawling (experimental)",
+  },
+  "headless-parameter": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-headless-parameter",
+    "visible": false,
+    "description": "Discover parameters with headless browser",
+  },
+}}
+/>

@@ -1,0 +1,66 @@
+---
+title: "mksub"
+description: "Make subdomains using a wordlistRead a wordlist file (lowercase, remove [^a-zA-Z0-9-_.]+), filter unique words and generate subdomains."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="de35c1d1-60fd-4db0-9390-8a63ca126045"
+  name="mksub"
+  description="Make subdomains using a wordlistRead a wordlist file (lowercase, remove [^a-zA-Z0-9-_.]+), filter unique words and generate subdomains."
+  category="Recon"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/mksub:aa347db"
+  source_url="https://github.com/trickest/mksub"
+  license="Unknown"
+  output_command="-o"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/de35c1d1-60fd-4db0-9390-8a63ca126045.json"
+  inputs={ {
+  "level": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-l",
+    "visible": false,
+    "description": "Subdomain level to generate. E.g. level 1 will produce sub.domain.com, and level 2 sub.sub.domain.com (default: 1).",
+  },
+  "domain": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-d",
+    "visible": true,
+    "description": "Domain to generate permutations for.",
+  },
+  "silent": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-silent",
+    "visible": false,
+    "description": "Skip writing generated subdomains to stdout (faster) (default true)",
+  },
+  "wordlist": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-w",
+    "visible": true,
+    "description": "Wordlist for permutations.",
+  },
+  "domain-list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-df",
+    "visible": true,
+    "description": "Input domain file, one domain per line.",
+  },
+  "regex-filter": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-r",
+    "visible": false,
+    "description": "Regex to filter words from wordlist file.",
+  },
+}}
+/>

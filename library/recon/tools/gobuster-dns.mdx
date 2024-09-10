@@ -1,0 +1,80 @@
+---
+title: "gobuster-dns"
+description: "A tool used to brute-force DNS subodmains(with wildcard support)"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="1e00e61a-26a2-4515-a57d-dfbcc1524457"
+  name="gobuster-dns"
+  description="A tool used to brute-force DNS subodmains(with wildcard support)"
+  category="Recon"
+  author="trickest"
+  created_date="2021-08-04"
+  container="quay.io/trickest/gobuster-dns:f7bc132"
+  source_url="https://github.com/OJ/gobuster"
+  license="Unknown"
+  output_command="-o"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/1e00e61a-26a2-4515-a57d-dfbcc1524457.json"
+  inputs={ {
+  "domain": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-d",
+    "visible": true,
+    "description": "The target domain",
+  },
+  "show-ip": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-i",
+    "visible": false,
+    "description": "Show IP addresses",
+  },
+  "threads": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-t",
+    "visible": false,
+    "description": "Number of concurrent threads (default 10)",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--timeout",
+    "visible": false,
+    "description": "DNS resolver timeout (default 1s)",
+  },
+  "resolver": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-r",
+    "visible": false,
+    "description": "Use custom DNS server (format server.com or server.com:port)",
+  },
+  "wordlist": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-w",
+    "visible": true,
+    "description": "Path to the wordlist",
+  },
+  "show-cname": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-c",
+    "visible": false,
+    "description": "Show CNAME records (cannot be used with '-i' option)",
+  },
+  "force-wildcard": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--wildcard",
+    "visible": false,
+    "description": "Force continued operation when wildcard found",
+  },
+}}
+/>

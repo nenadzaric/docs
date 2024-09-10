@@ -1,0 +1,66 @@
+---
+title: "urldedupe"
+description: "urldedupe is a tool to quickly pass in a list of URLs, and get back a list of deduplicated (unique) URL and query string combination. This is useful to ensure you don't have a URL list will hundreds of duplicated parameters with differing qs values."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="25719df3-4330-429b-a744-1d1a3cbc9db5"
+  name="urldedupe"
+  description="urldedupe is a tool to quickly pass in a list of URLs, and get back a list of deduplicated (unique) URL and query string combination. This is useful to ensure you don't have a URL list will hundreds of duplicated parameters with differing qs values."
+  category="Utilities"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/urldedupe:cc9b25a"
+  source_url="https://github.com/ameenmaali/urldedupe"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/25719df3-4330-429b-a744-1d1a3cbc9db5.json"
+  inputs={ {
+  "mode": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-m",
+    "visible": false,
+    "description": "The mode/filters to be enabled (can be 1 or more, comma separated). Default is none, available options are the other flags (--mode r,s,qs,ne)",
+  },
+  "urls-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-u",
+    "visible": true,
+    "description": "File containing urls",
+  },
+  "regex-parse": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-r",
+    "visible": false,
+    "description": "This is significantly slower than normal parsing, but may be more thorough or accurate",
+  },
+  "no-extensions": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-ne",
+    "visible": false,
+    "description": "Do not include URLs if they have an extension (i.e. .png, .jpg, .woff, .js, .html)",
+  },
+  "query-strings-only": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-qs",
+    "visible": false,
+    "description": "Only include URLs if they have query strings",
+  },
+  "remove-similar-urls": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-s",
+    "visible": false,
+    "description": "Remove similar URLs (based on integers and image/font files) - i.e. /api/user/1 & /api/user/2 deduplicated",
+  },
+}}
+/>

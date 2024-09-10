@@ -1,0 +1,31 @@
+---
+title: "dnsdumpster-dns-lookup"
+description: "Look up DNS records on DNSDumpster"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="4b6bd82b-0d26-4e49-a454-50d55e1949e3"
+  name="dnsdumpster-dns-lookup"
+  description="Look up DNS records on DNSDumpster"
+  category="OSINT"
+  author="trickest-mhmdiaa"
+  created_date="2022-12-07"
+  container="quay.io/trickest/dnsdumpster-dns-lookup:v1.0.2"
+  source_url="https://github.com/trickest"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/4b6bd82b-0d26-4e49-a454-50d55e1949e3.json"
+  inputs={ {
+  "domain": {
+    "type": "STRING",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Root domain to enumerate",
+  },
+}}
+/>

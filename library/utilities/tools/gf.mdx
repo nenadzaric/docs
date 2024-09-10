@@ -1,0 +1,38 @@
+---
+title: "gf"
+description: "A wrapper around grep to avoid typing common patterns."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="65df490e-84cc-4f41-9e9b-6b648d97ebc6"
+  name="gf"
+  description="A wrapper around grep to avoid typing common patterns."
+  category="Utilities"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/gf:dcd4c36-patch-1"
+  source_url="https://github.com/tomnomnom/gf"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/65df490e-84cc-4f41-9e9b-6b648d97ebc6.json"
+  inputs={ {
+  "input": {
+    "type": "FILE",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "Input file",
+  },
+  "gf-json": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Name of JSON file",
+  },
+}}
+/>

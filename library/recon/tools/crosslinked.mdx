@@ -1,0 +1,66 @@
+---
+title: "crosslinked"
+description: "LinkedIn enumeration tool to extract valid employee names from an organization through search engine scraping"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="62dd0240-86fd-4c2b-a59d-a6e014e4c36e"
+  name="crosslinked"
+  description="LinkedIn enumeration tool to extract valid employee names from an organization through search engine scraping"
+  category="Recon"
+  author="trickest-mhmdiaa"
+  created_date="2022-03-28"
+  container="quay.io/trickest/crosslinked:e1c2cc7"
+  source_url="https://github.com/m8r0wn/CrossLinked"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/62dd0240-86fd-4c2b-a59d-a6e014e4c36e.json"
+  inputs={ {
+  "proxy": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--proxy",
+    "visible": false,
+    "description": "Proxy requests (IP:Port)",
+  },
+  "format": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-f",
+    "visible": true,
+    "description": "Format names, ex: `domain\{f}{last}`, `{first}.{last}@domain.com`",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-t",
+    "visible": false,
+    "description": "Max timeout per search (Default=20, 0=None)",
+  },
+  "proxy-file": {
+    "type": "FILE",
+    "order": 1,
+    "command": "--proxy-file",
+    "visible": false,
+    "description": "Load proxies from file for rotation",
+  },
+  "company-name": {
+    "type": "STRING",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Target company name",
+  },
+  "search-engine": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--search",
+    "visible": false,
+    "description": "Search engine (Default='google,bing')",
+  },
+}}
+/>

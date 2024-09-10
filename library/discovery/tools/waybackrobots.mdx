@@ -1,0 +1,52 @@
+---
+title: "waybackrobots"
+description: "Enumerate old versions of robots.txt paths using Wayback Machine for content discovery"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="a47b3d9e-4a71-498d-9ddd-376447200213"
+  name="waybackrobots"
+  description="Enumerate old versions of robots.txt paths using Wayback Machine for content discovery"
+  category="Discovery"
+  author="trickest-mhmdiaa"
+  created_date="2023-04-18"
+  container="quay.io/trickest/waybackrobots:v1.0.1"
+  source_url="https://github.com/mhmdiaa/waybackrobots"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/a47b3d9e-4a71-498d-9ddd-376447200213.json"
+  inputs={ {
+  "limit": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-limit",
+    "visible": false,
+    "description": "limit the number crawled snapshots. Use -1 for unlimited (default 50)",
+  },
+  "recent": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-recent",
+    "visible": false,
+    "description": "use the most recent snapshots without evenly distributing them",
+  },
+  "target": {
+    "type": "STRING",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "Target domain",
+  },
+  "targets": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "List of targets",
+  },
+}}
+/>

@@ -1,0 +1,157 @@
+---
+title: "gobuster-dir"
+description: "A tool to brute-force directories and files in web sites."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="086104cd-1acc-4eea-ac6a-d14b3926b08a"
+  name="gobuster-dir"
+  description="A tool to brute-force directories and files in web sites."
+  category="Discovery"
+  author="trickest"
+  created_date="2021-08-04"
+  container="quay.io/trickest/gobuster-dir:f7bc132"
+  source_url="https://github.com/OJ/gobuster"
+  license="Unknown"
+  output_command="-o"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/086104cd-1acc-4eea-ac6a-d14b3926b08a.json"
+  inputs={ {
+  "url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-u",
+    "visible": true,
+    "description": "The target URL",
+  },
+  "proxy": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-p",
+    "visible": false,
+    "description": "Proxy to use for requests [http(s)://host:port]",
+  },
+  "cookies": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-c",
+    "visible": false,
+    "description": "Cookies to use for the requests",
+  },
+  "headers": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-H",
+    "visible": false,
+    "description": "Specify HTTP headers, -H 'Header1: val1' -H 'Header2: val2'",
+  },
+  "threads": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-t",
+    "visible": false,
+    "description": "Number of concurrent threads (default 10)",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--timeout",
+    "visible": false,
+    "description": "HTTP Timeout (default 10s)",
+  },
+  "wordlist": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-w",
+    "visible": true,
+    "description": "Provide a wordlist",
+  },
+  "add-slash": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-f",
+    "visible": false,
+    "description": "Append / to each request",
+  },
+  "useragent": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-a",
+    "visible": false,
+    "description": "Set the User-Agent string (default gobuster/3.1.0)",
+  },
+  "extensions": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-x",
+    "visible": false,
+    "description": "File extension(s) to search for",
+  },
+  "expanded-mode": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-e",
+    "visible": false,
+    "description": "Expanded mode, print full URLs",
+  },
+  "include-length": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-l",
+    "visible": false,
+    "description": "Include the length of the body in the output",
+  },
+  "follow-redirect": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-r",
+    "visible": false,
+    "description": "Follow redirects",
+  },
+  "no-tls-validation": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--no-tls-validation",
+    "visible": false,
+    "description": "Skip TLS certificate verification",
+  },
+  "basic-auth-password": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-P",
+    "visible": false,
+    "description": "Password for Basic Auth",
+  },
+  "basic-auth-username": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-U",
+    "visible": false,
+    "description": "Username for Basic Auth",
+  },
+  "positive-status-codes": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-s",
+    "visible": false,
+    "description": "Positive status codes (will be overwritten with status-codes-blacklist if set) (default 200,204,301,302,307,401,403)",
+  },
+  "blacklist-status-codes": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-b",
+    "visible": false,
+    "description": "Negative status codes (will override status-codes if set)",
+  },
+  "force-continued-wildcard": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--wildcard",
+    "visible": false,
+    "description": "Force continued operation when wildcard found",
+  },
+}}
+/>

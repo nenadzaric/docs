@@ -1,0 +1,304 @@
+---
+title: "dnsx"
+description: "dnsx is a fast and multi-purpose DNS toolkit allow to run multiple probers using retryabledns library, that allows you to perform multiple DNS queries of your choice with a list of user supplied resolvers."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="f7065154-7a1e-4a9e-a7f8-2289e0383cd6"
+  name="dnsx"
+  description="dnsx is a fast and multi-purpose DNS toolkit allow to run multiple probers using retryabledns library, that allows you to perform multiple DNS queries of your choice with a list of user supplied resolvers."
+  category="Recon"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/dnsx:v1.2.1"
+  source_url="https://github.com/projectdiscovery/dnsx"
+  license="Unknown"
+  output_command="-o"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/f7065154-7a1e-4a9e-a7f8-2289e0383cd6.json"
+  inputs={ {
+  "a": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-a",
+    "visible": false,
+    "description": "query A record (default)",
+  },
+  "mx": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-mx",
+    "visible": false,
+    "description": "query MX record",
+  },
+  "ns": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-ns",
+    "visible": false,
+    "description": "query NS record",
+  },
+  "any": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-any",
+    "visible": false,
+    "description": "query ANY record",
+  },
+  "asn": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-asn",
+    "visible": false,
+    "description": "display host asn information",
+  },
+  "caa": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-caa",
+    "visible": false,
+    "description": "query CAA record",
+  },
+  "cdn": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-cdn",
+    "visible": false,
+    "description": "display cdn name",
+  },
+  "ptr": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-ptr",
+    "visible": false,
+    "description": "query PTR record",
+  },
+  "soa": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-soa",
+    "visible": false,
+    "description": "query SOA record",
+  },
+  "srv": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-srv",
+    "visible": false,
+    "description": "query SRV record",
+  },
+  "txt": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-txt",
+    "visible": false,
+    "description": "query TXT record",
+  },
+  "aaaa": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-aaaa",
+    "visible": false,
+    "description": "query AAAA record",
+  },
+  "axfr": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-axfr",
+    "visible": false,
+    "description": "query AXFR",
+  },
+  "json": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-json",
+    "visible": false,
+    "description": "write output in JSONL(ines) format",
+  },
+  "list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-list",
+    "visible": true,
+    "description": "list of sub(domains)/hosts to resolve (file or stdin)",
+  },
+  "resp": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-resp",
+    "visible": false,
+    "description": "display dns response",
+  },
+  "cname": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-cname",
+    "visible": false,
+    "description": "query CNAME record",
+  },
+  "debug": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-debug",
+    "visible": false,
+    "description": "display raw dns response",
+  },
+  "rcode": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-rcode",
+    "visible": false,
+    "description": "filter result by dns status code (eg. -rcode noerror,servfail,refused)",
+  },
+  "recon": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-recon",
+    "visible": false,
+    "description": "query all the dns records (a,aaaa,cname,ns,txt,srv,ptr,mx,soa,axfr,caa)",
+  },
+  "retry": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-retry",
+    "visible": false,
+    "description": "number of dns attempts to make (must be at least 1) (default 2)",
+  },
+  "stats": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-stats",
+    "visible": false,
+    "description": "display stats of the running scan",
+  },
+  "trace": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-trace",
+    "visible": false,
+    "description": "perform dns tracing",
+  },
+  "domain": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-domain",
+    "visible": false,
+    "description": "list of domain to bruteforce (file or comma separated or stdin)",
+  },
+  "silent": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-silent",
+    "visible": false,
+    "description": "display only results in the output",
+  },
+  "threads": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-threads",
+    "visible": false,
+    "description": "number of concurrent threads to use (default 100)",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-verbose",
+    "visible": false,
+    "description": "display verbose output",
+  },
+  "no-color": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-no-color",
+    "visible": false,
+    "description": "disable color in output",
+  },
+  "omit-raw": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-omit-raw",
+    "visible": false,
+    "description": "omit raw dns response from jsonl output",
+  },
+  "resolver": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-resolver",
+    "visible": false,
+    "description": "list of resolvers to use (comma separated)",
+  },
+  "wordlist": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-wordlist",
+    "visible": false,
+    "description": "list of words to bruteforce (file or comma separated or stdin)",
+  },
+  "hostsfile": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-hostsfile",
+    "visible": false,
+    "description": "use system host file",
+  },
+  "resp-only": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-resp-only",
+    "visible": false,
+    "description": "display dns response only",
+  },
+  "rate-limit": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-rate-limit",
+    "visible": false,
+    "description": "number of dns request/second to make (disabled as default) (default -1)",
+  },
+  "exclude-type": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-exclude-type",
+    "visible": false,
+    "description": "dns query type to exclude (a,aaaa,cname,ns,txt,srv,ptr,mx,soa,axfr,caa) (default none)",
+  },
+  "health-check": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-health-check",
+    "visible": false,
+    "description": "run diagnostic check up",
+  },
+  "resolver-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-resolver",
+    "visible": false,
+    "description": "list of resolvers to use (file)",
+  },
+  "wildcard-domain": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-wildcard-domain",
+    "visible": false,
+    "description": "domain name for wildcard filtering (other flags will be ignored - only json output is supported)",
+  },
+  "wildcard-threshold": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-wildcard-threshold",
+    "visible": false,
+    "description": "wildcard filter threshold (default 5)",
+  },
+  "trace-max-recursion": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-trace-max-recursion",
+    "visible": false,
+    "description": "Max recursion for dns trace (default 32767)",
+  },
+}}
+/>

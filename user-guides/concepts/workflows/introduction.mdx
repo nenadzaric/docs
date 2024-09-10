@@ -1,0 +1,67 @@
+---
+title: Introduction
+description: ''
+---
+
+In Trickest Platform connecting different [Node Types](../nodes/node-types) through [Node Connections](../nodes/node-connections) creates a workflow. Workflows are the core of the platform and are used to automate and orchestrate different offensive security tasks.
+
+## Workflow Editor
+
+The workflow editor is a place where you develop and customize workflows. It is a provides a way to construct your workflow through various nodes that can be dragged, dropped, connected, and modified.
+
+<Tip>To learn how to create your first empty workflow, check out [Tutorials -> Create Workflow](../../tutorials/creating-workflows)</Tip>
+
+## Builder Mode 
+
+When you create your first workflow, you will be in the builder mode. In this mode, you can add, remove, and connect nodes to create your workflow.
+
+<Frame> 
+  <img src="/images/empty-editor.png" />
+</Frame>
+
+### Left Sidebar
+
+<div style={{ display: 'flex', alignItems: 'center' }}>
+  <div style={{ flex: '2' }}>
+  <Frame>
+    <img src="images/left-sidebar-drag.gif" alt="Workflow Editor Left Sidebar" style={{ width: '100%', height: '100%' }} />
+  </Frame>
+  </div>
+  <div style={{ flex: '1', paddingLeft: '20px' }}>   
+    The left sidebar contains all the nodes that you can use in your workflow. 
+    If you want to use particular tool, you need to drag & drop it's [node](../nodes/node) from left sidebar to the workflow editor like shown in the picture.
+
+    The nodes are divided by:
+
+    * [**Node Types**](../nodes/node-types) - Contains all the different node types that you can use in your workflow.
+    * [**Categories**](../library/introduction) - Contains all the nodes that are grouped by their main functionality.
+
+  </div>
+</div> 
+
+<Tip>Use the **Search...** to find the node.</Tip>
+
+### Right Sidebar
+
+<div style={{ display: 'flex', alignItems: 'center' }}>
+  <div style={{ flex: '1', paddingRight: '20px' }}>
+    The right sidebar contains the configuration of the selected node. 
+    When you select a node, you can see the configuration options in the right sidebar.
+
+    <Info> If you didn't select any node, the right sidebar will present your workflow details.</Info>
+
+    This sidebar will contain all Command Line input parameters in human readable format available. There, you can **toggle** parameters of particular node to make them visible.
+
+  </div>
+  <div style={{ flex: '2' }}>
+  <Frame>
+    <img src="images/right-sidebar-toggle.gif" alt="Workflow Editor Right Sidebar" style={{ width: '100%', height: '100%' }} />
+  </Frame>
+  </div>
+  </div>
+
+
+Now that we have covered the basics of the workflow editor, let's move on to [configure our first tool](tools) and get it ready for execution. 
+
+<Tip>For more details about Nodes and how they work, check out [Node Inputs](../nodes/node-inputs), [Node Outputs](../nodes/node-outputs) and [Node Connections](../nodes/node-connections)</Tip>
+

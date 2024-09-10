@@ -1,0 +1,66 @@
+---
+title: "dsxs"
+description: "Damn Small XSS Scanner (DSXS) is a fully functional Cross-site scripting vulnerability scanner (supporting GET and POST parameters) written in under 100 lines of code."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="a0aefed3-8323-4c4f-8ed9-0d90ecfdc86e"
+  name="dsxs"
+  description="Damn Small XSS Scanner (DSXS) is a fully functional Cross-site scripting vulnerability scanner (supporting GET and POST parameters) written in under 100 lines of code."
+  category="Vulnerabilities"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/dsxs:3e628b6"
+  source_url="https://github.com/stamparm/DSXS"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/a0aefed3-8323-4c4f-8ed9-0d90ecfdc86e.json"
+  inputs={ {
+  "url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-u",
+    "visible": true,
+    "description": "Target URL (e.g. http://www.target.com/page.htm?id=1)",
+  },
+  "proxy": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--proxy",
+    "visible": false,
+    "description": "HTTP proxy address (e.g. http://127.0.0.1:8080)",
+  },
+  "cookie": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--cookie",
+    "visible": false,
+    "description": "HTTP Cookie header value",
+  },
+  "referer": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--referer",
+    "visible": false,
+    "description": "HTTP Referer header value",
+  },
+  "post-data": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--data",
+    "visible": false,
+    "description": "POST data (e.g. query=test)",
+  },
+  "user-agent": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--user-agent",
+    "visible": false,
+    "description": "HTTP User-Agent header value",
+  },
+}}
+/>

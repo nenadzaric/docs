@@ -1,0 +1,213 @@
+---
+title: "nikto"
+description: "Nikto is web server scanner which performs comprehensive tests against web servers for multiple items, including over 6700 potentially dangerous files/programs, checks for outdated versions of over 1250 servers, and version specific problems on over 270 servers."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="f3105920-d013-4302-a89d-5373ba95eedf"
+  name="nikto"
+  description="Nikto is web server scanner which performs comprehensive tests against web servers for multiple items, including over 6700 potentially dangerous files/programs, checks for outdated versions of over 1250 servers, and version specific problems on over 270 servers."
+  category="Scanners"
+  author="trickest"
+  created_date="2021-09-07"
+  container="quay.io/trickest/nikto:dc98b86"
+  source_url="https://github.com/sullo/nikto"
+  license="Unknown"
+  output_command="-output"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/f3105920-d013-4302-a89d-5373ba95eedf.json"
+  inputs={ {
+  "host": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-host",
+    "visible": true,
+    "description": "Target host",
+  },
+  "port": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-port",
+    "visible": false,
+    "description": "Port to use (default 80)",
+  },
+  "proxy": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-useproxy",
+    "visible": false,
+    "description": "Use the proxy defined in nikto.conf, or argument http://server:port",
+  },
+  "until": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-until",
+    "visible": false,
+    "description": "Run until the specified time or duration",
+  },
+  "vhost": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-vhost",
+    "visible": false,
+    "description": "Virtual host (for Host header)",
+  },
+  "format": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-Format",
+    "visible": false,
+    "description": "Output file format (Options: csv, html, nbe, txt, xml)",
+  },
+  "mutate": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-mutate",
+    "visible": false,
+    "description": "Guess additional file names",
+  },
+  "no-404": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-no404",
+    "visible": false,
+    "description": "Disables nikto attempting to guess a 404 page",
+  },
+  "no-ssl": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-nossl",
+    "visible": false,
+    "description": "Disables the use of SSL",
+  },
+  "dbcheck": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-dbcheck",
+    "visible": false,
+    "description": "Check database and other key files for syntax errors",
+  },
+  "display": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-Display",
+    "visible": false,
+    "description": "Turn on/off display outputs (options: 1, 2, 3, 4, D, E, P, S, V)",
+  },
+  "maxtime": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-maxtime",
+    "visible": false,
+    "description": "Maximum testing time per host (e.g., 1h, 60m, 3600s)",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-timeout",
+    "visible": false,
+    "description": "Timeout for requests (default 10 seconds)",
+  },
+  "userdbs": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-Userdbs",
+    "visible": false,
+    "description": "Load only user databases, not the standard databases",
+  },
+  "cgi-dirs": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-Cgidirs",
+    "visible": false,
+    "description": "Scan these CGI dirs: none, all, or values like /cgi/ /cgi-a/",
+  },
+  "nolookup": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-nolookup",
+    "visible": false,
+    "description": "Disables DNS lookups",
+  },
+  "rsa-cert": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-RSAcert",
+    "visible": false,
+    "description": "Client certificate file",
+  },
+  "force-ssl": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-ssl",
+    "visible": false,
+    "description": "Force ssl mode on port",
+  },
+  "IgnoreCode": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-IgnoreCode",
+    "visible": false,
+    "description": "Ignore Codes--treat as negative responses",
+  },
+  "use-config": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-config",
+    "visible": false,
+    "description": "Use this config file",
+  },
+  "user-agent": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-useragent",
+    "visible": false,
+    "description": "Over-rides the default useragent",
+  },
+  "scan-tuning": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-Tuning",
+    "visible": false,
+    "description": "Scan tuning:",
+  },
+  "mutate-options": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-mutate-options",
+    "visible": false,
+    "description": "Provide information for mutates",
+  },
+  "root-directory": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-root",
+    "visible": false,
+    "description": "Prepend root value to all requests, format is /directory",
+  },
+  "client-cert-key": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-key",
+    "visible": false,
+    "description": "Client certificate key file",
+  },
+  "evasion-technique": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-evasion",
+    "visible": false,
+    "description": "Encoding technique",
+  },
+  "host-authentication": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-id",
+    "visible": false,
+    "description": "Host authentication to use, format is id:pass or id:pass:realm",
+  },
+}}
+/>

@@ -1,0 +1,115 @@
+---
+title: "cmseek"
+description: "CMSeeK is content management system(CMS) is detection & exploitation suite"
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="b99ca538-ae81-442c-a270-a1c6db902a50"
+  name="cmseek"
+  description="CMSeeK is content management system(CMS) is detection & exploitation suite"
+  category="Scanners"
+  author="trickest-mhmdiaa"
+  created_date="2022-02-05"
+  container="quay.io/trickest/cmseek:20f9780"
+  source_url="https://github.com/Tuhinshubhra/CMSeeK"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/b99ca538-ae81-442c-a270-a1c6db902a50.json"
+  inputs={ {
+  "url": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--url",
+    "visible": true,
+    "description": "Target URL.",
+  },
+  "cms-id": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--strict-cms",
+    "visible": false,
+    "description": "Checks target against a list of provided CMS IDs. separated by comma ,",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--verbose",
+    "visible": false,
+    "description": "Increase output verbosity",
+  },
+  "only-cms": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--only-cms",
+    "visible": false,
+    "description": "Only detect CMS, ignore deep scan and version detection.",
+  },
+  "light-scan": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--light-scan",
+    "visible": false,
+    "description": "Skips Deep Scan. Does CMS and version detection only.",
+  },
+  "no-redirect": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--no-redirect",
+    "visible": false,
+    "description": "Skips all redirects and tests the input target(s)",
+  },
+  "target-list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--list",
+    "visible": true,
+    "description": "Target list (comma separated)",
+  },
+  "skip-scanned": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--skip-scanned",
+    "visible": false,
+    "description": "Skips target if it's CMS was previously detected.",
+  },
+  "ignore-cms-ids": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-i",
+    "visible": false,
+    "description": "Specify which CMS IDs to skip in order to avoid flase positive. separated by comma ,",
+  },
+  "follow-redirect": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--follow-redirect",
+    "visible": false,
+    "description": "Follows all/any redirect(s)",
+  },
+  "use-random-agent": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--random-agent",
+    "visible": false,
+    "description": "Use a random user agent",
+  },
+  "custom-user-agent": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--user-agent",
+    "visible": false,
+    "description": "Specify a custom user agent",
+  },
+  "googlebot-useragent": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--googlebot",
+    "visible": false,
+    "description": "Use Google bot user agent",
+  },
+}}
+/>

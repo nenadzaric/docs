@@ -1,0 +1,115 @@
+---
+title: "xurlfind3r"
+description: "xurlfind3r is designed to efficiently identify known URLs of given domains by tapping into a multitude of curated online passive sources."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="d5436c12-69b9-4d0d-9e6d-9ab86e758c4b"
+  name="xurlfind3r"
+  description="xurlfind3r is designed to efficiently identify known URLs of given domains by tapping into a multitude of curated online passive sources."
+  category="Discovery"
+  author="trickest-mhmdiaa"
+  created_date="2023-12-08"
+  container="quay.io/trickest/xurlfind3r:v0.4.0"
+  source_url="https://github.com/hueristiq/xurlfind3r"
+  license="Unknown"
+  output_command="--output"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/d5436c12-69b9-4d0d-9e6d-9ab86e758c4b.json"
+  inputs={ {
+  "list": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--list",
+    "visible": true,
+    "description": "target domains' list file path",
+  },
+  "match": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--match",
+    "visible": false,
+    "description": "regex to match URLs",
+  },
+  "domain": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--domain",
+    "visible": true,
+    "description": "target domain",
+  },
+  "filter": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--filter",
+    "visible": false,
+    "description": "regex to filter URLs",
+  },
+  "silent": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--silent",
+    "visible": false,
+    "description": "display output subdomains only",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--verbose",
+    "visible": false,
+    "description": "display verbose output",
+  },
+  "no-color": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--no-color",
+    "visible": false,
+    "description": "disable colored output",
+  },
+  "use-sources": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--use-sources",
+    "visible": false,
+    "description": "comma(,) separated sources to use",
+  },
+  "configuration": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--configuration",
+    "visible": false,
+    "description": "configuration file",
+  },
+  "exclude-sources": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--exclude-sources",
+    "visible": false,
+    "description": "comma(,) separated sources to exclude",
+  },
+  "include-subdomains": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--include-subdomains",
+    "visible": false,
+    "description": "match subdomain's URLs",
+  },
+  "parse-wayback-robots": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--parse-wayback-robots",
+    "visible": false,
+    "description": "with wayback, parse robots.txt snapshots",
+  },
+  "parse-wayback-source": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--parse-wayback-source",
+    "visible": false,
+    "description": "with wayback, parse source code snapshots",
+  },
+}}
+/>

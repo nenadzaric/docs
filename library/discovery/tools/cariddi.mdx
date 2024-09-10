@@ -1,0 +1,178 @@
+---
+title: "cariddi"
+description: "Take a list of domains, crawl URLs, and scan for endpoints, secrets, API keys, file extensions, tokens, and more..."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="81c2dc94-64d1-4415-9c2d-61bdaf9aa5a8"
+  name="cariddi"
+  description="Take a list of domains, crawl URLs, and scan for endpoints, secrets, API keys, file extensions, tokens, and more..."
+  category="Discovery"
+  author="trickest-mhmdiaa"
+  created_date="2022-02-05"
+  container="quay.io/trickest/cariddi:v1.3.1"
+  source_url="https://github.com/edoardottt/cariddi"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/81c2dc94-64d1-4415-9c2d-61bdaf9aa5a8.json"
+  inputs={ {
+  "err": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-err",
+    "visible": false,
+    "description": "Hunt for errors in websites.",
+  },
+  "json": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-json",
+    "visible": false,
+    "description": "Print the output as JSON in stdout.",
+  },
+  "debug": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-debug",
+    "visible": false,
+    "description": "Print debug information while crawling.",
+  },
+  "plain": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-plain",
+    "visible": false,
+    "description": "Print only the results.",
+  },
+  "proxy": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-proxy",
+    "visible": false,
+    "description": "Set a Proxy to be used (http and socks5 supported).",
+  },
+  "domains": {
+    "type": "FILE",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "List of domains to scan",
+  },
+  "headers": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-headers",
+    "visible": false,
+    "description": "Use custom headers for each request E.g. Cookie: auth=yes;;Client: type=2.",
+  },
+  "timeout": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-t",
+    "visible": false,
+    "description": "Set timeout for the requests. (default 10)",
+  },
+  "hunt-info": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-info",
+    "visible": false,
+    "description": "Hunt for useful informations in websites.",
+  },
+  "intensive": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-intensive",
+    "visible": false,
+    "description": "Crawl searching for resources matching 2nd level domain.",
+  },
+  "user-agent": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-ua",
+    "visible": false,
+    "description": "Use a custom User Agent.",
+  },
+  "headersfile": {
+    "type": "FILE",
+    "order": 1,
+    "command": "-headersfile",
+    "visible": false,
+    "description": "Read from an external file custom headers (same format of headers flag).",
+  },
+  "hunt-secrets": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-s",
+    "visible": false,
+    "description": "Hunt for secrets.",
+  },
+  "random-agent": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-rua",
+    "visible": false,
+    "description": "Use a random browser user agent on every request.",
+  },
+  "external-file": {
+    "type": "FILE",
+    "order": 1,
+    "command": "-ef",
+    "visible": false,
+    "description": "Use an external file (txt, one per line) to use custom parameters for endpoints hunting.",
+  },
+  "juicy-endpoint": {
+    "type": "BOOLEAN",
+    "order": 1,
+    "command": "-e",
+    "visible": false,
+    "description": "Hunt for juicy endpoints.",
+  },
+  "juicy-extensions": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-ext",
+    "visible": false,
+    "description": "Hunt for juicy file extensions. Integer from 1(juicy) to 7(not juicy).",
+  },
+  "concurrency-level": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-c",
+    "visible": false,
+    "description": "Concurrency level. (default 20)",
+  },
+  "ignore-url-element": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-i",
+    "visible": false,
+    "description": "Ignore the URL containing at least one of the elements of this array.",
+  },
+  "delay-between-crawl": {
+    "type": "STRING",
+    "order": 1,
+    "command": "-d",
+    "visible": false,
+    "description": "Delay between a page crawled and another.",
+  },
+  "custom-regex-secrets": {
+    "type": "FILE",
+    "order": 1,
+    "command": "-sf",
+    "visible": false,
+    "description": "Use an external file (txt, one per line) to use custom regexes for secrets hunting.",
+  },
+  "ignore-url-element-file": {
+    "type": "FILE",
+    "order": 1,
+    "command": "-it",
+    "visible": false,
+    "description": "Ignore the URL containing at least one of the lines of this file.",
+  },
+}}
+/>

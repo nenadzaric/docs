@@ -1,0 +1,59 @@
+---
+title: "404checker"
+description: "Auxiliary script thought to be used in Red Team exercises to check if a URL redirects to a masked 404 (such as 200 that redirects to a Not found page or similars). URLs must be passed sorted in order to improve performance."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="aeea5d43-432f-4e1a-a8db-d8e33e232ba1"
+  name="404checker"
+  description="Auxiliary script thought to be used in Red Team exercises to check if a URL redirects to a masked 404 (such as 200 that redirects to a Not found page or similars). URLs must be passed sorted in order to improve performance."
+  category="Discovery"
+  author="trickest-mhmdiaa"
+  created_date="2024-05-07"
+  container="quay.io/trickest/404checker:824380b"
+  source_url="https://github.com/carlospolop/404checker"
+  license="Unknown"
+  output_command="--output_file"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/aeea5d43-432f-4e1a-a8db-d8e33e232ba1.json"
+  inputs={ {
+  "threads": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--threads",
+    "visible": false,
+    "description": "Number of threads (default 50)",
+  },
+  "verbose": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--verbose",
+    "visible": false,
+    "description": "Be verbose",
+  },
+  "processes": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--processes",
+    "visible": false,
+    "description": "Number of browser processes (default number of cpus)",
+  },
+  "input-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "--input_file",
+    "visible": true,
+    "description": "Input file with urls on it (one per line)",
+  },
+  "user-agent": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--user-agent",
+    "visible": false,
+    "description": "User Agent",
+  },
+}}
+/>

@@ -1,0 +1,213 @@
+---
+title: "jwt-tool"
+description: "jwt_tool.py is a toolkit for validating, forging, scanning, and tampering JWTs (JSON Web Tokens)."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="87733b2a-5926-48fc-b7d1-a4366a923a6c"
+  name="jwt-tool"
+  description="jwt_tool.py is a toolkit for validating, forging, scanning, and tampering JWTs (JSON Web Tokens)."
+  category="Vulnerabilities"
+  author="trickest-mhmdiaa"
+  created_date="2022-02-05"
+  container="quay.io/trickest/jwt-tool:eb411ea"
+  source_url="https://github.com/ticarpi/jwt_tool"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/87733b2a-5926-48fc-b7d1-a4366a923a6c.json"
+  inputs={ {
+  "jwt": {
+    "type": "STRING",
+    "order": 0,
+    "command": "",
+    "visible": true,
+    "description": "The JWT to tinker with (no need to specify if in header/cookies)",
+  },
+  "bare": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--bare",
+    "visible": false,
+    "description": "Return TOKENS ONLY",
+  },
+  "mode": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--mode",
+    "visible": false,
+    "description": "Scanning mode: pb = playbook audit, er = fuzz existing claims to force errors, cc = fuzz common claims, at - All Tests!",
+  },
+  "sign": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--sign",
+    "visible": false,
+    "description": "Sign the resulting token",
+  },
+  "crack": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--crack",
+    "visible": false,
+    "description": "Crack key for an HMAC-SHA token",
+  },
+  "query": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--query",
+    "visible": false,
+    "description": "Query a token ID against the logfile to see the details of that request",
+  },
+  "tamper": {
+    "type": "BOOLEAN",
+    "order": 2,
+    "command": "--tamper",
+    "visible": false,
+    "description": "Tamper with the JWT contents",
+  },
+  "cookies": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--cookies",
+    "visible": false,
+    "description": "Request cookies to send with the forged HTTP request",
+  },
+  "exploit": {
+    "type": "STRING",
+    "order": 1,
+    "command": "--exploit",
+    "visible": false,
+    "description": "Exploit known vulnerabilities: a = alg:none, signature, b = blank password accepted in signature, s = spoof JWKS, k = key confusion (specify public key with -pk), i = inject inline JWKS",
+  },
+  "headers": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--headers",
+    "visible": false,
+    "description": "Request headers to send with the forged HTTP request (can be used multiple times for additional headers)",
+  },
+  "noproxy": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--noproxy",
+    "visible": false,
+    "description": "Disable proxy for current request",
+  },
+  "pub-key": {
+    "type": "FILE",
+    "order": 2,
+    "command": "--pubkey",
+    "visible": false,
+    "description": "Public Key for Asymmetric crypto",
+  },
+  "verbose": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--verbose",
+    "visible": false,
+    "description": "When parsing and printing, produce (slightly more) verbose output",
+  },
+  "jwks-url": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--jwksurl",
+    "visible": false,
+    "description": "URL location where you can host a spoofed JWKS",
+  },
+  "jwksfile": {
+    "type": "FILE",
+    "order": 2,
+    "command": "--jwksfile",
+    "visible": false,
+    "description": "JSON Web Key Store for Asymmetric crypto",
+  },
+  "key-file": {
+    "type": "FILE",
+    "order": 2,
+    "command": "--keyfile",
+    "visible": false,
+    "description": "Keyfile for cracking (when signed with 'kid' attacks)",
+  },
+  "postdata": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--postdata",
+    "visible": true,
+    "description": "Text string that contains all the data to be sent in a POST request",
+  },
+  "priv-key": {
+    "type": "FILE",
+    "order": 2,
+    "command": "--privkey",
+    "visible": false,
+    "description": "Private Key for Asymmetric crypto",
+  },
+  "target-url": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--targeturl",
+    "visible": true,
+    "description": "Target URL",
+  },
+  "verify-rsa": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--verify",
+    "visible": false,
+    "description": "Verify the RSA signature against a Public Key",
+  },
+  "canaryvalue": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--canaryvalue",
+    "visible": true,
+    "description": "Text string that appears in response for valid token (e.g. Welcome, ticarpi)",
+  },
+  "headerclaim": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--headerclaim",
+    "visible": false,
+    "description": "Header claim to tamper with",
+  },
+  "headervalue": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--headervalue",
+    "visible": false,
+    "description": "Value (or file containing values) to inject into tampered header claim",
+  },
+  "injectclaims": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--injectclaims",
+    "visible": false,
+    "description": "Inject new claims and update existing claims with new values",
+  },
+  "payloadclaim": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--payloadclaim",
+    "visible": false,
+    "description": "Payload claim to tamper with",
+  },
+  "payloadvalue": {
+    "type": "STRING",
+    "order": 2,
+    "command": "--payloadvalue",
+    "visible": false,
+    "description": "Value (or file containing values) to inject into tampered payload claim",
+  },
+  "dict-file-crack": {
+    "type": "FILE",
+    "order": 2,
+    "command": "--dict",
+    "visible": false,
+    "description": "Dictionary file for cracking",
+  },
+}}
+/>

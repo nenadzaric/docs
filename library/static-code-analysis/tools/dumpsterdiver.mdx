@@ -1,0 +1,122 @@
+---
+title: "dumpsterdiver"
+description: "DumpsterDiver is a tool, which can analyze big volumes of data in search of hardcoded secrets like keys (e.g. AWS Access Key, Azure Share Key or SSH keys) or passwords. Additionally, it allows creating a simple search rules with basic conditions (e.g. report only csv files including at least 10 email addresses). The main idea of this tool is to detect any potential secret leaks."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="da093a74-c0dc-4bb6-97f6-91936a548b7c"
+  name="dumpsterdiver"
+  description="DumpsterDiver is a tool, which can analyze big volumes of data in search of hardcoded secrets like keys (e.g. AWS Access Key, Azure Share Key or SSH keys) or passwords. Additionally, it allows creating a simple search rules with basic conditions (e.g. report only csv files including at least 10 email addresses). The main idea of this tool is to detect any potential secret leaks."
+  category="Static Code Analysis"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/dumpsterdiver:a54c190"
+  source_url="https://github.com/securing/dumpsterdiver"
+  license="Unknown"
+  output_command="-o"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/da093a74-c0dc-4bb6-97f6-91936a548b7c.json"
+  inputs={ {
+  "remove": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-r",
+    "visible": false,
+    "description": "When this flag is set, then files which don't contain any secret (or anything interesting if -a flag is set) will be removed.",
+  },
+  "secret": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-s",
+    "visible": false,
+    "description": "When this flag is set, then all files will be additionally analyzed in search of hardcoded passwords.",
+  },
+  "grep-words": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--grep-words",
+    "visible": false,
+    "description": "Specifies the grep words to look for. Multiple words should be separated by space. Wildcards are supported. Requires adding -a flag to the syntax.",
+  },
+  "search-level": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--level",
+    "visible": false,
+    "description": "Search level for key length. Options: --level 0 - short keys (20-40B), e.g. AWS Access Key ID. --level 1 (default) - typical keys (40-70B), e.g. AWS Secret Access Key or Azure Shared Key. --level 2 - long keys (1000-1800B), e.g. SSH private key. --level 3 - any key (20-1800B). Be careful with this setting, because it may generate lots of false positives.",
+  },
+  "path-to-files": {
+    "type": "FOLDER",
+    "order": 0,
+    "command": "-p",
+    "visible": true,
+    "description": "Path to the folder containing files to be analyzed",
+  },
+  "max-key-length": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--max-key",
+    "visible": false,
+    "description": "Specifies the maximum key length to be analyzed (default is 80).",
+  },
+  "min-key-length": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--min-key",
+    "visible": false,
+    "description": "Specifies the minimum key length to be analyzed (default is 20).",
+  },
+  "bad-expressions": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--bad-expressions",
+    "visible": false,
+    "description": "Specifies bad expressions. If the DumpsterDiver find such expression in a file, then this file won't be analyzed. Multiple bad expressions should be separated by space.",
+  },
+  "files-to-exclude": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--exclude-files",
+    "visible": false,
+    "description": "Specifies file names or extensions which shouldn't be analyzed. File extension should contain . character (e.g. .pdf). Multiple file names and extensions should be separated by space.",
+  },
+  "advanced-analysis": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-a",
+    "visible": false,
+    "description": "when this flag is set, then all files will be additionally analyzed using rules specified in rules.yaml file.",
+  },
+  "max-password-length": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--max-pass",
+    "visible": false,
+    "description": "Specifies the maximum password length to be analyzed (default is 12). Requires adding -s flag to the syntax.",
+  },
+  "min-password-length": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--min-pass",
+    "visible": false,
+    "description": "Specifies the minimum password length to be analyzed (default is 8). Requires adding -s flag to the syntax.",
+  },
+  "password-complexity": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--pass-complex",
+    "visible": false,
+    "description": "Specifies the edge of password complexity between 1 (trivial passwords) to 9 (very complex passwords) (default is 8). Requires adding -s flag to the syntax.",
+  },
+  "enge-of-high-entropy": {
+    "type": "STRING",
+    "order": 0,
+    "command": "--entropy",
+    "visible": false,
+    "description": "Specifies the edge of high entropy (default is 4.3).",
+  },
+}}
+/>

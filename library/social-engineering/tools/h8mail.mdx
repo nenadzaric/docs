@@ -1,0 +1,143 @@
+---
+title: "h8mail"
+description: "h8mail is an email OSINT and breach hunting tool using different breach and reconnaissance services."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="a29e26aa-7953-4058-adf9-1d02ef3b8583"
+  name="h8mail"
+  description="h8mail is an email OSINT and breach hunting tool using different breach and reconnaissance services."
+  category="Social Engineering"
+  author="trickest"
+  created_date="2021-06-23"
+  container="quay.io/trickest/h8mail:v2.5.6"
+  source_url="https://github.com/khast3x/h8mail"
+  license="Unknown"
+  output_command="-o"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/a29e26aa-7953-4058-adf9-1d02ef3b8583.json"
+  inputs={ {
+  "keys": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-k",
+    "visible": false,
+    "description": "Pass config options. Supported format: K=V,K=V",
+  },
+  "chase": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-ch",
+    "visible": false,
+    "description": "Add related emails from hunter.io to ongoing target list. Define number of emails per target to chase. Requires hunter.io private API key if used without power-chase",
+  },
+  "debug": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--debug",
+    "visible": false,
+    "description": "Print request debug information",
+  },
+  "gzip-src": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-gz",
+    "visible": false,
+    "description": "Local tar.gz (gzip) compressed breaches to scans for targets",
+  },
+  "url-input": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-u",
+    "visible": false,
+    "description": "String URL input. (Require http:// or https://)",
+  },
+  "breachcomp": {
+    "type": "FOLDER",
+    "order": 0,
+    "command": "-bc",
+    "visible": false,
+    "description": "Path to the breachcompilation torrent folder. Uses the query.sh script included in the torrent",
+  },
+  "user-query": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-q",
+    "visible": false,
+    "description": "Perform a custom query. Supports username, password, ip, hash, domain. Performs an implicit loose search when searching locally",
+  },
+  "config-file": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-c",
+    "visible": true,
+    "description": "Configuration file for API keys. Accepts keys from Snusbase, WeLeakInfo, Leak-Lookup, HaveIBeenPwned, Emailrep, Dehashed, and hunter",
+  },
+  "power-chase": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--power-chase",
+    "visible": false,
+    "description": "Add related emails from ALL API services to ongoing target list. Use with chase",
+  },
+  "single-file": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-sf",
+    "visible": false,
+    "description": "If breach contains big cleartext or tar.gz files, set this flag to view the progress bar. Disables concurrent file searching for stability",
+  },
+  "local-breach": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-lb",
+    "visible": false,
+    "description": "Local cleartext breaches to scan for targets.",
+  },
+  "loose-search": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--loose",
+    "visible": false,
+    "description": "Allow loose search by disabling email pattern recognition.",
+  },
+  "target-input": {
+    "type": "STRING",
+    "order": 0,
+    "command": "-t",
+    "visible": true,
+    "description": "String target input",
+  },
+  "skip-defaults": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "-sk",
+    "visible": false,
+    "description": "Skips HaveIBeenPwned and HunterIO check",
+  },
+  "hide-passwords": {
+    "type": "BOOLEAN",
+    "order": 0,
+    "command": "--hide",
+    "visible": false,
+    "description": "Only shows the first 4 characters of found passwords to output.",
+  },
+  "url-file-input": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-u",
+    "visible": false,
+    "description": "File URL input",
+  },
+  "target-file-input": {
+    "type": "FILE",
+    "order": 0,
+    "command": "-t",
+    "visible": true,
+    "description": "File target input",
+  },
+}}
+/>

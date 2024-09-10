@@ -1,0 +1,38 @@
+---
+title: "shodan-download"
+description: "Download json.gz data from shodan."
+mode: "wide"
+---
+
+import { ToolDetails } from '/snippets/ToolDetails.mdx';
+
+<ToolDetails
+  id="c4eb3c68-d6a1-42f3-997e-11d539b6f005"
+  name="shodan-download"
+  description="Download json.gz data from shodan."
+  category="OSINT"
+  author="trickest"
+  created_date="2021-10-26"
+  container="quay.io/trickest/shodan-download:v1.0.0"
+  source_url="https://github.com/achillean/shodan-python"
+  license="Unknown"
+  output_command=">"
+  output_type=""
+  iframe_url="https://editor.staging.trickest.io/preview?workflow_url=https://trickest-public-workflow.s3.eu-central-1.amazonaws.com/c4eb3c68-d6a1-42f3-997e-11d539b6f005.json"
+  inputs={ {
+  "query": {
+    "type": "STRING",
+    "order": 2,
+    "command": "",
+    "visible": true,
+    "description": "Query for Shodan API.",
+  },
+  "api_key": {
+    "type": "STRING",
+    "order": 1,
+    "command": "",
+    "visible": true,
+    "description": "API key for Shodan API.",
+  },
+}}
+/>
